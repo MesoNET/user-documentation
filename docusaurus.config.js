@@ -21,7 +21,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'MesoNET', // Usually your GitHub org/user name.
   projectName: 'user-documentation', // Usually your repo name.
-  deploymentBranch: 'main',
+  //deploymentBranch: 'main', // default is gh-pages
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
