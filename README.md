@@ -1,4 +1,4 @@
-# MesoNET User Documentation Website
+# MesoNET User Documentation Website - Docusaurus sources
 
 Website built using [Docusaurus 2](https://docusaurus.io/)
 
