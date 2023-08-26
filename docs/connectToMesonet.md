@@ -12,7 +12,10 @@ Account manager is available at https://iam.mesonet.fr
 
 In both cases, you need to choose a username (you future login) and fill your motivation to join.
 You will next receive a validation mail : you need to clic on the validation link.
+Manual validation by a MesoNET administrator will then be required, which may take a few days.
 NOTE : During this process, you may be confronted with an error message. In this case, please stop and restart your browser.
+
+If you have any questions, please use the support tool and submit a ticket.
 
 # Access to mesonet services
 
