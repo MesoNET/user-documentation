@@ -21,8 +21,8 @@ If you have any questions, please use the support tool and submit a ticket.
 
 # Access to mesonet services
 
-- MesoNET website, including description of the ressources : https://www.mesonet.fr
-- GramC portal scientific attribution of the ressources : https://acces.mesonet.fr
-- Temporary portal to access to ressources : https://www.mesonet.fr/portal
-- Documentation portal : TBR
-- Support portal : TBR
+- MesoNET website, including description of the ressources : https://www.mesonet.fr 
+- GramC portal scientific attribution of the ressources : https://acces.mesonet.fr 
+- Temporary portal to access to ressources : https://www.mesonet.fr/portal 
+- Documentation portal : TBR 
+- Support portal : TBR 
