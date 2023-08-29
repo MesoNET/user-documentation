@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to MesoNET website
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
+    name: Deploy to MesoNET website
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
