@@ -3,17 +3,17 @@
 Historically, on Infiniband clusters, Open MPI was built with the openib BTL support, enabled when Open MPI is configured --with-verbs. The openib BTL became deprecated in favor of the Unified Communication X (UCX) PML. Hence, the current documentation shows some guidelines on how to install a CUDA-Aware Open MPI library with UCX. Note that all the examples used in this document were run on juliet supercomputer. 
 
 The building process includes two main steps:
-1. Building UCX with GPU support (+ some GPU specific module kernels)
+1. Building UCX with GPU support (+ some GPU-specific module kernels)
 2. Building OpenMPI with previously configured UCX
 
 ## Setting up and building UCX with GPU support
 
 ### GPU communication performance
 
-To obtain high communication performance on a Infiniband cluster, we first need to enable the GPUDirect RDMA technolog, before building UCX. Prior to CUDA 11.4, GPUDirect RDMA was enabled by installing the 
+To obtain high communication performance on a Infiniband cluster, we first need to enable the GPUDirect RDMA technology, before building UCX. Prior to CUDA 11.4, GPUDirect RDMA was enabled by installing the 
 `nv_peer_memory` kernel developped by Mellanox. Starting with CUDA 11.4 there is a new kernel module called `nvidia-peermem` implemented by Nvidia. To note th\t `nv_peer_memory` became deprecated and should be replaced by `nvidia-peermem`. Please visit the [Nvidia website](https://docs.nvidia.com/cuda/gpudirect-rdma/) for more details.
 
-Additionally, to optimize the intra-node GPU communication latency, UCX should be build with the `gdrcopy` support. The last one is a library based on the GPUDirect RDMA features. A data transfer performed with `gdrcopy` is driven by the CPU, and is meant to reduce the communication latency. This is library is composed of a kernel module called `gdrdrv` and a API called `gdrapi`.
+Additionally, to optimize the intra-node GPU communication latency, UCX should be build with the `gdrcopy` support. The last one is a library based on the GPUDirect RDMA features. A data transfer performed with `gdrcopy` is driven by the CPU, and is meant to reduce the communication latency. This library is composed of a kernel module called `gdrdrv` and a API called `gdrapi`.
 
 Hence, before building UCX please make sure that both `nvidia-peermem` and `gdrdrv` kernel modules are installed and loaded. 
 ```sh
@@ -24,14 +24,14 @@ If the kernel modules are not loaded please refer to the following ressources fo
 
 ### Building UCX
 
-Building UCX is typically a combination of running "configure" and "make". For a GPU support we need to specify the cuda and gdrcopy install directories via the `--with-cuda` and `--with-gdrcopy` options of "configure". Below are the steps required to build and install UCX on juliet supercomputer. The latest release UCX tarball can be downloaded from the [UCX repository](https://github.com/openucx/ucx/releases). 
+Building UCX is typically a combination of running "configure" and "make". For GPU support we need to specify the cuda and gdrcopy install directories via the `--with-cuda` and `--with-gdrcopy` options of "configure". Below are the steps required to build and install UCX on juliet supercomputer. The latest release UCX tarball can be downloaded from the [UCX repository](https://github.com/openucx/ucx/releases). 
 
 ```sh
 $ ./configure --prefix=<prefix_path> --with-cuda=/apps/spack/spack-softwares/linux-rocky9-zen3/gcc-13.1.0/cuda-12.1.1-hhxtp4y7d55t27jbbxwpjxc4t24tgi3h --with-gdrcopy=/apps/manual_install/gdrcopy
 $ make -j8 install
 ```
 
-Once the installtion completed, the information about the current UCX installation instance can be retrived via the `ucx_info` command. For example, it is possible to check the UCX GPU support via the following command:
+Once the installation is completed, the information about the current UCX installation instance can be retrieved via the `ucx_info` command. For example, it is possible to check the UCX GPU support via the following command:
 ```sh
 $ ucx_info -d | grep cuda
 ```
@@ -43,7 +43,7 @@ $ env UCX_LOG_LEVEL=debug ucx_info -d | grep -i cuda
 
 ## Setting up and building OpenMPI
 
- Below are the commands for building a CUDA-Aware OpenMPI library with the Slurm support on juliet supercomputer. We need to specify the path to the UCX instalation directory via the `--with-ucx` option and also the path to cuda via `--with-cuda`. Additionaly, we need to set the `--with-pmi` option for supporting slurm (i.e. running MPI application with srun). We also disable the btl openib via `--without-verbs` option. 
+ Below are the commands for building a CUDA-Aware OpenMPI library with Slurm support on juliet supercomputer. We need to specify the path to the UCX installation directory via the `--with-ucx` option and the path to cuda via `--with-cuda`. Additionaly, we need to set the `--with-pmi` option for supporting slurm (i.e. running MPI application with srun). We also disable the btl openib via `--without-verbs` option. 
 
 ```sh
 $ ./configure --prefix=<prefix_path> --with-ucx=<path_to_ucx_install> --with-cuda=/apps/spack/spack-softwares/linux-rocky9-zen3/gcc-13.1.0/cuda-12.1.1-hhxtp4y7d55t27jbbxwpjxc4t24tgi3h --with-pmi --without-verbs
@@ -219,5 +219,5 @@ import TabItem from '@theme/TabItem';
 
 #### Manual tunning parameters
 
-For all the runs above we need to specify the location of the gdrcopy library via `-x LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/manual_install/gdrcopy/lib`. Without this option, the MPI library would be unabled to use gdrcopy, resulting in a performance degradation. We also select the same Infiniband MCA for all our runs via `x UCX_NET_DEVICES=mlx5_0:1 `. This was done for reproductibility issues. To learn more about possible UCX options and manual tunning please visit the [OpenUCX website](https://openucx.readthedocs.io/en/master/faq.html?highlight=uct#working-with-gpu).
+For all the runs above we need to specify the location of the gdrcopy library via `-x LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/apps/manual_install/gdrcopy/lib`. Without this option, the MPI library could not use gdrcopy, resulting in performance degradation. We also select the same Infiniband MCA for all our runs via `x UCX_NET_DEVICES=mlx5_0:1 `. This was done for reproducibility issues. To learn more about possible UCX options and manual tunning please visit the [OpenUCX website](https://openucx.readthedocs.io/en/master/faq.html?highlight=uct#working-with-gpu).
 
