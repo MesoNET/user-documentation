@@ -8,7 +8,7 @@ Before proceeding to this section please make sure that you configured the NGC `
 
 :::caution
 
-Nvidia HPL implementation requires `gdrcopy` to be installed on the compute nodes. You can check if `gdrcopy` is loaded via the `lsmod | grep gdrdrv` comand. The last one need to be executed on the compute (there is no reason to have a GPU driver on login nodes). Feel free to perform this operation via slurm if needed: 
+Nvidia HPL implementation requires `gdrcopy` to be installed on the compute nodes. You can check if `gdrcopy` is loaded via the `lsmod | grep gdrdrv` command. The last one needs to be executed on the compute nodes (there is no reason to have a GPU driver on login nodes). Feel free to perform this operation via slurm if needed: 
 
 `srun -p mesonet -n 1 -w juliet3 lsmod | grep gdrdrv`
 
