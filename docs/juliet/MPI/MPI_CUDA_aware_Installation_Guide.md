@@ -11,7 +11,7 @@ The building process includes two main steps:
 ### GPU communication performance
 
 Before building UCX, we might need to set up the GPUDirect RDMA technology, in order to improve the GPU communication performance. Prior to CUDA 11.4, GPUDirect RDMA technology was handled by the 
-`nv_peer_memory` kernel developed by Mellanox. Starting with CUDA 11.4 there is a new kernel module called `nvidia-peermem` implemented by Nvidia. To note th\t `nv_peer_memory` became deprecated and should be replaced by `nvidia-peermem`. Please visit the [Nvidia website](https://docs.nvidia.com/cuda/gpudirect-rdma/) for more details.
+`nv_peer_memory` kernel developed by Mellanox. Starting with CUDA 11.4 there is a new kernel module called `nvidia-peermem` implemented by Nvidia. To note that `nv_peer_memory` became deprecated and should be replaced by `nvidia-peermem`. Please visit the [Nvidia website](https://docs.nvidia.com/cuda/gpudirect-rdma/) for more details.
 
 Additionally, to optimize the intra-node GPU communication latency, UCX should be build with the `gdrcopy` support. The last one is a library based on the GPUDirect RDMA features. A data transfer performed with `gdrcopy` is driven by the CPU, and is meant to reduce the communication latency. This library is composed of a kernel module called `gdrdrv` and a API called `gdrapi`.
 
@@ -78,9 +78,12 @@ For example, we can enable or disable the use of GPUDirect RDMA optimization (av
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
+import GDROptSvg from './gdr_impact.svg';
 
 <Tabs>
+  <TabItem value="perf_graph" label="Performance graph" default>
+    <GDROptSvg/>
+  </TabItem>
   <TabItem value="rdma1_gdr1" label="GPUDirect RDMA and gdrcopy" default>
     Both GPUDirect RDMA and gdrcopy enabled (Device to Device)
 
