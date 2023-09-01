@@ -10,8 +10,8 @@ The building process includes two main steps:
 
 ### GPU communication performance
 
-To obtain high communication performance on a Infiniband cluster, we first need to enable the GPUDirect RDMA technology, before building UCX. Prior to CUDA 11.4, GPUDirect RDMA was enabled by installing the 
-`nv_peer_memory` kernel developped by Mellanox. Starting with CUDA 11.4 there is a new kernel module called `nvidia-peermem` implemented by Nvidia. To note th\t `nv_peer_memory` became deprecated and should be replaced by `nvidia-peermem`. Please visit the [Nvidia website](https://docs.nvidia.com/cuda/gpudirect-rdma/) for more details.
+Before building UCX, we might need to set up the GPUDirect RDMA technology, in order to improve the GPU communication performance. Prior to CUDA 11.4, GPUDirect RDMA technology was handled by the 
+`nv_peer_memory` kernel developed by Mellanox. Starting with CUDA 11.4 there is a new kernel module called `nvidia-peermem` implemented by Nvidia. To note th\t `nv_peer_memory` became deprecated and should be replaced by `nvidia-peermem`. Please visit the [Nvidia website](https://docs.nvidia.com/cuda/gpudirect-rdma/) for more details.
 
 Additionally, to optimize the intra-node GPU communication latency, UCX should be build with the `gdrcopy` support. The last one is a library based on the GPUDirect RDMA features. A data transfer performed with `gdrcopy` is driven by the CPU, and is meant to reduce the communication latency. This library is composed of a kernel module called `gdrdrv` and a API called `gdrapi`.
 
@@ -20,7 +20,7 @@ Hence, before building UCX please make sure that both `nvidia-peermem` and `gdrd
 $ lsmod | grep gdrdrv
 $ lsmod | grep nvidia_peermem
 ```
-If the kernel modules are not loaded please refer to the following ressources for [installing gdrcopy](https://github.com/NVIDIA/gdrcopy) and/or for [loading nvidia-peermem](https://docs.nvidia.com/cuda/gpudirect-rdma/).
+If the kernel modules are not loaded please refer to the following resources for [installing gdrcopy](https://github.com/NVIDIA/gdrcopy) and/or for [loading nvidia-peermem](https://docs.nvidia.com/cuda/gpudirect-rdma/).
 
 ### Building UCX
 
@@ -43,7 +43,7 @@ $ env UCX_LOG_LEVEL=debug ucx_info -d | grep -i cuda
 
 ## Setting up and building OpenMPI
 
- Below are the commands for building a CUDA-Aware OpenMPI library with Slurm support on juliet supercomputer. We need to specify the path to the UCX installation directory via the `--with-ucx` option and the path to cuda via `--with-cuda`. Additionaly, we need to set the `--with-pmi` option for supporting slurm (i.e. running MPI application with srun). We also disable the btl openib via `--without-verbs` option. 
+ Below are the commands for building a CUDA-Aware OpenMPI library with Slurm support on juliet supercomputer. We need to specify the path to the UCX installation directory via the `--with-ucx` option and the path to cuda via `--with-cuda`. Additionally, we need to set the `--with-pmi` option for supporting slurm (i.e. running MPI application with srun). We also disable the btl openib via `--without-verbs` option. 
 
 ```sh
 $ ./configure --prefix=<prefix_path> --with-ucx=<path_to_ucx_install> --with-cuda=/apps/spack/spack-softwares/linux-rocky9-zen3/gcc-13.1.0/cuda-12.1.1-hhxtp4y7d55t27jbbxwpjxc4t24tgi3h --with-pmi --without-verbs
@@ -72,7 +72,7 @@ $ make install
 
 ### Running OSU Micro-Benchmarks
 
-By default, UCX tries to use all available devices on the machine, and selects best ones based on performance characteristics. One can also use manual tunning in order to force the use of certain devices or technologies.
+By default, UCX tries to use all available devices on the machine and selects the best ones based on performance characteristics. One can also use manual tunning in order to force the use of certain devices or technologies.
 
 For example, we can enable or disable the use of GPUDirect RDMA optimization (available through the `nvidia-peermem` kernel) and enable or disable the use of gdrcopy (i.e. use of the `gdrdrv` kernel). Below are a few examples.
 
