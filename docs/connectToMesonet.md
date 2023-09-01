@@ -16,7 +16,7 @@ Manual validation by a MesoNET administrator will then be required, which may ta
 💥NOTE : During this process, you may be confronted with an error message. In this case, please stop and restart your browser.
 
 :::tip
-If you have any questions, please use the support tool and submit a ticket.
+If you have any question, please use the support tool and submit a ticket.
 :::
 
 # Access to mesonet services
