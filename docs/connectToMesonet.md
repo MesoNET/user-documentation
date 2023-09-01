@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Request a mesonet account
+# Request a MesoNET account
 
 You need to create a MesoNET account to access all MesoNET services.
 Account manager is available at https://iam.mesonet.fr
