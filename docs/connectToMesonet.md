@@ -11,7 +11,7 @@ Account manager is available at https://iam.mesonet.fr
 2. Without an institution present in EduGAIN, you can create a local account at https://iam.mesonet.fr/start-registration
 
 In both cases, you need to choose a username (you future login) and fill your motivation to join.  
-You will next receive a validation mail : you need to clic on the validation link.  
+You will next receive a validation mail (check your spam directory) : you need to clic on the validation link.  
 Manual validation by a MesoNET administrator will then be required, which may take a few days.  
 💥NOTE : During this process, you may be confronted with an error message. In this case, please stop and restart your browser.
 
