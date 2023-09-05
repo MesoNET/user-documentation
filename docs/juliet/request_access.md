@@ -37,7 +37,7 @@ Enter the type and value of your public key on the `Key` field
 Check the `Valid Key` button to validate your key.
 
 
-:::warning
+:::caution
 The key must include the key type (ssh-rsa,...) as well as the value.
 
 In the current state, the portal has no failsafe to detect invalid SSH keys. Please make sure your key is valid before adding it.
