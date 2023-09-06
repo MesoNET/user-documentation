@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Request access to a server
 # Prerequisites
 
-1) You need a validated MesoNET account. You can find the steps to obtain one [here](https://www.mesonet.fr/documentation/user-documentation/connectToMesonet)
+1) You need a validated MesoNET account. You can find the steps to obtain one [here](https://www.mesonet.fr/documentation/user-documentation/connectToMesonet).
 
 2) You need a valid SSH key. You can follow [GitHub's tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) to create one.
 # Access request
