@@ -8,16 +8,16 @@ import TabItem from '@theme/TabItem';
 # Request access to a server
 # Prerequisites
 
-1) You need a validated MesoNET account. You can find the steps to obtain one here : https://www.mesonet.fr/documentation/user-documentation/connectToMesonet
+1) You need a validated MesoNET account. You can find the steps to obtain one [here](https://www.mesonet.fr/documentation/user-documentation/connectToMesonet)
 
-2) You need a valid SSH key. Here is a tutorial on how to create one : https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+2) You need a valid SSH key. You can follow [GitHub's tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) to create one.
 # Access request
 
 
 <Tabs>
 <TabItem value="juliet" label="Juliet AI server">
 
-The ticket center is currently under construction. In the meantime you can request access to the Juliet AI pod through the Romeo ticket center : https://romeo.univ-reims.fr/ticket/
+The ticket center is currently under construction. In the meantime you can request access to the Juliet AI pod through the [Romeo ticket center](https://romeo.univ-reims.fr/ticket/)
 
 
 To request access :
@@ -30,8 +30,7 @@ To request access :
 
 # Add a ssh key
 This step can be performed before or after the previous one.
-Go to your key list at : https://www.mesonet.fr/portal/mykeys
-    or by clicking on the top right icon -> `My keys`.
+Go to your [key list](https://www.mesonet.fr/portal/mykeys) with the link or by clicking on the top right icon -> `My keys`.
 
 At the bottom of the list, click on `New Key`.
 Enter a `Label` for your key to identify it
@@ -58,7 +57,7 @@ Depending on what you copied it from, some newline character might have been int
 
 # Activate SSH key
 
-Once you have been granted access to a server, it should appear on the `Dashboard` (https://www.mesonet.fr/portal/dashboard)
+Once you have been granted access to a server, it should appear on the [Dashboard](https://www.mesonet.fr/portal/dashboard)
 
 By clicking on a computing architecture you can select which keys are activated or deactivate for this architecture.
 
@@ -79,8 +78,8 @@ On Juliet, the list of activated keys is refreshed every 3 hours.
 
 # Revoke SSH Key
 
-To revoke a SSH Key, go to your key list (https://www.mesonet.fr/portal/mykeys
-or by clicking on the top right icon -> `My keys`).
+To revoke a SSH Key, go to your [key list](https://www.mesonet.fr/portal/mykeys) with the link
+or by clicking on the top right icon -> `My keys`.
 
 Click on the key label. Finally under `Validity`, check `Unvalid key`.
 
