@@ -46,3 +46,8 @@ The processor and memory affinities can drastically impact the performance of th
 srun -p mesonet -N 1 -n 8 -c 14 -G 8 --cpu-bind=none --mpi=pmi2 apptainer exec --nv --ipc nvidia_hpc_benchmarks.sif /workspace/hpcg.sh --nx 256 --ny 512 --nz 512 --rt 2
 ```
 
+:::tip
+
+Using `srun` allows us to launch containerized MPI applications without using any host-side MPI library. Hence, we only need an MPI implementation to be installed inside the container.
+
+:::
