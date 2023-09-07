@@ -22,7 +22,8 @@ The ticket center is currently under construction. In the meantime you can reque
 
 To request access :
     - Select "MESONET Account" creation under "Help Topic"
-    - Provide your username in the details of the ticket.
+    - Provide an e-mail address to contact the owner of the account
+    - Provide the username in the details of the ticket.
 
 </TabItem>
 </Tabs> 
@@ -49,7 +50,9 @@ Check the `Valid Key` button to validate your key.
 :::caution
 The key must include the key type (ssh-rsa,...) as well as the value.
 
-⚠⚠⚠ In the current state, the portal has no failsafe to detect invalid SSH keys. Please make sure your key is valid before adding it.
+⚠ In the current state, the portal has no failsafe to detect invalid SSH keys. ⚠
+
+⚠ Please make sure your key is valid before adding it. ⚠
 
 Depending on what you copied it from, some newline character might have been introduced in the text and must be removed. 
 
