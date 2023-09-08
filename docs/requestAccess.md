@@ -57,7 +57,7 @@ Examples of the expected format :
 `ssh-rsa ThisTypeOfKeyIsMuchLongerThanThatButYouGetTheIdea`
 :::
 
-Check the `Valid Key` button to validate your key.
+Check the `Valid Key` button to validate your key. You can have as many valid keys as you want.
 
 
 :::caution
