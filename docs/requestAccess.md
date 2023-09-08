@@ -10,7 +10,10 @@ import TabItem from '@theme/TabItem';
 
 1) You need a validated MesoNET account. You can find the steps to obtain one [here](https://www.mesonet.fr/documentation/user-documentation/connectToMesonet).
 
-2) You need a valid SSH key. You can follow [GitHub's tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) to create one.
+2) You need a valid SSH key. You can generate a key in a command line interface with the command : 
+```sh 
+ssh-keygen 
+```
 # Access request
 
 
@@ -33,6 +36,8 @@ To request access :
 This step can be performed before or after the previous one.
 Go to your [key list](https://www.mesonet.fr/portal/mykeys) with the link or by clicking on the top right icon -> `My keys`.
 
+![The top right panel.](./assets/keys.png)
+
 At the bottom of the list, click on `New Key`.
 Enter a `Label` for your key to identify it
 
@@ -42,15 +47,22 @@ Labels are not unique and are only used for information.
 
 :::
 
-Enter the type and value of your public key on the `Key` field 
+Enter the type and value of your public key on the `Key` field.
+
+:::note
+Examples of the expected format : 
+
+`ssh-ed25519 ThATiSthEB0DY0FAKeY`
+
+`ssh-rsa ThisTypeOfKeyIsMuchLongerThanThatButYouGetTheIdea`
+:::
 
 Check the `Valid Key` button to validate your key.
 
 
 :::caution
-The key must include the key type (ssh-rsa,...) as well as the value.
 
-⚠ In the current state, the portal has no failsafe to detect invalid SSH keys. ⚠
+⚠ In the current state, the portal has no failsafe to detect invalid or duplicate SSH keys. ⚠
 
 ⚠ Please make sure your key is valid before adding it. ⚠
 
@@ -88,7 +100,11 @@ Click on the key label. Finally under `Validity`, check `Unvalid key`.
 
 :::caution
 
-This will revoke the key for every MesoNET server.
+- This will revoke the key for every MesoNET server.
+
+⚠ In the current state, the portal has no failsafe to detect duplicate SSH keys. ⚠
+
+If there are duplicate SSH keys revoking one will also revoke the others.
 
 :::
 
