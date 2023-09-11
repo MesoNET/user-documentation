@@ -24,7 +24,7 @@ The ticket center is currently under construction. In the meantime you can reque
 
 
 To request access :
-    - Select "MESONET Account" creation under "Help Topic"
+    - Select "MESONET Account Creation" under "Help Topic"
     - Provide an e-mail address to contact the owner of the account
     - Provide the username in the details of the ticket.
 
