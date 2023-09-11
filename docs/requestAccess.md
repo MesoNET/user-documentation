@@ -10,7 +10,10 @@ import TabItem from '@theme/TabItem';
 
 1) You need a validated MesoNET account. You can find the steps to obtain one [here](https://www.mesonet.fr/documentation/user-documentation/connectToMesonet).
 
-2) You need a valid SSH key. You can generate a key in a command line interface with the command : 
+2) You need to have entered a `Login` in your MesoNET [profile](https://www.mesonet.fr/portal/profile).
+
+
+3) You need a valid SSH key. You can generate a key in a command line interface with the command :
 ```sh 
 ssh-keygen 
 ```
