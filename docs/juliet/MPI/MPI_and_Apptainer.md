@@ -3,7 +3,7 @@ There are two main ways of launching MPI applications with apptainer, known as `
 
 :::caution
 
-The present document is inteended to offer some examples and tips for MesoNET supercomputers and should not be taken as an comprehensive User Guide. We encourage you to read and uderstand the [Apptainer Documentation](https://apptainer.org/docs/user/1.0/mpi.html) before proceeding.
+The present document is intended to offer some examples and tips for MesoNET supercomputers and should not be taken as a comprehensive User Guide. We encourage you to read and understand the [Apptainer Documentation](https://apptainer.org/docs/user/1.0/mpi.html) before proceeding.
 
 :::
 
@@ -18,13 +18,13 @@ On Slurm supercomputers, it is possible to avoid having two MPI installation ins
 :::
 
 ## Bind Model 
-By default, Apptainer automatically mounts several bind points: `$HOME`, `/sys`, `/proc`, `/tmp`, etc. Meaning that you will have access to these points inside the container. These bindings depends on the system configuration and can be different from on machine to another. For more details please visit the (Apptainer Bind Paths and Mounts Documentation)[https://apptainer.org/docs/user/main/bind_paths_and_mounts.html]. 
+By default, Apptainer automatically mounts several bind points: `$HOME`, `/sys`, `/proc`, `/tmp`, etc. Meaning that you will have access to these points inside the container. These bindings depend on the system configuration and can be different from one machine to another. For more details please visit the (Apptainer Bind Paths and Mounts Documentation)[https://apptainer.org/docs/user/main/bind_paths_and_mounts.html]. 
 
-Hence, in order to use the host-side MPI library, we need to identify its location, and mount/bind it into the container. Below we provide an example of an Aptainer (Definition File)[https://apptainer.org/docs/user/main/definition_files.html] where we use the host-side MPI implementation to install the well-known (OSU Micro-Benchmarks)[https://mvapich.cse.ohio-state.edu/benchmarks/] inside the container. Then, we run MPI applications inside the container by specifing the installation path to the host-side MPI library via the Apptainer `--bind` option. 
+Hence, in order to use the host-side MPI library, we need to identify its location, and mount/bind it into the container. Below we provide an example of an Aptainer (Definition File)[https://apptainer.org/docs/user/main/definition_files.html] where we use the host-side MPI implementation to install the well-known (OSU Micro-Benchmarks)[https://mvapich.cse.ohio-state.edu/benchmarks/] inside the container. Then, we run MPI applications inside the container by specifying the installation path to the host-side MPI library via the Apptainer `--bind` option. 
 
 :::caution
 
-This example is based on a NVC container. Before proceeding, please make sure that you (configured the NGC Catalog <API_key>)[../Apptainer/Building_NGC_Containers.md].
+This example is based on an NGC container. Before proceeding, please make sure that you (configured the NGC Catalog <API_key>)[../Apptainer/Building_NGC_Containers.md].
 
 :::
 
@@ -79,6 +79,6 @@ $> apptainer shell --nv --bind $JULIET_MPI_BINDING apptainer_mpi_cuda.sif
 
 :::info
 
-The juliet MPI library depends on the hwloc library, which is located in `/usr` directory. Hence we also need to bind the `/usr/bin` and `/usr/lib` directories.
+The juliet MPI instance depends on the hwloc library, which is located in `/usr` directory. Hence we also need to bind the `/usr/bin` and `/usr/lib` directories.
 
 :::
