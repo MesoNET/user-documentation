@@ -3,7 +3,7 @@ There are two main ways of launching MPI applications with apptainer, known as `
 
 :::caution
 
-The present document is intended to offer some examples and tips for MesoNET supercomputers and should not be taken as a comprehensive User Guide. We encourage you to read and understand the [Apptainer Documentation](https://apptainer.org/docs/user/1.0/mpi.html) before proceeding.
+The present document is inteended to offer some examples and tips for MesoNET supercomputers and should not be taken as an comprehensive User Guide. We encourage you to read and uderstand the [Apptainer Documentation](https://apptainer.org/docs/user/1.0/mpi.html) before proceeding.
 
 :::
 
@@ -18,63 +18,62 @@ On Slurm supercomputers, it is possible to avoid having two MPI installation ins
 :::
 
 ## Bind Model 
-By default, Apptainer automatically mounts several bind points: `$HOME`, `/sys`, `/proc`, `/tmp`, etc. Meaning that you will have access to these points inside the container. These bindings depend on the system configuration and can be different from one machine to another. For more details please visit the [Apptainer Bind Paths and Mounts Documentation](https://apptainer.org/docs/user/main/bind_paths_and_mounts.html). 
+By default, Apptainer automatically mounts several bind points: `$HOME`, `/sys`, `/proc`, `/tmp`, etc. Meaning that you will have access to these points inside the container. These bindings depends on the system configuration and can be different from on machine to another. For more details please visit the (Apptainer Bind Paths and Mounts Documentation)[https://apptainer.org/docs/user/main/bind_paths_and_mounts.html]. 
 
-Hence, in order to use the host-side MPI library, we need to identify its location, and mount/bind it into the container. Below we provide an example of an Aptainer (Definition File)[https://apptainer.org/docs/user/main/definition_files.html] where we use the host-side MPI implementation to install the well-known [OSU Micro-Benchmarks](https://mvapich.cse.ohio-state.edu/benchmarks/) inside the container. Then, we run MPI applications inside the container by specifying the installation path to the host-side MPI library via the Apptainer `--bind` option. 
+Hence, in order to use the host-side MPI library, we need to identify its location, and mount/bind it into the container. Below we provide an example of an Aptainer (Definition File)[https://apptainer.org/docs/user/main/definition_files.html] where we use the host-side MPI implementation to install the well-known (OSU Micro-Benchmarks)[https://mvapich.cse.ohio-state.edu/benchmarks/] inside the container. Then, we run MPI applications inside the container by specifing the installation path to the host-side MPI library via the Apptainer `--bind` option. 
 
-:::caution
 
-This example is based on an NGC container. Before proceeding, please make sure that you [configured the NGC Catalog <API_key>](../Apptainer/Building_NGC_Containers.md).
-
-:::
-
-On juliet supercomputer, there is a CUDA-Aware MPI library installed in `/apps/manual_install/openmpi/4.1.5`. This location does not correspond to a path that is mounted by default. Hence, we need to manually specify this location when building the container. Also, since we have a CUDA-Aware communication library, we need CUDA to be installed inside the container. For this, we create a definition file called `apptainer_mpi_cuda.sif` based on an existing container called `nvcr.io/nvidia/cuda:12.2.0-devel-rockylinux9` from the NGC Catalog, which already 
-has CUDA installed. Below is the content of the definition file.
+On juliet supercomputer, there is a MPI communication library installed at `/apps/manual_install/openmpi/4.1.5`. This location does not correspond to a path that is mounted by default. Hence, we need to manually specify this location when building the container. We create a definition file called `mpi_bind.def` based on an existing public container from Docker Hub. Below is the content of the definition file.
 
 ```sh
 
 Bootstrap: docker
-From: nvcr.io/nvidia/cuda:12.2.0-devel-rockylinux9
+From: rockylinux:9.2
 
 %setup
-        mkdir -p $APPTAINER_ROOTFS/openmpi/4.1.5
-        mkdir -p $APPTAINER_ROOTFS/bin_host
-        mkdir -p $APPTAINER_ROOTFS/lib64_host
+	mkdir -p $APPTAINER_ROOTFS/openmpi/4.1.5
+	mkdir -p $APPTAINER_ROOTFS/bin_host
+	mkdir -p $APPTAINER_ROOTFS/lib64_host
 
 %environment
-        export PATH="$PATH:/usr/bin_host:/apps/manual_install/openmpi/4.1.5/bin"
-        export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib64_host:/apps/manual_install/openmpi/4.1.5/lib"
+	export PATH="$PATH:/bin_host:/openmpi/4.1.5/bin"
+	export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/lib64_host:/openmpi/4.1.5/lib"
+	export OPAL_PREFIX="/openmpi/4.1.5" 
 
 %post
-        dnf install -y wget gcc g++
+	# install wget
+         dnf install -y wget gcc g++ 
+
         # relocate MPI installation directory (bind mode)
-        export OPAL_PREFIX="/openmpi/4.1.5"
+        export OPAL_PREFIX="/openmpi/4.1.5" 
         export PATH="$PATH:/bin_host:/openmpi/4.1.5/bin"
         export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/lib64_host:/openmpi/4.1.5/lib"
-        # install OSU MPI benchmarks
+
+        # get OSU MPI benchmarks
         mkdir /root/network_benchmarking && cd $_
         wget https://mvapich.cse.ohio-state.edu/download/mvapich/osu-micro-benchmarks-7.2.tar.gz
         tar -xf osu-micro-benchmarks-7.2.tar.gz && rm osu-micro-benchmarks-7.2.tar.gz
+
+        # install OSU MPI benchmarks
         cd osu-micro-benchmarks-7.2
-        ./configure CC=/openmpi/4.1.5/bin/mpicc CXX=/openmpi/4.1.5/bin/mpicxx --enable-cuda --with-cuda-include=/usr/local/cuda-12.2/include --with-cuda-libpath=/usr/local/cuda-12.2/lib64
+        ./configure CC=/openmpi/4.1.5/bin/mpicc CXX=/openmpi/4.1.5/bin/mpicxx 
         make
 ```
 
-Build the container on juliet:
+Build the container:
 ```sh
-$> export JULIET_MPI_BINDING=/apps/manual_install/openmpi/4.1.5:/openmpi/4.1.5,/usr/bin:/bin_host,/usr/lib64:/lib64_host
-$> apptainer build --nv --bind $JULIET_MPI_BINDING apptainer_mpi_cuda.sif apptainer_mpi_cuda.def
+export JULIET_MPI_BINDING=/apps/manual_install/openmpi/4.1.5:/openmpi/4.1.5,/usr/bin:/bin_host,/usr/lib64:/lib64_host
+apptainer build --bind $JULIET_MPI_BINDING mpi_bind.sif mpi_bind.def
 ```
 
 Run the container on juliet:
 ```sh
-Run the container on juliet:
 export JULIET_MPI_BINDING=/apps/manual_install/openmpi/4.1.5:/openmpi/4.1.5,/usr/bin:/bin_host,/usr/lib64:/lib64_host
-$> apptainer shell --nv --bind $JULIET_MPI_BINDING apptainer_mpi_cuda.sif
+srun -p mesonet -N 2 -n 2 --mpi=pmi2 apptainer exec --bind $JULIET_MPI_BINDING mpi_bind.sif /root/network_benchmarking/osu-micro-benchmarks-7.2/c/mpi/pt2pt/standard/osu_latency
 ```
 
 :::info
 
-The juliet MPI instance depends on the hwloc library, which is located in `/usr` directory. Hence we also need to bind the `/usr/bin` and `/usr/lib` directories.
+The juliet MPI library depends on the hwloc library, which is located in `/usr` directory. Hence we also need to bind the `/usr/bin` and `/usr/lib` directories.
 
 :::
