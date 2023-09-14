@@ -42,22 +42,22 @@ From: rockylinux:9.2
 
 %post
 	# install wget
-         dnf install -y wget gcc g++ 
-
-        # relocate MPI installation directory (bind mode)
-        export OPAL_PREFIX="/openmpi/4.1.5" 
-        export PATH="$PATH:/bin_host:/openmpi/4.1.5/bin"
-        export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/lib64_host:/openmpi/4.1.5/lib"
-
-        # get OSU MPI benchmarks
-        mkdir /root/network_benchmarking && cd $_
-        wget https://mvapich.cse.ohio-state.edu/download/mvapich/osu-micro-benchmarks-7.2.tar.gz
-        tar -xf osu-micro-benchmarks-7.2.tar.gz && rm osu-micro-benchmarks-7.2.tar.gz
-
-        # install OSU MPI benchmarks
-        cd osu-micro-benchmarks-7.2
-        ./configure CC=/openmpi/4.1.5/bin/mpicc CXX=/openmpi/4.1.5/bin/mpicxx 
-        make
+	 dnf install -y wget gcc g++ 
+	
+	# relocate MPI installation directory (bind mode)
+	export OPAL_PREFIX="/openmpi/4.1.5" 
+	export PATH="$PATH:/bin_host:/openmpi/4.1.5/bin"
+	export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/lib64_host:/openmpi/4.1.5/lib"
+	
+	# get OSU MPI benchmarks
+	mkdir /root/network_benchmarking && cd $_
+	wget https://mvapich.cse.ohio-state.edu/download/mvapich/osu-micro-benchmarks-7.2.tar.gz
+	tar -xf osu-micro-benchmarks-7.2.tar.gz && rm osu-micro-benchmarks-7.2.tar.gz
+	
+	# install OSU MPI benchmarks
+	cd osu-micro-benchmarks-7.2
+	./configure CC=/openmpi/4.1.5/bin/mpicc CXX=/openmpi/4.1.5/bin/mpicxx 
+	make
 ```
 
 Build the container:
