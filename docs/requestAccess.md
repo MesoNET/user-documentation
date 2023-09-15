@@ -34,6 +34,15 @@ To request access :
 </TabItem>
 </Tabs> 
 
+# Define your username
+
+To access mesonet services you are going to need a username. To define a username, you can go to your [profile] with the link or by clicking on the top right icon -> `Profile`.
+
+![The top right panel.](./assets/keys.png)
+
+The username must be entered under the `Login` field.
+
+![The profile panel](./assets/profile.jpg)
 
 # Add a ssh key
 This step can be performed before or after the previous one.
