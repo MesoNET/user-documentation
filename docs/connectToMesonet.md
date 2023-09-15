@@ -21,17 +21,7 @@ Manual validation by a MesoNET administrator will then be required, which may ta
 If you have any question, please use the support tool and submit a ticket.
 :::
 
-# Define your username
-
-To access mesonet services you are going to need a username. To define a username, you can go to your [profile] with the link or by clicking on the top right icon -> `Profile`.
-
-![The top right panel.](./assets/keys.png)
-
-The username must be entered under the `Login` field.
-
-![The profile panel](./assets/profile.jpg)
-
-# Access to mesonet services
+# Next step : Access to mesonet services
 
 - MesoNET website, including description of the ressources : https://www.mesonet.fr 
 - GramC portal scientific attribution of the ressources : https://acces.mesonet.fr 
