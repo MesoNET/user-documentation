@@ -1,35 +1,23 @@
-# MesoNET User Documentation Website - Docusaurus sources
+# Projet GitLab du site de documentation Mesonet. 
 
-Website built using [Docusaurus 2](https://docusaurus.io/)
+Le site web de la documentation est construit à l'aide de [Docusaurus 2](https://docusaurus.io/), un générateur de site statique, basé sur nodejs. 
 
-### Local Development
+Le contenu, en markdown (avec possibilité d'inclure du html) est situé dans le dossier `/docs`.
 
-```
-$ npm run start
-```
+Les images sont à stocker dans le dossier `/static/img/`. Pour linker une image dans le contenu markdown, il faut utiliser le chemin `/img/...`. 
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
+### Édition et prévisualisation locale 
 
-```
-$ npm run build
-```
+#### Prérequis
+ 
+* `nodejs >=16.14` : https://nodejs.org/en/download/package-manager
+* `yarn` ou `npm` installés sur la machine cible. 
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+#### HOWTO
 
-### Deployment
+- On clone ce dépôt : `git clone https://gricad-gitlab.univ-grenoble-alpes.fr/mesonet/documentation.git mesodoc` 
+- on installe docusaurus : `cd mesodoc && yarn install` ou `cd mesodoc && npm install`
+- On édite ce que l'on souhaite
+- On construit le site et lance un serveur web localement pour le prévisualiser : `yarn serve` ou `npm run serve`
 
-Using SSH:
-
-```
-$ npm run deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> npm run deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
