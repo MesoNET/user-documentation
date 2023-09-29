@@ -86,3 +86,6 @@ Vous pouvez visualiser vos données ou résultats de calculs sans devoir les dé
 
 La procédure pour envoyer des fichiers sur Turpan, ou récupérer sur votre poste de travail les fichiers déposés sur Turpan [est ici](https://www.calmip.univ-toulouse.fr/espace-utilisateurs/doc-technique-olympe/se-connecter-olympe/transferer-des-fichiers-entre-olympe-et-votre-poste-de-travail) (la procédure est la même que pour le calculateur Olympe Du CALMIP).
 
+## Changer son mot de passe
+On ne peut pas se connecter sur Turpan avec un mot de passe, il faut utiliser une [clé ssh](https://www.calmip.univ-toulouse.fr/mesonet-gerer-ses-cles-ssh)
+
