@@ -6,6 +6,8 @@ Le contenu, en markdown (avec possibilité d'inclure du html) est situé dans le
 
 Les images sont à stocker dans le dossier `/static/img/`. Pour linker une image dans le contenu markdown, il faut utiliser le chemin `/img/...`. 
 
+L'adresse de la documentation ets celle-ci : https://www.mesonet.fr/documentation/user-documentation/
+
 
 ### Édition et prévisualisation locale 
 
