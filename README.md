@@ -6,7 +6,7 @@ Le contenu, en markdown (avec possibilité d'inclure du html) est situé dans le
 
 Les images sont à stocker dans le dossier `/static/img/`. Pour linker une image dans le contenu markdown, il faut utiliser le chemin `/img/...`. 
 
-L'adresse de la documentation ets celle-ci : https://www.mesonet.fr/documentation/user-documentation/
+L'adresse de la documentation est celle-ci : https://www.mesonet.fr/documentation/user-documentation/
 
 
 ### Édition et prévisualisation locale 
@@ -18,8 +18,8 @@ L'adresse de la documentation ets celle-ci : https://www.mesonet.fr/documentatio
 
 #### HOWTO
 
-- On clone ce dépôt : `git clone https://gricad-gitlab.univ-grenoble-alpes.fr/mesonet/documentation.git mesodoc` 
+- On clone ce dépôt : `git clone git@github.com:MesoNET/user-documentation.git` 
 - on installe docusaurus : `cd mesodoc && yarn install` ou `cd mesodoc && npm install`
 - On édite ce que l'on souhaite
-- On construit le site et lance un serveur web localement pour le prévisualiser : `yarn serve` ou `npm run serve`
+- On construit le site et lance un serveur web localement pour le prévisualiser : `yarn serve` ou `npm run start`
 

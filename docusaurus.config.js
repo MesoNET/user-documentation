@@ -93,7 +93,7 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          {to: 'https://portail.mesonet.fr', label: 'Portail', position: 'left'},
+          {to: 'https://acces.mesonet.fr/gramc-meso/', label: 'Portail', position: 'left'},
           {to: 'https://mesonet.fr', label: 'Site web', position: 'left'},
         ],
       },
