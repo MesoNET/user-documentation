@@ -7,7 +7,7 @@ sidebar_position: 4
 
 Une seule partition nommée `mesonet`
 
-::: info
+:::info
 
 Il n'y a pas de limite de demande de ressource ni de temps pour le moment. Cela pourra être changé dans le futur.
 
@@ -106,11 +106,7 @@ Cette commande exécute le travail sur la partition "visu" avec 1 nœud.
 Cette commande affiche des informations détaillées sur les nœuds disponibles, telles que leur nom, partition, état, nombre de tâches, mémoire, ressources, charge CPU, temps d'activité et utilisation GPU 
 
 
-## 8. Ressources supplémentaires
-
-https://slurm.schedmd.com/documentation.html
-
-# Exemples de scripts sbatch
+## 8. Exemples de scripts sbatch
 Exemple de script shell utilisant un nœud complet : 
 
 ```Shell
@@ -139,5 +135,7 @@ Exemple de script shell utilisant un seul GPU :
 ~/miniconda3/envs/h2ogpt/bin/python generate.py --share=False --gradio_offline_level=1 --base_model=h2oai/h2ogpt-4096-llama2-70b-chat
 ```
  
+## 9. Ressources supplémentaires
 
+https://slurm.schedmd.com/documentation.html
 
