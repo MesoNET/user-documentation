@@ -13,7 +13,7 @@ Concernant le stockage, la machine Turpan dispose de 343 To sur des disques méc
 
 ## Faire appel au support  
 
-Si quelque chose ne fonctionne pas et que vous n'arrivez pas à vous en sortir, vouis pouvez envoyer un courriel à [cette adresse](mailto:support.calmip@univ-toulouse.fr), en précisant : 
+Si quelque chose ne fonctionne pas et que vous n'arrivez pas à vous en sortir, vouis pouvez envoyer un courriel à [cette adresse](mailto:support@mesonet.fr), en précisant : 
 - Chemin du répertoire d’appel
 - Chemin du script d’appel
 - Numéro du job concerné
