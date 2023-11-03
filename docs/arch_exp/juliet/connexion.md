@@ -21,7 +21,7 @@ L'intégration au portail Gramc est en cours. En l'état actuel, pour obtenir un
 
 Vous avez besoin d'un compte valide sur MesoNET. Vous pouvez trouver les étapes pour obtenir un compte [ici](https://www.mesonet.fr/documentation/user-documentation/acces/portail).
 
-Vous avez entré un Login dans votre [profil MesoNET](https://www.mesonet.fr/portal/profile).
+Vous avez entré un Login dans votre [profil sur votre MesoNET](https://www.mesonet.fr/portal/profile).
 
 Vous avez besoin d'une clé SSH valide. Vous pouvez générer une clé en ligne de commande avec la commande :
 
@@ -38,13 +38,14 @@ Il faudra donc les entrer à nouveau en suivant les instructions ci-dessous.
 
 # Demande d'accès
 
-Le centre de tickets est actuellement en cours de construction. Dans l'attente, vous pouvez demander accès au pod Juliet AI via le [centre de tickets Romeo](https://romeo.univ-reims.fr/ticket/open.php)
+Le centre de tickets MesoNET est actuellement en cours de construction. Dans l'attente, vous pouvez demander accès au pod IA Juliet via le [centre de tickets ROMEO](https://romeo.univ-reims.fr/ticket/open.php)
 
 Pour demander un accès :
 
 - Sélectionnez `Juliet account creation` sous `Help Topic`
 - Fournissez un adresse e-mail pour contacter l'utilisateur du compte
 - Fournissez le nom d'utilisateur dans les détails du ticket.
+- Attendez la fermeture du ticket avant de passer à la suite
 
 # Ajouter une clé SSH
 
