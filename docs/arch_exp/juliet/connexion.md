@@ -21,7 +21,7 @@ L'intégration au portail Gramc est en cours. En l'état actuel, pour obtenir un
 
 Vous avez besoin d'un compte valide sur MesoNET. Vous pouvez trouver les étapes pour obtenir un compte [ici](https://www.mesonet.fr/documentation/user-documentation/acces/portail).
 
-Vous avez entré un Login dans votre [profil sur votre MesoNET](https://www.mesonet.fr/portal/profile).
+Vous avez entré un Login dans votre [profil sur le portail MesoNET](https://www.mesonet.fr/portal/profile).
 
 Vous avez besoin d'une clé SSH valide. Vous pouvez générer une clé en ligne de commande avec la commande :
 
