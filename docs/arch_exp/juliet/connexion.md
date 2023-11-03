@@ -70,7 +70,7 @@ Exemples des formats attendus :
 `ssh-rsa ThisTypeOfKeyIsMuchLongerThanThatButYouGetTheIdea`
 :::
 
-Via le boutons sélecteur, vous pouvez activer (selecteur de couleur verte) ou désactiver (selecteur de couleur gris) une clé SSH.
+Vous pouvez activer une clé SSH ou la désactiver en cas de compromission par exemple.
 
 :::caution
 
