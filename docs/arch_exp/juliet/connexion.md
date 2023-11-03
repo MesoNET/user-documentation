@@ -1,5 +1,5 @@
 ---
-title: "Se connecter à Juliet (temporaire)"
+title: "Se connecter à Juliet"
 sidebar_position: 2
 ---
 
@@ -12,50 +12,47 @@ La connexion s'effectue en SSH vers juliet.mesonet.fr.
 
 :::caution
 
-L'intégration au portail Gramc est en cours. En l'état actuel, pour obtenir un accès à la machine, vous pouvez utiliser la procédure ci-dessous.
+L'intégration au portail Gramc ainsi que la mise en place de l'outil de ticketing MesoNET sont en cours. En l'état actuel, pour obtenir un accès à la machine, vous pouvez utiliser la procédure ci-dessous.
  Cette procédure étant encore en développement, soyez vigilants, la documentation n'étant pas toujours claire et les erreurs pouvant être difficiles à rattraper
 
 :::
 
 # Prérequis
 
-Vous avez besoin d'un compte valide sur MesoNET. Vous pouvez trouver les étapes pour obtenir un compte [ici](https://www.mesonet.fr/documentation/user-documentation/acces/portail).
+Vous avez besoin d'un compte MesoNET valide. Vous pouvez trouver les étapes pour obtenir un compte [ici](https://www.mesonet.fr/documentation/user-documentation/acces/portail).
 
-Vous avez entré un Login dans votre [profil sur le portail MesoNET](https://www.mesonet.fr/portal/profile).
-
-Vous avez besoin d'une clé SSH valide. Vous pouvez générer une clé en ligne de commande avec la commande :
-
-```sh 
-ssh-keygen 
-```
-
-:::caution
-
-En attendant l'intégration au portail Gramc, les clés SSH entrées dans Gramc ne sont pas visibles de Juliet et vice-versa. 
-Il faudra donc les entrer à nouveau en suivant les instructions ci-dessous.
-
-:::
+# Connexion au portail
+Connectez-vous au [portail MesoNET](https://www.mesonet.fr/portal/) puis rendez-vous dans votre [profil du portail MesoNET](https://www.mesonet.fr/portal/profile) pour y renseigner votre **login** de préférence.
 
 # Demande d'accès
 
-Le centre de tickets MesoNET est actuellement en cours de construction. Dans l'attente, vous pouvez demander accès au pod IA Juliet via le [centre de tickets ROMEO](https://romeo.univ-reims.fr/ticket/open.php)
+Vous pouvez ensuite demander accès au pod IA Juliet via le [centre de tickets ROMEO](https://romeo.univ-reims.fr/ticket/open.php)
 
 Pour demander un accès :
 
 - Sélectionnez `Juliet account creation` sous `Help Topic`
-- Fournissez un adresse e-mail pour contacter l'utilisateur du compte
-- Fournissez le nom d'utilisateur dans les détails du ticket.
-- Attendez la fermeture du ticket avant de passer à la suite
+- Renseigner votre adresse e-mail
+- Ainsi que votre **login** (nom d'utilisateur) dans les détails du ticket.
+- Attendez la fermeture du ticket avant de passer à l'étape suivante
 
-# Ajouter une clé SSH
+# Gestion des clés SSH
 
-Cette étape peut être effectuée avant ou après la précédente.
-Allez sur votre liste de clés avec le lien ou en cliquant sur l'icône en haut à droite -> Mes clés.
+Vous avez besoin d'une clé SSH valide. Vous pouvez la générer avec la ligne de commande suivante :
 
-L'icône en haut à droite.
+```sh 
+ssh-keygen 
+```
+:::caution
+
+En attendant l'intégration au portail Gramc, les clés SSH entrées dans Gramc ne sont pas visibles de Juliet et vice-versa. 
+
+:::
+
+Allez sur votre liste de clés avec le lien ou en cliquant sur l'icône en haut à droite -> My Keys.
 
 En bas de la liste, cliquez sur `New key`.
-Entrez un `Label` pour votre clé afin d'identifier-la.
+
+Entrez un `Label` pour votre clé afin de l'identifier.
 
 :::info
 
@@ -73,47 +70,26 @@ Exemples des formats attendus :
 `ssh-rsa ThisTypeOfKeyIsMuchLongerThanThatButYouGetTheIdea`
 :::
 
-Cochez la case `Valid Key` pour valider votre clé. Vous pouvez avoir autant de clés valides que vous voulez.
+Via le boutons sélecteur, vous pouvez activer (selecteur de couleur verte) ou désactiver (selecteur de couleur gris) une clé SSH.
 
 :::caution
 
-⚠ Dans l'état actuel, le portail n'a pas de système de sécurité pour détecter des clés SSH non valides ou des doublons. ⚠
+⚠ Attention au format des clés, dans l'état actuel, le portail n'est pas en capacité de vérifier leur format (sauts de ligne introduits par un copier/coller) ainsi que les doublons. ⚠
 
-⚠ Veuillez vérifier que votre clé est valide avant d'ajouter-la. ⚠
 
-En fonction des outils utilisés, certains caractères de saut de ligne peuvent avoir été introduits dans le texte et doivent être supprimés.
 
 :::
-# Activer une clé SSH
+# Activer une clé SSH sur un serveur
 
-Une fois que vous avez été accordé accès à un serveur, il devrait apparaître sur le [Dashboard](https://www.mesonet.fr/portal/dashboard)
+Une fois d'un accès vous est accordé sur un serveur, il devrait apparaître sur le [Dashboard, dans My Servers](https://www.mesonet.fr/portal/dashboard)
 
-En cliquant sur un architecture de calcul, vous pouvez sélectionner les clés SSH activées ou désactivées pour cette architecture.
-
-Pour activer une clé SSH sur juliet, cliquez sur le bouton gris en dessous du libellé de la clé. Le bouton va devenir vert. La clé sera utilisable sur juliet une fois la liste mise à jour.
-
-Pour désactiver une clé SSH, cliquez sur le même bouton. Il va changer de couleur de vert à gris.
+En cliquant sur l'un des serveurs, vous pouvez associer des clés SSH à ce serveur, en l'activant (selecteur de couleur verte).
 
 :::info
-Sur juliet, la liste des clés SSH est mise à jour toutes les 3 heures.
+Les clés SSH sont propagées sur juliet toutes les 3 heures.
 :::
 
-# Désactiver une clé SSH
 
-Pour désactiver une clé SSH, allez sur votre liste de clés avec le lien
-ou en cliquant sur l'icône en haut à droite -> `My keys`.
-
-Cliquez sur le libellé de la clé. Enfin, sous `Validity`, cocher `Invalid key`.
-
-:::caution
-
-Cette action va désactiver la clé pour tous les serveurs MesoNET.
-
-⚠ Dans l'état actuel, le portail n'a pas de système de sécurité pour détecter les doublons.
-
-⚠ Si vous désactivez une clé, cela désactivera également ses doublons.
-
-:::
 
 :::tip
 
