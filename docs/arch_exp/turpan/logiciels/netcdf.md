@@ -23,28 +23,28 @@ import TabItem from '@theme/TabItem';
 <Tabs>
   <TabItem value="gnu" label="GNU" default>
 
-Compilé avec gcc 11.2.0 et openmpi 4.1.4
+netCDF Fortran 4.8.1 compilé avec gcc 11.2.0
 
 ```
-module load fftw/gnu/3.3.10
+module load netcdf/gnu/4.8.1
 ```
 
   </TabItem>
   <TabItem value="arm" label="ARM">
 
-Compilé avec armclang 22.1 et openmpi 4.1.4
+netCDF Fortran 4.8.1 compilé avec armflang 22.1
 
 ```
-module load fftw/arm/3.3.10
+module load netcdf/arm/4.8.1
 ```
 
   </TabItem>
   <TabItem value="nvidia" label="NVIDIA">
 
-Compilé avec nvc 22.9-0 et openmpi 4.1.4
+netCDF Fortran 4.8.1 compilé avec nvhpc 22.9
 
 ```
-module load fftw/nvidia/3.3.10
+module load netcdf/nvidia/4.8.1
 ```
   </TabItem>
 </Tabs>
