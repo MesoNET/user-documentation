@@ -15,7 +15,7 @@ hide_table_of_contents: true
             - Pour les environnements arm et nvidia, seul netCDF-FORTRAN a été recompilé
 
 
-## Comment charger FFTW avec un environnement ? 
+## Comment charger netCDF avec un environnement ? 
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
