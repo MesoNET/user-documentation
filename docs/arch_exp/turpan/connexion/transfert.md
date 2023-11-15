@@ -53,10 +53,11 @@ Si la liaison s'interrompt durant le transfert de fichiers, ne supprimez pas le 
 
 Vous pouvez utiliser le logiciel libre filezilla pour effectuer votre transfert de fichiers. Vous devrez le configurer comme suit :
 
-Hôte :	turpan.calmip.univ-toulouse.fr
-Identifiant :	Votre identifiant sur Turpan
-Mot de passe :	Votre mot de passe sur Turpan
-Port :	22
+|Hôte :| turpan.calmip.univ-toulouse.fr|
+|---|---|
+|Identifiant :|	Votre identifiant sur Turpan|
+|Mot de passe :| Votre mot de passe sur Turpan|
+|Port :| 22|
 
 
   </TabItem>
@@ -108,10 +109,11 @@ Si la liaison s'interrompt durant le transfert de fichiers, ne supprimez pas le 
 
 Vous pouvez utiliser le logiciel libre filezilla pour effectuer votre transfert de fichiers. A travers le VPN, vous devrez le configurer comme suit :
 
-Hôte :	sftp://127.0.0.1
-Identifiant :	Votre identifiant sur Turpan
-Mot de passe :	Votre mot de passe sur Turpan
-Port :	11300 (ou autre, voir la fenêtre du VPN)
+|Hôte :| sftp://127.0.0.1|
+|---|---|
+|Identifiant :|	Votre identifiant sur Turpan|
+|Mot de passe :| Votre mot de passe sur Turpan|
+|Port : | 11300 (ou autre, voir la fenêtre du VPN)|
 
 
   </TabItem>
