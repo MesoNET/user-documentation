@@ -19,7 +19,7 @@ Mesurer : LWP, Linaro Forge et Nsight
 
 - [Nsight](./nsight.md) Graphics est un outil de développement autonome avec prise en charge du lancer de rayons qui vous permet de déboguer, de profiler et d'exporter des images créées avec Direct3D, Vulkan, OpenGL, OpenVR et Oculus SDK.
 
-Améliorer : [BLAS](../logiciles/blas.md), [LAPACK](../logiciels/lapack.md), [ScaLAPACK](../logiciels/scalapack.md)
+Améliorer : [BLAS](../logiciels/blas.md), [LAPACK](../logiciels/lapack.md), [ScaLAPACK](../logiciels/scalapack.md)
 
 Ils permettent souvent d’améliorer les performances.
 
