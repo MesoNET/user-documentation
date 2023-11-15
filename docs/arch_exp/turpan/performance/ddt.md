@@ -28,7 +28,7 @@ Pour déboguer votre code, vous devez travailler en deux temps :
 module load arm-forge/22.1.2 
 ddt &
 ```
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/1.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/ddt_1.png)
 
 ### Modifier votre script batch:
 Ajouter ddt --connect avant la commande srun (ou mpiexec.hydra ou mpirun) :
@@ -40,17 +40,17 @@ ddt --connect srun ...
 ### Démarrage de ddt:
 Depuis la fenêtre graphique ddt lancée à l'étape 1, une boite de dialogue va s'ouvrir (attendre quelques secondes).
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/2.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/ddt_2.png)
 
 ### Configuration:
 Une nouvelle fenêtre vous demandant de préciser les caractéristiques de votre code s'ouvre alors. Vous voudrez probablement déboguer la mémoire : dans ce cas cochez la case et pressez sur le bouton indiqué ci-dessous.
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/3.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/ddt_3.png)
 
 ### Recommandation
 Nous vous recommandons de positionner le "Heap Debugging" sur Fast, et de préciser à ddt si le programme est en C, C++ ou fortran, multithreadé ou pas.
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/4.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/ddt_4.png)
 
 Vous êtes maintenant prêt à déboguer !
 
