@@ -19,7 +19,11 @@ La visualisation à distance permet de résoudre ces difficultés :
 - Les fichiers n’ont pas besoin d’être transférés
 - Les ressources graphiques nécessaires se trouvent à Calmip, il n’y a pas besoin de grosse station graphique au laboratoire pour visualiser les données, même en 3D, dans de bonnes conditions
 
+:::caution
+
 ATTENTION - VERSION DE TUBOVNC REQUISE >= 3.0.2 !
+
+:::
 
 ## Prérequis
 
@@ -178,16 +182,23 @@ vncviewer
 ![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/turbo_2.png)
 
 - Le gestionnaire de fenêtre utilisé est gnome-classic. Cliquer sur "Applications" pour faire appaître le menu des applications.
-[!WARNING]
+
+:::caution
+
 Si vous avez un écran noire avec l'heure, pressez la touche "entrée" de votre clavier
+
+:::
 
 - Si vous fermez la fenêtre du vncviewer, vous devrez générer de nouveau un jeton d'authentification avec la commande donnée par le script ci-dessus (dans notre exemple) : 
 ```
 ssh turpanvisu0 '/opt/TurboVNC/bin/vncpasswd -o -display :2'
 ```
 
-[!WARNING]
+:::caution
+
 Toutes les communications entre votre poste de travail et le nœud graphique sont chiffrées
+
+:::
 
 - Pour avoir accès aux caractères de contrôle, passer en plein écran, etc. pressez sur la touche F8 pour afficher le menu VNC (Ctrl-Alt-MAJ F pour quitter le plein écran)
 
