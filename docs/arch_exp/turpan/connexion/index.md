@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="linux" label="GNU Linux/MacOS" default>
-Ce qui suit suppose que vous avez généré et déployé une clé ssh sur votre compte Turpan, [comme il est indiqué ici](../../acces/ssh.md). 
+Ce qui suit suppose que vous avez généré et déployé une clé ssh sur votre compte Turpan, [comme il est indiqué ici](../../../acces/ssh.md). 
 
 Écrivez un fichier appelé .ssh/config (ou complétez-le s'il existe déjà !) de la manière suivante:
 
@@ -60,7 +60,7 @@ Remote Host : turpanlogin.calmip.univ-toulouse.fr
 
 Specify Username : monloginturpan (à remplacer par votre propre nom d'utilisateur)
 
-Cliquez sur l'onglet 'Advanced SSH settings' et cochez la case 'Use private key'. Sélectionnez alors le fichier .ppk que [vous avez sauvegardé lors de la création de votre clé ssh.](../../acces/ssh.md)
+Cliquez sur l'onglet 'Advanced SSH settings' et cochez la case 'Use private key'. Sélectionnez alors le fichier .ppk que [vous avez sauvegardé lors de la création de votre clé ssh.](../../../acces/ssh.md)
 
 ![Capture d'écran de MobaXTerm](/img/Moba_session.png)
 
@@ -87,5 +87,5 @@ Vous pouvez visualiser vos données ou résultats de calculs sans devoir les dé
 La procédure pour envoyer des fichiers sur Turpan, ou récupérer sur votre poste de travail les fichiers déposés sur Turpan [est ici](https://www.calmip.univ-toulouse.fr/espace-utilisateurs/doc-technique-olympe/se-connecter-olympe/transferer-des-fichiers-entre-olympe-et-votre-poste-de-travail) (la procédure est la même que pour le calculateur Olympe Du CALMIP).
 
 ## Changer son mot de passe
-On ne peut pas se connecter sur Turpan avec un mot de passe, il faut utiliser une [clé ssh](https://www.calmip.univ-toulouse.fr/mesonet-gerer-ses-cles-ssh)
+On ne peut pas se connecter sur Turpan avec un mot de passe, il faut utiliser une [clé ssh](../../../acces/ssh.md)
 
