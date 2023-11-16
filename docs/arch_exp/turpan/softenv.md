@@ -16,82 +16,84 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-  <TabItem value="nvhpc" label="nvhpc" default>
+  <TabItem value="gnu" label="GNU" default>
+
+  
+Sans openmpi, sans gpu
+```
+module load gnu/11.2.0
+```
+
+Avec openmpi, sans gpu
+```
+module load gnu/11.2.0
+module load openmpi/gnu/4.1.4-cpu
+```
+
+Avec openmpi, avec gpu
+```
+module load gnu/11.2.0
+module load openmpi/gnu/4.1.4-gpu
+```
+
+
+  </TabItem>
+  <TabItem value="arm" label="ARM">
+
+
+Sans openmpi, sans gpu
+```
+module load arm
+module load acfl/22.1
+module load armpl/22.1.0
+```
+
+Avec openmpi, sans gpu
+```
+module load arm
+module load acfl/22.1
+module load armpl/22.1.0
+module load openmpi/arm/4.1.4-cpu
+```
+
+Avec openmpi, avec gpu
+```
+module load arm
+module load acfl/22.1
+module load armpl/22.1.0
+module load openmpi/arm/4.1.4-gpu
+```
+
+
+  </TabItem>
+  <TabItem value="nvidia" label="NVIDIA">
+
 
 Sans openmpi, avec cuda :
-
 ```
 module load nvidia
 module load nvhpc-nompi/22.9
 ```
 
 Avec openmpi compilé pour cpu, avec cuda
-
 ```
 module load nvidia
 module load nvhpc-nompi/22.9
 module load openmpi/nvidia/4.1.4-cpu
 ```
-Avec openmpi compilé pour gpu, avec cuda
 
+Avec openmpi compilé pour gpu, avec cuda
 ```
 module load nvidia
 module load nvhpc-nompi/22.9
 module load openmpi/nvidia/4.1.4-gpu
-
 ```  
-  </TabItem>
-  <TabItem value="arm" label="ARM">
-Sans openmpi, sans gpu
 
-```
-module load arm
-module load acfl/22.1
-module load armpl/22.1.0
 
-```
-Avec openmpi, sans gpu
-
-```
-module load arm
-module load acfl/22.1
-module load armpl/22.1.0
-module load openmpi/arm/4.1.4-cpu
-
-```
-Avec openmpi, avec gpu
-
-```
-module load arm
-module load acfl/22.1
-module load armpl/22.1.0
-module load openmpi/arm/4.1.4-gpu
-
-```
-  </TabItem>
-  <TabItem value="gnu" label="GNU">
-  Sans openmpi, sans gpu
-
-```
-module load gnu/11.2.0
-
-```
-Avec openmpi, sans gpu
-
-```
-module load gnu/11.2.0
-module load openmpi/gnu/4.1.4-cpu
-
-```
-Avec openmpi, avec gpu
-
-```
-module load gnu/11.2.0
-module load openmpi/gnu/4.1.4-gpu
-
-```  
   </TabItem>
 </Tabs>
+
+
 
 ## Comment charger un module ? 
 

@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 ## Les variantes
 <Tabs>
-  <TabItem value="gnu" label="gnu" default>
+  <TabItem value="gnu" label="GNU" default>
 
 ### Version séquentielle:
 
@@ -35,7 +35,7 @@ module load hdf5/gnu/parallel
 ```
   </TabItem>
 
-  <TabItem value="arm" label="arm" default>
+  <TabItem value="arm" label="ARM">
 
 ### Version séquentielle:
 
@@ -52,7 +52,7 @@ module load hdf5/arm/parallel
 ```
   </TabItem>
 
-  <TabItem value="nvidia" label="nvidia" default>
+  <TabItem value="nvidia" label="NVIDIA">
  
 
 ### Version séquentielle:

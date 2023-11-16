@@ -3,17 +3,36 @@ title: ScaLAPACK
 sidebar_position: 3
 ---
 
-Dans l'environnement nvhpc
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="gnu" label="GNU" default>
+
+
+```
+module load scalapack/gnu/2.2.0
+
+```
+
+  </TabItem>
+  <TabItem value="arm" label="ARM">
+
+
+```
+module load scalapack/arm/2.2.0
+
+```
+
+  </TabItem>
+  <TabItem value="nvidia" label="NVIDIA">
+
+
 ```
 module load scalapack/nvidia/2.2.0
 ```
+  </TabItem>
+</Tabs>
 
-Dans l'environnement arm
-```
-module load scalapack/arm/2.2.0
-```
 
-Dans l'environnement gnu
-```
-module load scalapack/gnu/2.2.0
-```
