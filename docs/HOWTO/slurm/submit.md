@@ -1,13 +1,15 @@
 ---
-title: "Soumettre un job"
+title: "Soumettre et gérer ses travaux"
 sidebar_position: 1
 ---
-# Soumission de travaux avec [sbatch](https://slurm.schedmd.com/sbatch.html)
+# Soumettre et gérer ses travaux avec slurm
 
 :::info
 
 Les exemples donnés ici doivent éventuellement être adaptés au spécificités de chaque machine, par exemple en spécifiant l'option `--partition` etc.
 :::
+
+## Soumission de scripts avec [sbatch](https://slurm.schedmd.com/sbatch.html)
 
 La soumission d'un job se fait avec la commande
 
@@ -51,94 +53,106 @@ La documentation complète de `sbatch` est disponible [ici](https://slurm.schedm
 
 Nous nous limitons ici aux options les plus importantes.
 
-## [`-t`, `--time`](https://slurm.schedmd.com/sbatch.html#OPT_time)
+### [`--time`, `-t`](https://slurm.schedmd.com/sbatch.html#OPT_time)
 
-Le temps demandé sous la forme "min", "min:sec", "h:min:sec", "jours-h", "jours-h:min" ou "jours-h:min:sec".
-La valeur par default et le maximum autorisé varient selon la configuration de chaque machine.
+Exemples:
 
-## [`-N`, `--nodes`](https://slurm.schedmd.com/sbatch.html#OPT_nodes)
+- `#SBATCH --time 4:00:00` pour demander 4 heures de temps.
+- `#SBATCH --time 2-12` pour 2 jours et demi
+- `#SBATCH --time 30` pour 30 minutes
+- `#SBATCH --time 30:00` pour 30 minutes aussi
+
+
+La valeur par default et le maximum autorisé varient selon la configuration de chaque machine et dépendent souvent de la partition ou le jobs est soumis.
+
+Si le temps demandé dépasse la limite autorisée le job restera en attente indéfiniment.
+
+### [`--partition`, `-p`](https://slurm.schedmd.com/sbatch.html#OPT_partition)
+
+La partition où les ressources seront alloués. Éventuellement une partition défaut a été configuré sur votre machine.
+
+- `SBATCH --partition compute` demande une allocation sur la partition 'compute'.
+- `#SBATCH --partition shared,small` demande une allocation sur la partition 'shared' ou 'small', là où le job pourra démarrer en premier.
+
+### [`--nodes`, `-N`](https://slurm.schedmd.com/sbatch.html#OPT_nodes)
 
 Le nombre de nœuds demandés.
 
-## [`-n`, `--ntasks`](https://slurm.schedmd.com/sbatch.html#OPT_ntasks)
+- `#SBATCH --nodes 4` (ou `#SBATCH -N 4`) signifie qu'au moins 4 nœuds seront alloués au job - mais d'autres option peuvent augmenter ce nombre.
 
-Le nombre de tâches demandés. La notion de *task* dans slurm est assez proche d'un *process* MPI.
+- `#SBATCH --nodes 2-4` signifie qu'au moins 2 et au plus 4 nœuds seront alloués au job.
 
-Par défaut ce nombre est égale au nombre de nœuds.
+### [`--ntasks`, `-n`](https://slurm.schedmd.com/sbatch.html#OPT_ntasks)
 
+Indique que le job comporte `--ntasks` tâches, slurm déterminera alors les ressources à demander. La notion de *task* dans slurm est assez proche d'un *process* MPI.
 
-## [`-ntasks-per-node`](https://slurm.schedmd.com/sbatch.html#OPT_ntasks-per-node)
-
-Utilisé avec `--nodes`.
-
-
-## [`-p`, `--partition`](https://slurm.schedmd.com/sbatch.html#OPT_partition)
+- sur un cluster équipé de nœuds 80-cœurs l'option `#SBATCH -n 160` demandera 2 nœuds et 160 CPUs.
 
 
-## [`--reservation`](https://slurm.schedmd.com/sbatch.html#OPT_reservation)
+### [`-ntasks-per-node`](https://slurm.schedmd.com/sbatch.html#OPT_ntasks-per-node)
+
+A utiliser avec l'option `--nodes`.
 
 
+### [`-cpus-per-task`](https://slurm.schedmd.com/sbatch.html#OPT_cpus-per-task)
 
-## [`--mem`](https://slurm.schedmd.com/sbatch.html#OPT_mem)
+Souvent utilisé pour des jobs hybrides MPI/OpenMP. Par exemple
 
+```
+#SBATCH --nodes 2
+#SBATCH --ntasks-per-node 2
+#SBATCH --cpus-per-task 16
+```
 
-## [`-g`, `--gpus=[type:]<number>`](https://slurm.schedmd.com/sbatch.html#OPT_gpus)
-
-voir aussi `--gpus-per-node`
-et `--gres`
-
-## Job name [-J, --job-name](https://slurm.schedmd.com/sbatch.html#OPT_job-name)
-
-
-
-## E-mail notifications
-
---mail-type and --mail-user
-
-https://slurm.schedmd.com/sbatch.html#OPT_mail-type
-https://slurm.schedmd.com/sbatch.html#OPT_mail-user
-
-## Output files
-[`-e` `--error`](https://slurm.schedmd.com/sbatch.html#OPT_error)
-[`-o` `--output`](https://slurm.schedmd.com/sbatch.html#OPT_output)
-
-## **--exclusive** (https://slurm.schedmd.com/sbatch.html#OPT_exclusive)
-
-## **--export**
+demande 2 nœuds et 32 cœurs par nœud (pour 2 tâches par nœud utilisant 16 CPUs par tâche).
 
 
+### [`--mem`](https://slurm.schedmd.com/sbatch.html#OPT_mem)
+
+La mémoire *par nœud* nécessaire. Exemples:
+
+- `SBATCH --mem=2000` : 2000 Mo
+- `SBATCH --mem=2000M` : 2000 Mo
+- `SBATCH --mem=2G` : 2 Go
+- `SBATCH --mem=1T` : 1 To
 
 
+### [`--reservation`](https://slurm.schedmd.com/sbatch.html#OPT_reservation)
 
-## Job chaining **[`-d` `--dependency=<dependency_list>](https://slurm.schedmd.com/sbatch.html#OPT_dependency)**
+`#SBATCH --reservation=toto` alloue des ressources dans la reservation 'toto' si elle existe.
 
-## Job arrays **[`-a`, `--array=<indices>`](https://slurm.schedmd.com/sbatch.html#OPT_array)**
-
-## Working directory **[`-D`, `--chdir=`]**
-
-
-## Environnement variables
-
-Les variables utilitaires suivantes (liste non exhaustive) peuvent être exploitées dans les commandes utilisateurs (Shell) d'un script de soumission.
-
-Action	Commande
-SLURM_JOB_ID	Identification du travail (exemple : 64549)
-SLURM_JOB_NAME	Nom du travail (spécifié par #SBATCH -J)
-SLURM_SUBMIT_DIR	Nom du répertoire initial (dans lequel la commande sbatch a été lancée)
-SLURM_NTASKS	Nombre de processus MPI du travail
-LOCAL_WORK_DIR	Nom du répertoire de scratch temporaire fondé sur le numéro du calcul : /dlocal/run/$SLURM_JOB_ID. Cette arborescence est supprimée 45 jours après la fin du calcul.
+Typiquement les admins d'une machine peuvent créer des reservations en avance pour des travaux pratiques.
 
 
-sbatch propagates environment variables
+### [`--gpus=[type:]<number>`, `-g`](https://slurm.schedmd.com/sbatch.html#OPT_gpus)
+
+voir aussi `--gpus-per-node` et et `--gres`
+
+### [--job-name, -J](https://slurm.schedmd.com/sbatch.html#OPT_job-name)
 
 
+`SBATCH --job-name=toto` fera apparaitre le nom 'toto' dans les requêtes slurm. Par defaut, le nom du job sera celui du script de soumission.
 
-# Jobs interactifs
+### e-mail notifications
+
+- [`--mail-type`](https://slurm.schedmd.com/sbatch.html#OPT_mail-type) et [`--mail-user`](https://slurm.schedmd.com/sbatch.html#OPT_mail-user) permettent de reçevoir des mails de notification
+
+### Output files
+
+- [`--output`, `-o` ](https://slurm.schedmd.com/sbatch.html#OPT_output) et [`--error`,`-e`](https://slurm.schedmd.com/sbatch.html#OPT_error) permettent de spécifier le nom des fichiers sortie.
+
+<!-- ### **--exclusive** (https://slurm.schedmd.com/sbatch.html#OPT_exclusive)
+
+
+### Working directory **[`-D`, `--chdir=`]** -->
+
+
+<!-- ## Jobs interactifs
 
 Les jobs interactifs permettent de reserver des ressources et de s'y connecter, sans nécessairement effectuer des calculs.
 Par conséquent les règles concernant les jobs interactifs peuvent varier entre les différentes machines MesoNET.
 
-## srun
+### srun
 La commande `srun` est similaire à `sbatch` et les options, en particulier pour spécifier les ressources sont presque identiques.
 
 Contrairement à `sbatch` la commande `srun` est *bloquante* et *interactive* (les résultats s'affichent directement dans le terminal qui reste bloqué jusqu'à la fin de la commande).
@@ -154,22 +168,14 @@ La session démarrera quand les ressources sont alloués.
 
 srun --pty -c 4 /bin/bash
 ￼
-Cette commande lance un shell interactif avec 4 CPU alloués. Utile pour les tâches interactives ou les tests.
+Cette commande lance un shell interactif avec 4 CPU alloués. Utile pour les tâches interactives ou les tests. -->
 
 
-
-## salloc
+<!--
+### salloc
 reserver ressources sans y lancer un script. il faut s'y connecter ultérieurement
+ -->
 
+## Annulation d'un job avec scancel
 
-## scancel
-
-
-
-
-
-
-
-## 
-
-#
+`scancel JOBID` permet d'annuler le job JOBID
