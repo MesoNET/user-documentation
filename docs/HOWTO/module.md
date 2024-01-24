@@ -1,5 +1,5 @@
 ---
-title: "Modules d'environnement logiciel"
+title: "Modules d'environnement"
 sidebar_position: 3
 ---
 
