@@ -2,7 +2,7 @@
 title: "Soumettre et gérer ses travaux"
 sidebar_position: 1
 ---
-# Soumettre et gérer ses travaux avec slurm
+# Soumettre ses travaux avec slurm
 
 :::info
 
@@ -203,7 +203,3 @@ Cette commande lance un shell interactif avec 4 CPU alloués. Utile pour les tâ
 ### salloc
 reserver ressources sans y lancer un script. il faut s'y connecter ultérieurement
  -->
-
-## Annulation d'un job avec [scancel](https://slurm.schedmd.com/sbatch.html)
-
-`scancel JOBID` permet d'annuler le job JOBID
