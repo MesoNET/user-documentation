@@ -4,13 +4,13 @@ sidebar_position: 1
 ---
 # Gestion de travaux avec Slurm
 
-Sur pratiquement tous les supercalculateurs les calculs s'effectuent par l'intermédiaire d'un gestionnaire de travaux qui gère une file d'attente contenant les travaux d'utilisateurs et les ressources dispponibles.
+Sur pratiquement tous les supercalculateurs les calculs s'effectuent par l'intermédiaire d'un gestionnaire de travaux qui gère une file d'attente de travaux et les ressources disponibles.
 
 Le gestionnaire de travaux installé sur toutes les machines MesoNET est [Slurm](https://slurm.schedmd.com/documentation.html).
 
 :::caution
 
-Rappel : Il est strictement interdit de calculer directement sur les nœuds de login!
+Rappel : Il est strictement interdit de calculer directement sur les nœuds login!
 
 :::
 
@@ -23,12 +23,12 @@ Il est donc très important que les ressources demandées soient adéquates pour
 
 Slurm fournit une vingtaine de commandes, des fichiers de configuration et des gestionnaires de services.
 Heureusement, il suffit de connaître un petit nombre de commandes et d'options pour la plupart des cas d'utilisation.
-Ce document fournit éléments nécessaires pour soumettre des scripts Slurm adaptés à vos besoins et pour surveiller et gérer vos travaux.
+Ce document fournit les éléments nécessaires pour écrire et [soumettre des scripts](HOWTO/slurm/submit.md) Slurm adaptés à vos besoins et pour [surveiller et gérer vos travaux](HOWTO/slurm/monitor.md).
 
 :::info
 
-Chaque machine MesoNET est configuré différemment. Il se peut que le comportement de certaines commandes décrites ici soit différent sur la machine que vous utilisez. L'objectif de ce document est de fournir une introduction générale à Slurm.
+Chaque machine MesoNET est configurée différemment. Il se peut que le comportement de certaines commandes décrites ici soit différent sur la machine que vous utilisez. L'objectif de ce document est de fournir une introduction générale à Slurm.
 
 :::
 
-Une *cheat sheet* slurm est disponible [ici (pdf, 2 pages)](https://slurm.schedmd.com/pdfs/summary.pdf).
+Une *cheat sheet* Slurm est disponible [ici (pdf, 2 pages)](https://slurm.schedmd.com/pdfs/summary.pdf).

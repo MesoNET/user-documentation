@@ -37,7 +37,7 @@ sleep 60
 décrit un job qui exécutera la commande `hostname` suivi de la commande `sleep 60`.
 Ce job *single node* (`--nodes=1`) consiste en une seule tâche (`--ntasks-per-node=1`) mono-cœur (`--cpus-per-task=1`) avec un temps d'exécution d'au plus 10 minutes.
 
-La commande `sbatch job.slurm` rejoute le job à la file d'attente et retourne un numéro de job (SLURM_JOB_ID), qui permet notamment de suivre l'état du job.
+La commande `sbatch job.slurm` rajoute le job à la file d'attente et retourne un numéro de job (SLURM_JOB_ID), qui permet notamment de suivre l'état du job.
 
 En fonction des ressources demandées et l'état du cluster, slurm lance le job et redirige la sortie standard (ici le nom du nœud alloué) vers un fichier `slurm-%j.out` (où `%j` est le SLURM_JOB_ID) localisé dans le dossier de lancement. Le job se termine soit quand la fin du script est atteint, soit quand le temps maximal (ici 10 minutes) est atteint.
 
@@ -62,16 +62,15 @@ Exemples:
 - `#SBATCH --time 30` pour 30 minutes
 - `#SBATCH --time 30:00` pour 30 minutes aussi
 
+La valeur par défaut et le maximum autorisé varient selon la configuration de chaque machine et dépendent souvent de la partition ou le job est soumis.
 
-La valeur par default et le maximum autorisé varient selon la configuration de chaque machine et dépendent souvent de la partition ou le jobs est soumis.
-
-Si le temps demandé dépasse la limite autorisée le job restera en attente indéfiniment.
+Attention: si le temps demandé dépasse la limite autorisée, alors le job restera en attente indéfiniment.
 
 ### [`--partition`, `-p`](https://slurm.schedmd.com/sbatch.html#OPT_partition)
 
-La partition où les ressources seront alloués. Éventuellement une partition défaut a été configuré sur votre machine.
+La partition où les ressources seront alloués. Éventuellement une partition défaut a été configurée sur votre machine.
 
-- `SBATCH --partition compute` demande une allocation sur la partition 'compute'.
+- `#SBATCH --partition compute` demande une allocation sur la partition 'compute'.
 - `#SBATCH --partition shared,small` demande une allocation sur la partition 'shared' ou 'small', là où le job pourra démarrer en premier.
 
 ### [`--nodes`, `-N`](https://slurm.schedmd.com/sbatch.html#OPT_nodes)
@@ -89,12 +88,12 @@ Indique que le job comporte `--ntasks` tâches, slurm déterminera alors les res
 - sur un cluster équipé de nœuds 80-cœurs l'option `#SBATCH -n 160` demandera 2 nœuds et 160 CPUs.
 
 
-### [`-ntasks-per-node`](https://slurm.schedmd.com/sbatch.html#OPT_ntasks-per-node)
+### [`--ntasks-per-node`](https://slurm.schedmd.com/sbatch.html#OPT_ntasks-per-node)
 
 A utiliser avec l'option `--nodes`.
 
 
-### [`-cpus-per-task`](https://slurm.schedmd.com/sbatch.html#OPT_cpus-per-task)
+### [`--cpus-per-task`](https://slurm.schedmd.com/sbatch.html#OPT_cpus-per-task)
 
 Souvent utilisé pour des jobs hybrides MPI/OpenMP. Par exemple
 
@@ -117,6 +116,8 @@ La mémoire *par nœud* nécessaire. Exemples:
 - `SBATCH --mem=1T` : 1 To
 
 
+
+
 ### [`--reservation`](https://slurm.schedmd.com/sbatch.html#OPT_reservation)
 
 `#SBATCH --reservation=toto` alloue des ressources dans la reservation 'toto' si elle existe.
@@ -124,22 +125,49 @@ La mémoire *par nœud* nécessaire. Exemples:
 Typiquement les admins d'une machine peuvent créer des reservations en avance pour des travaux pratiques.
 
 
-### [`--gpus=[type:]<number>`, `-g`](https://slurm.schedmd.com/sbatch.html#OPT_gpus)
+### [`--gpus`, `-G`](https://slurm.schedmd.com/sbatch.html#OPT_gpus) {#opt-gpus}
 
-voir aussi `--gpus-per-node` et et `--gres`
+L'option `--gpus=3` demande l'allocation de 3 GPUs. Si différents types de GPUs sont disponible, il est possible de spécifier le type: par exemple, `--gpus=ampere:5` demande l'allocation de 5 GPUs de type *ampere*.
 
-### [--job-name, -J](https://slurm.schedmd.com/sbatch.html#OPT_job-name)
+Voir aussi [`--gpus-per-node`](#opt-gpus-per-node) et et [`--gres`](#opt-gres).
 
+### [`--gpus-per-node`](https://slurm.schedmd.com/sbatch.html#OPT_gpus-per-node) {#opt-gpus-per-node}
+
+Comme `--gpus`, mais *par nœud*.
+
+### [`--gres`](https://slurm.schedmd.com/sbatch.html#OPT_gres) {#opt-gres}
+
+*gres* signifie consumable *generic resources*. Les *gres* disponibles varient selon la configuration des machines.
+
+Le plus souvent `gres` est utilisé pour réserver des GPUs :
+```
+#SBATCH --gres=gpu:2
+```
+demande une réservation de 2 GPUs *par nœud*.
+
+Comme dans `--gpus` et `--gpus-per-node` il est possible de spécifier le type de GPU.
+
+La commande `sbatch --gres=help` permet de lister les *gres* disponibles.
+
+
+### [`--job-name`, `-J`](https://slurm.schedmd.com/sbatch.html#OPT_job-name)
 
 `SBATCH --job-name=toto` fera apparaitre le nom 'toto' dans les requêtes slurm. Par defaut, le nom du job sera celui du script de soumission.
 
-### e-mail notifications
+### [`--mail-user`](https://slurm.schedmd.com/sbatch.html#OPT_mail-user)
 
-- [`--mail-type`](https://slurm.schedmd.com/sbatch.html#OPT_mail-type) et [`--mail-user`](https://slurm.schedmd.com/sbatch.html#OPT_mail-user) permettent de reçevoir des mails de notification
+Activer des notifications par mail pour des événements specifié par [`--mail-type`](https://slurm.schedmd.com/sbatch.html#OPT_mail-type).
 
-### Output files
+### [`--output`, `-o` ](https://slurm.schedmd.com/sbatch.html#OPT_output)
 
-- [`--output`, `-o` ](https://slurm.schedmd.com/sbatch.html#OPT_output) et [`--error`,`-e`](https://slurm.schedmd.com/sbatch.html#OPT_error) permettent de spécifier le nom des fichiers sortie.
+et [`--error`,`-e`](https://slurm.schedmd.com/sbatch.html#OPT_error) permettent de spécifier le nom des fichiers sortie. Par défaut, les deux (output et error) sont redirigés vers un seul fichier `slurm-%j.out` où `%j` est remplacé par le numéro de job.
+
+Il est possible de créer des fichiers de sortie par nœud ou par tâche.
+
+La [documentation de slurm](https://slurm.schedmd.com/sbatch.html#SECTION_%3CB%3Efilename-pattern%3C/B%3E) fournit plus de détails sur la création de fichiers de sortie.
+
+
+
 
 <!-- ### **--exclusive** (https://slurm.schedmd.com/sbatch.html#OPT_exclusive)
 
@@ -176,6 +204,6 @@ Cette commande lance un shell interactif avec 4 CPU alloués. Utile pour les tâ
 reserver ressources sans y lancer un script. il faut s'y connecter ultérieurement
  -->
 
-## Annulation d'un job avec scancel
+## Annulation d'un job avec [scancel](https://slurm.schedmd.com/sbatch.html)
 
 `scancel JOBID` permet d'annuler le job JOBID
