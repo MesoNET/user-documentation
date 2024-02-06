@@ -3,6 +3,12 @@ title: "Se connecter à Juliet"
 sidebar_position: 2
 ---
 
+:::caution
+
+L'intégration au portail Gramc ainsi que la mise en place de l'outil de ticketing MesoNET sont en cours. Sauf indication contraire, merci d'utiliser la [documentation officielle](https://www.mesonet.fr/documentation/user-documentation/acces/portail)
+
+:::
+
 # Comment se connecter à Juliet
 
 La connexion s'effectue en SSH vers juliet.mesonet.fr.
