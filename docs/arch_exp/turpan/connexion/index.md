@@ -14,7 +14,8 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="linux" label="GNU Linux/MacOS" default>
-Ce qui suit suppose que vous avez généré et déployé une clé ssh sur votre compte Turpan, [comme il est indiqué ici](../../../acces/ssh.md). 
+
+Ce qui suit suppose que vous avez généré et déployé une clé ssh sur votre compte Turpan, comme [il est indiqué ici](acces/ssh.md).
 
 Écrivez un fichier appelé .ssh/config (ou complétez-le s'il existe déjà !) de la manière suivante:
 
@@ -50,7 +51,7 @@ ssh -XY turpanlogin
 Une fois connecté vous êtes sur une des frontales de connexion de Turpan.
   </TabItem>
   <TabItem value="windows" label="Windows">
-Sous Windows vous devez installer un client ssh. CALMIP recommande l'usage de MobaXterm (Home Edition). 
+Sous Windows vous devez installer un client ssh. CALMIP recommande l'usage de MobaXterm (Home Edition).
 
 Téléchargez la version portable sur ce site : https://mobaxterm.mobatek.net puis il vous suffit d'extraire les fichiers contenus dans l'archive .zip à l'emplacement de votre choix. Lancez ensuite l'application en double-cliquant sur le fichier MobaXterm_Personal_22.x.zip.
 
@@ -88,4 +89,3 @@ La procédure pour envoyer des fichiers sur Turpan, ou récupérer sur votre pos
 
 ## Changer son mot de passe
 On ne peut pas se connecter sur Turpan avec un mot de passe, il faut utiliser une [clé ssh](../../../acces/ssh.md)
-
