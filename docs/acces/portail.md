@@ -1,13 +1,18 @@
-# Comment accéder au portail Mesonet ? 
+---
+title: "Accéder au portail MesoNET"
+sidebar_position: 1
+---
 
-Pour accéder au portail MesoNet, il faut au préalable se créer un compte. 
+# Comment accéder au portail MesoNET ?
 
-## Demander un compte Mesonet
+Pour accéder au portail MesoNET, il faut au préalable se créer un compte.
 
-Pour demander un compte mesonet, faites pointer votre navigateur sur l'URL: https://iam.mesonet.fr/
+## Demander un compte MesoNET {#demander-compte}
+
+Pour demander un compte MesoNET, faites pointer votre navigateur sur l'URL: https://iam.mesonet.fr/
 
 1. Si vous le pouvez, **connectez-vous avec vos identifiants institutionnels** (CNRS, université, institutions de recherche étrangères ,etc.) en cliquant sur le **bouton EduGAIN**. Si vous n'avez pas d'identifiants institutionnels (entreprises, ...) et seulement dans ce cas, ouvrez un compte local. Pour cela, visitez l'URL https://iam.mesonet.fr/start-registration pour vous créer un compte.
-2. Dans tous les cas, vous serez redirigés vers l'écran suivant : 
+2. Dans tous les cas, vous serez redirigés vers l'écran suivant :
 
 ![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/portail_register.png)
 
@@ -43,7 +48,7 @@ https://iam.mesonet.fr/registration/verify/xxxxxxx-yyyy-yyyy-yyyy-yyyyyyyyy
 The MesoNET SSO registration service
 ```
 
-Un administrateur de mesonet devra alors valider votre compte, à la suite de quoi vous recevrez le message suivant :
+Un administrateur de MesoNET devra alors valider votre compte, à la suite de quoi vous recevrez le message suivant :
 
 ```
 Dear Jean Dupont,
@@ -66,25 +71,25 @@ The MesoNET SSO registration service
 
 **Si vous vous identifiez via Edugain, vous ne DEVEZ PAS définir de mot de passe.** Mais si vous avez créé un compte local, vous devrez cliquer sur le lien pour vous choisir un mot de passe.
 
-## Accéder aux ressources Mesonet
+## Accéder aux ressources MesoNET
 
-Maintenant que vous avez votre compte mesonet, vous êtes en mesure de demander des ressources de calcul, pour l'instant seulement sur Boréale ou Turpan.
+Maintenant que vous avez votre compte MesoNET, vous êtes en mesure de demander des ressources de calcul, pour l'instant seulement sur [Boréale](arch_exp/boreal/description.md) ou [Turpan](arch_exp/turpan/description.md).
 
-1/ Pour cela, rendez-vous sur https://acces.mesonet.fr. Cliquez sur le bouton **connexion**" en haut à droite, et identifiez vous de la même façon que lors de la création de votre compte, typiquement via eduGAIN, enfin complétez votre profil.
+1. Pour cela, rendez-vous sur https://acces.mesonet.fr. Cliquez sur le bouton **connexion** en haut à droite, et identifiez vous de la même façon que lors de la création de votre compte, typiquement via eduGAIN, enfin complétez votre profil.
 
-2/ Cliquez alors sur le bouton **Demandeur** pour arriver à l'écran de vos projets : si vous êtes déclaré comme collaborateur d'un projet, vous le verrez apparaître. Si vous êtes reconnu comme chercheur ou ingénieur permanent, vous pourrez aussi démarrer un nouveau projet et inviter des collègues à y collaborer. Pour cela, cliquez sur le bouton bouton **nouveau projet**
+2. Cliquez alors sur le bouton **Demandeur** pour arriver à l'écran de vos projets : si vous êtes déclaré comme collaborateur d'un projet, vous le verrez apparaître. Si vous êtes reconnu comme chercheur ou ingénieur permanent, vous pourrez aussi démarrer un nouveau projet et inviter des collègues à y collaborer. Pour cela, cliquez sur le bouton bouton **nouveau projet**
 
 ### Répondre à une invitation
 
-Peut-être avez-vous été "invité à mesonet" par un collègue, responsable de projet. Cela signifie que vous avez reçu un mail tel que celui-ci :
+Peut-être avez-vous été "invité à MesoNET" par un collègue, responsable de projet. Cela signifie que vous avez reçu un mail tel que celui-ci :
 
 ```
 Bonjour Jean Dupont
 
 Vous avez été invité-e par le responsable de projet Alice User sur la plateforme
-d'attribution de ressources de MESONET.
+d'attribution de ressources de MesoNET.
 
-Si vous n'avez pas encore de compte Mesonet,
+Si vous n'avez pas encore de compte MesoNET,
 nous vous invitons à vous créer un compte en suivant les instructions suivantes: https://www.calmip.univ-toulouse.fr/demander-un-compte-mesonet
 
 Ensuite, connectez-vous à
@@ -93,9 +98,9 @@ Ensuite, connectez-vous à
 ATTENTION L'invitation expire le 31-12-2022
 
 Cordialement,
-L'équipe MESONET
+L'équipe MesoNET
 ```
 
 Dans ce cas, vous devrez :
-1. Ouvrir votre compte mesonet comme indiqué ci-dessus.
-2. Puis, suivre le second lien afin de mettre en relation votre compte mesonet et l'invitation.
+1. Ouvrir votre compte MesoNET [comme indiqué ci-dessus](#demander-compte).
+2. Puis, suivre le second lien afin de mettre en relation votre compte MesoNET et l'invitation.

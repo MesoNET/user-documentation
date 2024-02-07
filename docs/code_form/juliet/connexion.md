@@ -37,20 +37,19 @@ Vous pouvez ensuite demander accès au pod IA Juliet via le [centre de tickets R
 Pour demander un accès :
 
 - Sélectionnez `Juliet account creation` sous `Help Topic`
-- Renseigner votre adresse e-mail
-- Ainsi que votre **login** (nom d'utilisateur) dans les détails du ticket.
+- Renseignez votre **adresse e-mail** ainsi que votre **login** (nom d'utilisateur) dans les détails du ticket.
 - Attendez la fermeture du ticket avant de passer à l'étape suivante
 
 # Gestion des clés SSH
 
 Vous avez besoin d'une clé SSH valide. Vous pouvez la générer avec la ligne de commande suivante :
 
-```sh 
-ssh-keygen 
+```sh
+ssh-keygen
 ```
 :::caution
 
-En attendant l'intégration au portail Gramc, les clés SSH entrées dans Gramc ne sont pas visibles de Juliet et vice-versa. 
+En attendant l'intégration au portail Gramc, les clés SSH entrées dans Gramc ne sont pas visibles de Juliet et vice-versa.
 
 :::
 
