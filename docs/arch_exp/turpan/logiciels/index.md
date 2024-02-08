@@ -31,7 +31,7 @@ Les logiciels scientifiques disponibles sur Turpan :
 ## Les logiciels de visualisation
 
 Les logiciels suivants de visualisation de données scientifiques sont installés sur Turpan : 
-* ParaView
+* [ParaView](./paraview.md)
 
 :::tip Rappel
 

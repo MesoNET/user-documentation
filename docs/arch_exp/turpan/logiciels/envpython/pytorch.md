@@ -102,7 +102,7 @@ Exemple de script sbatch pour utiliser pytorch avec le lanceur torchrun en multi
 >```
 
 
-Le script et le dataset d'exemple est disponible ici : [torchrun-turpan.tgz (TGZ - 2 ko)](/img/turpan/torchrun.tgz)
+Le script et le dataset d'exemple est disponible ici : [torchrun-turpan.tgz (TGZ - 2 ko)](/img/turpan/torchrun-turpan.tgz)
 
 
 ## Pour plus d'information
