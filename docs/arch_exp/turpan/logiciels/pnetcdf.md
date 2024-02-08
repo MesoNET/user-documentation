@@ -1,5 +1,5 @@
 ---
-title: parallel netCDF
+title: Parallel netCDF
 sidebar_position: 9
 hide_table_of_contents: true
 ---

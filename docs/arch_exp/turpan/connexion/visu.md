@@ -175,11 +175,11 @@ vncviewer
 
 - Entrez dans le champ VNC Server l’adresse donnée par le script ci-dessus : turpanlogin.calmip.univ-toulouse.fr:5902 (dans notre exemple)
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/turbo_1.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO MesoNET](/img/turpan/turbo_1.png)
 
 - Entrez dans le champ Password le jeton d'authentification donné par le script ci-dessus : 91668926 (dans notre exemple)
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/turbo_2.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO MesoNET](/img/turpan/turbo_2.png)
 
 - Le gestionnaire de fenêtre utilisé est gnome-classic. Cliquer sur "Applications" pour faire appaître le menu des applications.
 
@@ -210,7 +210,6 @@ Par défaut les touches de contrôle ne sont pas utilisables car elles sont inte
 CTRL-SHIFT-ALT G
 ```
 
-
 Attention dans ce cas la session graphique a tout le contrôle de votre clavier, du coup c’est votre poste de travail qui ne répondra pas à votre clavier ni dans certains cas à la souris (on a l’impression qu’il est planté, mais ce n’est pas vrai). Dans ce cas, pressez à nouveau sur CTRL-SHIFT-ALT G pour retrouver le fonctionnement normal.
 
 Si vous travaillez longtemps sur la visualisation, vous aimerez probablement passer en plein écran :
@@ -233,12 +232,12 @@ Vous avez alors la possibilité de dégrader la qualité de l’image afin d’a
 
 - Cliquez sur le bouton en haut à gauche de la fenêtre TurboVnc
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/turbo_3.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO MesoNET](/img/turpan/turbo_3.png)
 
 
 - Une fenêtre s’ouvre, vous donnant accès à deux outils permettant de jouer sur la compression jpeg : le premier diminue ou supprime les couleurs, le second joue sur la résolution
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/turbo_4.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO MesoNET](/img/turpan/turbo_4.png)
 
 ### Partager sa session graphique
 Il est possible de partager la session graphique : cliquez sur l’option du menu "Sharing your session", une fenêtre s’ouvrira et vous donnera la possibilité de disposer d’un mot de passe à usage unique que vous pourrez envoyer à votre correspondant pour lui permettre de travailler :
@@ -261,5 +260,5 @@ Tout cela fonctionne grâce à :
 - Un nœud graphique de 220 Gb de mémoire et 14 cœurs et 1 carte NVIDIA A40 (2 noeuds au total sont disponibles)
 - Le logiciel virtualGL
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/schema.jpg)
+![Capture d'écran du formulaire d'enregistrement dans le SSO MesoNET](/img/turpan/schema.jpg)
 

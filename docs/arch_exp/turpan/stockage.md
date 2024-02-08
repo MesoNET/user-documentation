@@ -17,6 +17,12 @@ L’espace disque est constitué de trois parties :
 
 :::
 
+:::info
+
+Un espace de stockage fédéré est en cours de contruction et permettra de faciliter la mobilité des données entres les machines du projets MesoNET . [Plus d'information ici](https://www.mesonet.fr/8_federation-de-stockage.html).
+
+:::
+
 ## Les quotas
 
 Sur les différents espaces, des quotas sont mis en place afin que chacun puissent bénéificer du stockage de façon équitable : 
