@@ -75,5 +75,5 @@ cd /usr/local/arch-x86/nvidia/nvhpc/Linux_x86_64/23.1/profilers/Nsight_Systems/h
 
 /tmpdir/jamal/Tests_Nsys/6147/report-mpirun-singlenode.nsys-rep
 ```
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/nsight.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO MesoNET](/img/turpan/nsight.png)
 

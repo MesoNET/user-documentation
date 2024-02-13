@@ -3,63 +3,49 @@ title: "Les logiciels installés"
 sidebar_position: 6
 ---
 
-
-Les compilateurs : Nvidia HPC, ARM, GNU
-
-Les librairies de communication : OpenMPI
-
-Les librairies : BLAS, LAPACK, ScaLAPACK, FFT, PetSC
-
-Applications scientifique : MAGMA, OpenFoam, Saturne, HDF5, AMGX, CuFFT, CuBlas, CuSparse, CuTENSOR
-
-Les outils de profiling et diagnostique : MAP (CPU / GPU), Nsight (GPU)
-
-
+Un cetains nombre d'outils et de blibiothèques sont disponibles sur Turpan :
+* Les compilateurs : [Nvidia HPC ARM, GNU](../softenv.md#les-compilateurs-pour-gnu-arm-nvhpc)
+* Les librairies de communication : OpenMPI
+* Les librairies : [BLAS, LAPACK, ScaLAPACK, FFT, PetSC](#les-bibliothèques-scientifiques)
+* Applications scientifique : [MAGMA, OpenFoam, Saturne, HDF5, AMGX, CuFFT, CuBlas, CuSparse, CuTENSOR](#les-logiciels-scientifiques)
+* Les outils de profiling et diagnostique : MAP (CPU / GPU), Nsight (GPU)
 
 ## Les bibliothèques scientifiques
-- [BLAS](./blas.md)
-- [LAPACK](./lapack.md)
-- [ScaLAPACK](./scalapack.md)
-- [HDF5](./hdf5.md)
 
-
+Les bibliothèques scientifiques disponibles sur Turpan :
+* [BLAS](./blas.md)
+* [LAPACK](./lapack.md)
+* [ScaLAPACK](./scalapack.md)
+* [HDF5](./hdf5.md)
 
 ## Les logiciels scientifiques
-- [PETSc](./petsc.md)
-- [AmgX](./amgx.md)
-- [FFTW](./fftw.md)
-- [netCDF](./netcdf.md)
-- [parallel netCDF](./pnetcdf.md)
+
+Les logiciels scientifiques disponibles sur Turpan :
+* [PETSc](./petsc.md)
+* [AmgX](./amgx.md)
+* [FFTW](./fftw.md)
+* [netCDF](./netcdf.md)
+* [parallel netCDF](./pnetcdf.md)
 
 
 ## Les logiciels de visualisation
-Les logiciels suivants de visualisation de données scientifiques sont installés sur Turpan.  
-RAPPEL - Pour se connecter aux nœuds de visualisation de Turpan
-- ParaView
+
+Les logiciels suivants de visualisation de données scientifiques sont installés sur Turpan : 
+* [ParaView](./paraview.md)
+
+:::tip Rappel
+
+Pour avoir une session graphique, il faut se [connecter aux nœuds de visualisation de Turpan](../connexion/visu.md#prérequis).
+
+:::
 
 ## L'écosystème Python
 
+Les [environnements python](./envpython/index.md) font l'objet d'une section entière et dédiée.
 
-## CALMIP préconise l’utilisation de conda pour l’installation de vos environnements python :
+## Les conteneurs
 
-- La documentation CALMIP pour conda
+Si vous avez des dépendances très nombreuses et particulières, vous pouvez utiliser des conteneurs :
 
-### Environnements conda prêts à être utilisés ou clonés :
-
-- python (uniquement python)
-- python-tools (contenant les modules : Numpy, Scipy, Pandas, Matplotlib, JupyterLab plus quelques autres)
-- tensorflow (tensorflow, JupyterLab et TensorBoard) [en cours de création]
-- pytorch (pytorch et JupyterLab) [en cours de création]
-- scikit-learn (scikit-learn et JupyterLab) [en cours de création]
-
-### Outils de visualisation également disponibles :
-
-- TensorBoard [en cours de création]
- - JupyterLab [en cours de création]
-
-### Si vous avez des dépendances très nombreuses et particulières:
-
-- Il est peut-être plus simple de passer par un conteneur singularity [a venir]
-
-
+* La documentation sur les [conteneur Apptainer (anciennement Singularity)](./apptainer.md)
 

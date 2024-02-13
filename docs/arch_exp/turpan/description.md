@@ -3,7 +3,7 @@ title: "Description"
 sidebar_position: 1
 ---
 
-# Turpan, la machine ARM de MEsoNET
+# Turpan, le cluster de prototypage ARM accéléré du projet MesoNET
 
 Le supercalculateur Turpan dispose de 15 nœuds de calcul. Dans un nœud, L’architecture détaillée est la suivante : autour du CPU, on a 512Go RAM répartis en 8 barrettes de 64Go sur des canaux indépendants, deux cartes GPU Nvidia A100-80, connectées en PCI express x16, 2 cartes réseaux infiniband 200 Gb/s chacune, également connectées en PCI express x16, 6To de stockage local, et de la connectique standard (USB, Ethernet etc).
 
@@ -11,9 +11,11 @@ Dans un nœud de Turpan, le processeur est un Ampere Altra Q80-30, qui comporte 
 
 Concernant le stockage, la machine Turpan dispose de 343 To sur des disques mécaniques pour le stockage scratch et projet. Et 17 To de SSD qui serve de cache pour accélérer les entres sorties. Physiquement on a 60 disques mécaniques de 8To, 11 disques SSD de 3,8To.
 
-## Faire appel au support  
+*English version*
 
-Si quelque chose ne fonctionne pas et que vous n'arrivez pas à vous en sortir, vouis pouvez envoyer un courriel à [cette adresse](mailto:support@mesonet.fr), en précisant : 
-- Chemin du répertoire d’appel
-- Chemin du script d’appel
-- Numéro du job concerné
+*Turpan is a Prototype Supercomputer made of 15 compute nodes with a total perfomance peak of 613,5 TF/s (1200 ARM core and 30 GPU A100). Each Turpan's node is equiped with :*
+
+* *1 Ampere Altra Q80-30, 80 cores ARM v8.2, 3 Ghz : 1,9 TF/s Peak per socket*
+* *2 GPU Nvidia A100-80 (80 GB HBM), 19,5 TF/s (FP64 TC)* 
+* *2 HDR Infiniband link (2 x 200 Gb/s)*
+* *40,9 TF/s Peak Performance at node level*

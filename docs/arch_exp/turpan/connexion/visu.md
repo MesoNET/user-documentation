@@ -138,34 +138,34 @@ Il s’agit d’une session interactive, qui ne doit pas être interrompue : si 
 
 Exemple de bannière :
 
-```
-[  1/150] Queuing and waiting for visu session resources allocation (6043) ...
-
-Desktop 'VNC-SESSION-estana' started on display turpanvisu0:2 ...
-
-#===========================================================================
-|
-| Point TurboVnc viewer on your computer to : turpanlogin.calmip.univ-toulouse.fr:5902
-|            Full control one-time password : 91668926
-|
-+---------------------------------------------------------------------------
-| From a shell on a login node, to get a new full control one-time password,
-| use :
-|    ssh turpanvisu0 '/opt/TurboVNC/bin/vncpasswd -o -display :2'
-|
-#===========================================================================
-| CAUTION : DO NOT CLOSE this slurm job or this terminal !
-#===========================================================================
-
-+---------------------------------------------------------------------------
-| CONNECTION INFO : xxx.xxx.xxx.xxx (FROM AN AUTHORIZED IP) [turpanvisu0]
-+---------------------------------------------------------------------------
-| TurboVnc 3.0.2 or later is needed on your computer to access visu session
-| See https://sourceforge.net/projects/turbovnc/files/
-+---------------------------------------------------------------------------
-
-[\] - Press CTRL-C to quit
-```
+>```
+>[  1/150] Queuing and waiting for visu session resources allocation (6043) ...
+>
+>Desktop 'VNC-SESSION-estana' started on display turpanvisu0:2 ...
+>
+>#===========================================================================
+>|
+>| Point TurboVnc viewer on your computer to : turpanlogin.calmip.univ-toulouse.fr:5902
+>|            Full control one-time password : 91668926
+>|
+>+---------------------------------------------------------------------------
+>| From a shell on a login node, to get a new full control one-time password,
+>| use :
+>|    ssh turpanvisu0 '/opt/TurboVNC/bin/vncpasswd -o -display :2'
+>|
+>#===========================================================================
+>| CAUTION : DO NOT CLOSE this slurm job or this terminal !
+>#===========================================================================
+>
+>+---------------------------------------------------------------------------
+>| CONNECTION INFO : xxx.xxx.xxx.xxx (FROM AN AUTHORIZED IP) [turpanvisu0]
+>+---------------------------------------------------------------------------
+>| TurboVnc 3.0.2 or later is needed on your computer to access visu session
+>| See https://sourceforge.net/projects/turbovnc/files/
+>+---------------------------------------------------------------------------
+>
+>[\] - Press CTRL-C to quit
+>```
 
 ### Étape 3 :
 Sur votre poste, lancez l’exécutable suivant de turboVNC :
@@ -175,11 +175,11 @@ vncviewer
 
 - Entrez dans le champ VNC Server l’adresse donnée par le script ci-dessus : turpanlogin.calmip.univ-toulouse.fr:5902 (dans notre exemple)
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/turbo_1.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO MesoNET](/img/turpan/turbo_1.png)
 
 - Entrez dans le champ Password le jeton d'authentification donné par le script ci-dessus : 91668926 (dans notre exemple)
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/turbo_2.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO MesoNET](/img/turpan/turbo_2.png)
 
 - Le gestionnaire de fenêtre utilisé est gnome-classic. Cliquer sur "Applications" pour faire appaître le menu des applications.
 
@@ -210,7 +210,6 @@ Par défaut les touches de contrôle ne sont pas utilisables car elles sont inte
 CTRL-SHIFT-ALT G
 ```
 
-
 Attention dans ce cas la session graphique a tout le contrôle de votre clavier, du coup c’est votre poste de travail qui ne répondra pas à votre clavier ni dans certains cas à la souris (on a l’impression qu’il est planté, mais ce n’est pas vrai). Dans ce cas, pressez à nouveau sur CTRL-SHIFT-ALT G pour retrouver le fonctionnement normal.
 
 Si vous travaillez longtemps sur la visualisation, vous aimerez probablement passer en plein écran :
@@ -233,20 +232,35 @@ Vous avez alors la possibilité de dégrader la qualité de l’image afin d’a
 
 - Cliquez sur le bouton en haut à gauche de la fenêtre TurboVnc
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/turbo_3.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO MesoNET](/img/turpan/turbo_3.png)
 
 
 - Une fenêtre s’ouvre, vous donnant accès à deux outils permettant de jouer sur la compression jpeg : le premier diminue ou supprime les couleurs, le second joue sur la résolution
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/turbo_4.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO MesoNET](/img/turpan/turbo_4.png)
 
 ### Partager sa session graphique
-Il est possible de partager la session graphique : cliquez sur l’option du menu "Sharing your session", une fenêtre s’ouvrira et vous donnera la possibilité de disposer d’un mot de passe à usage unique que vous pourrez envoyer à votre correspondant pour lui permettre de travailler :
+Il est possible de partager la session graphique : 
 
-- en lecture seule : vous travaillez et vos correspondants peuvent suivre ce que vous faites, mais ils ne peuvent pas intervenir
-- en lecture-écriture : travail à plusieurs sur la même session. Attention, vous donnez ainsi à votre correspondant accès à tout votre compte sur Turpan !
+Pour cela depuis votre session graphique, exécutez la commande suivante qui va générer 2 jetons :
+
+```bash
+/opt/TurboVNC/bin/vncpasswd -o -display :1 -v
+```
+
+* en lecture seule (View-only): vous travaillez et vos correspondants peuvent suivre ce que vous faites, mais ils ne peuvent pas intervenir
+* en lecture-écriture (Full control): travail à plusieurs sur la même session. Attention, vous donnez ainsi à votre correspondant accès à tout votre compte sur Turpan !
 
 Vous pouvez partager la session plusieurs fois, autant de fois que de partages simultanés souhaités. Pour chaque correspondant vous devrez générer un nouveau mot de passe.
+
+Enfin, il faut donner a votre correspondant les informations de connexions à votre session ainsi que le jeton ci-dessus :
+
+>```
+>[  1/150] Queuing and waiting for visu session resources allocation (6043) ...
+>[...]
+>| Point TurboVnc viewer on your computer to : turpanlogin.calmip.univ-toulouse.fr:5902
+>[...]
+>```
 
 ### En cas d'erreur :
 Merci de décrire précisément votre problème et de mettre l'intégralité de la bannière de connexion afin que le support dispose de l'ensemble des informations nécessaires pour la résolution du problème.
@@ -261,5 +275,5 @@ Tout cela fonctionne grâce à :
 - Un nœud graphique de 220 Gb de mémoire et 14 cœurs et 1 carte NVIDIA A40 (2 noeuds au total sont disponibles)
 - Le logiciel virtualGL
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/schema.jpg)
+![Capture d'écran du formulaire d'enregistrement dans le SSO MesoNET](/img/turpan/schema.jpg)
 

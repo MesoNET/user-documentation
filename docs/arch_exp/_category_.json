@@ -1,4 +1,7 @@
 {
-  "label": "Architectures expérimentales",
-  "position": 3
+  "label": "Architectures de Prototypage et Spécialisées",
+  "position": 3,
+  "link": {
+      "type": "generated-index"
+  }
 }

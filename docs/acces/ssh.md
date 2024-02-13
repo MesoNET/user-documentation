@@ -1,6 +1,11 @@
+---
+title: "Gérer ses clés SSH"
+sidebar_position: 2
+---
+
 # Gérer ses clés SSH
 
-## Qu'est-ce qu'une clé SSH
+## Qu'est-ce qu'une clé SSH ?
 
 Une clé ssh est un ensemble de deux fichiers, permettant d'établir des clés de chiffrement. Ces deux fichiers constituent:
 
@@ -19,7 +24,7 @@ import TabItem from '@theme/TabItem';
 <Tabs>
   <TabItem value="linux" label="GNU Linux" default>
 
-La commande pour générer une clé SSH : 
+La commande pour générer une clé SSH :
 
 ```Shell
 $ ssh-keygen -t ed25519 -f .ssh/turpan
@@ -58,7 +63,7 @@ ssh-keygen -t rsa -b 3072 -f .ssh/turpan
 ```
   </TabItem>
   <TabItem value="windows" label="Windows">
-Sous Windows vous devez installer un client ssh. CALMIP recommande l'usage de MobaXterm (Home Edition). 
+Sous Windows vous devez installer un client ssh. CALMIP recommande l'usage de MobaXterm (Home Edition).
 
 Téléchargez la version portable sur ce site : https://mobaxterm.mobatek.net puis il vous suffit d'extraire les fichiers contenus dans l'archive .zip à l'emplacement de votre choix. Lancez ensuite l'application en double-cliquant sur le fichier MobaXterm_Personal_22.x.zip.
 
@@ -79,7 +84,7 @@ Laissez la fenêtre ouverte pour copier/coller le contenu du cadre :
 Vous pourrez ainsi l'ajouter à votre trousseau de clés à l'étape suivante.
   </TabItem>
   <TabItem value="macosx" label="Mac OS X">
-La commande pour générer une clé SSH : 
+La commande pour générer une clé SSH :
 
 ```Shell
 $ ssh-keygen -t ed25519 -f .ssh/turpan
