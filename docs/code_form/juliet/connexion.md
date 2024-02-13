@@ -12,7 +12,11 @@ La connexion s'effectue en SSH vers juliet.mesonet.fr.
 
 :::caution
 
-L'intégration au portail Gramc ainsi que la mise en place de l'outil de ticketing MesoNET sont en cours. En l'état actuel, pour obtenir un accès à la machine, vous pouvez utiliser la procédure ci-dessous.
+L'intégration au portail Gramc est terminée pour les utilisateurs académiques de Juliet. Pour vous connecter à juliet, suivez [la procédure normale de connexion](https://www.mesonet.fr/documentation/user-documentation/acces/portail)
+
+La mise en place de l'outil de ticketing MesoNET est en cours. 
+
+Pour les utilisateurs industriels de Juliet, vous pouvez utiliser la procédure ci-dessous.
  Cette procédure étant encore en développement, soyez vigilants, la documentation n'étant pas toujours claire et les erreurs pouvant être difficiles à rattraper
 
 :::
@@ -67,7 +71,6 @@ Exemples des formats attendus :
 
 `ssh-ed25519 ThATiSthEB0DY0FAKeY`
 
-`ssh-rsa ThisTypeOfKeyIsMuchLongerThanThatButYouGetTheIdea`
 :::
 
 Vous pouvez activer une clé SSH ou la désactiver en cas de compromission par exemple.
