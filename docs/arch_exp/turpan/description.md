@@ -11,7 +11,7 @@ Dans un nœud de Turpan, le processeur est un Ampere Altra Q80-30, qui comporte 
 
 Concernant le stockage, la machine Turpan dispose de 343 To sur des disques mécaniques pour le stockage scratch et projet. Et 17 To de SSD qui serve de cache pour accélérer les entres sorties. Physiquement on a 60 disques mécaniques de 8To, 11 disques SSD de 3,8To.
 
-*English version*
+*English version* :
 
 *Turpan is a Prototype Supercomputer made of 15 compute nodes with a total perfomance peak of 613,5 TF/s (1200 ARM core and 30 GPU A100). Each Turpan's node is equiped with :*
 

@@ -11,12 +11,13 @@ CALMIP préconise l’utilisation de conda pour l’installation de vos environn
 
 * [python](./python.md) (uniquement python)
 * [python-tools](./python-tools.md) (contenant les modules : Numpy, Scipy, Pandas, Matplotlib, JupyterLab plus quelques autres)
-* tensorflow (tensorflow, JupyterLab et TensorBoard) [en cours de création]
-* [pytorch](./pytorch.md) (L'utilisation de pytorch dans JupyterLab est en cours de création)
-* scikit-learn (scikit-learn et JupyterLab) [en cours de création]
+* [tensorflow](./tensorflow.md) via les conteneurs nvidia
+* [pytorch](./pytorch.md) via les conteneurs nvidia
+* [scikit-learn](./scikit-learn.md) et rapids (cuML, cuDF, cuGraph, etc ...) via les conteneurs nvidia
 
-### Outils de visualisation également disponibles :
+### Outils interactifs et de visualisation également disponibles :
 
-* TensorBoard [en cours de création]
-* JupyterLab [en cours de création]
+* [JupyterLab](./jupyterlab.md)
+* [TensorBoard](./tensorboard.md)
+
 
