@@ -1,14 +1,15 @@
 ---
-title: PyTorch
-sidebar_position: 4
+title: Scikit-learn et rapids
+sidebar_position: 6
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-L'installation de PyTorch par pip ou conda sur l'architecture ARM (aarch64) installe uniquement une version CPU. Pour permettre une utilisation GPU, nous avons créé un conteneur apptainer en adaptant pour TURPAN le conteneur pytorch de Nvidia depuis le NGC. Il contient l'ensemble des programmes et librairies décrit ici : https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-24-02.html
 
-## Utilisation du conteneur pytorch
+Scikit-learn n'est disponible par défaut que sur cpu. Si vous souhaitez utiliser des librairies de machine learning qui utilisent le GPU, vous pouvez utiliser les librairies fournies par Nvidia comme cuML uniquement. Pour vous permettre les 2 utilisations, nous avons créé un conteneur apptainer en adaptant pour TURPAN le conteneur rapids de Nvidia depuis le NGC. Il contient l'ensemble des programmes et librairies décrit ici : https://catalog.ngc.nvidia.com/orgs/nvidia/teams/rapidsai/containers/notebooks
+
+## Utilisation du conteneur rapids
 
 Il y a deux façons d'utiliser ce conteneur :
 
@@ -26,31 +27,36 @@ Vous pouvez utiliser le conteneur dans un script sbatch. Dans l'exemple ci-desso
 >#SBATCH --time=0:15:00
 >#SBATCH --gres=gpu:1
 >
->apptainer exec --bind /tmpdir,/work --nv /work/conteneurs/sessions-interactives/pytorch-24.02-py3-calmip-si.sif python mon_script.py
+>apptainer exec --bind /tmpdir,/work --nv /work/conteneurs/sessions-interactives/rapids-notebooks-24.02-cuda12.0-py3.10-si.sif python mon_script.py
 >```
 
 </TabItem>
-<TabItem label="Mode interractif" value="interractif">
+<TabItem label="Mode interractif" value="interractif" default>
 
 Vous pouvez utiliser le conteneur interactif (pour tester ou installer d'autres outils ou configurer votre environnement). Dans l'exemple ci-dessous avec une demande de ressources de 1 cœur CPU et 1 GPU :
 
 ```bash
-srun -p shared -n1 --gres=gpu:1 --pty apptainer shell --bind /tmpdir,/work --nv /work/conteneurs/sessions-interactives/pytorch-24.02-py3-calmip-si.sif
+srun -p shared -n1 --gres=gpu:1 --pty apptainer shell --nv /work/conteneurs/sessions-interactives/rapids-notebooks-24.02-cuda12.0-py3.10-si.sif
 Apptainer> python
 Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
->>> import torch
->>> # Pour vérifier que vos ressources GPU sont bien visibles depuis pytorch
->>> torch.cuda.current_device()
-0
->>> torch.cuda.device(0)
-<torch.cuda.device object at 0x4000154a7580>
->>> torch.cuda.device_count()
-1
->>> torch.cuda.get_device_name(0)
-'NVIDIA A100 80GB PCIe'
->>> torch.cuda.is_available()
-True
+>>> import cuml
+>>> from cuml.neighbors import NearestNeighbors
+>>> from cuml.datasets import make_regression, make_blobs
+>>> from cuml.model_selection import train_test_split
+>>> from cuml.common.device_selection import using_device_type
+>>> X_blobs, y_blobs = make_blobs(n_samples=2000,
+...                               n_features=20)
+
+>>> X_train_blobs, X_test_blobs, y_train_blobs, y_test_blobs = train_test_split(X_blobs,
+...                                                                             y_blobs,
+...                                                                             test_size=0.2, shuffle=True)
+>>> nn = NearestNeighbors()
+>>> with using_device_type('gpu'):
+...     nn.fit(X_train_blobs)
+...     nearest_neighbors = nn.kneighbors(X_test_blobs)
+... 
+NearestNeighbors()
 [...]
 >>> # Vos commandes python
 [...]
@@ -64,46 +70,10 @@ True
 Le conteneur n'a accès par défaut qu'à votre espace $HOME. Si vous avez besoin des espaces WORK `/work` ou SCRATCH `/tmpdir` vous pouvez les accrocher en utilisant l'option `--bind` d'Apptainer par exemple :
 
 ```bash
-apptainer exec --bind /tmpdir,/work  --nv ...
+apptainer exec --bind /tmpdir,/work --nv ...
 ```
 
 :::
-
-Exemple de script sbatch pour utiliser pytorch avec le lanceur torchrun en multi-noeuds sur Turpan :
-
->```
->#!/bin/bash
->
->#SBATCH --job-name=multinode-example
->#SBATCH --nodes=2
->#SBATCH --ntasks=4
->#SBATCH --ntasks-per-node=2
->#SBATCH --gres=gpu:2
->#SBATCH --cpus-per-task=1
->
->set -x
->sleep 10
->
->export MASTER_PORT=$(echo "${SLURM_JOB_ID} % 100000 % 50000 + 30000" | bc)
->export MASTER_ADDR=$(hostname --ip-address)
->echo "MASTER_ADDR:MASTER_PORT="${MASTER_ADDR}:${MASTER_PORT}
->export LOGLEVEL=DEBUG
->
->echo "HOSTNAME: $(hostname)"
->echo "NODES : ${SLURM_JOB_NODELIST}"
->
->srun apptainer exec --bind /tmpdir,/work --nv /work/conteneurs/sessions-interactives/pytorch-24.02-py3-calmip-si.sif torchrun \
->--nnodes 2 \
->--nproc_per_node 2 \
->--rdzv_id ${RANDOM} \
->--rdzv_backend c10d \
->--rdzv_endpoint "${MASTER_ADDR}:${MASTER_PORT}" \
->./multinode.py 50 10
->```
-
-
-Le script et le dataset d'exemple est disponible ici : [torchrun-turpan.tgz (TGZ - 2 ko)](/img/turpan/torchrun-turpan.tgz)
-
 
 ## Pour plus d'information
 
@@ -113,7 +83,7 @@ Pour plus d'information sur l'utilisation des conteneurs Apptainer :
 * La documentation officeille d'Apptainer : https://apptainer.org/docs/user/1.1/
 
 
-## Pytorch et modules python supplémentaires
+## Conteneur rapids et modules python supplémentaires
 
 :::caution Attention
 
@@ -124,7 +94,7 @@ L'utilisation de ce conteneur est incompatible avec l'utilisation des environnem
 Néanmoins, vous pouvez ajouter des modules avec pip depuis le conteneur en se positionnant sur une frontale de connexion pour  l'installation (les noeuds de calcul n'ont pas d'accès à internet) :
 
 ```bash
-apptainer shell --nv /work/conteneurs/sessions-interactives/pytorch-24.02-py3-calmip-si.sif
+apptainer shell --nv /work/conteneurs/sessions-interactives/rapids-notebooks-24.02-cuda12.0-py3.10-si.sif
 ```
 
 Puis, vous pouvez installer les modules souhaités avec obligatoirement l'option `--user` afin de les installer dans votre home :
