@@ -34,6 +34,6 @@ Il s'agit d'un outil graphique, vous devrez donc ouvrir une session X11 :
 
 La partie supérieure de l'écran ressemblera à la figure ci-dessous. Si vous avez compilé votre code avec le switch -g, et si map est capable de trouver les sources de votre programme, vous pourrez alors établir une corrélation entre le profil affiché en haut de l'écran et le code (qui sera affiché en bas de l’écran).
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/map.png)
+![Capture d'écran du formulaire d'engistrement dans le SSO MesoNET](/img/turpan/map.png)
 
 Le menu Metrics permet de choisir ce qu'on regarde : les entrées-sorties, les appels mpi, etc.

@@ -6,7 +6,7 @@ sidebar_position: 2
 # Comment se connecter à Turpan
 
 :::caution
-La connexion sur la machine de prototypage Turpan se fait obligatoirement par clé SSH.**
+**La connexion sur la machine de prototypage Turpan se fait obligatoirement par clé SSH.**
 :::caution
 
 import Tabs from '@theme/Tabs';
@@ -15,29 +15,29 @@ import TabItem from '@theme/TabItem';
 <Tabs>
   <TabItem value="linux" label="GNU Linux/MacOS" default>
 
-Ce qui suit suppose que vous avez généré et déployé une clé ssh sur votre compte Turpan, comme [il est indiqué ici](acces/ssh.md).
+Ce qui suit suppose que vous avez généré et déployé une clé ssh sur votre compte Turpan. La génération est expliqué en détail sur [la page dédiée à l'utilisation du portail](../../../acces/ssh.md).
 
-Écrivez un fichier appelé .ssh/config (ou complétez-le s'il existe déjà !) de la manière suivante:
+Écrivez un fichier appelé `.ssh/config` (ou complétez-le s'il existe déjà !) de la manière suivante:
 
-```Shell
-Host turpanlogin
-   Hostname turpanlogin.calmip.univ-toulouse.fr
-   IdentityFile ~/.ssh/votre_cle_ssh_privee
-   IdentitiesOnly=yes
-   User votre_nom_d_utilisateur
-
-Host turpanlogin1
-   Hostname turpanlogin1.calmip.univ-toulouse.fr
-   IdentityFile ~/.ssh/votre_cle_ssh_privee
-   IdentitiesOnly=yes
-   User votre_nom_d_utilisateur
-
-Host turpanlogin2
-   Hostname turpanlogin2.calmip.univ-toulouse.fr
-   IdentityFile ~/.ssh/votre_cle_ssh_privee
-   IdentitiesOnly=yes
-   User votre_nom_d_utilisateur
-```
+>```shell
+>Host turpanlogin
+>   Hostname turpanlogin.calmip.univ-toulouse.fr
+>   IdentityFile ~/.ssh/votre_cle_ssh_privee
+>   IdentitiesOnly=yes
+>   User votre_nom_d_utilisateur
+>
+>Host turpanlogin1
+>   Hostname turpanlogin1.calmip.univ-toulouse.fr
+>   IdentityFile ~/.ssh/votre_cle_ssh_privee
+>   IdentitiesOnly=yes
+>   User votre_nom_d_utilisateur
+>
+>Host turpanlogin2
+>   Hostname turpanlogin2.calmip.univ-toulouse.fr
+>   IdentityFile ~/.ssh/votre_cle_ssh_privee
+>   IdentitiesOnly=yes
+>   User votre_nom_d_utilisateur
+>```
 
 Bien sûr vous devrez remplacer `votre_nom_d_utilisateur` par le nom d'utilisateur qui vous a été donné sur Turpan.
 
@@ -45,31 +45,43 @@ Et vous devrez remplacer `votre_cle_ssh_privee` par le nom de fichier que vous a
 
 Dès lors, à partir des réseaux locaux autorisés, vous pouvez vous connecter sur Turpan par:
 
-```
+```shell
 ssh -XY turpanlogin
 ```
+
 Une fois connecté vous êtes sur une des frontales de connexion de Turpan.
+
   </TabItem>
   <TabItem value="windows" label="Windows">
-Sous Windows vous devez installer un client ssh. CALMIP recommande l'usage de MobaXterm (Home Edition).
+
+Sous Windows vous devez installer un client ssh. CALMIP recommande l'usage de MobaXterm (Home Edition). 
 
 Téléchargez la version portable sur ce site : https://mobaxterm.mobatek.net puis il vous suffit d'extraire les fichiers contenus dans l'archive .zip à l'emplacement de votre choix. Lancez ensuite l'application en double-cliquant sur le fichier MobaXterm_Personal_22.x.zip.
 
+:::tip
+
+En téléchargement sur http://mobaxterm.mobatek.net/downlo.... Une version portable est disponible, il n’est pas nécessaire d’être administrateur de son poste de travail pour l’installer. On peut aussi utiliser putty associé à Xwin32
+
+:::
+
 Cliquez sur le bouton 'Session' puis sur le bouton SSH. Remplissez les informations de la connexion ssh :
 
-Remote Host : turpanlogin.calmip.univ-toulouse.fr
+>```
+>Remote Host : turpanlogin.calmip.univ-toulouse.fr
+>```
 
 Specify Username : monloginturpan (à remplacer par votre propre nom d'utilisateur)
 
 Cliquez sur l'onglet 'Advanced SSH settings' et cochez la case 'Use private key'. Sélectionnez alors le fichier .ppk que [vous avez sauvegardé lors de la création de votre clé ssh.](../../../acces/ssh.md)
 
-![Capture d'écran de MobaXTerm](/img/Moba_session.png)
+![Capture d'écran de MobaXTerm](/img/turpan/Moba_session.png)
 
 Cliquez sur OK.
 
 Vous pouvez désormais lancer une session SSH sur Turpan en double-cliquant sur le Bookmark ainsi créé :
 
-![Capture d'écran de génération de clé](/img/Moba_bookmark.png)
+![Capture d'écran de génération de clé](/img//turpan/Moba_bookmark.png)
+
   </TabItem>
 </Tabs>
 
