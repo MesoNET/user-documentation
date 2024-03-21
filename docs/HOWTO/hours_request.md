@@ -8,6 +8,10 @@ import TabItem from '@theme/TabItem';
 
 # Calculer le nombre d'heures à demander sur une machine.
 
+:::caution
+Cette page est une ébauche et est susceptible de changer à l'avenir.
+:::
+
 ## TURPAN (CPU)
 
 Le détail du décompte est décrit dans  [la section "accounting" de la documentation TURPAN](http://localhost:3000/documentation/user-documentation/arch_exp/turpan/accounting/accounting-rules)
@@ -49,13 +53,13 @@ Pour une réservation sur les partition shared ou visu, le nœud est partagé en
 
 ## Juliet (GPU)
 
-::info
+:::info
     Les règles exactes de comptabilité sur Juliet sont encore en cours de développement, cette page peut être amenée à évoluer.
 :::
 Sur Juliet la comptabilisation se fait en heures GPU. Pour utiliser un GPU pendant une heure, il faut compter une heure GPU. Les noeuds sont partagés par défauts. Pour réserver un noeud complet, le nombre d'heures à demander correspond à 8 fois le nombre d'heures de calcul.
 
 ## Zen (CPU)
-::info
+:::info
     Les règles exactes de comptabilité sur Zen sont encore en cours de développement, cette page peut être amenée à évoluer.
 :::
 
