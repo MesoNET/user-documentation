@@ -1,5 +1,5 @@
 ---
-title: "Calculer le nombre d'heures à demander sur une machine"
+title: "Comptabilisation heures de calcul sur une machine"
 sidebar_position: 4
 ---
 
@@ -14,7 +14,7 @@ Cette page est une ébauche et est susceptible de changer à l'avenir.
 
 ## TURPAN (CPU)
 
-Le détail du décompte est décrit dans  [la section "accounting" de la documentation TURPAN](http://localhost:3000/documentation/user-documentation/arch_exp/turpan/accounting/accounting-rules)
+Le détail du décompte est décrit dans  [la section "accounting" de la documentation TURPAN](https://www.mesonet.fr/documentation/user-documentation/arch_exp/turpan/accounting/accounting-rules//documentation/user-documentation/arch_exp/turpan/accounting/accounting-rules)
 
 Les heures à demander sont des heures CPU. Une heure de calcul CPU correspond à la réservation d'un coeur CPU unique pendant une heure. Le décompte est effectué différemment selon les partitions.
 
