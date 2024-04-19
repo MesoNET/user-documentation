@@ -17,5 +17,7 @@ Si quelque chose ne fonctionne pas et que vous n'arrivez pas à vous en sortir, 
 ## Remercier le mésocentre Calmip et le projet MesoNET
 Vous trouverez ci-dessous deux exemples de remerciement du mésocentre de calcul CALMIP et du projet MesoNET à intégrer dans vos publications :
 
-* version longue : "This work was granted access to the HPC resources of CALMIP supercomputing center and the MesoNET Project under the allocation 2016-[numéro projet]."
-* version courte : "This work was performed using HPC resources from CALMIP and MesoNET Project (Grant 2016-[numéro projet])."
+* version longue : "This work was supported by a French government grant managed by the Agence Nationale de la Recherche
+ under the "Investissements d'avenir" program (reference "ANR-21-ESRE-0051"). This work was granted access to the MesoNET resources center and the MesoNET Project under the allocation m[project_number]."
+* version courte : "This work was supported by a French government grant managed by the Agence Nationale de la Recherche
+ under the "Investissements d'avenir" program (reference "ANR-21-ESRE-0051")."
