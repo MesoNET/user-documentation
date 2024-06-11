@@ -28,14 +28,14 @@ Avec openmpi compilé pour cpu, avec cuda
 ```shell
 module load nvidia
 module load nvhpc-nompi/22.9
-module load openmpi/nvidia/4.1.4-cpu
+module load openmpi/nvidia/4.1.6-opt
 ```
 
 Avec openmpi compilé pour gpu, avec cuda
 ```shell
 module load nvidia
 module load nvhpc-nompi/22.9
-module load openmpi/nvidia/4.1.4-gpu
+module load openmpi/nvidia/4.1.6-opt
 ```  
 
 </TabItem>
@@ -49,13 +49,13 @@ module load gnu/11.2.0
 Avec openmpi, sans gpu
 ```shell
 module load gnu/11.2.0
-module load openmpi/gnu/4.1.4-cpu
+module load openmpi/gnu/4.1.6-opt
 ```
 
 Avec openmpi, avec gpu
 ```shell
 module load gnu/11.2.0
-module load openmpi/gnu/4.1.4-gpu
+module load openmpi/gnu/4.1.6-opt
 ```
 
 </TabItem>
