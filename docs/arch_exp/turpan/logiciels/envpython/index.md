@@ -14,6 +14,7 @@ CALMIP préconise l’utilisation de conda pour l’installation de vos environn
 * [tensorflow](./tensorflow.md) via les conteneurs nvidia
 * [pytorch](./pytorch.md) via les conteneurs nvidia
 * [scikit-learn](./scikit-learn.md) et rapids (cuML, cuDF, cuGraph, etc ...) via les conteneurs nvidia
+* [modulus](./modulus.md) via les conteneurs nvidia
 
 ### Outils interactifs et de visualisation également disponibles :
 

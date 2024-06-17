@@ -1,6 +1,6 @@
 ---
 title: Notebook jupyter
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 import Tabs from '@theme/Tabs';
@@ -79,12 +79,13 @@ Enfin, vous pouvez utiliser votre notebook jupyter :
 * En utilisant **le navigateur de votre poste de travail** et copier/coller l'URL fournie par le script "http://localhost:8888/?token=..."
 * En utilisant vscode, et copier/coller l'URL fournie par le script "http://localhost:8888/?token=..." en suivant la [documentation officielle de vscode](https://code.visualstudio.com/docs/datascience/jupyter-kernel-management#_existing-jupyter-server)
 
-## Utiliser les conteneurs nvidia (pytorch, tensorflow et rapids)
+## Utiliser les conteneurs nvidia (pytorch, tensorflow, rapids et modulus)
 
-Il existe 3 type de conteneurs disponibles pour les sessions interactives :
+Il existe 4 type de conteneurs disponibles pour les sessions interactives :
 * pytorch : [NVIDIA PyTorch container](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch)
 * tensorflow : [NVIDIA TensorFlow container](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/tensorflow)
 * rapids : [NVIDIA RAPIDS container](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/rapidsai/containers/notebooks)
+* modulus : [NVIDIA Modulus container](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/modulus/containers/modulus)
 
 Ceux-ci peuvent être utilisés en invoquant `runJupyterSession.sh` avec l'option `--container`. Exemple pour utiliser le conteneur pytorch :
 ```bash
@@ -106,6 +107,7 @@ Voici des tutoriels pour tester chacun des conteneurs NVIDIA :
 * [TensorFlow quickstart](https://www.tensorflow.org/tutorials/quickstart/beginner)
 * [RAPIDS introduction](https://github.com/rapidsai-community/notebooks-contrib/blob/main/getting_started_materials/intro_tutorials_and_guides/14_Introduction_to_Machine_Learning_using_cuML.ipynb)
 * [scikit-learn Getting Started](https://scikit-learn.org/stable/getting_started.html)
+* [NVIDIA Modulus Getting Started](https://docs.nvidia.com/deeplearning/modulus/getting-started/index.html)
 
 ### Passer en production
 Une fois votre script mis au point, vous pouvez le lancer en production en mettant dans votre script sbatch les commandes suivantes. Dans cet exemple les ressources réservées sont proches de celle de la session de Notebook Jupyter :
@@ -180,6 +182,29 @@ apptainer exec --env "PYTHONUSERBASE=${HOME}/myenv3" --bind /tmpdir,/work --nv /
 ```
 
 </TabItem>
+<TabItem label="Conteneur modulus" value="modulus" >
+
+```bash
+#!/bin/bash
+#SBATCH -N 1
+#SBAT<CH -n 40
+#SBATCH --gres=gpu:1
+#SBATCH -p shared
+#SBATCH --ntasks-per-node=40
+#SBATCH --time=00:10:00
+
+module purge
+
+apptainer exec --bind /tmpdir,/work --nv /work/conteneurs/sessions-interactives/modulus-24.04-calmip-si.sif /usr/local/bin/proxychains.sh python monscript.py
+```
+
+Et si vous aviez lancé le notebook avec l'option "--userbase" (Exemple : `runJupyterSession.sh --container rapids --userbase "${HOME}/myenv3"`), alors vous devrez ajouter `--env "PYTHONUSERBASE=${HOME}/myenv3"` à la commande de lancement apptainer :
+
+```bash
+apptainer exec --env "PYTHONUSERBASE=${HOME}/myenv3" --bind /tmpdir,/work --nv /work/conteneurs/sessions-interactives/modulus-24.04-calmip-si.sif-si.sif /usr/local/bin/proxychains.sh python monscript.py
+```
+
+</TabItem>
 </Tabs>
 
 Voici quelques liens pour avoir de l'information supplémentaire :
@@ -187,6 +212,7 @@ Voici quelques liens pour avoir de l'information supplémentaire :
   * Sur l'[utilisation de la bibliothèque Pytorch](./pytorch.md) sur Turpan
   * Sur l'[utilisation de la bibliothèque TensorFlow](./tensorflow.md) sur Turpan
   * Sur l'[utilisation de la bibliothèque Scikit-learn](./scikit-learn.md) sur Turpan
+  * Sur l'[utilisation de la bibliothèque modulus](./modulus.md) sur Turpan
 
 ## Comment arrêter une session interactive de notebook jupyter
 Vous pouvez arrêter la session interactive de notebook jupyter de 2 façon :
