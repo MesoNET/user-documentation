@@ -138,7 +138,7 @@ Pour ajouter une clé, cliquer sur le bouton "Ajouter une clé" puis renseignez 
 
 Cliquez enfin sur le bouton "Ajouter" pour finaliser l'ajout de la clé dans votre trousseau.
 
-## Associé sa clé ssh à un compte dans un projet
+## Associer sa clé ssh à un compte dans un projet
 
 Une fois sa clé ssh ajoutée dans le trousseau, vous pouvez l'associer à un compte en revenant sur la [page d'accueil](https://acces.mesonet.fr/gramc-meso/projet/accueil). Sur cette page, vous pouvez voir la liste des projets sur lesquels vous avez des comptes sur les machines. 
 
