@@ -16,7 +16,7 @@ Une clé ssh est un ensemble de deux fichiers, permettant d'établir des clés d
 
 En conséquence, la clé privée doit être protégée le mieux possible, et en particulier vous devrez la protéger par un mot de passe (en fait une "passphrase"), afin que si vous vous la faites voler elle ne soit pas utilisable par quelqu'un d'autre que vous.
 
-## Générer sa clé SSH
+## Générer sa clé SSH  {#gen-sshkey}
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -123,3 +123,37 @@ ssh-keygen -t rsa -b 3072 -f .ssh/turpan
 ```
   </TabItem>
 </Tabs>
+
+## Déposer sa clé ssh sur le portail
+Pour déposer votre clé ssh, il faut se connecter, sur le portail MesoNET : https://acces.mesonet.fr. Cliquez sur le bouton **connexion** en haut à droite, et identifiez vous de la même façon que lors de la création de votre compte, typiquement via eduGAIN.
+
+Une fois authentifié, cliquez sur le trousseau de clé en haut à gauche (à coté de votre nom). Cela ouvre la page de gestion des clés SSH.
+
+![Capture d'écran du formulaire de gestion des clés SSH](/img/portail-gestion-des-cles-ssh.png)
+
+Pour ajouter une clé, cliquer sur le bouton "Ajouter une clé" puis renseignez les chams suivants :
+
+* **Nom de la clé**: une chaine de caractère permettant d'identifier la clé de manière unique
+* **Votre clé publique ssh**: La chaine de caractère correspondant à votre clé ssh publique (qui est le contenu du fichier .pub créé lors de la [génération de la clé ssh](#gen-sshkey))
+
+Cliquez enfin sur le bouton "Ajouter" pour finaliser l'ajout de la clé dans votre trousseau.
+
+## Associé sa clé ssh à un compte dans un projet
+
+Une fois sa clé ssh ajoutée dans le trousseau, vous pouvez l'associer à un compte en revenant sur la [page d'accueil](https://acces.mesonet.fr/gramc-meso/projet/accueil). Sur cette page, vous pouvez voir la liste des projets sur lesquels vous avez des comptes sur les machines. 
+
+Les comptes qui n'ont pas de clé SSH associés sont signalés par un pictogramme : ![pictogramme attention clé ssh manquante](/img/portail-associer-une-cle-ssh-pictogramme.png)
+
+Pour associer une clé ssh de votre trousseau à un compte, il faut cliquer sur la clé a coté du nom du compte.
+
+![Liste des projets et comptes](/img/portail-liste-des-projets-et-comptes.png)
+
+Cela ouvre l'écran permettant d'associer une clé ssh de son trousseau à ce compte.
+
+![Liste des projets et comptes](/img/portail-associer-une-cle-ssh.png)
+
+Pour associer la clé, il faut lire et accepter les conditions générales d'utilisation de la machine (CGU), sélectionner la clé à associer puis cliquer sur le bouton "Modifier".
+
+Une fois la clé associée, vous devez patienter que la clé soit déployée sur la machine. Lorsque la clé est déployée, le pictogramme ![pictogramme attention clé ssh manquante](/img/portail-associer-une-cle-ssh-pictogramme.png) disparaît.
+
+![Liste des projets et comptes](/img/portail-liste-des-projets-et-comptes-cle-deployee.png)
