@@ -14,7 +14,7 @@ Pour demander un compte MesoNET, faites pointer votre navigateur sur l'URL: http
 1. Si vous le pouvez, **connectez-vous avec vos identifiants institutionnels** (CNRS, université, institutions de recherche étrangères ,etc.) en cliquant sur le **bouton EduGAIN**. Si vous n'avez pas d'identifiants institutionnels (entreprises, ...) et seulement dans ce cas, ouvrez un compte local. Pour cela, visitez l'URL https://iam.mesonet.fr/start-registration pour vous créer un compte.
 2. Dans tous les cas, vous serez redirigés vers l'écran suivant :
 
-![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/portail_register.png)
+![Capture d'écran du formulaire d'enregistrement dans le SSO Mesonet](/img/portail_register.png)
 
 - Vérifiez et corrigez si nécessaire votre adresse mail, votre prénom et nom
 - Choisissez-vous un Username:
