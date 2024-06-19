@@ -51,7 +51,7 @@ Il n'est pas possible de lancer un job avec le projet *default*
 
 - **Nombre de noeuds demandés** : Le paramètre `-N n` vous permettra de réserver N noeuds (par défaut 1)
 - **Nombre de cpu par noeud**: Le paramètre `--cpu=n` ou `-c n` vous permettra de réserver n CPUs (par défaut 1)
-- **Nombre de GPU par noeud**: Le paramètre `gres:gpu=n` ou `-G n` vous permettra de réserver n GPUs (par défaut 0)
+- **Nombre de GPU par noeud**: Le paramètre `--gpus=n` ou `-G n` vous permettra de réserver n GPUs (par défaut 0)
 
 ### Exemple 1 : Soumettre un script simple
 
