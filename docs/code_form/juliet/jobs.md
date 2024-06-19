@@ -35,7 +35,8 @@ Certains paramètres doivent être fournis afin de permettre le lancement de vot
 
 - **Temps d'allocation**, le paramètre `--time=HH:MM:SS` vous permet d'avoir des ressources allouées pendant HH heures MM minutes et SS secondes.
 - **Projet**, le paramètre `--account=m2xxxx` vous permet de renseigner de quel projet les heures doivent être décomptées
-    Pour savoir les projets auxquels vous êtes associé, vous pouvez utiliser la commande 
+    Pour savoir les projets auxquels vous êtes associé, vous pouvez utiliser la commande
+
 ```
 sacctmgr --parsable2 show association where user=$USER format=account
 ```
@@ -49,9 +50,11 @@ Il n'est pas possible de lancer un job avec le projet *default*
 
 ### Paramètres optionnels
 
-- **Nombre de noeuds demandés** : Le paramètre `-N n` vous permettra de réserver N noeuds (par défaut 1)
-- **Nombre de cpu par noeud**: Le paramètre `--cpu=n` ou `-c n` vous permettra de réserver n CPUs (par défaut 1)
-- **Nombre de GPU par noeud**: Le paramètre `--gpus=n` ou `-G n` vous permettra de réserver n GPUs (par défaut 0)
+- **Nombre de noeuds demandés** : Le paramètre `--nodes=n` vous permettra de réserver N noeuds pour le job entier (par défaut 1)
+- **Nombre de cpu par noeud**: Le paramètre `--cpu_per_task=n` vous permettra de réserver n CPUs par tâche (par défaut 1)
+- **Nombre de GPU par noeud**: Le paramètre `--gpus=n` vous permettra de réserver n GPUs pour le job entier (par défaut 0)
+- **Quantité de mémoire demandée** Le paramètre `--mem=kG` vous permettra d'allouer k Go de RAM pour le job entier (par défaut n\_cpu Go avec n\_cpu le nombre de cpu alloués pour le job entier)
+
 
 ### Exemple 1 : Soumettre un script simple
 
