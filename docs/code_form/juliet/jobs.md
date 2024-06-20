@@ -38,7 +38,7 @@ Certains paramètres doivent être fournis afin de permettre le lancement de vot
     Pour savoir les projets auxquels vous êtes associé, vous pouvez utiliser la commande
 
 ```
-sacctmgr --parsable2 show association where user=$USER format=account
+sacctmgr --noheader --parsable2 show association where user=$USER format=account
 ```
 
 :::caution
