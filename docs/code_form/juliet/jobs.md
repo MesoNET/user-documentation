@@ -29,6 +29,33 @@ Slurm (Simple Linux Utility for Resource Management) est un puissant système de
 
 ## 2. Soumission de travaux
 
+### Paramètres requis
+
+Certains paramètres doivent être fournis afin de permettre le lancement de votre job. Ils peuvent être fournis dans le script ou en paramètre de sbatch.
+
+- **Temps d'allocation**, le paramètre `--time=HH:MM:SS` vous permet d'avoir des ressources allouées pendant HH heures MM minutes et SS secondes.
+- **Projet**, le paramètre `--account=m2xxxx` vous permet de renseigner de quel projet les heures doivent être décomptées
+    Pour savoir les projets auxquels vous êtes associé, vous pouvez utiliser la commande
+
+```
+sacctmgr --parsable2 show association where user=$USER format=account
+```
+
+:::caution
+
+Il n'est pas possible de lancer un job avec le projet *default*
+
+:::
+
+
+### Paramètres optionnels
+
+- **Nombre de noeuds demandés** : Le paramètre `--nodes=n` vous permettra de réserver N noeuds pour le job entier (par défaut 1)
+- **Nombre de cpu par noeud**: Le paramètre `--cpu_per_task=n` vous permettra de réserver n CPUs par tâche (par défaut 1)
+- **Nombre de GPU par noeud**: Le paramètre `--gpus=n` vous permettra de réserver n GPUs pour le job entier (par défaut 0)
+- **Quantité de mémoire demandée** Le paramètre `--mem=kG` vous permettra d'allouer k Go de RAM pour le job entier (par défaut n\_cpu Go avec n\_cpu le nombre de cpu alloués pour le job entier)
+
+
 ### Exemple 1 : Soumettre un script simple
 
     sbatch mon_script.sh
@@ -40,6 +67,35 @@ Cette commande soumet le script `mon_script.sh` pour exécution. Assurez-vous qu
     sbatch --partition=mesonet --nodes=2 --ntasks-per-node=4 mon_script.sh
 
 Cette commande alloue le travail à la partition "mesonet" sur 2 nœuds, avec 4 tâches par nœud. Assurez-vous d'ajuster les valeurs selon vos besoins. 
+
+### Exemples de scripts sbatch
+Exemple de script shell utilisant un nœud complet : 
+
+```Shell
+#!/bin/bash
+#SBATCH -p mesonet 
+#SBATCH -N 1
+#SBATCH -c 224
+#SBATCH --gres=gpu:8 
+#SBATCH --time=1:00:00
+#SBATCH --mem=0
+
+~/miniconda3/envs/h2ogpt/bin/python generate.py --share=False --gradio_offline_level=1 --base_model=h2oai/h2ogpt-4096-llama2-70b-chat --use_gpu_id=False
+```
+
+Exemple de script shell utilisant un seul GPU : 
+
+```Shell
+#!/bin/bash
+#SBATCH -p mesonet 
+#SBATCH -N 1
+#SBATCH -c 28
+#SBATCH --gres=gpu:1 
+#SBATCH --time=1:00:00
+#SBATCH --mem=256G
+
+~/miniconda3/envs/h2ogpt/bin/python generate.py --share=False --gradio_offline_level=1 --base_model=h2oai/h2ogpt-4096-llama2-70b-chat
+```
 
 ## 3. Vérification de l'état des travaux
 
@@ -106,36 +162,7 @@ Cette commande exécute le travail sur la partition "visu" avec 1 nœud.
 Cette commande affiche des informations détaillées sur les nœuds disponibles, telles que leur nom, partition, état, nombre de tâches, mémoire, ressources, charge CPU, temps d'activité et utilisation GPU 
 
 
-## 8. Exemples de scripts sbatch
-Exemple de script shell utilisant un nœud complet : 
-
-```Shell
-#!/bin/bash
-#SBATCH -p mesonet 
-#SBATCH -N 1
-#SBATCH -c 224
-#SBATCH --gres=gpu:8 
-#SBATCH --time=1:00:00
-#SBATCH --mem=0
-
-~/miniconda3/envs/h2ogpt/bin/python generate.py --share=False --gradio_offline_level=1 --base_model=h2oai/h2ogpt-4096-llama2-70b-chat --use_gpu_id=False
-```
-
-Exemple de script shell utilisant un seul GPU : 
-
-```Shell
-#!/bin/bash
-#SBATCH -p mesonet 
-#SBATCH -N 1
-#SBATCH -c 28
-#SBATCH --gres=gpu:1 
-#SBATCH --time=1:00:00
-#SBATCH --mem=256G
-
-~/miniconda3/envs/h2ogpt/bin/python generate.py --share=False --gradio_offline_level=1 --base_model=h2oai/h2ogpt-4096-llama2-70b-chat
-```
- 
-## 9. Ressources supplémentaires
+## 8. Ressources supplémentaires
 
 https://slurm.schedmd.com/documentation.html
 
