@@ -27,7 +27,7 @@ Vous pouvez utiliser le conteneur dans un script sbatch. Dans l'exemple ci-desso
 >#SBATCH --time=0:15:00
 >#SBATCH --gres=gpu:1
 >
->apptainer exec --bind /tmpdir,/work --nv /work/conteneurs/sessions-interactives/modulus-24.04-calmip-si.sif python mon_script.py
+>apptainer exec --bind /tmpdir,/work --nv /work/conteneurs/sessions-interactives/modulus-24.01-calmip-si.sif python mon_script.py
 >```
 
 </TabItem>
@@ -36,7 +36,7 @@ Vous pouvez utiliser le conteneur dans un script sbatch. Dans l'exemple ci-desso
 Vous pouvez utiliser le conteneur interactif (pour tester ou installer d'autres outils ou configurer votre environnement). Dans l'exemple ci-dessous avec une demande de ressources de 1 cœur CPU et 1 GPU :
 
 ```bash
-srun -p shared -n1 --gres=gpu:1 --pty apptainer shell --nv /work/conteneurs/sessions-interactives/modulus-24.04-calmip-si.sif
+srun -p shared -n1 --gres=gpu:1 --pty apptainer shell --nv /work/conteneurs/sessions-interactives/modulus-24.01-calmip-si.sif
 Apptainer> python
 Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
@@ -84,7 +84,7 @@ L'utilisation de ce conteneur est incompatible avec l'utilisation des environnem
 Néanmoins, vous pouvez ajouter des modules avec pip depuis le conteneur en se positionnant sur une frontale de connexion pour  l'installation (les noeuds de calcul n'ont pas d'accès à internet) :
 
 ```bash
-apptainer shell --nv /work/conteneurs/sessions-interactives/modulus-24.04-calmip-si.sif
+apptainer shell --nv /work/conteneurs/sessions-interactives/modulus-24.01-calmip-si.sif
 ```
 
 Puis, vous pouvez installer les modules souhaités avec obligatoirement l'option `--user` afin de les installer dans votre home :
