@@ -55,7 +55,7 @@ Exemple script shared, 1 nœud, 40 processeurs,  le temps d'exécution moins de 
 >```
 >#!/bin/bash
 >#SBATCH -N 1
->#SBAT<CH -n 40
+>#SBATCH -n 40
 >#SBATCH --gres=gpu:1
 >#SBATCH -p shared
 >#SBATCH --ntasks-per-node=40
