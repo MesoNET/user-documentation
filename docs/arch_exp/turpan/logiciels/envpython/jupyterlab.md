@@ -195,13 +195,13 @@ apptainer exec --env "PYTHONUSERBASE=${HOME}/myenv3" --bind /tmpdir,/work --nv /
 
 module purge
 
-apptainer exec --bind /tmpdir,/work --nv /work/conteneurs/sessions-interactives/modulus-24.04-calmip-si.sif /usr/local/bin/proxychains.sh python monscript.py
+apptainer exec --bind /tmpdir,/work --nv /work/conteneurs/sessions-interactives/modulus-24.01-calmip-si.sif /usr/local/bin/proxychains.sh python monscript.py
 ```
 
 Et si vous aviez lancé le notebook avec l'option "--userbase" (Exemple : `runJupyterSession.sh --container rapids --userbase "${HOME}/myenv3"`), alors vous devrez ajouter `--env "PYTHONUSERBASE=${HOME}/myenv3"` à la commande de lancement apptainer :
 
 ```bash
-apptainer exec --env "PYTHONUSERBASE=${HOME}/myenv3" --bind /tmpdir,/work --nv /work/conteneurs/sessions-interactives/modulus-24.04-calmip-si.sif-si.sif /usr/local/bin/proxychains.sh python monscript.py
+apptainer exec --env "PYTHONUSERBASE=${HOME}/myenv3" --bind /tmpdir,/work --nv /work/conteneurs/sessions-interactives/modulus-24.01-calmip-si.sif-si.sif /usr/local/bin/proxychains.sh python monscript.py
 ```
 
 </TabItem>
