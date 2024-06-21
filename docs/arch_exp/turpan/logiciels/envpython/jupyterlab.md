@@ -118,7 +118,7 @@ Une fois votre script mis au point, vous pouvez le lancer en production en metta
 ```bash
 #!/bin/bash
 #SBATCH -N 1
-#SBAT<CH -n 40
+#SBATCH -n 40
 #SBATCH --gres=gpu:1
 #SBATCH -p shared
 #SBATCH --ntasks-per-node=40
@@ -141,7 +141,7 @@ apptainer exec --env "PYTHONUSERBASE=${HOME}/myenv3" --bind /tmpdir,/work --nv /
 ```bash
 #!/bin/bash
 #SBATCH -N 1
-#SBAT<CH -n 40
+#SBATCH -n 40
 #SBATCH --gres=gpu:1
 #SBATCH -p shared
 #SBATCH --ntasks-per-node=40
@@ -164,7 +164,7 @@ apptainer exec --env "PYTHONUSERBASE=${HOME}/myenv3" --bind /tmpdir,/work --nv /
 ```bash
 #!/bin/bash
 #SBATCH -N 1
-#SBAT<CH -n 40
+#SBATCH -n 40
 #SBATCH --gres=gpu:1
 #SBATCH -p shared
 #SBATCH --ntasks-per-node=40
@@ -187,7 +187,7 @@ apptainer exec --env "PYTHONUSERBASE=${HOME}/myenv3" --bind /tmpdir,/work --nv /
 ```bash
 #!/bin/bash
 #SBATCH -N 1
-#SBAT<CH -n 40
+#SBATCH -n 40
 #SBATCH --gres=gpu:1
 #SBATCH -p shared
 #SBATCH --ntasks-per-node=40
