@@ -1,4 +1,4 @@
-# Des ressources de calcul pour vos formation.
+# Pour les formations
 
 MesoNET propose des ressources de calcul pour les formations en HPC et IA.
 
