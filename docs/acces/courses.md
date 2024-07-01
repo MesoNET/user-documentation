@@ -20,8 +20,8 @@ Il conviendra d'identifier clairement les besoins techniques, logiciels, nombre 
 
 ## 2 - Instruction de la demande 
 Une analyse de la demande sera faite, en cohérence avec les aspects techniques, scientifiques et quantitatifs
-	- des compléments pourront être demandés par email si besoin
-	- la validation des projets est fortement dépendante de la disponilité des ressources
+- des compléments pourront être demandés par email si besoin
+- la validation des projets est fortement dépendante de la disponilité des ressources
 
 ## 3 - Création des accès
 Une fois la demande acceptée, le porteur sera contacté en vue de la création des comptes étudiants sur la ou les machines cibles.
