@@ -74,6 +74,24 @@ Comme les 2 messages l'indiquent, ne fermez pas la fenêtre de demande de sessio
 
 Enfin, vous pouvez utiliser Tensorboard en utilisant **le navigateur de votre poste de travail** et copier/coller l'URL fournie par le script "http://localhost:6006".
 
+:::warning Erreur "Permission denied (publickey)"
+Si vous obtenez l'erreur suivante lors de l'inititailisation du tunnel :
+>```
+>uyyyyy@turpanlogin.calmip.univ-toulouse.fr: Permission denied (publickey).
+>```
+
+Vérifier votre configuration ssh. La configuration associée à clé ssh dans votre fichier .ssh/config, doit avoir "turpanlogin.calmip.univ-toulouse.fr" sur la ligne "Host" 
+>```
+># La configuration suivante est indispensable pour utiliser les outils
+># runVisuSession, runJupyterSession, runTensorboardSession sur turpan
+>Host turpan turpanlogin turpanlogin.calmip.univ-toulouse.fr
+>   Hostname turpanlogin.calmip.univ-toulouse.fr
+>   IdentityFile ~/.ssh/votre_cle_ssh_privee
+>   IdentitiesOnly=yes
+>   User votre_nom_d_utilisateur
+>```
+:::
+
 ## Pour tester
 Vous pouvez générer des données en suivant le tutoriel "[Premiers pas avec TensorBoard](https://www.tensorflow.org/tensorboard/get_started)", dans [une session interractive de notebook jupyter](./jupyterlab.md) par exemple, puis visualiser les données en utilisant la commande suivant pour pointer vers le dataset généré :
 
