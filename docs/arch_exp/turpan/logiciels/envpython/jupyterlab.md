@@ -70,7 +70,6 @@ Patientez là encore quelques secondes et vous devriez obtenir le message suivan
 >| CAUTION : DO NOT CLOSE this terminal !
 >#===========================================================================
 >```
-
 :::warning DO NOT CLOSE TERMINALS
 Comme les 2 messages l'indiquent, ne fermez pas la fenêtre de demande de session interactive sur Turpan, ni celle du tunnel ssh sur votre poste de travail.
 :::
@@ -78,6 +77,24 @@ Comme les 2 messages l'indiquent, ne fermez pas la fenêtre de demande de sessio
 Enfin, vous pouvez utiliser votre notebook jupyter :
 * En utilisant **le navigateur de votre poste de travail** et copier/coller l'URL fournie par le script "http://localhost:8888/?token=..."
 * En utilisant vscode, et copier/coller l'URL fournie par le script "http://localhost:8888/?token=..." en suivant la [documentation officielle de vscode](https://code.visualstudio.com/docs/datascience/jupyter-kernel-management#_existing-jupyter-server)
+
+:::warning Erreur "Permission denied (publickey)"
+Si vous obtenez l'erreur suivante lors de l'inititailisation du tunnel :
+>```
+>uyyyyy@turpanlogin.calmip.univ-toulouse.fr: Permission denied (publickey).
+>```
+
+Vérifier votre configuration ssh. La configuration associée à clé ssh dans votre fichier .ssh/config, doit avoir "turpanlogin.calmip.univ-toulouse.fr" sur la ligne "Host" 
+>```
+># La configuration suivante est indispensable pour utiliser les outils
+># runVisuSession, runJupyterSession, runTensorboardSession sur turpan
+>Host turpan turpanlogin turpanlogin.calmip.univ-toulouse.fr
+>   Hostname turpanlogin.calmip.univ-toulouse.fr
+>   IdentityFile ~/.ssh/votre_cle_ssh_privee
+>   IdentitiesOnly=yes
+>   User votre_nom_d_utilisateur
+>```
+:::
 
 ## Utiliser les conteneurs nvidia (pytorch, tensorflow, rapids et modulus)
 
