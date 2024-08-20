@@ -20,12 +20,15 @@ Ce qui suit suppose que vous avez généré et déployé une clé ssh sur votre 
 Écrivez un fichier appelé `.ssh/config` (ou complétez-le s'il existe déjà !) de la manière suivante:
 
 >```shell
->Host turpanlogin
+># La configuration suivante est indispensable pour utiliser les outils
+># runVisuSession, runJupyterSession, runTensorboardSession sur turpan
+>Host turpan turpanlogin turpanlogin.calmip.univ-toulouse.fr
 >   Hostname turpanlogin.calmip.univ-toulouse.fr
 >   IdentityFile ~/.ssh/votre_cle_ssh_privee
 >   IdentitiesOnly=yes
 >   User votre_nom_d_utilisateur
 >
+># Configuration par frontale
 >Host turpanlogin1
 >   Hostname turpanlogin1.calmip.univ-toulouse.fr
 >   IdentityFile ~/.ssh/votre_cle_ssh_privee
