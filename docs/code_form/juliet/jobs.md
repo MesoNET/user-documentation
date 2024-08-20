@@ -79,6 +79,7 @@ Exemple de script shell utilisant un nœud complet :
 #SBATCH --gres=gpu:8 
 #SBATCH --time=1:00:00
 #SBATCH --mem=0
+#SBATCH --account=m2xxxx
 
 ~/miniconda3/envs/h2ogpt/bin/python generate.py --share=False --gradio_offline_level=1 --base_model=h2oai/h2ogpt-4096-llama2-70b-chat --use_gpu_id=False
 ```
@@ -93,6 +94,7 @@ Exemple de script shell utilisant un seul GPU :
 #SBATCH --gres=gpu:1 
 #SBATCH --time=1:00:00
 #SBATCH --mem=256G
+#SBATCH --account=m2xxxx
 
 ~/miniconda3/envs/h2ogpt/bin/python generate.py --share=False --gradio_offline_level=1 --base_model=h2oai/h2ogpt-4096-llama2-70b-chat
 ```
@@ -130,13 +132,13 @@ Cette commande modifie la priorité du travail avec l'ID spécifié. La priorit�
 
 ### Exemple 7 : Spécifier les ressources avec sbatch
 
-    sbatch --partition=compute --nodes=1 --cpus-per-task=8 --mem=16G mon_script.sh
+    sbatch --partition=compute --nodes=1 --cpus-per-task=8 --mem=16G mon_script.sh --time:HH:MM:SS --account=m2xxxx
 
 Cette commande spécifie les ressources pour le travail, y compris la partition, le nombre de nœuds, le nombre de tâches par nœud et le nombre de CPU par tâche.
 
 ### Exemple 8 : Exécuter des tâches interactives avec srun
 
-    srun --pty -c 4 /bin/bash
+    srun --time:HH:MM:SS --account=m2xxxx --pty -c 4 /bin/bash
 
 Cette commande lance un shell interactif avec 4 CPU alloués. Utile pour les tâches interactives ou les tests.
 
@@ -144,13 +146,13 @@ Cette commande lance un shell interactif avec 4 CPU alloués. Utile pour les tâ
 
 ### Exemple 9 : Utiliser une réservation de nœuds
 
-    srun --reservation=ma_reservation --nodes=2 mon_script.sh
+    srun --reservation=ma_reservation --nodes=2 mon_script.sh --time:HH:MM:SS --account=m2xxxx
 
 Cette commande exécute le travail sur une réservation de 2 nœuds spécifiée avec l'option `--reservation`.
 
 ### Exemple 10 : Utiliser une partition spécifique avec srun
 
-    srun --partition=visu --nodes=1 mon_script.sh
+    srun --partition=visu --nodes=1 --time:HH:MM:SS --account=m2xxxx mon_script.sh 
 
 Cette commande exécute le travail sur la partition "visu" avec 1 nœud. 
 
