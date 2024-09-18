@@ -77,7 +77,7 @@ Maintenant que vous avez votre compte MesoNET, vous êtes en mesure de demander 
 
 1. Pour cela, rendez-vous sur https://acces.mesonet.fr. Cliquez sur le bouton **connexion** en haut à droite, et identifiez vous de la même façon que lors de la création de votre compte, typiquement via eduGAIN, enfin complétez votre profil.
 
-2. Cliquez alors sur le bouton **Demandeur** pour arriver à l'écran de vos projets : si vous êtes déclaré comme collaborateur d'un projet, vous le verrez apparaître. Si vous êtes reconnu comme chercheur ou ingénieur permanent, vous pourrez aussi démarrer un nouveau projet et inviter des collègues à y collaborer. Pour cela, cliquez sur le bouton bouton **nouveau projet**
+2. Cliquez alors sur le bouton **Demandeur** pour arriver à l'écran de vos projets : si vous êtes déclaré comme collaborateur d'un projet, vous le verrez apparaître. Si vous êtes reconnu comme chercheur ou ingénieur permanent, vous pourrez aussi démarrer un nouveau projet et inviter des collègues à y collaborer. Pour cela, cliquez sur le bouton **nouveau projet**
 
 ### Répondre à une invitation
 
@@ -90,7 +90,7 @@ Vous avez été invité-e par le responsable de projet Alice User sur la platefo
 d'attribution de ressources de MesoNET.
 
 Si vous n'avez pas encore de compte MesoNET,
-nous vous invitons à vous créer un compte en suivant les instructions suivantes: https://www.calmip.univ-toulouse.fr/demander-un-compte-mesonet
+nous vous invitons à vous créer un compte en suivant les instructions suivantes: https://www.mesonet.fr/documentation/user-documentation/acces/portail/#demander-compte
 
 Ensuite, connectez-vous à
  https://acces.mesonet.fr/gramc-meso/xxxxxxyyyyyyyyzzzzzzzzzzzzzzzz/repinvit et renseignez complètement votre profil.
