@@ -104,7 +104,7 @@ font la même chose, mais `module a` est inconnu.
 
 ### ml
 
-`ml` est un raccourci astucieux pour la commande `module`.
+`ml` est un raccourci pratique pour la commande `module`.
 
 - Sans argument `ml` correspond à `module list`
 - Suivi d'un nom de module, `ml` correspond à `module load`, c'est-à-dire `ml gcc` charge le module gcc (la version défini comme défaut).
