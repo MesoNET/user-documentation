@@ -1,6 +1,7 @@
 ---
 title: "Utilisation avancée"
 sidebar_position: 3
+draft: true
 ---
 # Utilisation avancée de slurm
 
