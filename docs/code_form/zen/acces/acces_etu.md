@@ -54,7 +54,7 @@ Suivez attentivement les étapes de [la procédure générale de création de co
 
 Après validation de votre compte MesoNET, suivez le second lien et complétez votre profil.
 
-- Laboratoire : Autre
+- Laboratoire : Zen - Formation Zen
 - Statut : Autre
 - Établissement : Votre établissement (en cas de doute, demandez à votre responsable de formation)
 
