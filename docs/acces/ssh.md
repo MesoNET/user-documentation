@@ -124,7 +124,7 @@ ssh-keygen -t rsa -b 3072 -f .ssh/turpan
   </TabItem>
 </Tabs>
 
-## Déposer sa clé ssh sur le portail
+## Déposer sa clé ssh sur le portail {#deposer-sshkey}
 Pour déposer votre clé ssh, il faut se connecter, sur le portail MesoNET : https://acces.mesonet.fr. Cliquez sur le bouton **connexion** en haut à droite, et identifiez vous de la même façon que lors de la création de votre compte, typiquement via eduGAIN.
 
 Une fois authentifié, cliquez sur le trousseau de clé en haut à gauche (à coté de votre nom). Cela ouvre la page de gestion des clés SSH.
@@ -140,7 +140,7 @@ Cliquez enfin sur le bouton "Ajouter" pour finaliser l'ajout de la clé dans vot
 
 ## Associer sa clé ssh à un compte dans un projet
 
-Une fois sa clé ssh ajoutée dans le trousseau, vous pouvez l'associer à un compte en revenant sur la [page d'accueil](https://acces.mesonet.fr/gramc-meso/projet/accueil). Sur cette page, vous pouvez voir la liste des projets sur lesquels vous avez des comptes sur les machines. 
+Une fois sa clé ssh ajoutée dans le trousseau, vous pouvez l'associer à un compte en revenant sur la [page d'accueil](https://acces.mesonet.fr/gramc-meso/projet/accueil). Sur cette page, vous pouvez voir la liste des projets sur lesquels vous avez des comptes sur les machines.
 
 Les comptes qui n'ont pas de clé SSH associés sont signalés par un pictogramme : ![pictogramme attention clé ssh manquante](/img/portail-associer-une-cle-ssh-pictogramme.png)
 
