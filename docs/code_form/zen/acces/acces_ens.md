@@ -1,7 +1,6 @@
 ---
 title: "Pour les responsables de formation"
 sidebar_position: 2
-draft: true
 ---
 
 # Demande d'acces Zen - Enseignants

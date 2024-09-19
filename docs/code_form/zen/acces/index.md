@@ -1,7 +1,6 @@
 ---
 title: "Demande d'accès"
 sidebar_position: 2
-draft: true
 ---
 
 Pour obtenir un accès à la machine code-formation Zen, veuillez lire attentivement ces pages:

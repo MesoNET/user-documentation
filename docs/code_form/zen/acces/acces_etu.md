@@ -1,7 +1,6 @@
 ---
 title: "Pour les participants"
 sidebar_position: 3
-draft: true
 ---
 
 # Demande d'acces Zen - Étudiants {#compte-etudiant}

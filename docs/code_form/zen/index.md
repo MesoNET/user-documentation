@@ -1,6 +1,5 @@
 ---
 title: "La machine code-formation Zen"
-draft: true
 ---
 Le cluster CPU AMD "Zen" fait partie de la machine MesoNET code-formation.
 L'objectif de Zen est donc d'offrir un équipement de recherche de pointe pour:
@@ -11,8 +10,6 @@ L'objectif de Zen est donc d'offrir un équipement de recherche de pointe pour:
 [Description matérielle du cluster Zen](/code_form/zen/description)
 
 [Demande d'acces et gestion des comptes](/code_form/zen/acces)
-
-
 
 
 :::info Faire appel au support
