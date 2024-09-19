@@ -1,6 +1,6 @@
 ---
 title: Lancer un calcul
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 Pour effectuer des calculs sur Zen il faut obligatoirement utiliser le gestionnaire de travaux `slurm`.
@@ -11,7 +11,7 @@ Pour rappel, il est strictement interdit de lancer des calculs directement sur l
 
 :::
 
-Une introduction générale à `slurm` est disponible [ici](HOWTO/slurm.md).
+Une introduction générale à `slurm` est disponible [ici](/HOWTO/slurm).
 Cette page se concentre sur les particularités du cluster Zen.
 
 # Lancer un job sur Zen

@@ -1,6 +1,6 @@
 ---
 title: Environnement logiciel
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 Le système d'exploitation installé sur tous les nœuds est Rocky Linux 8.7.
