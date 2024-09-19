@@ -79,7 +79,7 @@ Maintenant que vous avez votre compte MesoNET, vous êtes en mesure de demander 
 
 2. Cliquez alors sur le bouton **Demandeur** pour arriver à l'écran de vos projets : si vous êtes déclaré comme collaborateur d'un projet, vous le verrez apparaître. Si vous êtes reconnu comme chercheur ou ingénieur permanent, vous pourrez aussi démarrer un nouveau projet et inviter des collègues à y collaborer. Pour cela, cliquez sur le bouton **nouveau projet**
 
-### Répondre à une invitation {#reply-invit}
+### Répondre à une invitation
 
 Peut-être avez-vous été "invité à MesoNET" par un collègue, responsable de projet. Cela signifie que vous avez reçu un mail tel que celui-ci :
 
