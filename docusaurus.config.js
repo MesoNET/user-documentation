@@ -9,7 +9,6 @@ const config = {
   title: 'Documentation de MesoNET',
   tagline: 'MesoNET in a nutshell',
   favicon: 'img/faviconM.ico',
-  staticDirectories: ['static/img','static'],
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',
