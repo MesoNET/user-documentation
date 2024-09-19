@@ -52,6 +52,6 @@ Il est possible d'avoir plusieurs identifiants
 
 Dans le [portail](https://acces.mesonet.fr) la liste "Vos projets" montre vos identifiants et la clé ssh associée.
 
-![screenshot mesonet usernames](/img/mesonet-usernames.png)
+<!-- ![screenshot mesonet usernames](/img/mesonet-usernames.png)
 
-Dans cet example, mon identifiant pour le projet M24072 sur Zen est `m24072-90`, la clé associé a été nommé `test-zen`.
+Dans cet example, mon identifiant pour le projet M24072 sur Zen est `m24072-90`, la clé associé a été nommé `test-zen`. -->
