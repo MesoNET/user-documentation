@@ -25,6 +25,12 @@ Pour demander un compte MesoNET, faites pointer votre navigateur sur l'URL: http
 
 :::note
 
+En cas de difficulté, un réseau de proximité de référents MésoNET peut vous accompagner : https://www.mesonet.fr/30_referents-de-proximites.html
+
+:::
+
+:::note
+
 Durant tout ce processus, Il peut arriver que vous soyez confronté à une erreur comme ci-dessous: dans ce cas, veuillez arrêter puis redémarrer votre navigateur.
 
 ![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/portail_err.png)
