@@ -46,3 +46,14 @@ Dans la section `Personnes participant au projet` cochez pour chaque collaborate
 # Demander une extension
 
 Pour demander une extension, une fois que le projet est validé, cliquer sur le bouton `Extension` dans les paramètres du projet.
+
+# Cycle de vie d'un projet Mesonet
+
+Le cycle de vie d'un projet Mesonet est détaillé dans les [Conditions Générales d'Attribution](https://acces.mesonet.fr/gramc-meso/Mesonet_CGA_version_1.pdf).
+
+Concernant la fin de vie des projets Mesonet, voici un certain nombre de précisions : 
+* Les accès aux ressources des projets Mesonet n'ayant pas été renouvelés au bout d'un an sont suspendus. 
+* L'état non-renouvelé dure 365 jours à compter de la date de fin du projet. Pendant cette période il vous est toujours possible de demander un renouvellement pour retrouver l'accès aux ressources.
+* Au-delà des 365 jours en état "non-renouvelé", les accès aux machines seront bloqués. **Puis, 15 jours après ce blocage, les comptes seront définitivement supprimés sans préavis**.
+
+![Le cycle de vie d'un projet mesonet en image](/img/cycle-de-vie-projet-mesonet.svg)
