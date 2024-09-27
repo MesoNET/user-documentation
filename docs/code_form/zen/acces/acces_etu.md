@@ -47,7 +47,7 @@ Suivez attentivement les étapes de [la procédure générale de création de co
 
 - Identification avec eduGAIN: Votre établissement se trouve certainement dans la liste. Tapez quelques lettres et votre école apparaîtra dans le menu déroulant (par ex. "Lill", puis sélectionner "Université de Lille"). Si vous ne trouvez pas, demandez à votre responsable de formation - a priori vous ne devez **pas créer de compte local**.
 
-- Dans le cadre "Notes", il faut obligatoirement **mentionner l'intitulé de votre formation et l'institution d'enseignement**.
+- Dans le cadre "Notes", il faut obligatoirement **mentionner l'intitulé de votre formation et votre établissement**.
 
 
 ## 3 - Compléter votre profil
