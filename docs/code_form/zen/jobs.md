@@ -28,4 +28,4 @@ dans l'en-tête du script de soumission.
 
 A des fins d'économie d'énergie, les nœuds de calcul de Zen s'arrêtent complètement au bout de 3 heures d'inactivité.
 
-Si les seuls nœuds pour satisfaire votre requête sont éteints, alors votre job se lancera seulement après environ 4 minutes, le temps nécessaire pour démarrer.
+Si les seuls nœuds pour satisfaire votre requête sont éteints, alors votre job se lancera seulement après environ 5 minutes, le temps nécessaire au serveur pour démarrer.

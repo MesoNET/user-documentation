@@ -50,7 +50,7 @@ Suivez attentivement les étapes de [la procédure générale de création de co
 - Dans le cadre "Notes", il faut obligatoirement **mentionner l'intitulé de votre formation et votre établissement**.
 
 
-## 3 - Compléter votre profil
+## 3 - Complétez votre profil
 
 Après validation de votre compte MesoNET, suivez le second lien et complétez votre profil.
 

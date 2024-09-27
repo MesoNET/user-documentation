@@ -17,7 +17,7 @@ Par exemple, le dossier `${HOME}` de l'utilisateur m24072-90 est `/home/m24072/m
 :::caution Attention
 
 L'espace de stockage sur le cluster est considéré comme temporaire. Nous ne garantissons pas la pérennité des données.
-Il est de votre responsabilité de rapatrier données et résultats de calcul vers des espaces de stockage locaux.
+Il est de votre responsabilité de rapatrier données et résultats de calcul vers des espaces de stockage locaux avant la fin du projet.
 
 :::
 
