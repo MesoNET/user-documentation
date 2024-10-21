@@ -37,6 +37,8 @@ Bien sûr, il faut
 
 Vous pouvez omettre l'option `-i` si votre clé a un nom standard (par ex. `id_rsa`,`id_ed25519`,...).
 
+Probablement vous pouvez aussi omettre l'option `-X`.
+
 Il peut être pratique de créer une entrée dans votre ficher de configuration ssh `~/.ssh/config`.
 Par exemple, en les lignes suivantes (il faut les adapter à votre cas),
 
