@@ -28,10 +28,31 @@ La création des comptes sur le cluster se fait automatiquement **toutes les 10 
 Si votre clé a été correctement associé à la machine, vous pouvez vous connecter à Zen par
 
 ```shell
-ssh -X votre_nom_d_utilisateur@zen.univ-lille.fr
+ssh -X votre_nom_d_utilisateur@zen.univ-lille.fr -i votre_cle_privee
 ```
 
-Bien sûr, il faut remplacer `votre_nom_d_utilisateur` par le nom d'utilisateur qui vous a été attribué sur Zen.
+Bien sûr, il faut
+- remplacer `votre_nom_d_utilisateur` par le nom d'utilisateur qui vous a été attribué sur Zen.
+- remplacer `votre_cle_privee` par le nom que vous avez donné à votre clé privée qui correspond à la clé publique associé à votre projet dans le portail. Par exemple `~/.ssh/id_ed25519`.
+
+Vous pouvez omettre l'option `-i` si votre clé a un nom standard (par ex. `id_rsa`,`id_ed25519`,...).
+
+Il peut être pratique de créer une entrée dans votre ficher de configuration ssh `~/.ssh/config`.
+Par exemple, en les lignes suivantes (il faut les adapter à votre cas),
+
+```shell
+Host nom-de-ma-connexion-zen
+    Hostname zen.univ-lille.fr
+    User m240NNN-NN
+    IdentityFile ~/.ssh/nom-de-ma-clé-privée
+```
+
+vous pouvez simplement vous connecter avec
+
+```shell
+ssh nom-de-ma-connexion-zen
+```
+
 
 
   </TabItem>
