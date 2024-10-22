@@ -42,7 +42,7 @@ Nous vous conseillons de créer un fichier `~/.ssh/config` (ou de le compléter 
 ```shell
 Host zenlogin
     Hostname zen.univ-lille.fr
-    User m240NNN-NN
+    User m240NN-NN
     IdentityFile ~/.ssh/nom-de-ma-clé-privée
 ```
 
