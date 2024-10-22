@@ -33,28 +33,24 @@ ssh -X votre_nom_d_utilisateur@zen.univ-lille.fr -i votre_cle_privee
 
 Bien sûr, il faut
 - remplacer `votre_nom_d_utilisateur` par le nom d'utilisateur qui vous a été attribué sur Zen.
-- remplacer `votre_cle_privee` par le nom que vous avez donné à votre clé privée qui correspond à la clé publique associé à votre projet dans le portail. Par exemple `~/.ssh/id_ed25519`.
+- remplacer `votre_cle_privee` par votre clé privée (le nom du fichier qui correspond à la clé publique associé à votre projet dans le portail). Par exemple `~/.ssh/id_ed25519` ou `~/.ssh/zen`.
 
 Vous pouvez omettre l'option `-i` si votre clé a un nom standard (par ex. `id_rsa`,`id_ed25519`,...).
 
-Probablement vous pouvez aussi omettre l'option `-X`.
-
-Il peut être pratique de créer une entrée dans votre ficher de configuration ssh `~/.ssh/config`.
-Par exemple, en les lignes suivantes (il faut les adapter à votre cas),
+Nous vous conseillons de créer un fichier `~/.ssh/config` (ou de le compléter s'il existe déjà) et d'y rajouter les lignes suivantes (il faut les adapter à votre cas!):
 
 ```shell
-Host nom-de-ma-connexion-zen
+Host zenlogin
     Hostname zen.univ-lille.fr
     User m240NNN-NN
     IdentityFile ~/.ssh/nom-de-ma-clé-privée
 ```
 
-vous pouvez simplement vous connecter avec
+Dès lors, vous pouvez simplement vous connecter sur Zen par
 
 ```shell
-ssh nom-de-ma-connexion-zen
+ssh zenlogin
 ```
-
 
 
   </TabItem>
@@ -62,7 +58,7 @@ ssh nom-de-ma-connexion-zen
 
 Sous Windows vous devez installer un client ssh.
 
-Vous pouvez utiliser MobaXterm et suivre les [indications pour Turpan](arch_exp/turpan) en les adaptant à la machine Zen
+Vous pouvez utiliser MobaXterm et suivre les [indications pour Turpan](arch_exp/turpan) en les adaptant à la machine Zen.
 
   </TabItem>
 </Tabs>
