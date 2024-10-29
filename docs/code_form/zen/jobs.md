@@ -1,25 +1,70 @@
 ---
 title: Lancer un calcul
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 Pour effectuer des calculs sur Zen il faut obligatoirement utiliser le gestionnaire de travaux `slurm`.
 
 :::caution
 
-Pour rappel, il est strictement interdit de lancer des calculs directement sur la frontale.
+Pour rappel, il est strictement interdit de lancer des calculs directement sur la frontale. Cépendant, vous pouvez y compiler vos codes et éditer des scripts.
 
 :::
 
-Une introduction générale à `slurm` est disponible [ici](HOWTO/slurm.md).
+Si vous n'êtes pas familier avec slurm il est vivement conseillé de suivre cette [introduction générale à `slurm` ici](/HOWTO/slurm).
+
 Cette page se concentre sur les particularités du cluster Zen.
 
 # Lancer un job sur Zen
 
-Zen comporte une seule partition nommée `compute`. Il faut spécifier
+Pour exécuter votre code sur les nœuds calcul il faut soumettre un script via la commande `sbatch`.
 
-```
-#SBATCH --partition=compute
+Voici un exemple minimal de script slurm:
+
+```shell
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --time=00:10:00
+
+hostname
+sleep 600
 ```
 
-dans l'en-tête du script de soumission.
+Pour créer ce script sur la frontale de Zen, vous pouvez l'éditer directement sur le nœud `login` (par ex. avec vi, vim, emacs, nano) ou bien l'éditer localement et le copier de votre machine sur Zen (par ex. avec rsync ou scp).
+
+Supposons que votre script s'appelle `job.slurm`. Vous pouvez le soumettre avec
+
+```shell
+sbatch job.slurm
+```
+
+et slurm vous repondra en donnant un identifiant unique à votre job.
+
+```shell
+Submitted batch job 56540
+```
+
+Avec la commande `squeue` vous pouvez suivre l'état de votre job et `scancel` permet de l'arrêter.
+
+Cliquez [ici](/HOWTO/slurm) pour aller plus loin avec slurm.
+
+
+# Jobs interactifs
+
+Il n'est pas possible de se connecter directement par ssh aux nœuds de calcul, même si le nœud est allumé.
+
+Vous obtenez alors le message suivant
+
+```shell
+Access denied by pam_slurm_adopt: you have no active jobs on this node
+Connection closed by 10.30.0.1 port 22
+```
+
+Par contre, vous pouvez vous connecter par ssh aux nœuds où vous avez une réservation active.
+
+
+# Démarrage des nœuds {#powersave}
+
+A des fins d'économie d'énergie, les nœuds de calcul de Zen s'arrêtent complètement au bout de 3 heures d'inactivité.
+
+Si les seuls nœuds pour satisfaire votre requête sont éteints, alors votre job se lancera seulement après environ 5 minutes, le temps nécessaire au serveur pour démarrer.

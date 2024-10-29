@@ -83,12 +83,11 @@ prepend-path    INCLUDE /share/libraries/hdf5/1.14.3/intel/2024/mpi/include
 `module help nom_module` affiche plus d'informations sur un module (si disponible).
 
 
-## Astuces
-
-### Raccourcis
+## Raccourcis
 
 Les sous-commandes de module peuvent être raccourcis, tant qu'il n'y a pas d'ambiguïté.
-Par exemple,
+
+- Par exemple,
 ```sh
 module avail
 module avai
@@ -99,12 +98,13 @@ module av
 font la même chose, mais `module a` est inconnu.
 
 
-`module lo` est `module load` et `module li` est `module list`, mais `module l` n'est pas valide.
+- `module lo` est `module load`
+- `module li` est `module list`, mais `module l` n'est pas valide.
 
 
-### ml
+### ml {#ml}
 
-`ml` est un raccourci astucieux pour la commande `module`.
+`ml` est un raccourci pratique pour la commande `module`.
 
 - Sans argument `ml` correspond à `module list`
 - Suivi d'un nom de module, `ml` correspond à `module load`, c'est-à-dire `ml gcc` charge le module gcc (la version défini comme défaut).
