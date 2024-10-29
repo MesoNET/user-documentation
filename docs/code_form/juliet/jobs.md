@@ -132,13 +132,13 @@ Cette commande modifie la priorité du travail avec l'ID spécifié. La priorit�
 
 ### Exemple 7 : Spécifier les ressources avec sbatch
 
-    sbatch --partition=compute --nodes=1 --cpus-per-task=8 --mem=16G mon_script.sh --time:HH:MM:SS --account=m2xxxx
+    sbatch --partition=compute --nodes=1 --cpus-per-task=8 --mem=16G mon_script.sh --time=HH:MM:SS --account=m2xxxx
 
 Cette commande spécifie les ressources pour le travail, y compris la partition, le nombre de nœuds, le nombre de tâches par nœud et le nombre de CPU par tâche.
 
 ### Exemple 8 : Exécuter des tâches interactives avec srun
 
-    srun --time:HH:MM:SS --account=m2xxxx --pty -c 4 /bin/bash
+    srun --time=HH:MM:SS --account=m2xxxx --pty -c 4 /bin/bash
 
 Cette commande lance un shell interactif avec 4 CPU alloués. Utile pour les tâches interactives ou les tests.
 
@@ -146,13 +146,13 @@ Cette commande lance un shell interactif avec 4 CPU alloués. Utile pour les tâ
 
 ### Exemple 9 : Utiliser une réservation de nœuds
 
-    srun --reservation=ma_reservation --nodes=2 mon_script.sh --time:HH:MM:SS --account=m2xxxx
+    srun --reservation=ma_reservation --nodes=2 mon_script.sh --time=HH:MM:SS --account=m2xxxx
 
 Cette commande exécute le travail sur une réservation de 2 nœuds spécifiée avec l'option `--reservation`.
 
 ### Exemple 10 : Utiliser une partition spécifique avec srun
 
-    srun --partition=visu --nodes=1 --time:HH:MM:SS --account=m2xxxx mon_script.sh 
+    srun --partition=visu --nodes=1 --time=HH:MM:SS --account=m2xxxx mon_script.sh 
 
 Cette commande exécute le travail sur la partition "visu" avec 1 nœud. 
 
