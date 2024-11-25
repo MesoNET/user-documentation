@@ -51,16 +51,30 @@ Cliquez [ici](/HOWTO/slurm) pour aller plus loin avec slurm.
 
 # Jobs interactifs
 
-Il n'est pas possible de se connecter directement par ssh aux nœuds de calcul, même si le nœud est allumé.
+## Connexion par ssh
 
-Vous obtenez alors le message suivant
+Il n'est pas possible de se connecter directement par ssh aux nœuds de calcul, sauf si vous avez un job actif sur le nœud.
+
+Si vous tentez de vous connecter par `ssh node001` alors vous obtenez alors le message suivant
 
 ```shell
 Access denied by pam_slurm_adopt: you have no active jobs on this node
 Connection closed by 10.30.0.1 port 22
 ```
 
-Par contre, vous pouvez vous connecter par ssh aux nœuds où vous avez une réservation active.
+Par contre, vous pouvez vous connecter par ssh aux nœuds où vous avez une réservation active (par `ssh node0xx`).
+
+Votre session ssh sera contrainte par les ressources allouées dans votre job le plus récent sur le nœud.
+
+## Session interactive via srun
+
+Vous pouvez démarrer une session interactive comme ceci:
+```
+$ srun --nodes=1 --ntasks-per-node=1 --time=01:00:00 --pty bash -i
+```
+
+Ici nous demandons un seul cœur sur un nœud pendant une heure. L'invite de commande apparaître dès que le job démarre.
+
 
 
 # Démarrage des nœuds {#powersave}
