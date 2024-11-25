@@ -15,7 +15,7 @@ Si vous n'êtes pas familier avec slurm il est vivement conseillé de suivre cet
 
 Cette page se concentre sur les particularités du cluster Zen.
 
-# Lancer un job sur Zen
+## Lancer un job sur Zen
 
 Pour exécuter votre code sur les nœuds calcul il faut soumettre un script via la commande `sbatch`.
 
@@ -49,9 +49,9 @@ Avec la commande `squeue` vous pouvez suivre l'état de votre job et `scancel` p
 Cliquez [ici](/HOWTO/slurm) pour aller plus loin avec slurm.
 
 
-# Jobs interactifs
+## Jobs interactifs
 
-## Connexion par ssh
+### Connexion par ssh
 
 Il n'est pas possible de se connecter directement par ssh aux nœuds de calcul, sauf si vous avez un job actif sur le nœud.
 
@@ -66,7 +66,7 @@ Par contre, vous pouvez vous connecter par ssh aux nœuds où vous avez une rés
 
 Votre session ssh sera contrainte par les ressources allouées dans votre job le plus récent sur le nœud.
 
-## Session interactive via srun
+### Session interactive via srun
 
 Vous pouvez démarrer une session interactive comme ceci:
 ```
@@ -77,7 +77,7 @@ Ici nous demandons un seul cœur sur un nœud pendant une heure. L'invite de com
 
 
 
-# Démarrage des nœuds {#powersave}
+## Démarrage des nœuds {#powersave}
 
 A des fins d'économie d'énergie, les nœuds de calcul de Zen s'arrêtent complètement au bout de 3 heures d'inactivité.
 
