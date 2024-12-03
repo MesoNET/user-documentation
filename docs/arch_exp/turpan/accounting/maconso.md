@@ -54,7 +54,7 @@ Légende :
 
 * **Consommation maximum** : Heures de calcul allouées au projet
 * **Consommation en cours (HH:MM)** : Heures de calcul brutes consommées par le projet (par ressource)
-* **Normalisation** : Heures de calcul normalisées, consommées par le projet (par ressource). La normalisation consiste à multiplier les heures gpu par 33
+* **Normalisation** : Heures de calcul normalisées, consommées par le projet (par ressource). Ce sont les heures qui sont effectivement comptabilisées pour établir la consommation du projet.
 * **Total** : Total des heures de calcul normalisées consommées par le projet
 
 :::info
