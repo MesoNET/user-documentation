@@ -16,7 +16,7 @@ title: Description
 
 | Network technology | Network speed | Network usage |
 |---|---|---|
-|InfiniBand|200 Gb/s|Fast interconnect for HPC storage and MPI communications
+|InfiniBand|100 Gb/s|Fast interconnect for HPC storage and MPI communications
 |Ethernet|1Gb/s|SSH Network to access compute nodes
 
 
@@ -30,6 +30,5 @@ title: Description
 | Path | Usage 
 |---|---|
 |`/home/<your_username>`|Home storage for lightweight data (codes, etc.)
-|`/projects/<your_project>`|Project storage for lightweight data to share with your team (codes, etc.)
-|`/scratch/<your_username>`|Computing scratch for temporary data when running jobs
+|`/scratch/users/<your_username>`|Computing scratch for temporary data when running jobs
 |`/softs`|Read-only directory to host installed software on Phileas
