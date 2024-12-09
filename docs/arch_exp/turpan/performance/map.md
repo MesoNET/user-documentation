@@ -11,6 +11,9 @@ Pour profiler votre code, vous devez travailler en deux temps :
 
 Il est recommandé de compiler son code avec le switch -g pour corréler les différentes phases du profil observé avec le code. Mais à l'inverse de ce qui est recommandé pour la phase de débogage (voir ici [ddt](./ddt.md) , il est utile de garder les options d'optimisation pour avoir un profil correct.
 
+:::caution
+MAP acceptera le profilage MPI jusqu'à **32 processus**. Il n'est pas autorisé de dépasser ce nombre de processus.
+:::
 ### Profiler son code avec map
 Dans le fichier de soumission sbatch, il vous suffit de modifier l’appel srun par :
 ```
