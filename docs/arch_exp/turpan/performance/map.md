@@ -14,6 +14,7 @@ Il est recommandé de compiler son code avec le switch -g pour corréler les dif
 :::caution
 MAP acceptera le profilage MPI jusqu'à **32 processus**. Il n'est pas autorisé de dépasser ce nombre de processus.
 :::
+MAP peut être utilisé pour profiler du code exécuté sur le **CPU**, sur le **GPU**, ainsi que sur des architectures hybrides.
 ### Profiler son code avec map
 Dans le fichier de soumission sbatch, il vous suffit de modifier l’appel mpirun par :
 ```
@@ -24,16 +25,17 @@ map --profile mpirun mon_appli...
 ### Voir les résultats avec map
 La commande ci-dessus produira un fichier dont le nom ressemblera à : mon_appli.map
 
-Il suffit alors d'ouvrir le visualiseur par :
-```
-map mon_appli.map
-```
-
-Il s'agit d'un outil graphique, vous devrez donc ouvrir une session X11 :
-
-- Vous connecter avec ssh -X
+Pour visualiser ce fichier, Il suffit alors d'ouvrir le visualiseur par :
+- Vous connecter avec ssh -X (une session X11)
 - Si le débit réseau est insuffisant, ssh -XC permet d’améliorer la fluidité de l'affichage
 - Si cela ne suffit pas, utilisez une session graphique
+- Accédez au chemin où se trouve le fichier mon_appli.map :
+- Avant de lancer l'outil de visualisation map, rechargez le module map dans la session ssh -X :
+
+```
+module load arm-forge/22.1.4
+map mon_appli.map
+```
 
 La partie supérieure de l'écran ressemblera à la figure ci-dessous. Si vous avez compilé votre code avec le switch -g, et si map est capable de trouver les sources de votre programme, vous pourrez alors établir une corrélation entre le profil affiché en haut de l'écran et le code (qui sera affiché en bas de l’écran).
 
