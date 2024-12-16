@@ -31,10 +31,10 @@ ddt &
 ![Capture d'écran du formulaire d'engistrement dans le SSO MesoNET](/img/turpan/ddt_1.png)
 
 ### Modifier votre script batch:
-Ajouter ddt --connect avant la commande srun (ou mpiexec.hydra ou mpirun) :
+Ajouter ddt --connect avant la commande mpirun:
 ```
 module load arm-forge/22.1.2
-ddt --connect srun ...
+ddt --connect mpirun ...
 ```
 
 ### Démarrage de ddt:

@@ -39,7 +39,7 @@ fi
 ldd ./${BINARY}
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 echo "OMP_NUM_THREADS=${OMP_NUM_THREADS}"
-srun $(placement 1 ${SLURM_CPUS_PER_TASK} ) ./${BINARY}
+time mpirun -np 1 --map-by ppr:1:node:PE=${SLURM_CPUS_PER_TASK} ./${BINARY}
 ```
 
 ## Comment utiliser la librairie lapack sous l'environnement arm ? Voici un exemple script.slurm (BigInt=32)

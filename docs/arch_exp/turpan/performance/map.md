@@ -15,10 +15,10 @@ Il est recommandé de compiler son code avec le switch -g pour corréler les dif
 MAP acceptera le profilage MPI jusqu'à **32 processus**. Il n'est pas autorisé de dépasser ce nombre de processus.
 :::
 ### Profiler son code avec map
-Dans le fichier de soumission sbatch, il vous suffit de modifier l’appel srun par :
+Dans le fichier de soumission sbatch, il vous suffit de modifier l’appel mpirun par :
 ```
 module load arm-forge/22.1.4
-map --profile srun mon_appli...
+map --profile mpirun mon_appli...
 ```
 
 ### Voir les résultats avec map
