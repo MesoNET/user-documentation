@@ -16,7 +16,7 @@ Mesurer : LWP, Linaro Forge et Nsight
 * [LWP](./lwp.md) - Bull MPI Lightweight Profiler est un outil de Bull/Atos donne des informations synthétiques intégrées à la sortie standard.
 * [MAP](./map.md) - Outil arm vous donnera l'évolution au cours du temps sur les E/S, les unités de calcul, l’utilisation de la mémoire, utilisation des GPUs.
 * [Nsight Graphics](./nsight.md) est un outil de développement autonome avec prise en charge du lancer de rayons qui vous permet de déboguer, de profiler et d'exporter des images créées avec Direct3D, Vulkan, OpenGL, OpenVR et Oculus SDK.
-* [Profileur de Code MAQAO](./maqao.md) ([développé à l'USVQ](https://www.maqao.org/)).
+* [Profileur de Code MAQAO](./maqao.md) ([développé à l'USVQ](https://www.maqao.org/)) est un outil d'analyse des performances qui non seulement surveille les performances, mais fournit également des informations qui aident à optimiser l'efficacité du code et l'utilisation du matériel.
 
 ### Librairies optimisées
 

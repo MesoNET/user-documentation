@@ -71,6 +71,10 @@ Exemple script shared, 1 nœud, 40 processeurs,  le temps d'exécution moins de 
 </TabItem>
 </Tabs>
 
+:::caution
+Sur Turpan, il est nécessaire d'utiliser **mpirun** et d'éviter srun, sauf si un conteneur est utilisé ([voir ici](./logiciels/apptainer.md)).
+:::
+
 ## Obtenir des informations sur un job
 
 Il est possible pour visualiser simplement des information sur son job d'utiliser la commande `jobinfo <jobid>`.Il peut être utilisé à la fin d'un script sbatch, jobinfo donnera des informations très utiles si vous contactez le support.

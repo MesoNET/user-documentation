@@ -94,6 +94,17 @@ Si votre adresse IP n’est pas autorisée, **vous ne pouvez pas vous connecter*
 
 Si vous êtes à l'extérieur, connectez-vous au vpn de votre laboratoire, votre adresse IP sera dès lors autorisée.
 
+
+## Se connecter en utilisant Vscode 
+Utiliser Visual Studio Code Remote - SSH avec Turpan simplifie votre flux de travail en permettant l'édition directe de code avec toutes les fonctionnalités de VS Code, telles qu’IntelliSense, le débogage et les extensions. Le terminal intégré vous permet d'exécuter des scripts SLURM et de gérer les fichiers directement sur Turpan sans changer d’outil.
+
+Cette configuration élimine les transferts de fichiers fréquents, car vous pouvez éditer et tester les fichiers directement sur turpan. Cette approche améliore la productivité et simplifie la gestion des fichiers.
+
+Visual Studio Code doit être installé sur votre machine locale. Après avoir transféré votre projet une première fois, comme décrit précédemment, vous pouvez ensuite effectuer des modifications continues en utilisant:
+```bash
+code --remote ssh-remote+turpanlogin /path/on/turpan/mon_projet
+```
+
 ## Se connecter aux équipements graphiques
 
 Vous pouvez visualiser vos données ou résultats de calculs sans devoir les déplacer de la machine Turpan à l'aide de [cette documentation](./visu.md).

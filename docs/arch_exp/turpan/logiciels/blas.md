@@ -16,7 +16,7 @@ module purge
 module load nvhpc-nompi/22.9
 nvfortran -O3 -g -cpp -Minfo -mp=multicore file.f90 -o ./file -lblas
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
-time srun -N 1 -n 1 -c ${OMP_NUM_THREADS} $(placement 1 ${OMP_NUM_THREADS}) ./file
+time mpirun -np 1 --map-by ppr:1:node:PE=${OMP_NUM_THREADS} ./file
 ```
 
 ## Comment utiliser la librairie blas sous l'environnement arm ? Voici un exemple script.slurm
@@ -35,5 +35,5 @@ module load armpl/22.1.0
 Copmilation and execution:
 armflang -Ofast -fopenmp file.f90 -o ./file -armpl_mp
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
-time srun -N 1 -n 1 -c ${OMP_NUM_THREADS} $(placement 1 ${OMP_NUM_THREADS}) ./file
+time mpirun -np 1 --map-by ppr:1:node:PE=${OMP_NUM_THREADS} ./file
 ```
