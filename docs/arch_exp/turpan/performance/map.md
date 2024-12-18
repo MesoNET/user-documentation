@@ -23,9 +23,11 @@ map --profile mpirun mon_appli...
 ```
 
 ### Voir les résultats avec map
-La commande ci-dessus produira un fichier dont le nom ressemblera à : mon_appli.map
+La commande ci-dessus produira un fichier dont le nom ressemblera à : mon_appli.map.
 
-Pour visualiser ce fichier, Il suffit alors d'ouvrir le visualiseur par :
+Il est fortement recommandé d'ouvrir les résultats avec la commande indiquée ci-dessous en utilisant la visualisation à distance ([voir ici](../connexion/visu.md)).
+
+Une autre méthode, moins recommandée, consiste à visualiser ce fichier en ouvrant le visualiseur avec :
 - Vous connecter avec ssh -X (une session X11)
 - Si le débit réseau est insuffisant, ssh -XC permet d’améliorer la fluidité de l'affichage
 - Si cela ne suffit pas, utilisez une session graphique
