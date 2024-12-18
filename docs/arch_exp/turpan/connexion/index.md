@@ -105,6 +105,8 @@ Visual Studio Code doit être installé sur votre machine locale. Après avoir t
 code --remote ssh-remote+turpanlogin /path/on/turpan/mon_projet
 ```
 
+Vous pouvez également ouvrir VS Code et accéder facilement à toutes les machines auxquelles vous vous êtes connecté ainsi qu'à tous vos projets, avec le même environnement sauvegardé. Pour cela, utilisez l'onglet Remote Explorer situé à droite ([Tutoriel pour en savoir plus](https://code.visualstudio.com/docs/remote/ssh)).
+
 ## Se connecter aux équipements graphiques
 
 Vous pouvez visualiser vos données ou résultats de calculs sans devoir les déplacer de la machine Turpan à l'aide de [cette documentation](./visu.md).
