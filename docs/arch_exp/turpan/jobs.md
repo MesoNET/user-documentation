@@ -72,7 +72,7 @@ Exemple script shared, 1 nœud, 40 processeurs,  le temps d'exécution moins de 
 </Tabs>
 
 :::caution
-Sur Turpan, il est nécessaire d'utiliser **mpirun** et d'éviter srun, sauf si un conteneur est utilisé ([voir ici](./logiciels/apptainer.md)).
+Sur Turpan, si l'application utilise **MPI**, il est nécessaire d'utiliser **mpirun** et d'éviter srun, sauf si un conteneur est utilisé ([voir ici](./logiciels/apptainer.md)). Pour les autres applications, srun reste valide
 :::
 
 ## Obtenir des informations sur un job
