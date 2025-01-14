@@ -8,13 +8,20 @@ import TabItem from '@theme/TabItem';
 
 # Comment lancer un calcul sur Turpan ? 
 
-Partition / global = 3 jobs max par utilisateur :
-
-- **small** : exclusive, 2 jobs max, pas plus de 6 noeuds par jobs, max walltime par job 4H
-- **big** : exclusive, 1 job max, pas plus de 13 noeuds par jobs, max walltime par job 2H
+<!-- Partition / global = 3 jobs max par utilisateur : -->
+L'utilisateur peut exécuter un maximum de 3 jobs simultanément, quelle que soit la partition utilisée. Dans tous les cas, il est impératif de respecter les contraintes spécifiques de chaque partition, comme indiqué ci-dessous :
+- **small** : exclusive, 2 jobs max, pas plus de 6 noeuds par jobs, max walltime par job 4H.
+- **big** : exclusive, 1 job max, pas plus de 13 noeuds par jobs, max walltime par job 2H.
 - **full** : exclusive, 1 job max, au moins 14 noeuds par jobs, max walltime par job 20H
-- **shared** : non exclusive, 2 jobs max, pas plus de 1 GPU, 40 cpu et 256G ram par jobs, max walltime par job 4H
-- **visu** : non exclusive, 1 job max, max 50Go RAM max 8 cpu par job, max walltime par job 4H
+- **visu** : non exclusive, 1 job max, max 50Go RAM max 8 cpu par job, max walltime par job 4H.
+- **shared** : non exclusive, 2 jobs max, max la moitié du noeud (40 cpu et 256G ram,1 GPU ), max walltime par job 4H.
+
+:::info
+* **Exclusive**: Un job en partition exclusive réserve l’intégralité des nœuds qui lui sont attribués.
+* **Non exclusive**: Un job en partition non exclusive ne réserve pas l’intégralité du nœud, ce qui permet à d’un autre job (d’un autre utilisateur) de partager les mêmes ressources.
+
+Le choix de la partition dépend des besoins en ressources, notamment en termes de nombre de cœurs par nœud et des limites de temps de calcul (walltime), veuillez consulter [les règles de comptabilisation des ressources ](./accounting/accounting-rules.md#exemples-).
+:::
 
 Afin de ne pas monopoliser l’ensemble des noeuds du cluster en journée :
 
@@ -72,7 +79,7 @@ Exemple script shared, 1 nœud, 40 processeurs,  le temps d'exécution moins de 
 </Tabs>
 
 :::caution
-Sur Turpan, si l'application utilise **MPI**, il est nécessaire d'utiliser **mpirun** et d'éviter srun, sauf si un conteneur est utilisé ([voir ici](./logiciels/apptainer.md)). Pour les autres applications, srun reste valide
+Sur Turpan, si l'application utilise **MPI**, il est nécessaire d'utiliser **mpirun** et d'éviter srun, sauf si un conteneur est utilisé ([voir ici](./logiciels/apptainer.md)). Pour les autres applications **sans MPI**, srun reste valide
 :::
 
 ## Obtenir des informations sur un job
