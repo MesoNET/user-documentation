@@ -2,6 +2,59 @@
 title: Lancer un calcul
 sidebar_position: 3
 ---
+# Lancer un calcul 
+
+**Les calculs ne doivent jamais être exécutés sur les frontales de loggin mais sur les nœuds de calcul.**
+
+Il n’y a pas d'espace scratch sur la machine Hedy. C'est le disque local des nœuds, de technologie NVMe offrant de bonnes performances en lecture/écriture qui fait office de scratch. L’usage recommandé est donc de copier les données d’entrée sur le répertoire /tmp au début du job (si elles ne sont pas trop volumineuses) et, à l'issue de l'exécution du programme, de déplacer les résultats depuis /tmp vers le home. Cette étape est essentielle car toutes les données seront supprimées du nœud à la fin du job.
+
+Hedy utilise l’ordonnanceur [slurm]( https://slurm.schedmd.com/overview.html) qui assure l’ordonnancement et la planification des travaux. La soumission des jobs à Slurm se fait à partir d'un script shell ou en ligne de commande. 
+
+# Soumission par script
+
+Il faut écrire un script shell comportant les directives Slurm (#SBATCH) et les commandes appropriées. 
+
+Exemple de script shell qui sollicite la réservation pour 24 heures de 2 GPUs GH100, 16 CPUs et exécute le programme mon_programme : 
+```
+#!/bin/bash
+#SBATCH --job-name=mon_job_gpu
+#SBATCH --account=b1001
+#SBATCH --partition=gpu
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:GH100:2 
+#SBATCH --cpus-per-gpu=8
+#SBATCH --time=24:00:00 
+
+# copie des données d’entrée sur le nœud alloué
+mkdir /tmp/input
+cp /home/user/.../* /tmp/input/.
+
+# lancement du programme
+~/soft/.../mon_progamme
+
+# déplacement des résultats sur le home
+mv /tmp/output/* /home/user/…/.
+```
+Il suffit ensuite d'envoyer le script à Slurm par la commande qui le mettra en file d'attente.
+```
+sbatch mon_programme.sh
+```
+
+# Soumission par ligne de commande 
+
+
+
+# Ouverture d’une session interactive
+Il est également possible d'accéder à une session La commande pour ouvrir une session en mode interactif :
+```
+srun  --pty bash -i
+```
+Vous serez alors connecté sur un nœud en utilisant les critères de connexion par défaut. Il est recommandé de préciser les options à appliquer à la session, par exemple le numéro de projet (--account), la durée de session --time), le nombre de ressources GPU (--gres), le nombre de cœurs (--ntasks-per-node).
+
+La liste complète des directives Slum est disponible [ici]( https://slurm.schedmd.com/archive/slurm-24.05.5/sbatch.html#lbAG).
+La documentation de SLURM est [ici]( https://slurm.schedmd.com/archive/slurm-24.05.5/)
+
+
 
 # Prise en main rapide de SLURM
 
