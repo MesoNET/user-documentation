@@ -4,11 +4,11 @@ sidebar_position: 3
 ---
 # Lancer un calcul 
 
-**Les calculs ne doivent jamais être exécutés sur les frontales de loggin mais sur les nœuds de calcul.**
+<ins>**Les calculs ne doivent jamais être exécutés sur les frontales de loggin mais sur les nœuds de calcul.**</ins>
 
-Il n’y a pas d'espace scratch sur la machine Hedy. C'est le disque local des nœuds, de technologie NVMe offrant de bonnes performances en lecture/écriture qui fait office de scratch. L’usage recommandé est donc de copier les données d’entrée sur le répertoire /tmp au début du job (si elles ne sont pas trop volumineuses) et, à l'issue de l'exécution du programme, de déplacer les résultats depuis /tmp vers le home. Cette étape est essentielle car toutes les données seront supprimées du nœud à la fin du job.
+Il n’y a pas d'espace scratch global sur la machine Hedy. Le disque local des nœuds, de technologie NVMe offre de bonnes performances en lecture/écriture et fait office de scratch. L’usage recommandé est de copier au début du job les données d’entrée sur le répertoire /tmp (si elles ne sont pas trop volumineuses) et, à l'issue de l'exécution du programme, de déplacer les résultats depuis /tmp vers le home. Cette étape est essentielle car toutes les données seront supprimées du nœud à la fin du job.
 
-Hedy utilise l’ordonnanceur [slurm]( https://slurm.schedmd.com/overview.html) qui assure l’ordonnancement et la planification des travaux. La soumission des jobs à Slurm se fait à partir d'un script shell ou en ligne de commande. 
+Hedy utilise l’ordonnanceur [Slurm]( https://slurm.schedmd.com/overview.html) qui assure l’ordonnancement et la planification des travaux de calcul. La soumission à Slurm des travaux de calcul se fait à partir d'un script shell ou en ligne de commande. 
 
 # Soumission par script
 
