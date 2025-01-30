@@ -14,7 +14,7 @@ Hedy utilise l’ordonnanceur [Slurm]( https://slurm.schedmd.com/overview.html) 
 
 Il faut écrire un script shell comportant les directives Slurm (#SBATCH) et les commandes appropriées. 
 
-Exemple de script shell qui sollicite la réservation pour 24 heures de 2 GPUs GH100, 16 CPUs et exécute le programme mon_programme : 
+Exemple de script shell qui sollicite la réservation pour 24 heures de 2 GPUs GH100, 16 CPUs et exécute le programme mon_programme.sh : 
 ```
 #!/bin/bash
 #SBATCH --job-name=mon_job_gpu
@@ -35,21 +35,26 @@ cp /home/user/.../* /tmp/input/.
 # déplacement des résultats sur le home
 mv /tmp/output/* /home/user/…/.
 ```
-Il suffit ensuite d'envoyer le script à Slurm par la commande qui le mettra en file d'attente.
+Il suffit ensuite d'envoyer le script à Slurm par la commande sbatch qui le mettra en file d'attente.
 ```
 sbatch mon_programme.sh
 ```
 
-# Soumission par ligne de commande 
+# Soumission en ligne de commande 
 
-
+Il est possible d'utiliser directement sbatch en ligne de commande avec pour arguments les directives Slurm et le nom du programme. 
+```
+srun --job-name=mon_job_gpu --account=b1001 --partition=gpu --nodes=1 --gres=gpu:GH100:2 --time=24:00:00 mon_script.sh
+```
 
 # Ouverture d’une session interactive
-Il est également possible d'accéder à une session La commande pour ouvrir une session en mode interactif :
+Il est également possible d'accéder à une session interactive en précisant les ressources souhaitées. 
+
+Par exemple : 
 ```
-srun  --pty bash -i
+srun --job-name=mon_job_gpu --account=b1001 --partition=gpu --nodes=1 --gres=gpu:GH100:2 --time=24:00:00 --pty bash -i
 ```
-Vous serez alors connecté sur un nœud en utilisant les critères de connexion par défaut. Il est recommandé de préciser les options à appliquer à la session, par exemple le numéro de projet (--account), la durée de session --time), le nombre de ressources GPU (--gres), le nombre de cœurs (--ntasks-per-node).
+Vous serez alors connecté sur un nœud et pourrez utiliser les commandes unix et lancer vos directement en ligne de commande.
 
 La liste complète des directives Slum est disponible [ici]( https://slurm.schedmd.com/archive/slurm-24.05.5/sbatch.html#lbAG).
 La documentation de SLURM est [ici]( https://slurm.schedmd.com/archive/slurm-24.05.5/)
