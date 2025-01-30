@@ -3,16 +3,17 @@ title: "Se connecter à Juliet"
 sidebar_position: 2
 ---
 
-:::caution
-
-La mise en place de l'outil de ticketing MesoNET sont en cours. Sauf indication contraire, merci d'utiliser la [documentation officielle](https://www.mesonet.fr/documentation/user-documentation/acces/portail)
-
-:::
 
 # Prérequis
 
 Vous avez besoin d'un compte MesoNET valide. Vous pouvez trouver les étapes pour obtenir un compte [ici](https://www.mesonet.fr/documentation/user-documentation/acces/portail). 
 Les personnels non-académiques peuvent prendre contact avec Florence Draux (florence.draux@univ-reims.fr)
+
+:::caution
+
+Si vous obtenez l'accès à un second, troisième, etc... projet Juliet, votre nom d'utilisateur sera le même que le premier. Du fait de soucis technique, cela peut ne pas s'afficher dans l'onglet `Demandeur` du portail. 
+
+:::
 
 
 # Comment se connecter à Juliet
