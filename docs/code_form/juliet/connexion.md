@@ -34,7 +34,7 @@ Host juliet
 
 # Support pour les utilisateurs non-académiques
 
-Pour obtenir de l'assistance en cas de problème, vous pouvez ouvrit un ticket avec l'outil de ticketing de ROMEO [https://romeo-ticket.univ-reims.fr/open.php](https://romeo-ticket.univ-reims.fr/open.php) en sélectionnant la rubrique d'aide `MesoNET`.
+Pour obtenir de l'assistance en cas de problème, vous pouvez ouvrit un ticket avec [l'outil de ticketing de ROMEO](https://romeo-ticket.univ-reims.fr/open.php) en sélectionnant la rubrique d'aide `MesoNET`.
 
 Pour les utilisateurs académiques, l'outil de ticketing reste [https://tickets.mesonet.fr/](https://tickets.mesonet.fr/)
 
