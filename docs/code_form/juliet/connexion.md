@@ -32,12 +32,11 @@ Host juliet
   User [UserName]
 ```
 
-:::caution
+# Support pour les utilisateurs non-académiques
 
-L'intégration au portail Gramc est terminée. Pour les utilisateurs académiques suivez [la procédure normale de connexion](https://www.mesonet.fr/documentation/user-documentation/acces/portail)
+Pour obtenir de l'assistance en cas de problème, vous pouvez ouvrit un ticket avec l'outil de ticketing de ROMEO [https://romeo-ticket.univ-reims.fr/open.php](https://romeo-ticket.univ-reims.fr/open.php) en sélectionnant la rubrique d'aide `MesoNET`.
 
-La mise en place de l'outil de ticketing MesoNET est en cours.
-:::
+Pour les utilisateurs académiques, l'outil de ticketing reste [https://tickets.mesonet.fr/](https://tickets.mesonet.fr/)
 
 
 
