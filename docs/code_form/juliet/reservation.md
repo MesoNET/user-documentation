@@ -12,10 +12,10 @@ Lorsque la réservation est validée, seuls les membres de projets faisant parti
 Pour faire une demande de réservation, le gestionnaire d'un projet peut ouvrir [un ticket MesoNET](https://tickets.mesonet.fr) en spécifiant la catégorie `Juliet` contenant les informations suivantes.
 
 ```
-- **Nom du projet concerné**:
-- **Nombre de noeuds requis**:
-- **Date de début de réservation**:
-- **Date de fin de réservation**:
+- Nom du projet concerné:
+- Nombre de noeuds requis:
+- Date de début de réservation:
+- Date de fin de réservation:
 ```
 
 :::caution
