@@ -57,6 +57,7 @@ Il n'est pas possible de lancer un job avec le projet *default*
 - **Nombre de cpu par noeud**: Le paramètre `--cpu_per_task=n` vous permettra de réserver n CPUs par tâche (par défaut 1)
 - **Nombre de GPU par noeud**: Le paramètre `--gpus=n` vous permettra de réserver n GPUs pour le job entier (par défaut 0)
 - **Quantité de mémoire demandée** Le paramètre `--mem=kG` vous permettra d'allouer k Go de RAM pour le job entier (par défaut n\_cpu Go avec n\_cpu le nombre de cpu alloués pour le job entier)
+- **Réservation demandée** Le paramètre `--reservation=xxx` vous permettra d'utiliser les noeuds alloués à la réservation xxx.
 
 
 ### Exemple 1 : Soumettre un script simple

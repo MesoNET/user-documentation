@@ -11,7 +11,7 @@ Les personnels non-académiques peuvent prendre contact avec Florence Draux (flo
 
 :::caution
 
-Si vous obtenez l'accès à un second, troisième, etc... projet Juliet, votre nom d'utilisateur sera le même que le premier. Du fait de soucis technique, cela peut ne pas s'afficher dans l'onglet `Demandeur` du portail. 
+Si vous obtenez l'accès à un second, troisième, etc... projet Juliet, votre nom d'utilisateur sera le même que le premier. Du fait de soucis techniques, cela peut ne pas s'afficher dans l'onglet `Demandeur` du portail. 
 
 :::
 

@@ -1,6 +1,6 @@
 ---
 title: "Réserver des noeuds de calcul sur Juliet"
-sidebar_position: 7
+sidebar_position: 6
 ---
 
 En cas de besoin de la machine à un moment donné, par exemple pour une séance de TP en formation, vous avez la possibilité de réserver un ou plusieurs noeuds de la machine Juliet. 
@@ -12,10 +12,10 @@ Lorsque la réservation est validée, seuls les membres de projets faisant parti
 Pour faire une demande de réservation, le gestionnaire d'un projet peut ouvrir [un ticket MesoNET](https://tickets.mesonet.fr) en spécifiant la catégorie `Juliet` contenant les informations suivantes.
 
 ```
-- Nom du proje concerné:
-- Nombre de noeuds requis
-- Date de début de réservation
-- Date de fin de réservation
+- **Nom du projet concerné**:
+- **Nombre de noeuds requis**:
+- **Date de début de réservation**:
+- **Date de fin de réservation**:
 ```
 
 :::caution
