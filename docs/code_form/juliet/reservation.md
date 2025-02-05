@@ -16,6 +16,7 @@ Pour faire une demande de réservation, le gestionnaire d'un projet peut ouvrir 
 - Nombre de noeuds requis:
 - Date de début de réservation:
 - Date de fin de réservation:
+- Pour une réservation liée à la formation, nombre d'étudiants:
 ```
 
 :::caution
