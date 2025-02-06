@@ -27,12 +27,12 @@ import TabItem from '@theme/TabItem';
 La commande pour générer une clé SSH :
 
 ```Shell
-$ ssh-keygen -t ed25519 -f .ssh/turpan
+$ ssh-keygen -t ed25519 -f .ssh/id_ed25519
 Generating public/private ed25519 key pair.
 Enter passphrase (empty for no passphrase): unsuper!#§m0t{[{[DEpaSsSe345
 Enter same passphrase again: unsuper!#§m0t{[{[DEpaSsSe345
-Your identification has been saved in .ssh/turpan
-Your public key has been saved in .ssh/turpan.pub
+Your identification has been saved in .ssh/id_ed25519
+Your public key has been saved in .ssh/id_ed25519.pub
 The key fingerprint is:
 SHA256:wB4qeovtHVtN63JRDrQMvkdHbr2OUdCj3/Rrb52zY40 manu1@delman
 The key's randomart image is:
@@ -49,17 +49,17 @@ The key's randomart image is:
 +----[SHA256]-----+
 $ ls -l .ssh
 total 8
--rw------- 1 manu1 manu1 444 déc.  13 12:05 turpan
--rw-r--r-- 1 manu1 manu1  94 déc.  13 12:05 turpan.pub
+-rw------- 1 manu1 manu1 444 déc.  13 12:05 .ssh/id_ed25519
+-rw-r--r-- 1 manu1 manu1  94 déc.  13 12:05 .ssh/id_ed25519.pub
 ```
 
 La commande a permis de créer deux fichiers:
-* turpan qui contient la clé privée
-* turpan.pub qui contient la clé publique.
+* id_ed25519 qui contient la clé privée
+* id_ed25519.pub qui contient la clé publique.
 Une variante avec RSA si la commande ne fonctionne pas (attention la taille doit être 3072 minimum) :
 
 ```
-ssh-keygen -t rsa -b 3072 -f .ssh/turpan
+ssh-keygen -t rsa -b 3072 -f .ssh/id_rsa
 ```
   </TabItem>
   <TabItem value="windows" label="Windows">
@@ -87,12 +87,12 @@ Vous pourrez ainsi l'ajouter à votre trousseau de clés à l'étape suivante.
 La commande pour générer une clé SSH :
 
 ```Shell
-$ ssh-keygen -t ed25519 -f .ssh/turpan
+$ ssh-keygen -t ed25519 -f .ssh/id_ed25519
 Generating public/private ed25519 key pair.
 Enter passphrase (empty for no passphrase): unsuper!#§m0t{[{[DEpaSsSe345
 Enter same passphrase again: unsuper!#§m0t{[{[DEpaSsSe345
-Your identification has been saved in .ssh/turpan
-Your public key has been saved in .ssh/turpan.pub
+Your identification has been saved in .ssh/id_ed25519
+Your public key has been saved in .ssh/id_ed25519.pub
 The key fingerprint is:
 SHA256:wB4qeovtHVtN63JRDrQMvkdHbr2OUdCj3/Rrb52zY40 manu1@delman
 The key's randomart image is:
@@ -109,8 +109,8 @@ The key's randomart image is:
 +----[SHA256]-----+
 $ ls -l .ssh
 total 8
--rw------- 1 manu1 manu1 444 déc.  13 12:05 turpan
--rw-r--r-- 1 manu1 manu1  94 déc.  13 12:05 turpan.pub
+-rw------- 1 manu1 manu1 444 déc.  13 12:05 id_ed25519
+-rw-r--r-- 1 manu1 manu1  94 déc.  13 12:05 id_ed25519.pub
 ```
 
 La commande a permis de créer deux fichiers:
@@ -119,7 +119,7 @@ La commande a permis de créer deux fichiers:
 Une variante avec RSA si la commande ne fonctionne pas (attention la taille doit être 3072 minimum) :
 
 ```
-ssh-keygen -t rsa -b 3072 -f .ssh/turpan
+ssh-keygen -t rsa -b 3072 -f .ssh/id_rsa
 ```
   </TabItem>
 </Tabs>
