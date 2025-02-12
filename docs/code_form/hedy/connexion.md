@@ -38,4 +38,3 @@ Une fois le fichier config correctement créé, il est possible de se connecter 
 ```
 ssh hedy
 ```
-N'oubliez pas de remplacer le mot `user` par votre propre identifiant utilisateur.
