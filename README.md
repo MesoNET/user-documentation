@@ -22,4 +22,3 @@ L'adresse de la documentation est celle-ci : https://www.mesonet.fr/documentatio
 - on installe docusaurus : `cd mesodoc && yarn install` ou `cd mesodoc && npm install`
 - On édite ce que l'on souhaite
 - On construit le site et lance un serveur web localement pour le prévisualiser : `yarn serve` ou `npm run start`
-
