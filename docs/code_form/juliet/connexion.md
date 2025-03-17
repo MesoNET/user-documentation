@@ -22,7 +22,7 @@ La connexion s'effectue en SSH vers juliet.mesonet.fr.
 
 ` ssh nomUtilisateur@juliet.mesonet.fr `
 
-Si vous utilisez un fichier de configuration vous devez indiquer l'endroit où se trouve votre clé SSH. Cette clef SSH doit avoir été renseignée sur le portail MesoNET (voir [Gérer ses clefs SSH](http://localhost:3000/documentation/user-documentation/acces/ssh))
+Si vous utilisez un fichier de configuration vous devez indiquer l'endroit où se trouve votre clé SSH. Cette clef SSH doit avoir été renseignée sur le portail MesoNET (voir [Gérer ses clefs SSH](https://www.mesonet.fr/documentation/user-documentation/acces/ssh))
 
 ```
 Host juliet
