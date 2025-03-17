@@ -13,6 +13,14 @@ title: "Accueil"
 
 Sur ce site, vous trouverez l'ensemble des procédures et techniques pour accéder et exploiter les infrastuctures opérées dans le cadre du [projet MesoNET](https://mesonet.fr).
 
+:::info Support
+
+Vous pouvez joindre le support mutualisé MesoNET à [**support@mesonet.fr**](mailto:support@mesonet.fr)
+
+:::
+
+
+
 ## Citation
 
 Pour citer l'utilisation des ressources MesoNET dans les remerciements de vos publications vous devez utiliser le texte suivant:

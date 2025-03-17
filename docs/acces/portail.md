@@ -79,7 +79,7 @@ The MesoNET SSO registration service
 
 ## Accéder aux ressources MesoNET
 
-Maintenant que vous avez votre compte MesoNET, vous êtes en mesure de demander des ressources de calcul, pour l'instant seulement sur [Boréale](arch_exp/boreal/description.md), [Turpan](arch_exp/turpan/description.md), [Zen](code_form/zen/description.md) ou [Juliet](code_form/juliet/description.md).
+Maintenant que vous avez votre compte MesoNET, vous êtes en mesure de demander des ressources de calcul, pour l'instant seulement sur [Boréale](arch_exp/boreal/description.md), [Turpan](arch_exp/turpan/description.md), [Zen](code_form/zen/description.md), [Juliet](code_form/juliet/description.md) ou [Vesta](code_form/vesta/description.md).
 
 1. Pour cela, rendez-vous sur https://acces.mesonet.fr. Cliquez sur le bouton **connexion** en haut à droite, et identifiez vous de la même façon que lors de la création de votre compte, typiquement via eduGAIN, enfin complétez votre profil.
 
