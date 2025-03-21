@@ -48,5 +48,5 @@ ssh -N -L 5871:{compute_node}:5871 {user}@juliet.mesonet.fr
 Ensuite vous pouvez vous connecter via votre navigateur Web à l'adresse [http://localhost:5871](http://localhost:5871)
 
 :::info
-Le port ne peut être utiliser que par une personne à la fois. Si celui si est occupé, vous pouvez remplacer 5871 par n'importe quel nombre entre 5000 et 7999
+Le port ne peut être utilisé que par une personne à la fois. Si celui si est occupé, vous pouvez remplacer 5871 par n'importe quel nombre entre 5000 et 7999
 :::
