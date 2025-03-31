@@ -85,7 +85,7 @@ Exemple de script sbatch pour utiliser pytorch avec le lanceur torchrun en multi
 >set -x
 >sleep 10
 >
->export MASTER_PORT=$(echo "${SLURM_JOB_ID} % 100000 % 50000 + 30000" | bc)
+>export MASTER_PORT=$(echo "${SLURM_JOB_ID} % 100000 % 50000 + 10001" | bc)
 >export MASTER_ADDR=$(hostname --ip-address)
 >echo "MASTER_ADDR:MASTER_PORT="${MASTER_ADDR}:${MASTER_PORT}
 >export LOGLEVEL=DEBUG
