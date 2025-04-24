@@ -108,6 +108,15 @@ Ceux-ci peuvent être utilisés en invoquant `runJupyterSession.sh` avec l'optio
 ```bash
 runJupyterSession.sh --container pytorch
 ```
+Il est possible de choisir la version du conteneur à l’aide de l’option `--flavor` :
+```bash
+runJupyterSession.sh --container pytorch --flavor 24.10
+```
+Pour consulter les versions disponibles, utilisez la commande suivante :
+```bash
+runJupyterSession.sh --container pytorch --help
+```
+
 ### Installer un paquet python supplémentaire dans mon environnement
 
 À l'intérieur d'une cellule du notebook, exécuter la commande `!pip install --user monpaquet'`
