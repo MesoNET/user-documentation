@@ -10,9 +10,9 @@ sidebar_position: 2
 Une clé ssh est un ensemble de deux fichiers, permettant d'établir des clés de chiffrement. Ces deux fichiers constituent:
 
 * La clé privée: **ce fichier ne doit être partagé avec personne, il est strictement privé**
-* La clé publique: Ce fichier peut être publiquement distribué à qui vous voulez
+* La clé publique: ce fichier peut être publiquement distribué à qui vous voulez
 
-`ssh` va crypter la communication en utilisant votre clé privée, le supercalculateur va le décrypter en utilisant votre clé publique. S'il arrive à décrypter on peut être sûr que c'est vous qui êtes connecté-e, puisque vous seul-e possédez la clé privée ! Il est donc possible de vous authentifier grâce à ce système de paires de clés publiques/privées.
+`ssh` va chiffrer la communication en utilisant votre clé privée, le supercalculateur va le déchiffrer en utilisant votre clé publique. S'il arrive à déchiffrer on peut être sûr que c'est vous qui êtes connecté-e, puisque vous seul-e possédez la clé privée ! Il est donc possible de vous authentifier grâce à ce système de paires de clés publiques/privées.
 
 En conséquence, la clé privée doit être protégée le mieux possible, et en particulier vous devrez la protéger par un mot de passe (en fait une "passphrase"), afin que si vous vous la faites voler elle ne soit pas utilisable par quelqu'un d'autre que vous.
 
@@ -54,8 +54,9 @@ total 8
 ```
 
 La commande a permis de créer deux fichiers:
-* id_ed25519 qui contient la clé privée
-* id_ed25519.pub qui contient la clé publique.
+* `id_ed25519` qui contient la clé privée
+* `id_ed25519.pub` qui contient la clé publique.
+
 Une variante avec RSA si la commande ne fonctionne pas (attention la taille doit être 3072 minimum) :
 
 ```
@@ -124,8 +125,14 @@ ssh-keygen -t rsa -b 3072 -f .ssh/id_rsa
   </TabItem>
 </Tabs>
 
+
+
 ## Déposer sa clé ssh sur le portail
-Pour déposer votre clé ssh, il faut se connecter, sur le portail MesoNET : https://acces.mesonet.fr. Cliquez sur le bouton **connexion** en haut à droite, et identifiez vous de la même façon que lors de la création de votre compte, typiquement via eduGAIN.
+Pour déposer votre clé ssh, il faut se connecter, sur le portail MesoNET : https://acces.mesonet.fr. Cliquez sur le bouton **Connexion** et identifiez vous de la même façon que lors de la création de votre compte, typiquement via eduGAIN.
+
+Une fois authentifié, cliquez sur l'icône 'Utilisateur' en haut à droite, puis sur 'Clés ssh'.
+
+![Capture d'écran du formulaire de gestion des clés SSH](/img/portail-cles-ssh.png)
 
 Une fois authentifié, cliquez sur le trousseau de clé en haut à gauche (à coté de votre nom). Cela ouvre la page de gestion des clés SSH.
 
@@ -140,7 +147,7 @@ Cliquez enfin sur le bouton "Ajouter" pour finaliser l'ajout de la clé dans vot
 
 ## Associer sa clé ssh à un compte dans un projet
 
-Une fois sa clé ssh ajoutée dans le trousseau, vous pouvez l'associer à un compte en revenant sur la [page d'accueil](https://acces.mesonet.fr/gramc-meso/projet/accueil). Sur cette page, vous pouvez voir la liste des projets sur lesquels vous avez des comptes sur les machines. 
+Une fois sa clé ssh ajoutée dans le trousseau, vous pouvez l'associer à un compte en revenant sur la [page d'accueil](https://acces.mesonet.fr/gramc-meso/projet/accueil). Sur cette page, vous pouvez voir la liste des projets sur lesquels vous avez des comptes sur les machines.
 
 Les comptes qui n'ont pas de clé SSH associés sont signalés par un pictogramme : ![pictogramme attention clé ssh manquante](/img/portail-associer-une-cle-ssh-pictogramme.png)
 
