@@ -77,7 +77,7 @@ Utilisez la commande `conda env list` pour trouver le chemin de votre environnem
 >```
 >$ conda env list 
 ># conda environments:
->qiskit-aer-arm         /users/sysadmin/user_name/.conda/envs/myenv3
+>myenv3                 /users/sysadmin/user_name/.conda/envs/myenv3
 >base                   /usr/local/miniconda/25.1.1
 >python-3.10.9          /usr/local/miniconda/25.1.1/envs/python-3.10.9
 >python-tools-3.10.9    /usr/local/miniconda/25.1.1/envs/python-tools-3.10.9
