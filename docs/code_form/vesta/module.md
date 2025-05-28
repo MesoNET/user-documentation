@@ -22,7 +22,7 @@ Currently Loaded Modulefiles:
  1) slurm/slurm(latest)
 ```
 
-On voit ici que le module **slurm/slurm** estchargé, ce qui nous permettra d'utiliser cette application.
+On voit ici que le module **slurm/slurm** est chargé, ce qui nous permettra d'utiliser cette application.
 
 ## module load
 
@@ -37,72 +37,72 @@ hal@hpc-vesta1:~$ which mpirun
 Le logiciel n'apparaît pas dans votre environnement, et par conséquent vous ne pouvez pas l'utiliser. Il faut donc charger le bon module avec la commande **module load** (ou son raccourci **ml load**) :
 
 ```console
-hal@hpc-vesta1:~$ module load openmpi/5.0.3.rocm-6.1.1
-Loading openmpi/5.0.3.rocm-6.1.1
-  Loading requirement: rocm/6.1.1
+hal@hpc-vesta1:~$ module load openmpi/5.0.6.rocm-5.7.1
+Loading openmpi/5.0.6.rocm-5.7.1
+  Loading requirement: rocm/5.7.1
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1
+ 1) slurm/slurm(latest)   2) rocm/5.7.1(latest)   3) openmpi/5.0.6.rocm-5.7.1
 hal@hpc-vesta1:~$ which mpirun
-/nfs/mesonet/sw/openmpi/openmpi-5.0.3.rocm-6.1.1/bin/mpirun
+/nfs/mesonet/sw/openmpi/openmpi-5.0.6.rocm-5.7.1/bin/mpirun
 ```
 
 On voit que maintenant **openmpi** est utilisable. On constate également que tous les autres modules desquels **openmpi** dépend ont été chargé automatiquement. Pour désactiver l'affichage du message, vous pouvez utiliser l'option **-s** (ou **--silent**) :
 ```console
 
-hal@hpc-vesta1:~$ module -s load openmpi/5.0.3.rocm-6.1.1
-Loading openmpi/5.0.3.rocm-6.1.1
-  Loading requirement: rocm/6.1.1
+hal@hpc-vesta1:~$ module -s load openmpi/5.0.6.rocm-5.7.1
+Loading openmpi/5.0.6.rocm-5.7.1
+  Loading requirement: rocm/5.7.1
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1
+ 1) slurm/slurm(latest)   2) rocm/5.7.1(latest)   3) openmpi/5.0.6.rocm-5.7.1
 ```
 Le message ne s'est pas affiché, mais tous les modules sont bien chargés. Cela peut servir pour alléger les logs de vos jobs.
 
 ## module remove
 
-Lorsque vous ne voulez plus utiliser un module, vous pouvez le supprimer de votre environnement avec la commande **module remove** (ou ses raccourcis **module rm** ou **ml rm**). Dans notre exemple, le module **openmpi/5.0.3.rocm-6.1.1** n'est plus nécessaire :
+Lorsque vous ne voulez plus utiliser un module, vous pouvez le supprimer de votre environnement avec la commande **module remove** (ou ses raccourcis **module rm** ou **ml rm**). Dans notre exemple, le module **openmpi/5.0.6.rocm-5.7.1** n'est plus nécessaire :
 
 ```console
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1
-hal@hpc-vesta1:~$ module remove openmpi/5.0.3.rocm-6.1.1
-Unloading openmpi/5.0.3.rocm-6.1.1
-  Unloading useless requirement: rocm/6.1.1
+ 1) slurm/slurm(latest)   2) rocm/5.7.1(latest)   3) openmpi/5.0.6.rocm-5.7.1
+hal@hpc-vesta1:~$ module remove openmpi/5.0.6.rocm-5.7.1
+Unloading openmpi/5.0.6.rocm-5.7.1
+  Unloading useless requirement: rocm/5.7.1
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
  1) slurm/slurm(latest)
 ```
 
-Module va gérer de manière "intelligente" les dépendances. Il a supprimé les dépendances automatiquement. Si vous aviez chargé le module **rocm/6.1.1** avant de charger le module **openmpi/5.0.3.rocm-6.1.1**, ce dernier ne chargera que l'autre dépendance manquante. Lors de la suppression, le module **rocm/6.1.1** sera conservé :
+Module va gérer de manière "intelligente" les dépendances. Il a supprimé les dépendances automatiquement. Si vous aviez chargé le module **rocm/5.7.1** avant de charger le module **openmpi/5.0.6.rocm-5.7.1**, ce dernier ne chargera que l'autre dépendance manquante. Lors de la suppression, le module **rocm/5.7.1** sera conservé :
 
 ```console
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)
-hal@hpc-vesta1:~$ module load openmpi/5.0.3.rocm-6.1.1
+ 1) slurm/slurm(latest)   2) rocm/5.7.1(latest)
+hal@hpc-vesta1:~$ module load openmpi/5.0.6.rocm-5.7.1
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1
-hal@hpc-vesta1:~$ module rm openmpi/5.0.3.rocm-6.1.1
+ 1) slurm/slurm(latest)   2) rocm/5.7.1(latest)   3) openmpi/5.0.6.rocm-5.7.1
+hal@hpc-vesta1:~$ module rm openmpi/5.0.6.rocm-5.7.1
   Unloading useless requirement: openmpi/openmpi-3.1.i18
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)
+ 1) slurm/slurm(latest)   2) rocm/5.7.1(latest)
 ```
 
 À l'inverse, si vous enlevez un module dont dépend d'autres modules, tous les modules seront déchargés :
 ```console
-hal@hpc-vesta1:~$ module load openmpi/5.0.3.rocm-6.1.1
-Loading openmpi/5.0.3.rocm-6.1.1
-  Loading requirement: rocm/6.1.1
+hal@hpc-vesta1:~$ module load openmpi/5.0.6.rocm-5.7.1
+Loading openmpi/5.0.6.rocm-5.7.1
+  Loading requirement: rocm/5.7.1
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1
-hal@hpc-vesta1:~$ module rm rocm/6.1.1
-Unloading rocm/6.1.1
-  Unloading dependent: openmpi/5.0.3.rocm-6.1.1
+ 1) slurm/slurm(latest)   2) rocm/5.7.1(latest)   3) openmpi/5.0.6.rocm-5.7.1
+hal@hpc-vesta1:~$ module rm rocm/5.7.1
+Unloading rocm/5.7.1
+  Unloading dependent: openmpi/5.0.6.rocm-5.7.1
 ```
 
 ## module purge
@@ -112,7 +112,7 @@ Vous pouvez supprimer tous vos modules d'un coup pour repartir sur une base nouv
 ```console
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1   4) gcc/13.2.0(latest)
+ 1) slurm/slurm(latest)   2) rocm/5.7.1(latest)   3) openmpi/5.0.6.rocm-5.7.1   4) gcc/13.2.0(latest)
 hal@hpc-vesta1:~$ module purge
 Unloading slurm/slurm
   ERROR: Unload of super-sticky module skipped
@@ -126,7 +126,7 @@ Vous pouvez qu'une erreur indique que le module **slurm/slurm** n'a pas pu être
 ```console
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1   4) gcc/13.2.0(latest)
+ 1) slurm/slurm(latest)   2) rocm/5.7.1(latest)   3) openmpi/5.0.6.rocm-5.7.1   4) gcc/13.2.0(latest)
 hal@hpc-vesta1:~$ module purge -s
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
@@ -143,13 +143,13 @@ Currently Loaded Modulefiles:
  1) slurm/slurm(latest)
 hal@hpc-vesta1:~$ module load aocl/4.2.0.aocc
 Loading aocl/4.2.0.aocc
-  Loading requirement: rocm/6.1.1
+  Loading requirement: rocm/5.7.1
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) aocl/4.2.0.aocc
+ 1) slurm/slurm(latest)   2) rocm/5.7.1(latest)   3) aocl/4.2.0.aocc
 hal@hpc-vesta1:~$ module switch aocl/4.2.0.aocc aocl/4.2.0.gcc
 Switching from aocl/4.2.0.aocc to aocl/4.2.0.gcc
-  Unloading useless requirement: rocm/6.1.1
+  Unloading useless requirement: rocm/5.7.1
   Loading requirement: gcc/13.2.0
 hal@hpc-vesta1:~$ module list
 Currently Loaded Modulefiles:
@@ -203,6 +203,6 @@ fi
 source /usr/local/configfiles/bashrc.default
 
 module load -s gcc/gcc-13.2.0
-module load -s openmpi/5.0.3.rocm-6.1.1
+module load -s openmpi/5.0.6.rocm-5.7.1
 module load -s cmake/3.29.5
 ```
