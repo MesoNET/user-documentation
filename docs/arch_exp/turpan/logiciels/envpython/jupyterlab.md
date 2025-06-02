@@ -96,13 +96,14 @@ Vérifier votre configuration ssh. La configuration associée à clé ssh dans v
 >```
 :::
 
-## Utiliser les conteneurs nvidia (pytorch, tensorflow, rapids et modulus)
+## Utiliser les conteneurs nvidia (pytorch, tensorflow, rapids, modulus et triton)
 
 Il existe 4 type de conteneurs disponibles pour les sessions interactives :
 * pytorch : [NVIDIA PyTorch container](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch)
 * tensorflow : [NVIDIA TensorFlow container](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/tensorflow)
 * rapids : [NVIDIA RAPIDS container](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/rapidsai/containers/notebooks)
 * modulus : [NVIDIA Modulus container](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/modulus/containers/modulus)
+* triton-llvm : [Triton container](https://triton-lang.org/main/getting-started/tutorials/index.html)
 
 Ceux-ci peuvent être utilisés en invoquant `runJupyterSession.sh` avec l'option `--container`. Exemple pour utiliser le conteneur pytorch :
 ```bash
@@ -116,6 +117,51 @@ Pour consulter les versions disponibles, utilisez la commande suivante :
 ```bash
 runJupyterSession.sh --container pytorch --help
 ```
+
+### Utiliser un conteneurs custom
+
+Pour utiliser un conteneur custom, il faut respecter quelques prérequis. Tout d'abord, le conteneur doit être construit depuis un des conteneurs prédéfinis (ci-dessus).
+Les fichiers images (.sif) de ces conteneurs se trouvent dans le répertoire `/work/conteneurs/sessions-interactives`. Les images valides sont celle contenant le mot clé "latest" dans leur nom.
+
+#### Exemple de build issue de la version 24.10 du conteneur pytorch :
+* Creation de l'environnement de build
+  ```bash
+  cd /work/conteneurs/invite/invitemc
+  apptainer build --sandbox mon_conteneur/ /work/conteneurs/sessions-interactives/pytorch-24.10-py3-calmip-si-latest.sif
+  mkdir mon_conteneur/users  mon_conteneur/tmpdir mon_conteneur/work
+  ```
+
+* Faire les modifications que l'on souhaite au sein du conteneur
+  ```bash
+  apptainer shell --fakeroot --bind /tmpdir,/work --writable mon_conteneur/
+  ```
+
+  :::tip
+  Il peut être intéressant de le faire en interractif sur un noeud pour disposer de la carte graphique
+
+  ```bash
+  cd /work/conteneurs/invite/invitemc
+  srun -n 1 -p shared --bind /tmpdir,/work --pty apptainer shell --fakeroot --bind /tmpdir,/work --writable mon_conteneur/
+  ```
+  :::
+
+* Créer l'image du conteneur
+  ```bash
+  cd /work/conteneurs/invite/invitemc
+  apptainer build mon_conteneur.sif mon_conteneur/
+  apptainer cache clean" # A faire uniquement tout a la fin une fois que l'image est définitive pour libérer la place
+  ```
+
+#### Pour utiliser le conteneur custom
+  
+```bash
+runJupyterSession.sh --container custom --containerpath /work/conteneurs/invite/invitemc/mon_conteneur.sif
+```
+:::tip
+L’option `--pythonenvname "<envname>"` permet d’utiliser un environnement dans le conteneur. La commande suivante est exécuté dans le conteneur avant de lancer le notebook : `python -m ipykernel install --user --name="<envname>"`
+
+Il est également possible d'utiliser l'option `--userbase` afin de spécifier un chemin alternatif pour les modules ou les environnements python (https://docs.python.org/3/using/cmdline.html#envvar-PYTHONUSERBASE)
+:::
 
 ### Installer un paquet python supplémentaire dans mon environnement
 
