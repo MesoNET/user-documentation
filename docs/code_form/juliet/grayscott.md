@@ -35,11 +35,11 @@ To connect to a compute node you will need to use slurm
 
 By default you can run the command:
 
-``` srun --partition=mesonet --account=m25065-students --time=10:00:00 --mem=64G --pty /bin/bash ```
+``` srun --partition=mesonet --account=m25065-students --time=10:00:00 --mem=64G -c 16 --pty /bin/bash ```
 
 If you need a GPU, run the command 
 
-``` srun --partition=mesonet --account=m25065-students --time=10:00:00 --mem=64G --gres=gpu:1 --pty /bin/bash ```
+``` srun --partition=mesonet --account=m25065-students --time=10:00:00 -c 16 --mem=64G --gres=gpu:1 --pty /bin/bash ```
 
 Due to a technical issue, for your job to properly take GPUs into account you will need to enter this command as soon as you connect to a compute node
 
