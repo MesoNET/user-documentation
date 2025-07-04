@@ -96,11 +96,12 @@ Le chemin sera ensuite utilisé pour l’ajouter au conteneur Apptainer, comme m
 >
 >ENV_PATH=/tmpdir/user_name/.conda/envs/myenv3
 >
->apptainer exec \
+> srun apptainer exec \
 >  --nv \
 >  --bind /tmpdir,/work \
 >  --env PYTHONUSERBASE=$ENV_PATH \
 >  --env LD_LIBRARY_PATH=$ENV_PATH/lib:$LD_LIBRARY_PATH \
+>  --env PYTHONPATH=$ENV_PATH/lib/python3.10/site-packages:$PYTHONPATH \
 >   /work/conteneurs/sessions-interactives/tensorflow-24.02-tf2-py3-calmip-si.sif \
 >  python mon_script.py
 >```
