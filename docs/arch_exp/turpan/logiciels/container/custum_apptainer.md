@@ -8,7 +8,7 @@ Le plus simple est de partir d’un [des conteneurs disponible](./list_container
 Les commandes pour créer l’environnement apptainer depuis l’image du conteneur nommés ici « X » ( où X peut être n'importe lequel des conteneurs disponibles):
 
 ```shell
-cd /work/conteneurs/
+cd /work/conteneurs/build_container
 apptainer build --sandbox mon_conteneur/ /work/conteneurs/sessions-interactives/x.sif
 
 # Create necessary directory 
