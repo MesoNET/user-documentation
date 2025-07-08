@@ -7,8 +7,14 @@ sidebar_position: 0
 
 Vous trouverez ici les dernières informations, annonces et mises à jour concernant Turpan. Consultez cette page régulièrement pour rester informé.
 
-<!-- ---
-## Dernières Nouvelles -->
+---
+## Dernières Nouvelles
+L’environnement logiciel a été enrichi avec les modules suivants :
+
+- **MAQAO version 25.1.0**  est désormais disponible. Cette dernière version offre des outils améliorés pour l’analyse et l’optimisation des performances.
+
+- **SYCL avec AdaptiveCpp** pour ARM a été intégré avec succès, permettant une programmation hétérogène efficace et un meilleur support des plateformes basées sur ARM.
+
 
 ---
 
