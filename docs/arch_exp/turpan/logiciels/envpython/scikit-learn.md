@@ -79,7 +79,7 @@ apptainer exec --bind /tmpdir,/work --nv ...
 
 Pour plus d'information sur l'utilisation des conteneurs Apptainer :
 
-* La documentation de l'[utilisation des conteneurs Apptainer sur Turpan](../apptainer.md)
+* La documentation de l'[utilisation des conteneurs Apptainer sur Turpan](../container/index.md)
 * La documentation officeille d'Apptainer : https://apptainer.org/docs/user/1.1/
 
 
