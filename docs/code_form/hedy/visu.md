@@ -1,6 +1,6 @@
 ---
 title: "Noeud de visulation"
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Utilisation du noeud de visualisation 
