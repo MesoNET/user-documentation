@@ -13,9 +13,15 @@ Une fois le projet validé, un dossier est créé pour chaque membre du projet d
 
 |                   | Limite d'espace      | Limite de fichiers    |
 | ----------------- | :------------------: | :-------------------: |
-| **Utilisateur**   | 500 Go               | 10000000              |
-| **Projet**        | 1000 Go              | 5000000               |
+| **Utilisateur**   | 500 Go               | 5000000              |
+| **Projet**        | 1000 Go              | 10000000               |
 
+
+## Limites de calcul
+
+Par ailleurs, certaines limites de calcul sont définies par défaut dans Slurm afin de garantir une utilisation équilibrée et équitable du cluster pour tous les utilisateurs. Le nombre maximal de GPU qu'un utilisateur peut occuper simultanément est de 4 H100, ce qui équivaut aux ressources d'un nœud complet.  De même, le nombre maximal de jobs qu'un utilisateur peut lancer, y compris les jobs en attente d'exécution, est de 10.
+
+Il est important que tous les utilisateurs respectent ces règles afin de garantir une utilisation raisonnable des ressources du cluster. Si une modification de ces limites et quotas s'avère nécessaire, une demande spéciale et dûment justifiée devra être remplie afin de faire l'objet d'une évaluation avant d'être validée en fonction des disponibilités.
 
 ## Informations utiles
 
