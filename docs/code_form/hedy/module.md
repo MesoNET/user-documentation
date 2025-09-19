@@ -1,6 +1,6 @@
 ---
 title: "Environnements logiciels"
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # INTRODUCTION
@@ -47,12 +47,10 @@ user@hedy:~$ which mpirun
 /nfs/mesonet/sw/openmpi/openmpi-5.0.3.rocm-6.1.1/bin/mpirun
 ```
 
-On voit que maintenant **openmpi** est utilisable. On constate également que tous les autres modules desquels **openmpi** dépend ont été chargé automatiquement. Pour désactiver l'affichage du message, vous pouvez utiliser l'option **-s** (ou **--silent**) :
+On voit que maintenant **openmpi** est utilisable. On constate également que tous les autres modules desquels **openmpi** dépend ont été chargé automatiquement. Pour désactiver l'affichage du message, vous pouvez utiliser l'option **-q** (ou **--quiet**) :
 ```console
 
-user@hedy:~$ module -s load openmpi/5.0.3.rocm-6.1.1
-Loading openmpi/5.0.3.rocm-6.1.1
-  Loading requirement: rocm/6.1.1
+user@hedy:~$ module -q load openmpi/5.0.3.rocm-6.1.1
 user@hedy:~$ module list
 Currently Loaded Modulefiles:
  1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1
@@ -121,13 +119,13 @@ Currently Loaded Modulefiles:
  1) slurm/slurm(latest)
 ```
 
-Vous pouvez qu'une erreur indique que le module **slurm/slurm** n'a pas pu être supprimé. C'est tout à fait normal, ce module étant indispensable au fonctionnement du centre de calcul, nous avons décidé de le rendre permanent. Si vous ne souhaitez pas voir l'erreur apparaître, vous pouvez utiliser l'option **-s** :
+Vous pouvez qu'une erreur indique que le module **slurm/slurm** n'a pas pu être supprimé. C'est tout à fait normal, ce module étant indispensable au fonctionnement du centre de calcul, nous avons décidé de le rendre permanent. Si vous ne souhaitez pas voir l'erreur apparaître, vous pouvez utiliser l'option **-q** :
 
 ```console
 user@hedy:~$ module list
 Currently Loaded Modulefiles:
  1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1   4) gcc/13.2.0(latest)
-user@hedy:~$ module purge -s
+user@hedy:~$ module purge -q
 user@hedy:~$ module list
 Currently Loaded Modulefiles:
  1) slurm/slurm(latest)

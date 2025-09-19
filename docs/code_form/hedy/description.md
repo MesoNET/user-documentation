@@ -5,6 +5,10 @@ sidebar_position: 1
 
 # Hedy, la machine IA/GPU H100 de MesoNET
 
+:::caution
+HEDY est en pré production : le nombre de projets est limité
+:::
+
 La machine Hedy dispose de 8 Noeuds PowerEdge XE8640 :
 
  - 2 x Intel Xeon Platinum 8462Y+ 2,8 GHz, 32C/64T, 16 GT/s, cache 60 Mo, Turbo, HT (300 W), mémoire DDR5 à 4 800 MHz
