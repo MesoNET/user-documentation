@@ -33,7 +33,7 @@ La commande `hedy_info` peut être lancée depuis les frontales de login pour ob
 UTILISATEUR: user2
 
 -------------------------------------------------------------------------------------------
-COMPTE: m20000
+PROJET: m20000
 ATTRIBUTION: 5002.00 heures GPU
 UTILISÉ: 20.47 heures GPU (0.41%)
 ÉNERGIE CONSOMMÉE: 0.09 kWh (0.32 MJ)
@@ -43,7 +43,7 @@ DÉTAILS DE LA CONSOMMATION:
            user2           | 7.28            | 0.15       | 0.04
 QUOTA DISQUE:
                           ||                     ESPACE                     ||                    FICHIERS      
-                          || Utilisé      | Limite Faible  | Limite Dur     || Utilisé      | Limite Faible  | Limite Dur    
+                          || Utilisé      | Limite Faible  | Limite Dure    || Utilisé      | Limite Faible  | Limite Dure   
            m20000         || 0K           | 900G           | 1000G          || 1            | 9000k          | 10000k        
            user1          || Informations confidentielles de l'utilisateur  || Informations confidentielles de l'utilisateur 
            user2          || 48K          | 450G           | 500G           || 13           | 4500k          | 5000k         
