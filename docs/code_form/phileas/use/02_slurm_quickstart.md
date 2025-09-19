@@ -29,12 +29,12 @@ Exemple de script batch Slurm pour soumettre un job  :
 #SBATCH --output=%x_%j.out      # Output file
 #SBATCH --error=%x_%j.err       # Error file
 
-#SBATCH --time=0-00:05:00       # Time limit
+#SBATCH --time=0-00:05:00       # Time limit. 5 minutes in this example
 #SBATCH --nodes=1               # How many nodes to run on
 #SBATCH --ntasks=2              # How many tasks per node
 #SBATCH --cpus-per-task=2       # Number of CPUs per task
 #SBATCH --mem-per-cpu=10g       # Memory per CPU
-#SBATCH --qos=short             # priority/quality of service
+#SBATCH --qos=normal             # priority/quality of service
 
 # Load specific module
 module load gcc

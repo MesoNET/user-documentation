@@ -24,7 +24,7 @@ Une documentation des commandes de base est disponible ici : [http://slurm.sched
 
 Les différents nœuds de calcul sont regroupés en fonction de différents critères dans des partitions.  
  Lors de la soumission d'un job, il faut choisir une partition.  
-Le cluster Vesta ne possède pour le moment qu'une parition nommé **mesonet** qui sera utilisée par défaut pour tous les jobs. Cette parition possède une limite de temps de **24 heures** par job. Cette limite est amenée à évoluer au cours du temps.
+Le cluster Vesta ne possède pour le moment qu'une parition nommé **mn-grant** qui sera utilisée pour tous les jobs. Cette parition possède une limite de temps de **24 heures** par job. Cette limite est amenée à évoluer au cours du temps.
 
 ## Lancement d'un job
 
@@ -47,9 +47,9 @@ Voici un exemple d'un script de soumission demandant 2 nœuds de calcul avec cha
 ```console
 #! /bin/bash
 
-#SBATCH -p mesonet      # Partition public avec des GPU
 #SBATCH -A account      # Cet account vous sera fourni à la création de votre projet
-#SBATCH -N 2-2          # 2 nœud
+#SBATCH -p mn-grant     # Partition Mesonet
+#SBATCH -N 2-2          # 2 nœuds
 #SBATCH --gres=gpu:10   # 10 GPU par nœud
 
 ./mon_code_gpu
@@ -88,8 +88,8 @@ Remarque : tous les arguments de la directive #SBATCH peuvent également être u
 
 ## Quelques directives utiles
 
-* **-p** : partition à utiliser pour le job
 * **-A** : compte Slurm à utiliser (il vous est fourni pour chaque projet)
+* **-p** : partition Slurm à utiliser (mn-grant pour la grande majorité des cas)
 * **-N** : nombre de nœuds (min - max)
 * **-n** : nombre de tâches (1 par nœud par défaut)
 * **--cpus-per-task** : nombre de cœurs par tâche
@@ -143,7 +143,7 @@ Pour utiliser une partition, il faut disposer d'un compte Slurm (indépendant du
 Pour utiliser la partition associée aux projets, vous aurez accès à un compte Slurm spécifique, configuré avec un quota d'heures suite à une allocation du comité scientifique :
 
 ```console
-#SBATCH -p mesonet
+#SBATCH -p mn-grant
 #SBATCH -A projet
 ```
 
@@ -152,16 +152,14 @@ Pour utiliser la partition associée aux projets, vous aurez accès à un compte
 Vous pouvez avoir une indication de votre consommation en heures CPU par la commande
 
 ```console
-sreport cluster AccountUtilizationByUser  start=2023-09-01 accounts=votre_account -t hours
+sreport cluster AccountUtilizationByUser  start=2025-04-01 accounts=votre_account -t hours
 ```
 
-Notez que **votre_account** correspond au nom du groupe Unix auquel vous appartenez ou alors au numéro du grant que vous avez obtenu lors d'une demande d'attributions d'heures par le comité scientifique.
+Notez que **votre_account** correspond au nom du groupe Unix auquel vous appartenez ou alors au numéro du projet mesonet auquel vous êtes intégrés.
 
 ## Espace disque temporaire
 
-À la soumission d’un job et sur le disque dur de chacun des nœuds qui vous sont alloués, Slurm crée un répertoire temporaire de nom **/scratch/job.$SLURM_JOB_ID**
-
-Vous pouvez utiliser ce répertoire pour y stocker les fichiers temporaires de vos applications en cours d’exécution. Pensez à les recopier sur votre compte à la fin du script. En effet, le répertoire /scratch/job.$SLURM_JOB_ID est automatiquement effacé en fin de job.
+À la soumission d’un job et sur le disque dur de chacun des nœuds qui vous sont alloués, Slurm crée un répertoire **/tmp** utilisable par vos jobs et supprimé dès la fin de ces derniers sans que vous ayez à faire quoi que ce soit. N'oubliez pas de récupérer les données de sortie si vous utilisez cet espace temporaire qui est détruit à la fin du job.
 
 ## Variables d'environnement
 

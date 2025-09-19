@@ -6,11 +6,11 @@ sidebar_position: 12
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Vous pouvez déployer vos applications via des conteneurs Apptainer (anciennement Singularity)
+Vous pouvez déployer vos applications via des conteneurs Apptainer (anciennement Singularity). La liste des conteneurs disponibles [se trouve ici](list_containers.md)
 
-## Construction de conteneurs
+## [Construction de conteneurs](custum_apptainer)
 
-Pour vous permettre de créer facilement des conteneurs pour l'architecture des CPUs ARM, la construction de conteneurs apptainer sur Turpan est possible à partir des frontales de connexion à l'aide de la commande `apptainer build`
+Pour vous permettre de créer facilement des conteneurs pour l'architecture des CPUs ARM, la construction de conteneurs apptainer sur Turpan est possible à partir des frontales de connexion à l'aide de la commande `apptainer build` [voir ici](custum_apptainer)
 
 ## Utilisation d'un conteneur Apptainer
 

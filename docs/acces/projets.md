@@ -13,7 +13,7 @@ Cette page est en construction, n'hésitez pas à envoyer des retours à theo.ba
 
 ### Prérequis
 
-Pour pouvoir créer un projet vous devez avoir un compte MesoNET et être membre d'un laboratoire identifié. 
+Pour pouvoir créer un projet vous devez [avoir un compte MesoNET](https://www.mesonet.fr/documentation/user-documentation/acces/portail/) et être membre d'un laboratoire identifié. 
 
 Si vous n'avez pas rentré votre laboratoire vous pouvez le rentrer dans [votre profil](https://acces.mesonet.fr/gramc-meso/profil)
 
@@ -21,13 +21,7 @@ Si votre laboratoire n'apparaît pas sur la liste merci de contacter support@mes
 
 ### Création de projet
 
-Pour créer un nouveau projet, allez dans l'onglet `Demandeur` et cliquez sur `Nouveau projet Dynamique`.
-
-:::caution
-
-Si vous ne pouvez pas cliquer le bouton, vous n'avez probablement pas de laboratoire associé dans votre profil, référez vous à la section ci-dessus pour l'ajouter.
-
-:::
+Pour créer un nouveau projet, allez dans la barre à gauche, dans la section `Projet` et cliquez sur `Nouveau Projet`
 
 Vous pouvez ensuite remplir les différents champs, enregistrer et cliquer sur `Envoyer en validation`.
 
@@ -37,11 +31,14 @@ Dans la section `Personnes participant au projet` renseignez leur email, Prénom
 
 Si le collaborateur a déjà un compte MesoNET, une autocomplétion est proposée à partir de l'adresse mail. S'il n'a pas de compte MesoNET un email sera envoyé à l'adresse fournie avec une invitation.
 
+Si vous ajoutez des collaborateurs par la suite, vous pouvez allez dans l'onglet `Collaborateurs` de votre projet.
+
 
 ## Accès aux machines 
 
-Dans la section `Personnes participant au projet` cochez pour chaque collaborateur les machines sur lesquelles le collaborateur a besoin d'un accès.
+Dans la section `Personnes participant au projet` ou dans l'onglet `Collaborateurs`, cochez pour chaque collaborateur les machines sur lesquelles le collaborateur a besoin d'un accès.
 
+Pour avoir accès à une machine vous devez faire une demande d'heures de calcul à cette dernière. Vous pouvez vous référer à la documentation de chaque machine 
 
 ## Demander une extension
 
