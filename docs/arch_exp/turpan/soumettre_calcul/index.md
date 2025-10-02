@@ -30,6 +30,11 @@ Afin de ne pas monopoliser l’ensemble des noeuds du cluster en journée :
 
 Lorsque la partition est désactivée, les soumissions sont possibles, mais les jobs sont suspendus jusqu’à l’activation de la partition. A la désactivation, les jobs RUNNING sur la partition "full" ne sont pas arrêtés.
 
+
+:::info
+Si votre application n’utilise qu’un seul GPU et ne consomme pas toute la capacité du GPU, pensez à vérifier l’option [**MIG**](./MIG.md).
+:::
+
 ## Comment lancer un script `sbatch` ?
 
 <Tabs>
