@@ -1,6 +1,6 @@
 ---
 title: Lancer un calcul
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 import Tabs from '@theme/Tabs';
@@ -20,7 +20,7 @@ L'utilisateur peut exécuter un maximum de 3 jobs simultanément, quelle que soi
 * **Exclusive**: Un job en partition exclusive réserve l’intégralité des nœuds qui lui sont attribués.
 * **Non exclusive**: Un job en partition non exclusive ne réserve pas l’intégralité du nœud, ce qui permet à d’un autre job (d’un autre utilisateur) de partager les mêmes ressources.
 
-Le choix de la partition dépend des besoins en ressources, notamment en termes de nombre de cœurs par nœud et des limites de temps de calcul (walltime), veuillez consulter [les règles de comptabilisation des ressources ](./accounting/accounting-rules.md#exemples-).
+Le choix de la partition dépend des besoins en ressources, notamment en termes de nombre de cœurs par nœud et des limites de temps de calcul (walltime), veuillez consulter [les règles de comptabilisation des ressources ](../accounting/accounting-rules.md#exemples-).
 :::
 
 Afin de ne pas monopoliser l’ensemble des noeuds du cluster en journée :
@@ -79,7 +79,7 @@ Exemple script shared, 1 nœud, 40 processeurs,  le temps d'exécution moins de 
 </Tabs>
 
 :::caution
-Sur Turpan, si l'application utilise **MPI**, il est nécessaire d'utiliser **mpirun** et d'éviter srun, sauf si un conteneur est utilisé ([voir ici](./logiciels/apptainer.md)). Pour les autres applications **sans MPI**, srun reste valide
+Sur Turpan, si l'application utilise **MPI**, il est nécessaire d'utiliser **mpirun** et d'éviter srun, sauf si un conteneur est utilisé ([voir ici](../logiciels/container/index.md)). Pour les autres applications **sans MPI**, srun reste valide
 :::
 
 ## Obtenir des informations sur un job
