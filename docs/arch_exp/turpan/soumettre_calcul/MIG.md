@@ -43,7 +43,6 @@ MIG est utilisable uniquement si votre application n’a besoin que d’un seul 
 >#SBATCH -n 20
 >#SBATCH --gres=gpu:3g.40gb 
 >#SBATCH -p 3g.40gb
->#SBATCH --reservation migconfig
 >
 >module purge
 >module load gnu/11.2.0
@@ -62,7 +61,6 @@ MIG est utilisable uniquement si votre application n’a besoin que d’un seul 
 >#SBATCH -n 10
 >#SBATCH --gres=gpu:2g.20gb 
 >#SBATCH -p 2g.20gb
->#SBATCH --reservation migconfig
 >
 >module purge
 >module load gnu/11.2.0
