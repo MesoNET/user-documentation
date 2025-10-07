@@ -1,20 +1,11 @@
 ---
-title: "Description"
-sidebar_position: 1
+title: "Arctic, multi-architectures"
 ---
+Parmi les entités de service « Code formation » de MesoNET, Arctic est matériellement hébergée par le cluster HPC régional (Austral) du mésocentre de Normandie, Criann.
 
-# L'architecture d'Arctic
+Le service est accessible à des projets d'enseignement, de formation ou de développement d'application de recherche en IA ou HPC.
 
-## Architecture globale
-Le cluster hébergeant Arctic est une solution HPE :
-- Réseau d'interconnexion SlingShot 11 a 200 Gbit/s (1 NIC par nœud de calcul fin (purement CPU), 1 NIC par nœud de calcul à GPU AMD, 3 ou 4 NIC par nœud de calcul à GPU NVIDIA)
-- Systeme de fichiers parallèle Lustre
-- Stockage : environ 2 Po d'espace disque (`/home`, `/dlocal`, `/soft`), dont :
-  - environ 1 Po en technologie Flash
-  - environ 1 Po en technologie disque mécanique 
+En fonction de la nature d'un projet et du profil de ses applications, différents sous-ensembles d'architecture (voir [Description](./description.md) et [Environnements logiciels](./logiciels.md)) peuvent être ciblés ou réservés (cas de TP d'enseignement) : ressources purement CPU (AMD Genoa), ressources GPU AMD MI210, GPU NVIDIA A100 ou H200.
 
-## Sous-ensembles d'architecture de nœuds de calcul
-- 124 nœuds de calcul bi-socket AMD EPYC 9654 (Genoa, 96-Core par socket à 2,4 GHz) dotés chacun de 768 (24x 32) Go de RAM DDR5 à 4800 MHz
-- 11 nœuds de calcul bi-socket AMD Epyc 7543 (Milan, 32-Core par socket à 2,8 GHz, 512 Go de RAM DDR4 à 3200 MHz), dotés chacun de 8 cartes **GPU NVIDIA A100** (8 unités de traitement GPU interconnectés par NVLink, 80 Go de mémoire HBM2e embarquée par unité)
-- 2 nœuds de calcul bi-sockets Intel Xeon 8558 (48-Core par socket à 2,1 GHz, 2 To de RAM DDR5 à 5600 MHz), dotés chacun de 8 cartes **GPU NVIDIA H200** (8 unités de traitement GPU interconnectés par NVLink, **141 Go de mémoire HBM3e** embarquée par unité)
-- 2 nœuds de calcul mono-socket AMD Epyc 7543P (Milan, 32-Core à 2,8 GHz, 256 Go de RAM DDR4 à 3200 MHz), dotés chacun de 4 cartes **GPU AMD MI210** (64 Go de mémoire HBM2e embarquée oar unité
+## Demande d'accès au service
+La [documentation générale d'acces à MesoNET](https://www.mesonet.fr/documentation/user-documentation/acces/portail) fournit les informations pour la demande d'accès au service, puis de dépôt d'un projet scientifique.
