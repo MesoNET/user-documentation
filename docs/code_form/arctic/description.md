@@ -1,28 +1,20 @@
 ---
-title: "Se connecter à Arctic"
-sidebar_position: 2
+title: "Description"
+sidebar_position: 1
 ---
 
-# Comment se connecter à Arctic
+# L'architecture d'Arctic
 
-La connexion s'effectue en SSH vers la frontale de nom **arctic.criann.fr**
+## Architecture globale
+Le cluster hébergeant Arctic est une solution HPE :
+- Réseau d'interconnexion SlingShot 11 a 200 Gbit/s (1 NIC par nœud de calcul fin (purement CPU), 1 NIC par nœud de calcul à GPU AMD, 3 ou 4 NIC par nœud de calcul à GPU NVIDIA)
+- Systeme de fichiers parallèle Lustre
+- Stockage : environ 2 Po d'espace disque (`/home`, `/dlocal`, `/soft`), dont :
+  - environ 1 Po en technologie Flash
+  - environ 1 Po en technologie disque mécanique 
 
-**Syntaxe en ligne de commande** : `ssh -l monlogin arctic.criann.fr` (en remplaçant `monlogin` par votre identifiant). Les environnements Linux et Mac intègrent nativement le protocole SSH via un terminal. Si vous êtes sous environnement Windows, nous vous recommandons d'utiliser le logiciel [MobaXTerm](https://mobaxterm.mobatek.net/) qui vous apportera un environnement de travail complet basé du protocole ssh (export d'écran, transfert de fichiers).
-
-Les connexions se font par clé ssh ou par mot de passe initial à modifier à la première connexion (cas de comptes d'étudiants pour TP ou mini-projet de projet d'enseignement). Les administrateurs d'Arctic fournissent les informations nécessaires aux porteurs et utilisateurs de projet lors des demandes et créations de compte.
-
-<!---
-Lors de votre première connexion, le changement de mot de passe vous est imposé. Lisez soigneusement ce qui vous est demandé : `(current) Password` correspond au mot de passe actuel et non au nouveau mot de passe souhaité...
-
-Les personnalisations (variables d'environnement, alias) se font avec un fichier `~/.bash_profile` (et non `~/.bashrc`) à créer.
-
-L'utilisateur a un espace de travail personnel dans `/home/2500001/mesonet_project/username`.
---->
-
-:::info
-Si votre structure a un **firewall** limitant les flux en sortie de votre site, voici les ports à ouvrir :
-
-- Connexions SSH (port 22) vers la frontale de nom `arctic.criann.fr`
-  - IPv4 : `195.xxx.xx.xxx`
-Concernant les sessions de visualisation à distance, pour connaître les IP et les ports à ouvrir, [merci de contacter le support par mail](mailto:support@criann.fr).
-:::
+## Sous-ensembles d'architecture de nœuds de calcul
+- 124 nœuds de calcul bi-socket AMD EPYC 9654 (Genoa, 96-Core par socket à 2,4 GHz) dotés chacun de 768 (24x 32) Go de RAM DDR5 à 4800 MHz
+- 11 nœuds de calcul bi-socket AMD Epyc 7543 (Milan, 32-Core par socket à 2,8 GHz, 512 Go de RAM DDR4 à 3200 MHz), dotés chacun de 8 cartes **GPU NVIDIA A100** (8 unités de traitement GPU interconnectés par NVLink, 80 Go de mémoire HBM2e embarquée par unité)
+- 2 nœuds de calcul bi-sockets Intel Xeon 8558 (48-Core par socket à 2,1 GHz, 2 To de RAM DDR5 à 5600 MHz), dotés chacun de 8 cartes **GPU NVIDIA H200** (8 unités de traitement GPU interconnectés par NVLink, **141 Go de mémoire HBM3e** embarquée par unité)
+- 2 nœuds de calcul mono-socket AMD Epyc 7543P (Milan, 32-Core à 2,8 GHz, 256 Go de RAM DDR4 à 3200 MHz), dotés chacun de 4 cartes **GPU AMD MI210** (64 Go de mémoire HBM2e embarquée oar unité
