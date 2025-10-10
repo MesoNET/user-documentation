@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## Architecture globale
 Le cluster hébergeant Arctic est une solution HPE :
-- Réseau d'interconnexion SlingShot 11 a 200 Gbit/s (1 NIC par nœud de calcul fin (purement CPU), 1 NIC par nœud de calcul à GPU AMD, 3 ou 4 NIC par nœud de calcul à GPU NVIDIA)
+- Réseau d'interconnexion SlingShot 11 à 200 Gbit/s (1 NIC par nœud de calcul fin (purement CPU), 1 NIC par nœud de calcul à GPU AMD, 3 ou 4 NIC par nœud de calcul à GPU NVIDIA)
 - Systeme de fichiers parallèle Lustre
 - Stockage : environ 2 Po d'espace disque (`/home`, `/dlocal`, `/soft`), dont :
   - environ 1 Po en technologie Flash
