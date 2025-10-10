@@ -24,4 +24,4 @@ Les GPU AMD sont consacrés à des codes de simulation programmés par API HIP, 
 ### Applications
 Des codes métier de référence sont aussi disponibles pour différents domaines tels que mécanique et CFD (exemple : **OpenFOAM**), climat (exemple : **WRF**), simulation atomistique (exemple : **Gromacs**) ou mathématiques (exemple : **R**).
 
-Voir les [commandes utiles](https://services.criann.fr/services/hpc/cluster-austral/guide/#logiciels-disponibles) (telles que `module load cfd_fem`, `module load atomic_simu`) permettant de lister les logicels disponibles par catégorie scientifique ou technique.
+Voir les [commandes utiles](https://services.criann.fr/services/hpc/cluster-austral/guide/#logiciels-disponibles) (telles que `module avail cfd_fem`, `module avail atomic_simu`) permettant de lister les logicels disponibles par catégorie scientifique ou technique.
