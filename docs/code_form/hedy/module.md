@@ -3,204 +3,131 @@ title: "Environnements logiciels"
 sidebar_position: 5
 ---
 
-# INTRODUCTION
+# Gestion de l'Environnement
 
-Le système de [Modules](https://modules.readthedocs.io/en/latest/#) est un outil qui simplifie l'initialisation du shell et permet aux utilisateurs et utilisatrices de modifier leur environnement facilement avec des fichiers de modules.
+Pour garantir que votre shell fonctionne correctement sur le cluster **Hedy**, nous utilisons un système appelé **[Modules](https://lmod.readthedocs.io/en/latest/index.html)**. Son but principal est de simplifier la configuration initiale.
 
-Chaque fichier de module contient les informations requises pour configurer le shell pour une application spécifique. Plusieurs modules sont pré-installés sur **Hedy**.
+Concrètement, l'outil Modules permet à chaque utilisateur de modifier son environnement facilement. Il y parvient en utilisant des fichiers de configuration qui contiennent tous les réglages pour qu'une application spécifique soit prête à l'emploi. Vous avez accès à de nombreux programmes déjà installés via ces modules.
 
-Par défaut, le module **[slurm/slurm](jobs)** (notre gestionnaire de ressources, indispensable pour soumettre des jobs) est chargé par défaut dans l'environnement de toutes les personnes se connectant au cluster.
 
-# UTILISATION
+# UTILISATION DU SYSTÈME DE MODULES
 ## module list
 
 Pour lister les modules chargés dans votre environnement, vous pouvez utiliser la commande **module list** (ou son raccourci **ml list**) :
 
 ```console
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)
+[user@m-login02 ~]$ module list
+No modules loaded
+[user@m-login02 ~]$ ml list
+No modules loaded
 ```
+On voit qu'au départ, aucun module n'est chargé et l'environnement de travail est propre.
 
-On voit ici que le module **slurm/slurm** estchargé, ce qui nous permettra d'utiliser cette application.
+## module avail
+
+La commande **module avail** (**ml avail**) permet d'obtenir la liste des modules installés sur le cluster.
+
+```console
+[user@m-login02 ~]$ module avail 
+
+----------------------------------------------------------------- /opt/ohpc/pub/modulefiles -----------------------------------------------------------------
+   R-Studio/2024.04.1                 cuda-nccl/2.21.5-cuda12.5                gdb/16.3         (D)    octave/10.2.0          (D)    pmix/4.2.9
+   R-Studio/2025.05.1          (D)    cuda-nccl/2.27.3-cuda12.9         (D)    gnu12/12.2.0            openjdk/21                    prun/2.2
+   R/4.4.0                            cuda-tensorrt/10.0.1.6-cuda12.4          gnu13/13.2.0            openjdk/24             (D)    python/3.12.4
+   R/4.5.0                     (D)    cuda-tensorrt/10.11.0.33-cuda12.9 (D)    hwloc/2.12.0            os                            python/3.13.4    (D)
+   autotools                          cuda-toolkit/12.4                        intel/2023.2.1          paraview/5.12.1-egl           ucx/1.18.0
+   blender/4.1.1                      cuda-toolkit/12.5                        intel/2024.0.0   (D)    paraview/5.12.1-mpi    (D)    valgrind/3.24.0
+   blender/4.4.3               (D)    cuda-toolkit/12.6                        intel/2024.1.2          paraview/5.12.1-osmesa        visit/3.4.1-beta
+   cmake/4.0.0                        cuda-toolkit/12.8                        intel/2024.2.1          paraview/5.13.3-egl           visit/3.4.2      (D)
+   cuda-cuddn/9.2.0.82-cuda12         cuda-toolkit/12.9                 (D)    libfabric/1.18.0        paraview/5.13.3-mpi
+   cuda-cuddn/9.10.2.21_cuda12 (D)    gdb/14.2                                 octave/9.2.0            paraview/5.13.3-osmesa
+
+  Where:
+   D:  Default Module
+```
+Certains modules ont des tags entre parenthèses. Ces modules représentent les modules qui seront chargés par défaut si on ne précise pas de version de module. 
+
+La liste peut être un peu longue, il est préférable d'affiner ses recherches avec le nom d'une application, par exemple :
+
+```console
+[user@m-login02 ~]$ module avail cuda
+
+----------------------------------------------------------------- /opt/ohpc/pub/modulefiles -----------------------------------------------------------------
+   cuda-cuddn/9.2.0.82-cuda12         cuda-nccl/2.27.3-cuda12.9         (D)    cuda-toolkit/12.4    cuda-toolkit/12.8
+   cuda-cuddn/9.10.2.21_cuda12 (D)    cuda-tensorrt/10.0.1.6-cuda12.4          cuda-toolkit/12.5    cuda-toolkit/12.9 (D)
+   cuda-nccl/2.21.5-cuda12.5          cuda-tensorrt/10.11.0.33-cuda12.9 (D)    cuda-toolkit/12.6
+```
 
 ## module load
 
-Prenons l'exemple de **openmpi**. Voici ce qui se passe si vous essayez de l'utiliser sans charger de module :
-
+Prenons l'exemple de **python3.12**. Voici ce qui se passe si vous recherchez **python3.12** dans votre environnement sans charger de module :
 ```console
-user@hedy:~$ mpirun
--bash: mpirun: command not found
-user@hedy:~$ which mpirun
-/usr/bin/which: no mpirun in (/usr/local/bin/di:/nfs/mesonet/home/users/hal/HPC_tools/utilities:/nfs/mesonet/home/users/hal/.local/bin:/nfs/mesonet/sw/slurm/slurm-24.05.0/bin:/nfs/mesonet/sw/modules/modules-5.4.0/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/nfs/mesonet/home/users/hal/bin:/nfs/mesonet/sw/munge/munge-0.5.16/bin/)
-```
-Le logiciel n'apparaît pas dans votre environnement, et par conséquent vous ne pouvez pas l'utiliser. Il faut donc charger le bon module avec la commande **module load** (ou son raccourci **ml load**) :
-
-```console
-user@hedy:~$ module load openmpi/5.0.3.rocm-6.1.1
-Loading openmpi/5.0.3.rocm-6.1.1
-  Loading requirement: rocm/6.1.1
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1
-user@hedy:~$ which mpirun
-/nfs/mesonet/sw/openmpi/openmpi-5.0.3.rocm-6.1.1/bin/mpirun
+[user@m-login02 ~]$ which python3.12
+/usr/bin/which: no python3.12 in (/home/user/.local/bin:/home/user/bin:/etc/slurm/bin:/etc/slurm/svisu/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/dell/srvadmin/bin)
 ```
 
-On voit que maintenant **openmpi** est utilisable. On constate également que tous les autres modules desquels **openmpi** dépend ont été chargé automatiquement. Pour désactiver l'affichage du message, vous pouvez utiliser l'option **-q** (ou **--quiet**) :
-```console
+Cette version de Python n'apparaît pas dans votre environnement, et par conséquent vous ne pouvez pas l'utiliser. Il faut donc charger le bon module avec la commande **module load** (ou son raccourci **ml load**) :
 
-user@hedy:~$ module -q load openmpi/5.0.3.rocm-6.1.1
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1
+```console
+[user@m-login02 ~]$ module load python/3.12
+
+[user@m-login02 ~]$ module list
+Currently Loaded Modules:
+  1) python/3.12.4
+
+[user@m-login02 ~]$ which python3.12
+/opt/ohpc/pub/apps/python/3.12.4/bin/python3.12
 ```
-Le message ne s'est pas affiché, mais tous les modules sont bien chargés. Cela peut servir pour alléger les logs de vos jobs.
+
+On voit que maintenant **python3.12** est utilisable. Tous les modules requis en tant que dépendances seront identifiés et chargés automatiquement, le cas échéant.
 
 ## module remove
 
-Lorsque vous ne voulez plus utiliser un module, vous pouvez le supprimer de votre environnement avec la commande **module remove** (ou ses raccourcis **module rm** ou **ml rm**). Dans notre exemple, le module **openmpi/5.0.3.rocm-6.1.1** n'est plus nécessaire :
+Lorsque vous ne voulez plus utiliser un module, vous pouvez le supprimer de votre environnement avec la commande **module remove** (ou ses raccourcis **module rm** ou **ml rm**) :
 
 ```console
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1
-user@hedy:~$ module remove openmpi/5.0.3.rocm-6.1.1
-Unloading openmpi/5.0.3.rocm-6.1.1
-  Unloading useless requirement: rocm/6.1.1
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)
+[user@m-login02 ~]$ module list
+Currently Loaded Modules:
+  1) python/3.12.4
+
+[user@m-login02 ~]$ module remove python/3.12.4 
+
+[user@m-login02 ~]$ module list
+No modules loaded
 ```
 
-Module va gérer de manière "intelligente" les dépendances. Il a supprimé les dépendances automatiquement. Si vous aviez chargé le module **rocm/6.1.1** avant de charger le module **openmpi/5.0.3.rocm-6.1.1**, ce dernier ne chargera que l'autre dépendance manquante. Lors de la suppression, le module **rocm/6.1.1** sera conservé :
-
-```console
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)
-user@hedy:~$ module load openmpi/5.0.3.rocm-6.1.1
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1
-user@hedy:~$ module rm openmpi/5.0.3.rocm-6.1.1
-  Unloading useless requirement: openmpi/openmpi-3.1.i18
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)
-```
-
-À l'inverse, si vous enlevez un module dont dépend d'autres modules, tous les modules seront déchargés :
-```console
-user@hedy:~$ module load openmpi/5.0.3.rocm-6.1.1
-Loading openmpi/5.0.3.rocm-6.1.1
-  Loading requirement: rocm/6.1.1
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1
-user@hedy:~$ module rm rocm/6.1.1
-Unloading rocm/6.1.1
-  Unloading dependent: openmpi/5.0.3.rocm-6.1.1
-```
+Module va gérer de manière "intelligente" les dépendances, si vous enlevez un module dont dépend d'autres modules, tous les modules seront déchargés.
 
 ## module purge
 
 Vous pouvez supprimer tous vos modules d'un coup pour repartir sur une base nouvelle avec **module purge** (**ml purge**)
 
 ```console
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1   4) gcc/13.2.0(latest)
-user@hedy:~$ module purge
-Unloading slurm/slurm
-  ERROR: Unload of super-sticky module skipped
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)
+[user@m-login02 ~]$ module list
+Currently Loaded Modules:
+  1) python/3.13.4   2) cuda-nccl/2.27.3-cuda12.9   3) autotools
+
+[user@m-login02 ~]$ module purge
+
+[user@m-login02 ~]$ module list
+No modules loaded
 ```
 
-Vous pouvez qu'une erreur indique que le module **slurm/slurm** n'a pas pu être supprimé. C'est tout à fait normal, ce module étant indispensable au fonctionnement du centre de calcul, nous avons décidé de le rendre permanent. Si vous ne souhaitez pas voir l'erreur apparaître, vous pouvez utiliser l'option **-q** :
+## module swap
+
+Il est possible de remplacer un module par un autre avec une seule commande **module swap** (**ml sw**) :
 
 ```console
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) openmpi/5.0.3.rocm-6.1.1   4) gcc/13.2.0(latest)
-user@hedy:~$ module purge -q
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)
+[user@m-login02 ~]$ module list 
+Currently Loaded Modules:
+  1) python/3.12.4
+
+[user@m-login02 ~]$ module swap python/3.12.4 python/3.13.4 
+The following have been reloaded with a version change:
+  1) python/3.12.4 => python/3.13.4
+
+[user@m-login02 ~]$ module list 
+Currently Loaded Modules:
+  1) python/3.13.4
 ```
-
-## module switch
-
-Il est possible de remplacer un module par un autre avec une seule commande **module switch** (**ml switch**) :
-
-```console
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)
-user@hedy:~$ module load aocl/4.2.0.aocc
-Loading aocl/4.2.0.aocc
-  Loading requirement: rocm/6.1.1
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) rocm/6.1.1(latest)   3) aocl/4.2.0.aocc
-user@hedy:~$ module switch aocl/4.2.0.aocc aocl/4.2.0.gcc
-Switching from aocl/4.2.0.aocc to aocl/4.2.0.gcc
-  Unloading useless requirement: rocm/6.1.1
-  Loading requirement: gcc/13.2.0
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) gcc/13.2.0(latest)   3) aocl/4.2.0.gcc
-```
-
-Ici on remplace le module **aocl/4.2.0.aocc** par le module **aocl/4.2.0.gcc**. Les dépendances sont gérées automatiquement.
-
-## module avail
-
-La commande **module avail** (**ml avail**) permet d'obtenir la liste des modules installés sur le cluster.
-
-La liste peut être un peu longue et indigeste, il est préférable d'affiner un peu ses recherches avec le nom d'une application par exemple :
-
-```console
-user@hedy:~$ module avail gcc
----------------- /nfs/mesonet/sw/modulefiles ----------------
-gcc/9.5.0  gcc/10.5.0  gcc/11.4.0  gcc/12.3.0  gcc/13.2.0(latest)
-```
-
-Certains modules ont des tags entre parenthèses. Ces derniers servent à identifier rapidement le module le plus récent. Quand 2 modules partagent le tag *latest*, un autre tag s'ajoute pour les différencier (souvent le compilateur qui a servi a complier l'application).
-
-D'autres modules sont soulignés. Ces modules représentent les modules qui seront chargés par défaut si on ne précise pas de version de module :
-
-```console
-user@hedy:~$ module load gcc
-user@hedy:~$ module list
-Currently Loaded Modulefiles:
- 1) slurm/slurm(latest)   2) gcc/gcc-13.2.0(latest)
-```
-
-## .bashrc / .cshrc / .zshrc
-Les fichiers **.bashrc** (pour [bash](https://www.gnu.org/software/bash)), **.cshrc** (pour [tcsh](https://www.tcsh.org) ou csh) et **.zshrc** (pour [zsh](https://www.zsh.org)) permettent une personalisation du shell. Vous pouvez y insérer des commandes qui seront lancées à chaque connexion. Il est ainsi possible de charger directement les modules qui vous intéressent dans ce fichier de configuration. Vous pouvez éditer ce fichier avec n'importe quel éditeur de texte installé sur **H** :
-
-```console
-vim ~/.bashrc
-```
-
-Ces modules seront également utilisés pour vos jobs, donc il n'est plus nécessaire de les charger manuellement dans vos scripts de soumissions.
-
-Voici un exemple de **.bashrc** qui charge des modules automatiquement :
-
-```console
-# .bashrc
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-        . /etc/bashrc
-fi
-
-source /usr/local/configfiles/bashrc.default
-
-module load -s gcc/gcc-13.2.0
-module load -s openmpi/5.0.3.rocm-6.1.1
-module load -s cmake/3.29.5
-```
+Ici on remplace le module **python3.12** par le module **python3.13**. Les dépendances sont gérées automatiquement, le cas échéant.
