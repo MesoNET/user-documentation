@@ -7,11 +7,7 @@ sidebar_position: 4
 
 Une seule partition nommée `mesonet`
 
-:::info
 
-Il n'y a pas de limite de demande de ressource ni de temps pour le moment. Cela pourra être changé dans le futur.
-
-:::
 
 # Documentation Utilisateur pour Slurm
 
@@ -34,6 +30,13 @@ Slurm (Simple Linux Utility for Resource Management) est un puissant système de
 Certains paramètres doivent être fournis afin de permettre le lancement de votre job. Ils peuvent être fournis dans le script ou en paramètre de sbatch.
 
 - **Temps d'allocation**, le paramètre `--time=HH:MM:SS` vous permet d'avoir des ressources allouées pendant HH heures MM minutes et SS secondes.
+
+:::info
+
+La limite de temps pour un calcul sur Juliet est de 10 jours.
+
+:::
+
 - **Projet**, le paramètre `--account=m2xxxx` vous permet de renseigner de quel projet les heures doivent être décomptées
     Pour savoir les projets auxquels vous êtes associé, vous pouvez utiliser la commande
 
@@ -54,6 +57,7 @@ Il n'est pas possible de lancer un job avec le projet *default*
 - **Nombre de cpu par noeud**: Le paramètre `--cpu_per_task=n` vous permettra de réserver n CPUs par tâche (par défaut 1)
 - **Nombre de GPU par noeud**: Le paramètre `--gpus=n` vous permettra de réserver n GPUs pour le job entier (par défaut 0)
 - **Quantité de mémoire demandée** Le paramètre `--mem=kG` vous permettra d'allouer k Go de RAM pour le job entier (par défaut n\_cpu Go avec n\_cpu le nombre de cpu alloués pour le job entier)
+- **Réservation demandée** Le paramètre `--reservation=xxx` vous permettra d'utiliser les noeuds alloués à la réservation xxx.
 
 
 ### Exemple 1 : Soumettre un script simple

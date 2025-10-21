@@ -60,6 +60,10 @@ Les règles exactes de comptabilité sur Juliet sont encore en cours de dévelop
 :::
 Sur Juliet la comptabilisation se fait en heures GPU. Pour utiliser un GPU pendant une heure, il faut compter une heure GPU. Les noeuds sont partagés par défauts. Pour réserver un noeud complet, le nombre d'heures à demander correspond à 8 fois le nombre d'heures de calcul.
 
+## Vesta (GPU)
+
+Sur Vesta, la comptabilisation se fait en heures GPU. Pour utiliser un GPU pendant une heure, il faut compte une heure GPU. Un nœud contenant 10 GPU, une heure de calcul sur un nœud complet correspond donc à 10 heures à demander.
+
 ## Zen (CPU)
 :::info
 

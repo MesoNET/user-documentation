@@ -18,7 +18,7 @@ Un VE possédant 8 cœurs, une parallélisation d'application par OpenMP et/ou M
 Trois modes d'utilisation de cette machine sont possibles :
 
 - Usage des VE en mode natif ou offloading automatique
-  - La programmation ne s'appuie que sur les langages standard (FORTRAN, C, C++), OpenMPI et/ou MPI. L'application est compilée par le compilateur de NEC et le système déporte automatiquement et totalement l'exécution sur VE
+  - La programmation ne s'appuie que sur les langages standard (FORTRAN, C, C++), OpenMP et/ou MPI. L'application est compilée par le compilateur de NEC et le système déporte automatiquement et totalement l'exécution sur VE
 - Usage des VE et VH en mode hybride
   - Si des parties d'algorithme ou des appels à entrées-sorties ne sont pas vectorisables, le mode natif risque de ne pas être efficace en performance. L'environnement de programmation de NEC permet une programmation hybride pour CPU et VE avec plusieurs API : programme principal sur VE et déport de noyaux sur VH (mode reverse offload, API VHcall), ou programme principal sur VH et déport de noyaux sur VE (mode accélérateur, API VEO, AVEO et VEDA). Se référer au document de formation à la prise en main de Boréale, et aux pages suivantes :
   - https://github.com/sx-aurora/veda

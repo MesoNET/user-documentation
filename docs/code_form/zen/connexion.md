@@ -42,7 +42,7 @@ Nous vous conseillons de créer un fichier `~/.ssh/config` (ou de le compléter 
 ```shell
 Host zenlogin
     Hostname zen.univ-lille.fr
-    User m240NN-NN
+    User m2NNNN-NN
     IdentityFile ~/.ssh/nom-de-ma-clé-privée
 ```
 
@@ -83,8 +83,8 @@ Il est possible d'avoir plusieurs identifiants
 - ... sur la même machine (un par projet).
 - ... par projet (un par machine).
 
-Dans le [portail](https://acces.mesonet.fr) la liste "Vos projets" montre vos identifiants et la clé ssh associée.
+Dans le [portail](https://acces.mesonet.fr) la liste des projets montre vos identifiants ("Login") et la clé ssh associée.
 
-![screenshot mesonet usernames](/img/mesonet-usernames.png)
+<!-- ![screenshot mesonet usernames](/img/mesonet-usernames.png) -->
 
 Sur Zen, ils sont de la forme m2XXXX-YY où m2XXXX est le numéro de votre projet et YY votre numéro d'utilisateur unique.

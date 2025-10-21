@@ -11,7 +11,7 @@ Pour accéder au portail MesoNET, il faut au préalable se créer un compte.
 
 Pour demander un compte MesoNET, faites pointer votre navigateur sur l'URL: https://iam.mesonet.fr/
 
-1. Si vous le pouvez, **connectez-vous avec vos identifiants institutionnels** (CNRS, université, institutions de recherche étrangères ,etc.) en cliquant sur le **bouton EduGAIN**. Si vous n'avez pas d'identifiants institutionnels (entreprises, ...) et seulement dans ce cas, ouvrez un compte local. Pour cela, visitez l'URL https://iam.mesonet.fr/start-registration pour vous créer un compte.
+1. Si vous le pouvez, **connectez-vous avec vos identifiants institutionnels** (CNRS, université, institutions de recherche étrangères ,etc.) en cliquant sur le **bouton eduGAIN**. Si vous n'avez pas d'identifiants institutionnels (entreprises, ...) et seulement dans ce cas, ouvrez un compte local. Pour cela, visitez l'URL https://iam.mesonet.fr/start-registration pour vous créer un compte.
 2. Dans tous les cas, vous serez redirigés vers l'écran suivant :
 
 ![Capture d'écran du formulaire d'enregistrement dans le SSO Mesonet](/img/portail_register.png)
@@ -25,13 +25,13 @@ Pour demander un compte MesoNET, faites pointer votre navigateur sur l'URL: http
 
 :::note
 
-En cas de difficulté, un réseau de proximité de référents MésoNET peut vous accompagner : https://www.mesonet.fr/30_referents-de-proximites.html
+En cas de difficulté, un réseau de proximité de référents MesoNET peut vous accompagner : https://www.mesonet.fr/30_referents-de-proximites.html
 
 :::
 
 :::note
 
-Durant tout ce processus, Il peut arriver que vous soyez confronté à une erreur comme ci-dessous: dans ce cas, veuillez arrêter puis redémarrer votre navigateur.
+Durant tout ce processus, il peut arriver que vous soyez confronté à une erreur comme ci-dessous: dans ce cas, veuillez arrêter puis redémarrer votre navigateur.
 
 ![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/portail_err.png)
 
@@ -75,19 +75,21 @@ to log into MesoNET SSO, your account is already active.
 The MesoNET SSO registration service
 ```
 
-**Si vous vous identifiez via Edugain, vous ne DEVEZ PAS définir de mot de passe.** Mais si vous avez créé un compte local, vous devrez cliquer sur le lien pour vous choisir un mot de passe.
+**Si vous vous identifiez via edugain, vous ne DEVEZ PAS définir de mot de passe.** Mais si vous avez créé un compte local, vous devrez cliquer sur le lien pour vous choisir un mot de passe.
 
 ## Accéder aux ressources MesoNET
 
-Maintenant que vous avez votre compte MesoNET, vous êtes en mesure de demander des ressources de calcul, pour l'instant seulement sur [Boréale](arch_exp/boreal/description.md), [Turpan](arch_exp/turpan/description.md), [Zen](code_form/zen/description.md) ou [Juliet](code_form/juliet/description.md).
+Maintenant que vous avez votre compte MesoNET, vous êtes en mesure de demander des ressources de calcul, pour l'instant seulement sur [Boréale](arch_exp/boreal/description.md), [Turpan](arch_exp/turpan/description.md), [Zen](code_form/zen/description.md), [Juliet](code_form/juliet/description.md) ou [Vesta](code_form/vesta/description.md).
 
-1. Pour cela, rendez-vous sur https://acces.mesonet.fr. Cliquez sur le bouton **connexion** en haut à droite, et identifiez vous de la même façon que lors de la création de votre compte, typiquement via eduGAIN, enfin complétez votre profil.
 
-2. Cliquez alors sur le bouton **Demandeur** pour arriver à l'écran de vos projets : si vous êtes déclaré comme collaborateur d'un projet, vous le verrez apparaître. Si vous êtes reconnu comme chercheur ou ingénieur permanent, vous pourrez aussi démarrer un nouveau projet et inviter des collègues à y collaborer. Pour cela, cliquez sur le bouton **nouveau projet**
+1. Pour cela, rendez-vous sur https://acces.mesonet.fr. Cliquez sur le bouton **Connexion avec eduGAIN** à droite, et identifiez-vous de la même façon que lors de la création de votre compte, typiquement via eduGAIN, enfin complétez votre profil.
+![Capture d'écran du formulaire d'engistrement dans le SSO Mesonet](/img/portail-connect.png)
+
+2. Dans le menu à gauche, cliquez sur **Liste des projets** pour arriver à l'écran de vos projets : si vous êtes déclaré comme collaborateur d'un projet, vous le verrez apparaître. Si vous êtes reconnu comme chercheur ou ingénieur permanent, vous pourrez aussi démarrer un nouveau projet et inviter des collègues à y collaborer. Pour cela, cliquez sur le bouton **Nouveau projet dynamique**
 
 ### Répondre à une invitation
 
-Peut-être avez-vous été "invité à MesoNET" par un collègue, responsable de projet. Cela signifie que vous avez reçu un mail tel que celui-ci :
+Peut-être avez-vous été "invité à MesoNET" par un collègue, enseignant ou responsable de projet. Cela signifie que vous avez reçu un mail tel que celui-ci :
 
 ```
 Bonjour Jean Dupont

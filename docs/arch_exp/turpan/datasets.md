@@ -15,7 +15,7 @@ CALMIP met à disposition sur le cluster de prototypage ARM accéléré du proje
 
 La description complète du contenu de ce jeu de données est disponible ici : https://www.image-net.org/index.php
 
-Sur le cluster Olympe, ce jeu de données est disponible dans le répertoire "/work/shares/IA-Datasets/" dans le fichier "imagenet-object-localization-challenge.zip"
+Sur le cluster Turpan, ce jeu de données est disponible dans le répertoire "/work/shares/IA-Datasets/" dans le fichier "imagenet-object-localization-challenge.zip"
 
 </TabItem>
 <TabItem label="Imagenet 21k" value="Imagenet21k">
@@ -24,7 +24,7 @@ Sur le cluster Olympe, ce jeu de données est disponible dans le répertoire "/w
 
 La description complète du contenu de ce jeu de données est disponible ici : https://www.image-net.org/index.php
 
-Sur le cluster Olympe, ce jeu de données est disponible dans le répertoire "/work/shares/IA-Datasets/" dans le fichier "winter21_whole.tar.gz"
+Sur le cluster Turpan, ce jeu de données est disponible dans le répertoire "/work/shares/IA-Datasets/" dans le fichier "winter21_whole.tar.gz"
 
 </TabItem>
 <TabItem label="Kinetic 400" value="Kinetic400">
@@ -33,7 +33,7 @@ Sur le cluster Olympe, ce jeu de données est disponible dans le répertoire "/w
 
 La description complète du contenu de ce jeu de données est disponible ici : https://github.com/cvdfoundation/kinetics-dataset
 
-Sur le cluster Olympe, le contenu de ce jeu de données est disponible dans le répertoire "/work/shares/IA-Datasets/k400"
+Sur le cluster Turpan le contenu de ce jeu de données est disponible dans le répertoire "/work/shares/IA-Datasets/k400"
 
 </TabItem>
 <TabItem label="Wikipedia-EN" value="WikipediaEN">
@@ -42,7 +42,18 @@ Sur le cluster Olympe, le contenu de ce jeu de données est disponible dans le r
 
 La description complète du contenu de ce jeu de données est disponible ici : https://huggingface.co/datasets/legacy-datasets/wikipedia
 
-Sur le cluster Olympe, le contenu de ce jeu de données est disponible dans le répertoire "/store/shares/IA-Datasets/Wikipedia-EN"
+Sur le cluster Turpan, le contenu de ce jeu de données est disponible dans le répertoire "/work/store/shares/IA-Datasets/Wikipedia-EN"
+
+
+</TabItem>
+<TabItem label="FineWeb-Edu" value="FineWebEdu">
+
+#### FineWeb-Edu dataset (uniquement la version 10BT) 
+Educational content (textbooks, lectures, academic papers, STEM topics, etc.).
+
+La description complète du contenu de ce jeu de données est disponible ici : https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu
+
+Sur le cluster Turpan, le contenu de ce jeu de données est disponible dans le répertoire "/work/shares/IA-Datasets/fineweb_edu_10bt_shuffled "
 
 </TabItem>
 </Tabs>

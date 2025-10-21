@@ -47,5 +47,5 @@ Les [environnements python](./envpython/index.md) font l'objet d'une section ent
 
 Si vous avez des dépendances très nombreuses et particulières, vous pouvez utiliser des conteneurs :
 
-* La documentation sur les [conteneur Apptainer (anciennement Singularity)](./apptainer.md)
+* La documentation sur les [conteneur Apptainer (anciennement Singularity)](./container/index.md)
 
