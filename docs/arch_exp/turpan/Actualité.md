@@ -9,16 +9,24 @@ Vous trouverez ici les dernières informations, annonces et mises à jour concer
 
 ---
 ## Dernières Nouvelles
+
+### 💻➕ Environnement logiciel 
+L’environnement logiciel a été enrichi avec les modules :
+- [La dynamique moléculaire](./logiciels/dynamique_moléculaire.md): LAMMPS, GROMACS et AMBER sont désormais disponible. 
+- [Chdb](./logiciels/chdb.md): pour  embarrassingly parallel sur un grand nombre d’entrées indépendantes.
+- L'utile `placement` a été mis à jour pour permettre une surveillance continue comme suit : Ajoutez à votre commande l’option **`--rt`**, qui par défaut affiche les informations toutes les 1 seconde, ou **--rt=t**, qui affiche les informations sur l’utilisation des ressources du code intégrées sur un intervalle de temps t. Pour plus d’informations, consultez placement --help.
+
+
+##  Actualités Précédentes
+---
+### 💻➕ Environnement logiciel 
 L’environnement logiciel a été enrichi avec les modules suivants :
 
 - **MAQAO version 25.1.0**  est désormais disponible. Cette dernière version offre des outils améliorés pour l’analyse et l’optimisation des performances.
 
 - **SYCL avec AdaptiveCpp** pour ARM a été intégré avec succès, permettant une programmation hétérogène efficace et un meilleur support des plateformes basées sur ARM.
-
-
 ---
 
-##  Actualités Précédentes
 ### 🔄 **Mise à jour et maintenance de Turpan** ✅
 **🗓️ <u>Date : 31 mars - 3 avril 2025</u>**
 
