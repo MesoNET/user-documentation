@@ -12,7 +12,7 @@ sidebar_position: 2
 - GPU pour l'IA ou le HPC : 1 nœud de calcul à 8 GPU NVIDIA A100, partitionnés en MIG (Multi-Instance GPU, voir section [travaux](https://github.com/PBousquetMelou/user-documentation/blob/ArcticCodeForm/docs/code_form/arctic/jobs.md) pour les précisions)
 - GPU pour le HPC : 2 nœuds de calcul à 4 GPU AMD MI210 chacun  
 
- ### Ressources utilisables pour TP, dans la file générale des travaux
+### Ressources utilisables pour TP, dans la file générale des travaux
  - GPU NVIDIA A100 (non partitionnés)
  - GPU NVIDIA H200
 
