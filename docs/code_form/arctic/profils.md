@@ -16,7 +16,7 @@ sidebar_position: 2
  - GPU NVIDIA A100 (non partitionnés)
  - GPU NVIDIA H200
 
-## Recherche, dans la file générale des travaux
-- GPU NVIDIA A100 ou H200
+## Recherche
+- GPU NVIDIA A100 ou H200, dans la file générale des travaux
 
 La valeur ajoutée du modèle H200 réside en particulier dans la quantité de mémoire qu'il embarque : 140 Go par carte. pertinente pour certians projets de recherche en IA ou HPC.
