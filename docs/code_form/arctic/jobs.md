@@ -10,15 +10,17 @@ Les modèles de script sont fournis dans un répertoire `/soft/slurm/Modeles_scr
 
 ## Les partitions (classes de soumission)
 
-La [parition Slurm](https://services.criann.fr/services/hpc/cluster-austral/guide/#environnement-de-soumission-slurm) est à spécifier par l'utilisateur dans son script. 
+La parition Slurm est à spécifier par l'utilisateur dans son script. 
 
 **_Partitions pour architectures spécifiques_**
 
 | Partition    | Durée maximale | Limites par calcul                                      
 | ------------ | -------------- |------------------------------------------------------- |
-| **ar_mig**   | 8 h            | 2 nœuds (16 GPU, 256 cœurs CPU, 2x480000 MB de mémoire) |
-| **ar_a100**  | 8 h            | 1 nœuds (8 GPU, 128 cœurs CPU, 480000 MB de mémoire)    |
-| **ar_h200**  | 8 h            | 1/2 nœud (4 GPU,96 cœurs)
-| **ar_mi210** | 8 h            | 2 nœuds (8 GPU, 64 cœurs CPU, 2x242000 MB de mémoire)   |
+| **ar_mig**   | 8 h            | 4 cœurs, 1 instance de GPU NVIDIA A100 partitionné en MIG |
+| **ar_a100**  | 8 h            | 16 cœurs, 1 GPU NVIDIA A100
+| **ar_h200**  | 8 h            | 24 cœurs, 1 GPU NVIDIA H200
+| **ar_mi210** | 1 h            | 4 cœurs, 1 GPU AMD MI210
+
+La partition `ar_mig` est associée à un nœud de calcul dont les GPU NVIDIA A100 sont partitionnés par la technologie MIG (Multi-Instance GPU). Différentes tailles d'instance de GPU partitionné sont disponibles : un [complément d'information](https://services.criann.fr/services/hpc/cluster-austral/guide/#gpus-mig) décrit ces tailles, et le nom de la ressource qui leur est associée et doit être spécifiée par la directive `--gres` de Slurm (sur le complément précédent, remplacer le nom de la partition `hpda_mig` par `ar_mig`).
 
 Domaine **IA - deep learning** : lire sa [page consacrée](https://services.criann.fr/services/hpc/cluster-austral/guide/ia-deep-learning) et sa section **Utilisation**
