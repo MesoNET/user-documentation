@@ -1,6 +1,6 @@
 ---
 title: "Stockage"
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 ### Espaces de travail et gestion des données
