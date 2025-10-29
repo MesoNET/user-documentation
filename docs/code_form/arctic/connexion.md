@@ -26,5 +26,5 @@ Si votre structure a un **firewall** limitant les flux en sortie de votre site, 
 
 - Connexions SSH (port 22) vers la frontale de nom `arctic.criann.fr`
   - IPv4 : `195.xxx.xx.xxx`
-Concernant les sessions de visualisation à distance, pour connaître les IP et les ports à ouvrir, [merci de contacter le support par mail](mailto:support@criann.fr).
+- Concernant les sessions de visualisation à distance, pour connaître les IP et les ports à ouvrir, [merci de contacter le support par mail](mailto:support@mesonet.fr).
 :::
