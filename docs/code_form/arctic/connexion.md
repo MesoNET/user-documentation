@@ -1,6 +1,6 @@
 ---
 title: "Se connecter à Arctic"
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Comment se connecter à Arctic
