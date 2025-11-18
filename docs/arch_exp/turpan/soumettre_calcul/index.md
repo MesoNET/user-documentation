@@ -1,6 +1,6 @@
 ---
 title: Lancer un calcul
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,13 +14,13 @@ L'utilisateur peut exécuter un maximum de 3 jobs simultanément, quelle que soi
 - **big** : exclusive, 1 job max, pas plus de 13 noeuds par jobs, max walltime par job 2H.
 - **full** : exclusive, 1 job max, au moins 14 noeuds par jobs, max walltime par job 20H
 - **visu** : non exclusive, 1 job max, max 50Go RAM max 8 cpu par job, max walltime par job 4H.
-- **shared** : non exclusive, 2 jobs max, max la moitié du noeud (40 cpu et 256G ram,1 GPU ), max walltime par job 4H.
+- **shared** : non exclusive, 2 jobs max, max la moitié du noeud (40 cpu et max 256G ram,1 GPU ), max walltime par job 4H.
 
 :::info
 * **Exclusive**: Un job en partition exclusive réserve l’intégralité des nœuds qui lui sont attribués.
 * **Non exclusive**: Un job en partition non exclusive ne réserve pas l’intégralité du nœud, ce qui permet à d’un autre job (d’un autre utilisateur) de partager les mêmes ressources.
 
-Le choix de la partition dépend des besoins en ressources, notamment en termes de nombre de cœurs par nœud et des limites de temps de calcul (walltime), veuillez consulter [les règles de comptabilisation des ressources ](./accounting/accounting-rules.md#exemples-).
+Le choix de la partition dépend des besoins en ressources, notamment en termes de nombre de cœurs par nœud et des limites de temps de calcul (walltime), veuillez consulter [les règles de comptabilisation des ressources ](../accounting/accounting-rules.md#exemples-).
 :::
 
 Afin de ne pas monopoliser l’ensemble des noeuds du cluster en journée :
@@ -29,6 +29,11 @@ Afin de ne pas monopoliser l’ensemble des noeuds du cluster en journée :
 - la partition "full" est désactivée du lundi au jeudi ainsi que le dimanche à partir de 22H00
 
 Lorsque la partition est désactivée, les soumissions sont possibles, mais les jobs sont suspendus jusqu’à l’activation de la partition. A la désactivation, les jobs RUNNING sur la partition "full" ne sont pas arrêtés.
+
+
+:::info
+Si votre application n’utilise qu’un seul GPU et ne consomme pas toute la capacité du GPU, pensez à vérifier l’option [**MIG**](./MIG.md).
+:::
 
 ## Comment lancer un script `sbatch` ?
 
@@ -59,7 +64,7 @@ Exemple script exclusif, 2 nœuds, 160 processeurs, le temps d'exécution moins 
 
 Exemple script shared, 1 nœud, 40 processeurs,  le temps d'exécution moins de 4H
 
->```
+>```shell
 >#!/bin/bash
 >#SBATCH -N 1
 >#SBATCH -n 40
@@ -67,6 +72,7 @@ Exemple script shared, 1 nœud, 40 processeurs,  le temps d'exécution moins de 
 >#SBATCH -p shared
 >#SBATCH --ntasks-per-node=40
 >#SBATCH --time=00:10:00
+>#SBATCH --mem=256G     # Mémoire par défaut est 64G, max est 256 G 
 >
 >module purge
 >module load gnu/11.2.0
@@ -78,9 +84,16 @@ Exemple script shared, 1 nœud, 40 processeurs,  le temps d'exécution moins de 
 </TabItem>
 </Tabs>
 
-:::caution
-Sur Turpan, si l'application utilise **MPI**, il est nécessaire d'utiliser **mpirun** et d'éviter srun, sauf si un conteneur est utilisé ([voir ici](./logiciels/apptainer.md)). Pour les autres applications **sans MPI**, srun reste valide
+:::info
+Sur la partition **shared**, la mémoire par défaut est de 64G, mais vous pouvez l'augmenter jusqu'à 256 G en utilisant `#SBATCH --mem` .
+Si `#SBATCH --mem` n'est pas présent dans votre script, la mémoire attribué à la tâche est de 64 Go par défaut.
 :::
+
+:::caution
+Sur Turpan, si l'application utilise **MPI**, il est nécessaire d'utiliser **mpirun** et d'éviter srun, sauf si un conteneur est utilisé ([voir ici](../logiciels/container/index.md)). Pour les autres applications **sans MPI**, srun reste valide
+:::
+
+
 
 ## Obtenir des informations sur un job
 
