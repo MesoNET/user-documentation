@@ -10,7 +10,7 @@ Vous avez besoin d'un compte MesoNET valide. Vous pouvez trouver les étapes pou
 # Comment se connecter à Vesta
 
 Vesta possède 2 nœuds de login.  
-Vous aurez besoin d'une clé SSH pour vous connecter (voir [Gérer ses clefs SSH](https://www.mesonet.fr/documentation/user-documentation/acces/ssh)).  
+Vous aurez besoin d'une clé SSH pour vous connecter (voir [Gérer ses clés SSH](https://www.mesonet.fr/documentation/user-documentation/acces/ssh)).  
 La connexion s'effectue en SSH vers hpc-vesta1.u-strasbg.fr ou hpc-vesta2.u-strasbg.fr.
 
 `ssh nomUtilisateur@hpc-vesta1.u-strasbg.fr`
