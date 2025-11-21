@@ -3,6 +3,12 @@ title: "Utiliser les noeuds de visualisation Juliet visu"
 sidebar_position: 10
 ---
 
+:::info
+
+Cette page est en cours de construction. Si des parties sont peu claires, manquantes ou difficiles à comprendre, contactez le support par l'adresse [tickets.mesonet.fr](https://tickets.mesonet.fr) ou par mail à `support@mesonet.fr`
+
+:::
+
 ## Prérequis
 
 Pour pouvoir lancer des sessions de visualisation sur Juliet, vous devez avoir demandé un compte sur Juliet visu (la case doit être cochée dans l'onglet ). Vous devez également faire partie d'un projet ayant demandé des heures de visualisation sur Juliet.
@@ -44,7 +50,7 @@ et cliquez sur `Join`.
 
 Pour accéder à votre machine entrez ensuite
 
-L'adresse e-mail de la forme `visuXXXX@univ-reims.fr` et le mot de passe  **qui vous ont été envoyés par mail** ainsi qu'un nom d'affichage
+L'adresse e-mail de la forme `visuXXXX@univ-reims.fr` et le mot de passe  **qui vous ont été envoyés par mail** ainsi qu'un nom d'affichage.
 
 :::caution
 
