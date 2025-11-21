@@ -1,6 +1,8 @@
 ---
-title: "Conditions Générales d'Utilisation d'Arctic (CGU)"
+title: "CGU"
 sidebar_position: 7
 ---
 
-Arctic est soumise aux [CGU des ressources de calcul intensif du CRIANN](https://www.criann.fr/cgu-calcul/)
+# Conditions Générales d'Utilisation des ressources de calcul du Criann
+
+Tout utilisateur d'Arctic doit lire et se conformer aux [CGU des ressources de calcul du Criann](https://www.criann.fr/cgu-calcul/)
