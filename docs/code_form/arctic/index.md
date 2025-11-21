@@ -10,6 +10,8 @@ En fonction de la nature d'un projet et du profil de ses applications, différen
 ## Demande d'accès au service
 La [documentation générale d'acces à MesoNET](https://www.mesonet.fr/documentation/user-documentation/acces/portail) fournit les informations pour la demande d'accès au service, puis de dépôt d'un projet scientifique sur le [portail](https://acces.mesonet.fr/gramc-meso/).
 
+Arctic est soumise aux [CGU des ressources de calcul intensif du CRIANN](https://www.criann.fr/cgu-calcul/).
+
 :::info
 La section [profils d'utilisation](./profils.md) doit être consultée par un porteur de projet qui dépose une demande pour Arctic : le formulaire de description scientifique doit préciser le type d'architecture qu'il cible. Pour des TP d'enseignement avec réservation par Slurm pour un groupe, préciser l'architecture, les dates et créneaux horaires.
 :::
