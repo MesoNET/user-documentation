@@ -20,6 +20,24 @@ La parition Slurm est à spécifier par l'utilisateur dans son script.
 | **ar_mi210** | 1 h            | 4 cœurs, 1 GPU AMD MI210 |
 | **ar_fin**   | 1 h            | 384 cœurs (2 nœuds de calcul purs CPU, AMD Genoa) |
 
-La partition `ar_mig` est associée à un nœud de calcul dont les GPU NVIDIA A100 sont partitionnés par la technologie MIG (Multi-Instance GPU). Différentes tailles d'instance de GPU partitionné sont disponibles : un [complément d'information](https://services.criann.fr/services/hpc/cluster-austral/guide/#gpus-mig) décrit ces tailles, et le nom de la ressource qui leur est associée et doit être spécifiée par la directive `--gres` de Slurm (sur le complément précédent, remplacer le nom de la partition `hpda_mig` par `ar_mig`).
+## Domaine IA - deep learning
+Lire sa [page consacrée](https://services.criann.fr/services/hpc/cluster-austral/guide/ia-deep-learning) et sa section **Utilisation**
 
-Domaine **IA - deep learning** : lire sa [page consacrée](https://services.criann.fr/services/hpc/cluster-austral/guide/ia-deep-learning) et sa section **Utilisation**
+## GPU partitionnés
+La partition `ar_mig` est associée à un nœud de calcul dont les GPU NVIDIA A100 sont partitionnés par la technologie MIG (Multi-Instance GPU).
+
+Différentes tailles d'instances sont disponibles (SM : Streaming Multiprocessor, TC : Tensor Core) :
+  - 10 devices a100_1g.10gb avec 10 GB de Mémoire, 14 SM et 56 TC
+  - 17 devices a100_2g.20gb avec 20 GB de Mémoire, 28 SM et 108 TC
+  - 4 devices a100_3g.40gb avec 40 GB de Mémoire, 42 SM et 164 TC
+
+Pour utiliser l'un de ces devices dans vos calculs il faut :
+  - cibler la partition `ar_mig` avec l'option `--partition ar_mig` de sbatch
+  - préciser le type de device souhaité avec l'option `--gres` de sbatch :
+    - `--gres=gpu:a100_1g.10gb` pour l'architecture a100_1g.10gb
+    - `--gres=gpu:a100_2g.20gb` pour l'architecture a100_2g.20gb
+    - `--gres=gpu:a100_3g.40gb` pour l'architecture a100_3g.40gb
+
+  Un exemple complet basé sur le tutoriel mnist pour PyTorch est disponible sur Arctic :
+  
+  `/soft/slurm/Arctic_Modeles_scripts/pytorch-mig/`
