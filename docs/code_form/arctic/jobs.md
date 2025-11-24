@@ -17,7 +17,7 @@ La parition Slurm est à spécifier par l'utilisateur dans son script.
 | **ar_mig**   | 8 h            | 4 cœurs, 1 instance de GPU NVIDIA A100 partitionné en MIG |
 | **ar_a100**  | 8 h            | 16 cœurs, 1 GPU NVIDIA A100 |
 | **ar_h200**  | 8 h            | 24 cœurs, 1 GPU NVIDIA H200 |
-| **ar_mi210** | 1 h            | 4 cœurs, 1 GPU AMD MI210 |
+| **ar_mi210** | 1 h            | 16 cœurs, 1 GPU AMD MI210 |
 | **ar_fin**   | 1 h            | 384 cœurs (2 nœuds de calcul purs CPU, AMD Genoa) |
 
 ## Domaine IA - deep learning
