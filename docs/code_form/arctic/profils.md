@@ -16,6 +16,6 @@ sidebar_position: 2
 Les architectures CPU, GPU AMD, NVIDIA A100 et H200 sont utilisables par l'ensemble des partitions Slurm d'Arctic : voir section [travaux](./jobs.md)
 
 ## Recherche
-Les architectures GPU AMD, NVIDIA A100 ou H200, sont utilisables dans la file générale des travaux
+Les architectures GPU AMD, NVIDIA A100 ou H200, sont utilisables dans la file générale des travaux.
 
 La valeur ajoutée du modèle H200 réside en particulier dans la quantité de mémoire qu'il embarque : 140 Go par carte, pertinente pour certains projets de recherche en IA ou HPC.
