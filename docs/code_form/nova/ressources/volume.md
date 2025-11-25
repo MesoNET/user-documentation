@@ -54,9 +54,12 @@ openstack volume delete <volume>
 Vous pouvez vérifier que le volume est bien supprimé en affichant la liste des volumes.
 ``` bash
 openstack volume list
-```
-Il devrait apparaître en état de suppression (*status = deleting*).
-![SuppressionVolume](/img/nova/Nova_VolumeDelete.png)
+```  
+
+Il devrait apparaître en état de suppression (*status = deleting*).   
+
+![SuppressionVolume](/img/nova/Nova_VolumeDelete.png)   
+
 Une fois complètement supprimé, il disparaît de la liste. Donc si le volume n'avait pas une taille importante il est possible que vous n'ayez pas eu le temps de le voir apparaître en état de suppression dans la liste des volumes.
 
 
@@ -65,7 +68,7 @@ Une fois complètement supprimé, il disparaît de la liste. Donc si le volume n
 Les volumes peuvent être attachés - et détachés - à des instances à tout moment.
 
 :::note
-Un volume peut être attaché à une seule instance
+Un volume peut être attaché à une seule instance.
 :::
 
 ### Attacher un volume à une instance

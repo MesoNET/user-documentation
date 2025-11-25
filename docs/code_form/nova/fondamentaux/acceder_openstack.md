@@ -8,39 +8,31 @@ Tout ce qui est fait sur Openstack peut se faire : soit graphiquement via un nav
 ## Connexion à l'interface Web
 
 Rendez-vous sur l'interface [https://gricad-cloud.univ-grenoble-alpes.fr/](https://gricad-cloud.univ-grenoble-alpes.fr/), puis connectez-vous au dashboard d'OpenStack.
-- _Domaine_ :  **Perseus**
-- "_login_" et "_mot de passe_" de PERSEUS
+- Sélectionnez *Authenticate with Mesonet*
+- Cliquez sur *Se connecter*
 
 ![connexion](/img/nova/Nova_Connexion.png?height=400px&classes=shadow)
 
-Si vous souhaitez continuer de manière graphique via le navigateur, vous pouvez suivre le [Quickstart]({{< relref "../basics/quickstart" >}}).
+Si vous souhaitez continuer de manière graphique via le navigateur, vous pouvez suivre le [Quickstart](/code_form/nova/fondamentaux/quickstart).
 
 ## Connexion en ligne de commande ou via les APIs
 
-{{% notice info %}}
-Vous aurez besoin du **fichier RC** de description de votre projet.
-Pour récupérer votre fichier RC il faut se connecter sur l'interface web.
-**Attention** : chaque projet a son propre fichier.
-{{% /notice %}}
+:::info
+Vous trouverez tous les détails de la configuration du client pour s'authentifier à Openstack [ici](https://docs.openstack.org/python-openstackclient/latest/configuration/index.html#configuration-files)
+:::
 
-#### Récupérer le fichier **RC** de votre projet
+Pour vous connecter avec le CLI ou via les APIs, vous pouvez :
+- Utilisez les variables d'environnement, un fichier RC est téléchargeable sur *Horizon*.
+Il suffit ensuite de *sourcer* ce fichier, celui-ci contenant toutes les variables d'environnement relatives au projet dans lequel vous êtes authentifié.
+- Plus moderne, vous pouvez utiliser le fichier *clouds.yml*. Ce fichier est aussi téléchargeable sur *Horizon*.
+Ce fichier se place ensuite dans *~/.config/openstack/clouds.yaml*
 
-Pour cela, cliquez sur votre login en haut à droite de l'interface web.
-![fichierRCv3_1](/img/nova/Nova_fichierRCv3_1.png?classes=shadow)
-Puis selectionnez le fichier **OpenStack RC** dans le menu déroulant.
-![fichierRC](/img/nova/Nova_fichierRC.png?classes=shadow)
-Vous obtenez un fichier du nom de **projectName-openrc.sh** : enregistrez-le.
+:::info 
+L'avantage du fichier *clouds.yml* est qu'il peut contenir différents Clouds Openstack, différents projets, différents utilisateurs.
+:::
 
+### Récupérer les fichiers **RC** ou *clouds.yml* de votre projet
 
-#### Utilisation du fichier RC dans le terminal
-
-Le fichier RC vous servira pour utiliser la ligne de commande **openstack**, un script python, ou tout outil se connectant aux APIs openstack.
-
-Exécutez le fichier, en ligne de commande, à l'endroit où vous l'avez enregistré. Il vous demandera votre mot de passe et positionnera correctement les variables d'environnement qui assureront l'authentification de chaque commande.
-``` bash
-$ source projectName-openrc.sh
-```
-
-#### Alternative avec des fichiers de configuration multi-cloud
-
-[Documentation de clouds.yaml](https://docs.openstack.org/python-openstackclient/latest/configuration/index.html#configuration-files). Attention aux mots de passe en clair dans ces fichiers.
+Pour cela, cliquez sur votre login en haut à droite de l'interface web.   
+    
+![fichierRC](/img/nova/Nova_fichierRC.png?classes=shadow)   

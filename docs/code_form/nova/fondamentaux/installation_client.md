@@ -7,11 +7,11 @@ Pour utiliser OpenStack en ligne de commande il faut installer le client **opens
 
 ## Virtualenv
 
-{{% notice note %}}
+:::note
 L'installation dans un environnement virtuel spécifique est facultative mais recommandée par les bonnes pratiques.
-{{% /notice %}}
+:::
 
-Le module venv est habituellement installé dans les versions récentes de Python. Créez votre environnement virtuel, par exemple gricad-nova-env.
+Le module *venv* est habituellement installé dans les versions récentes de Python. Créez votre environnement virtuel, par exemple gricad-nova-env.
 ``` bash
 python -m venv gricad-nova-env
 ```
@@ -20,7 +20,7 @@ Enfin, activez cet environnement virtuel.
 ```bash
 source gricad-nova-env/bin/activate
 ```
-Vous pouvez ajouter cette commande à la fin du fichier RC.
+   
 
 ## Client Openstack
 
@@ -35,7 +35,7 @@ Vous pouvez vérifier que le client est fonctionnel .
 openstack --version
 ```
 
-Un exemple pour tester votre authentification à NOVA, la commande suivante permet de lister les projets dont vous faites partie.
+Un exemple pour tester votre authentification à **Nova**, la commande suivante permet de lister les projets dont vous faites partie.
 ``` bash
 openstack project list
 ```

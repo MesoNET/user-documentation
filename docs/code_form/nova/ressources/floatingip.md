@@ -45,5 +45,4 @@ public
 
 ## 4- Associer une IP flottante à une instance
 L'association peut se faire lors de l'instanciation de la VM ou après coup,
-voir [Accès aux VMs]({{< relref "../create_access_vm/remoteaccess#associerIpFlottante" >}}).
-,
+voir [Accès aux VMs](/code_form/nova/creer_vm/acces_vm#associerIpFlottante).

@@ -14,9 +14,9 @@ Vous pouvez commencer par choisir le plus petit gabarit nécessaire pour votre a
 
 Pour en connaître la liste, utilisez la commande `openstack flavor list`.
 
-{{% notice warning %}}
+:::warning
 Attention, deux nommages cohabitent. Les gabarits dont les noms commencent par **m1** ou **m0** sont obsolètes
-{{% /notice %}}
+:::
 
 ### Gabarits
 

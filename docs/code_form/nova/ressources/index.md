@@ -3,7 +3,7 @@ title: "Ressources"
 ---
 
 Chaque projet NOVA se voit attribuer un quota de ressources disponibles pour créer et modifier les machines virtuelles, et le réseau du projet.
-Tout ce qui est effectué sur NOVA Openstack, peut se faire graphiquement via un [navigateur Web]({{< relref "../basics/authentification" >}}) ou en ligne de commande via le [client Python Openstack]({{< relref "../basics/installation" >}}).
+Tout ce qui est effectué sur NOVA Openstack, peut se faire graphiquement via un [navigateur Web](/code_form/nova/fondamentaux/acceder_openstack) ou en ligne de commande via le [client Python Openstack](/code_form/nova/fondamentaux/installation_client).
 
 ![Vue_d_ensemble_ProjetNOVA](/img/nova/Nova_VueEnsemble.png)
 

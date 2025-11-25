@@ -18,7 +18,7 @@ openstack server create \
 <nom de instance>
 ```
 Ajout de l'option `--user-data <configuration-file>` pour une création personnalisée avec
-[cloud-init]({{< ref "/nova/create_access_vm/advanced.fr.md">}})
+[cloud-init](/code_form/nova/creer_vm/advanced.md)
 et un fichier de configuration.
 
 

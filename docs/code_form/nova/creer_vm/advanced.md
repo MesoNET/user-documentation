@@ -32,12 +32,12 @@ Mais vous pouvez en savoir plus en vous référant à la documentation de cloud-
 [https://cloudinit.readthedocs.io/en/latest/topics/format.html](https://cloudinit.readthedocs.io/en/latest/topics/format.html)
 
 
-### Fichier cloud-config
+### Fichier cloud-config 
 Le fichier cloud-config est un moyen assez simple pour définir des tâches à accomplir au lancement de l'instance.
 
-{{% notice note %}}
+:::note
 Un fichier **cloud-config** doit être écrit avec une syntaxe **yaml** valide.
-{{% /notice %}}
+:::
 
 Pour commencer, le fichier doit débuter par `#cloud-config`.
 
@@ -56,7 +56,6 @@ Il suffit de faire la liste des paquets à installer sans préciser le dépôt d
 >
 ```
 package_upgrade: true
-
 packages:
   - aptitude
   - linuxlogo
@@ -66,7 +65,7 @@ packages:
   - gcc
   - g++
 ```
-
+    
 
 #### Ajout d'utilisateurs
 Avec le mot clé `users` on ajoute des utilisateurs qui pourront accéder à l'instance grâce à leur clé publique.
@@ -74,7 +73,6 @@ Avec le mot clé `users` on ajoute des utilisateurs qui pourront accéder à l'i
 >
 ```
 users:
-
   - name: "user1"
     gecos: "user 1"
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
@@ -82,14 +80,12 @@ users:
     homedir: "/home/user1"
     shell: "/bin/bash"
     ssh-authorized-keys: [ < public_key_user1 > ]
-
   - name: "ubuntu"
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     groups: [ wheel , sudo ]
     homedir: "/home/ubuntu"
     shell: "/bin/bash"
     ssh-authorized-keys: [ < public_key_user1 > , < public_key_user2 > ]
-
   - name: "user2"
     gecos: "user 2"
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
@@ -105,7 +101,6 @@ Il est possible d'écrire des fichiers au premier lancement avec `write_files` e
 >
 ```
 write_files:
-
   - content: |
       #!/bin/bash
       var="Hello World"
@@ -113,7 +108,6 @@ write_files:
     owner: root:root
     path: /home/ubuntu/hello.sh
     permissions: '0777'
-
   - content: |
       #!/bin/bash
       now="$(date)"
@@ -129,7 +123,7 @@ write_files:
 Le mot clé `runcmd` liste les commandes à exécuter dans un terminal.
 
 >
-```
+```json
 runcmd:
   # Personnalisation du bash pour user
   - echo "linuxlogo" >> /home/user/.bashrc
@@ -176,6 +170,5 @@ Pour cela, utilisez la commande de création d'instance openstack
 
 
 :::note
-Pour en savoir plus sur la création d'une instance à partir d'un volume, se référer à la documentation d'OpenStack.
-<i class="fas fa-hand-point-right"></i> [Documentation d'OpenStack](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html)
+Pour en savoir plus sur la création d'une instance à partir d'un volume, se référer à la [documentation d'OpenStack](https://docs.openstack.org/nova/latest/user/launch-instance-from-volume.html).
 :::

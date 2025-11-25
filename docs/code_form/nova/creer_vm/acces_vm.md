@@ -14,9 +14,9 @@ Utilisez la commande suivante pour associer une adresse ip flottante à une inst
 ``` bash
 openstack server add floating ip <instance> <ip_flottante>
 ```
-{{% notice note %}}
+:::note
 Cette commande ne produit aucune sortie si tout se passe correctement
-{{% /notice %}}
+:::
 
 >
 **Par exemple :**
@@ -44,10 +44,10 @@ ssh <nom-utilisateur>@<ip-flottante>
 
 Si vous avez créé l'instance sans créer d'utilisateur alors le nom d'utilisateur est celui par défaut.
 
-{{% notice note %}}
+:::note
 Par défaut, le nom d'utilisateur dépend de la distribution.
-En général, il s'agit du nom de la distribution... c'est le cas pour debian, ubuntu, nixos et cirros.
-{{% /notice %}}
+En général, il s'agit du nom de la distribution... C'est le cas pour debian, ubuntu, nixos et cirros.
+:::
 
 >
 Par exemple:

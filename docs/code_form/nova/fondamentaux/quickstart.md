@@ -8,12 +8,12 @@ Après la connexion, vous allez pouvoir commencer par créer votre paire de clé
 
 ## Prérequis
 
-* Avoir un projet Nova actif et donc un accès à l'interface Web avec vos identifiants PERSEUS (voir [Accéder à Openstack](/code_form/nova/fondamentaux/acceder_openstack)).
-* Avoir généré une paire de clés SSH sur votre machine (voir [SSH]({{< relref "../basics/ssh#création-dune-paire-de-clé" >}}))
+* Avoir un projet Nova actif et donc un accès à l'interface Web (voir [Accéder à Openstack](/code_form/nova/fondamentaux/acceder_openstack)).
+* Avoir généré une paire de clés SSH sur votre machine (voir [SSH](/code_form/nova/fondamentaux/ssh.md))
 
 ## Créer sa paire de clés
 
-Après vous être connecté à l'interface web Openstack, rendez vous dans l'onglet à gauche *Projet > Compute > Paires de clés*, cliquez sur *Importer un clé publique* :
+Après vous être connecté à Openstack, rendez vous dans l'onglet à gauche *Projet > Compute > Paires de clés*, cliquez sur *Importer un clé publique* :
 
 ![screen_keypair](/img/nova/nova_keypair.png?classes=shadow)
 
@@ -23,7 +23,9 @@ Enfin, vous avez le choix entre :
 * Sélectionner le fichier correspondant à votre clé **publique**, il s'agit du fichier généré lors des prérequis et qui se termine par **.pub**, par exemple, *id_rsa.pub*.
 * Copier coller le contenu du fichier correspondant à votre clé publique
 
-*Rappel : par défaut, ce fichier est situé dans le dossier **~/.ssh***
+:::note Rappel
+Par défaut, ce fichier est situé dans le dossier **~/.ssh***
+:::
 
 ## Autoriser l'accès SSH
 
@@ -99,16 +101,19 @@ Rendez vous dans l'onglet à gauche *Projet > Réseau > IP flottantes* :
 * On sélectionne *public* pour le pool d'IPs
 * Vous pouvez ajouter une description à votre adresse IP
 * **Obligatoire** : Pour le nom de domaine DNS, seule une liste de noms est autorisée : **nova.u-ga.fr.**, **u-ga.fr.** et **univ-grenoble-alpes.fr.**
-**Attention** au **.** à la fin, il est important.
 * Choisissez ensuite un nom DNS pour votre IP. Ce nom sera concaténé avec le nom de domaine précédent. Au final, vous pourrez, par exemple, accéder à votre machine virtuelle avec le nom *ma-vm.u-ga.fr*.
+
+:::warning Attention
+Le **.** à la fin de *u-ga.fr.* est important.
+:::
 
 ![screen_ipcreatesettings](/img/nova/nova_vm_ip_create_settings.png?classes=shadow)
 
 Il ne reste plus qu'à associer cette IP avec la machine virtuelle créée précédemment. Pour cela, cliquez sur *Associer* à côté de l'IP qui vient d'être créée.
 
-{{% notice warning %}}
-Attention, si vous souhaitez conserver votre déclaration DNS au moment de la suppression de votre VM, il faudra penser à dissocier votre IP flottante avant la suppression.
-{{% /notice %}}
+:::warning Attention
+Si vous souhaitez conserver votre déclaration DNS au moment de la suppression de votre VM, il faudra penser à dissocier votre IP flottante avant la suppression.
+:::
 
 ![screen_ipassociate](/img/nova/nova_vm_ip_associate.png?classes=shadow)
 
@@ -147,4 +152,4 @@ https://formulaires.univ-grenoble-alpes.fr/fr/declaration-site-web.
 
 ## Pour aller plus loin
 
-**Attention**, pour rappel, votre machine virtuelle est accessible depuis n'importe quelle adresse IP, il est préférable de filtrer les IPs autorisées. Pour cela, voir [Groupes de sécurité]({{< relref "../basics" >}}).
+**Attention**, pour rappel, votre machine virtuelle est accessible depuis n'importe quelle adresse IP, il est préférable de filtrer les IPs autorisées. Pour cela, voir [Groupes de sécurité](code_form/nova/ressources/groupe_secu.md).

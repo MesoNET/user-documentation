@@ -28,7 +28,7 @@ openstack server list
 ```
 >
 L'instance *youpi0* est active et fonctionne correctement (*Status = ACTIVE*).
-L'instance *youpi* est étteinte (*Status = SHUTOFF*).
+L'instance *youpi* est éteinte (*Status = SHUTOFF*).
 L'instance *youpi2* n'a pas réussie à se construire correctement donc elle est en état d'erreur (*Status = ERROR*).
 L'instance *youpi3* a été mise en pause ou suspendue (*Status = PAUSED*).
 L'instance *youpi4* est en construction (*Status = BUILD*).
@@ -46,9 +46,9 @@ openstack server create \
     --key-name <clé RSA> \
     <nom de instance>
 ```
-{{% notice tip %}}
-Utilisez **toujours** le réseau [**projet-int-net**]({{< ref "/nova/cloud_resources/network.fr.md">}}) pour lancer vos instances !
-{{% /notice %}}
+:::note
+Utilisez **toujours** le réseau [**default-net**](/code_form/nova/ressources/reseau#réseau-privé) pour lancer vos instances !
+:::
 
 
 >
@@ -58,7 +58,7 @@ On veut créer une instance appelée my-instance qui aura les caracteristiques s
 >
 - l'image: ubuntu-18.04-bionic-x86_64
 - le gabarit: m1.small
-- le réseau: project-int-net
+- le réseau: default-net
 - le groupe de sécurité: default
 - la clé ssh: my-key
 >
@@ -69,10 +69,10 @@ openstack server create --image ubuntu-18.04-bionic-x86_64 --flavor m1.small --n
 ```
 
 :::warning Attention
-Certaine image sont disponibles sous différents formats et donc portent le même nom.
+Certaines images sont disponibles sous différents formats et donc portent le même nom.
 Dans ce cas utilisez l'ID de l'image souhaitée pour éviter tout conflit à la création de l'instance :
 `--image <IMAGE_ID>`
 :::
 :::note
-La source à partir de laquelle on construit une instance n'est pas obligatoirement une image. Cela peut être un instantané ou même un volume bootable mais ce sont des cas particuliers qui seront traités [plus tard]({{< ref "/nova/create_access_vm/advanced.fr.md">}}).
+La source à partir de laquelle on construit une instance n'est pas obligatoirement une image. Cela peut être un instantané ou même un volume bootable mais ce sont des cas particuliers qui seront traités [plus tard](/code_form/nova/creer_vm/advanced#création-à-partir-dun-volume).
 :::

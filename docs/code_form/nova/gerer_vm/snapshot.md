@@ -8,10 +8,10 @@ Cela permet par exemple de relancer une instance depuis une version précédente
 
 ## Création d'instantané
 Avant de prendre un instantané, assurez-vous que la machine virtuelle soit arrêtée.
-{{% notice warning %}}
+:::warning
 Si l'instance n'est pas arrêtée, les données ne sont pas assurées d'être vidées sur le disque.
-{{% /notice %}}
-
+:::
+   
 Prenez l'instantané en utilisant la commande
 ``` bash
 openstack server image create <instance> --name myInstanceSnapshot
@@ -48,6 +48,5 @@ Si on veut migrer une instance vers un autre projet OpenStack, il faut
 
 
 :::note
-Pour en savoir plus sur les instantanés, se référer à la page de documentation d'OpenStack.
-<i class="fas fa-hand-point-right"></i>  [Documentation d'OpenStack](https://docs.openstack.org/ocata/user-guide/cli-use-snapshots-to-migrate-instances.html)
+Pour en savoir plus sur les instantanés, se référer à la page de [documentation d'OpenStack](https://docs.openstack.org/nova/latest/admin/migrate-instance-with-snapshot.html).
 :::

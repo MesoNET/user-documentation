@@ -4,8 +4,8 @@ title: "Réseaux"
 
 ## Réseau
 
-NOVA vous permet de créer la topologie réseau souhaitée à l'intérieur de votre projet.
-Le trafic interne entre les instances du projet est isolé des autres projets et de l'extérieur de NOVA.
+**Nova** vous permet de créer la topologie réseau souhaitée à l'intérieur de votre projet.
+Le trafic interne entre les instances du projet est isolé des autres projets et de l'extérieur de **Nova**.
 Chaque projet contient deux types de réseaux - network : privé et publique.
 
 ### Réseau privé
@@ -35,5 +35,5 @@ openstack subnet list
 qui renvoie le sous-réseau du réseau privé par défaut, *default-subnet*.
 
 :::note
-NOVA utilse l'adressage IPv4. Pour utiliser l'adressage IPv6, nous contacter.
+**Nova** utilise l'adressage IPv4. Pour utiliser l'adressage IPv6, nous contacter.
 :::

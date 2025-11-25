@@ -30,5 +30,5 @@ Cela permettra de libérer des ressources pour créer de nouvelles instances.
 
 
 :::tip
-En plus, c'est bon pour la planète ! <i class="fas fa-leaf"></i>
+En plus, c'est bon pour la planète !
 :::
