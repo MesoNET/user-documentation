@@ -18,4 +18,4 @@ Les architectures CPU, GPU AMD, NVIDIA A100 et H200 sont utilisables par l'ensem
 ## Recherche
 Les architectures GPU AMD, NVIDIA A100 ou H200, sont utilisables dans la file générale des travaux.
 
-La valeur ajoutée du modèle H200 réside en particulier dans la quantité de mémoire qu'il embarque : 140 Go par carte, pertinente pour certains projets de recherche en IA ou HPC.
+La valeur ajoutée du modèle H200 réside en particulier dans la quantité de mémoire qu'il embarque : 141 Go par carte, pertinente pour certains projets de recherche en IA ou HPC.
