@@ -4,12 +4,24 @@ sidebar_position: 6
 ---
 
 # Lancer un calcul sur Arctic
-Une section de documentation est dédiée à la [soumssion des travaux par Slurm](https://services.criann.fr/services/hpc/cluster-austral/guide/#environnement-de-soumission-slurm)
 
-Les modèles de script sont fournis dans un répertoire `/soft/slurm/Modeles_scripts/`
+## Commandes de Slurm
+| Action                                         | Commande                            
+| -----------------------------------------------| ----------------------------------------- |
+| Caractéristiques des partitions (classes)      | `sinfo`                                   |
+| Soumettre un travail                           | `sbatch script_soumission.sl`             |
+| Lister l'ensemble des travail                  | `squeue`                                  |
+| Lister ses propres travaux                     | `squeue --me`                             |
+| Affichage des caractéristiques d'un travail    | `scontrol show job job_id`                |
+| Prévision d'horaire de passage d'un travail en file d'attente | `squeue --start --job job_id`|
+| Prévision d'horaire de passage de ses propres travaux | `squeue --me --start`              |
+| Vérification de la syntaxe et prévision d'horaire de passage d'un travail sans le soumettre  | `sbatch --test-only script_soumission.sl` |
+| Tuer un travail                                | `scancel job_id`                          |
+
+## Modèles de script
+Les modèles de script sont fournis dans un répertoire `/soft/slurm/Arctic_Modeles_scripts/`
 
 ## Les partitions (classes de soumission)
-
 La parition Slurm est à spécifier par l'utilisateur dans son script. 
 
 | Partition    | Durée maximale | Limites par calcul                                      
