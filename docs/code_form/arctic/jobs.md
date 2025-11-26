@@ -6,7 +6,7 @@ sidebar_position: 6
 # Lancer un calcul sur Arctic
 
 ## Commandes de Slurm
-| Action                                         | Commande                            
+| Action                                         | Commande                                  |     
 | -----------------------------------------------| ----------------------------------------- |
 | Caractéristiques des partitions (classes)      | `sinfo`                                   |
 | Soumettre un travail                           | `sbatch slurm_script.sl`             |
