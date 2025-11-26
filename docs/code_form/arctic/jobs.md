@@ -15,7 +15,7 @@ sidebar_position: 6
 | Affichage des caractéristiques d'un travail    | `scontrol show job job_id`                |
 | Prévision d'horaire de passage d'un travail en file d'attente | `squeue --start --job job_id`|
 | Prévision d'horaire de passage de ses propres travaux | `squeue --me --start`              |
-| Vérification de la syntaxe et prévision d'horaire de passage d'un travail, <br> sans le soumettre | `sbatch --test-only script_soumission.sl` |
+| <p>Vérification de la syntaxe et prévision d'horaire de passage d'un travail, <br> sans le soumettre</p> | `sbatch --test-only script_soumission.sl` |
 | Tuer un travail                                | `scancel job_id`                          |
 
 ## Modèles de script
