@@ -9,13 +9,13 @@ sidebar_position: 6
 | Action                                         | Commande                            
 | -----------------------------------------------| ----------------------------------------- |
 | Caractéristiques des partitions (classes)      | `sinfo`                                   |
-| Soumettre un travail                           | `sbatch script_soumission.sl`             |
+| Soumettre un travail                           | `sbatch slurm_script.sl`             |
 | Lister l'ensemble des travail                  | `squeue`                                  |
 | Lister ses propres travaux                     | `squeue --me`                             |
 | Affichage des caractéristiques d'un travail    | `scontrol show job job_id`                |
 | Prévision d'horaire de passage d'un travail en file d'attente | `squeue --start --job job_id`|
 | Prévision d'horaire de passage de ses propres travaux | `squeue --me --start`              |
-| <p>Vérification de la syntaxe et prévision d'horaire de passage d'un travail, <br> sans le soumettre</p> | `sbatch --test-only script_soumission.sl` |
+| Vérification de la syntaxe et prévision d'horaire de passage d'un travail, sans le soumettre | `sbatch --test-only slurm_script.sl` |
 | Tuer un travail                                | `scancel job_id`                          |
 
 ## Modèles de script
