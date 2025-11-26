@@ -15,7 +15,7 @@ sidebar_position: 6
 | Affichage des caractéristiques d'un travail    | `scontrol show job job_id`                |
 | Prévision d'horaire de passage d'un travail en file d'attente | `squeue --start --job job_id`|
 | Prévision d'horaire de passage de ses propres travaux | `squeue --me --start`              |
-| Vérification de la syntaxe et prévision d'horaire de passage d'un travail sans le soumettre  | `sbatch --test-only script_soumission.sl` |
+| Vérification de la syntaxe et prévision d'horaire de passage d'un travail, <br> sans le soumettre | `sbatch --test-only script_soumission.sl` |
 | Tuer un travail                                | `scancel job_id`                          |
 
 ## Modèles de script
@@ -33,7 +33,7 @@ La parition Slurm est à spécifier par l'utilisateur dans son script.
 | **ar_fin**   | 1 h            | 384 cœurs (2 nœuds de calcul purs CPU, AMD Genoa) |
 
 ## Domaine IA - deep learning
-Lire sa [page consacrée](https://services.criann.fr/services/hpc/cluster-austral/guide/ia-deep-learning) et sa section **Utilisation**
+Lire sa [page consacrée](https://services.criann.fr/services/hpc/cluster-austral/guide/ia-deep-learning) et sa section **Utilisation** (les partitions Slurm pour GPU NVIDIA mentionnées sur ce lien sont à remplacer par celles du tableau ci-dessus).
 
 ## GPU partitionnés
 La partition `ar_mig` est associée à un nœud de calcul dont les GPU NVIDIA A100 sont partitionnés par la technologie MIG (Multi-Instance GPU).
