@@ -50,6 +50,6 @@ Pour utiliser l'un de ces devices dans vos calculs il faut :
     - `--gres=gpu:a100_2g.20gb` pour l'architecture a100_2g.20gb
     - `--gres=gpu:a100_3g.40gb` pour l'architecture a100_3g.40gb
 
-Un exemple complet basé sur le tutoriel mnist pour PyTorch est disponible un répertoire :
+Un exemple complet basé sur le tutoriel mnist pour PyTorch est disponible sur Arctic, dans le répertoire :
 
 `/soft/slurm/Arctic_Modeles_scripts/pytorch-mig/`
