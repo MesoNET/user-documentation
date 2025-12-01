@@ -42,6 +42,7 @@ These adaptations allow users to launch distributed training jobs without needin
 Examples:
 
 [- Flow matching](./flow_matching.md) 
+[- Ray tuning](./ray_tune.md) 
 
 ---
 
