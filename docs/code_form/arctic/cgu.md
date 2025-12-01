@@ -1,6 +1,6 @@
 ---
 title: "CGU"
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 # Conditions Générales d'Utilisation des ressources de calcul du Criann
