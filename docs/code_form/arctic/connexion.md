@@ -11,6 +11,7 @@ La connexion s'effectue en SSH vers la frontale de nom **arctic.criann.fr**
 
 Les environnements Linux et Mac intègrent nativement le protocole SSH via un terminal. Si vous êtes sous environnement Windows, nous vous recommandons d'utiliser le logiciel [MobaXTerm](https://mobaxterm.mobatek.net/) qui vous apportera un environnement de travail complet basé du protocole ssh (export d'écran, transfert de fichiers).
 
+Lire la documentation de bonnes pratiques de [sécurité](https://services.criann.fr/services/hpc/cluster-austral/guide/security/)
 <!---
 Les connexions se font par clé ssh ou par mot de passe initial à modifier à la première connexion (cas de comptes d'étudiants pour TP ou mini-projet de projet d'enseignement). Les administrateurs d'Arctic fournissent les informations nécessaires aux porteurs et utilisateurs de projet lors des demandes et créations de compte.
 --->
