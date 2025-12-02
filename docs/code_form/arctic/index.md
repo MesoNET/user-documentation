@@ -10,7 +10,7 @@ En fonction de la nature d'un projet et du profil de ses applications, différen
 Le [guide d'utilisation d'Austral](https://services.criann.fr/services/hpc/cluster-austral/guide/) complète celui d'Arctic (voir la section [travaux](./jobs.md) d'Arctic pour les partitions Slurm qui lui sont propres).
 
 ## Demande d'accès au service
-La [documentation générale d'accès à MesoNET](https://www.mesonet.fr/documentation/user-documentation/acces/portail) fournit les informations pour la demande d'accès au service, puis de dépôt d'un projet scientifique sur le [portail](https://acces.mesonet.fr/gramc-meso/).
+La [documentation générale d'accès à MesoNET](https://www.mesonet.fr/documentation/user-documentation/acces/portail) fournit les informations pour la demande d'accès au service, puis de dépôt d'un projet scientifique.
 
 Tout utilisateur d'Arctic doit lire et se conformer aux [CGU des ressources de calcul du Criann](https://www.criann.fr/cgu-calcul/).
 
