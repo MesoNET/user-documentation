@@ -13,7 +13,7 @@ sidebar_position: 2
 - GPU pour le HPC : 2 nœuds de calcul à 4 GPU AMD MI210 chacun  
 
 ### Ressources utilisables dans la file générale des travaux
-Les architectures CPU, GPU AMD, NVIDIA A100 et H200 sont utilisables par l'ensemble des partitions Slurm d'Arctic : voir section [travaux](./jobs.md)
+Les architectures CPU, GPU AMD, NVIDIA A100 et H200 sont utilisables par l'ensemble des partitions Slurm d'Arctic : voir section [travaux](./jobs.md).
 
 ## Recherche
 Les architectures GPU AMD, NVIDIA A100 ou H200, sont utilisables dans la file générale des travaux.
