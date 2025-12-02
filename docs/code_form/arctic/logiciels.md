@@ -11,7 +11,9 @@ Les logiciels sont installés sous environnements python3, pour l'architecture d
 - Outils de traitement d'image **OpenCV** et **scikit-image**
 - Outils d'analyse de données **pandas**
 
-Une [page dédiée](https://services.criann.fr/services/hpc/cluster-austral/guide/ia-deep-learning/) recense les différentes versions et leurs modules asscociés (commande utile : `module avail aidl`) 
+Une [page dédiée](https://services.criann.fr/services/hpc/cluster-austral/guide/ia-deep-learning/) recense les différentes versions et leurs modules asscociés.
+
+Commande utile : `module avail aidl`
 
 ## HPC
 ### Compliation
