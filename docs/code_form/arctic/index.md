@@ -15,7 +15,7 @@ La [documentation générale d'accès à MesoNET](https://www.mesonet.fr/documen
 Tout utilisateur d'Arctic doit lire et se conformer aux [CGU des ressources de calcul du Criann](https://www.criann.fr/cgu-calcul/)
 
 :::info
-La section [profils d'utilisation](./profils.md) doit être consultée par un porteur de projet qui dépose une demande pour Arctic : le formulaire de description scientifique doit préciser le type d'architecture qu'il cible. Pour des TP d'enseignement avec réservation par Slurm pour un groupe, préciser l'architecture, les dates, créneaux horaires, et modalités d'accès (ssh ou Jupyterhub).
+La section [profils d'utilisation](./profils.md) doit être consultée par un porteur de projet qui dépose une demande pour Arctic : le formulaire de description scientifique doit préciser le type d'architecture qu'il cible. Pour des TP d'enseignement avec réservation par Slurm pour un groupe, préciser l'architecture, les dates, créneaux horaires et modalités d'accès (ssh ou Jupyterhub).
 :::
 
-En cas de besoin d'informations complémentaires sur Arctic, écrire à support@mesonet.fr 
+En cas de besoin d'informations complémentaires sur Arctic, écrire à l'[adresse du support](mailto:support@criann.fr) 
