@@ -43,6 +43,7 @@ optuna/
 │   ├── optuna_mnist.py
 │   ├── check_best_model.py
 │   ├── run-optuna-multinode_Turpan.sh
+│   ├── init_optuna_db.py
 │   ├── study.db                (fichier SQLite partagé)
 ├── data/
 │   └── MNIST/                  (dataset MNIST)
@@ -57,8 +58,9 @@ optuna/
 |--------|------|
 | `optuna_mnist.py` | Script principal Optuna (fonction objective + entraînement MNIST) |
 | `check_best_model.py` | Lit le meilleur modèle depuis la base de données |
-| `run-optuna-multinode_Turpan.sh` | Script SLURM multi‑nœuds utilisant apptainer |
-| `study.db` | Base SQLite contenant les résultats (modifiable) |
+| `run-optuna-multinode-Turpan.sh` | Script SLURM multi‑nœuds utilisant apptainer |
+| `init_optuna_db.py` | Crée la base de donnes. Code lancé aussi par run-optuna-multinode-Turpan.sh |
+| `study.db` | Base SQLite contenant les résultats (crée par le code) |
 | `data/MNIST` | Dataset téléchargé automatiquement |
 | `README.txt` | Instructions |
 
@@ -167,16 +169,29 @@ Voici la version adaptée Turpan :
 set -euo pipefail
 
 # ---------- USER CONFIG ----------
-USER_WORKDIR=/tmpdir/bhupen/trash/optuna/code_and_slurm-scripts        # must be shared across nodes
+USER_WORKDIR="${SLURM_SUBMIT_DIR}"        # must be shared across nodes
 CONTAINER=/work/conteneurs/sessions-interactives/pytorch-24.02-py3-calmip-si.sif
 PY_SCRIPT=$USER_WORKDIR/optuna_mnist.py
 STUDY_DB=sqlite:///study.db
+DB_PATH="$USER_WORKDIR/study.db"
 STUDY_NAME="mnist_hpo"
 TOTAL_TRIALS=500            # total trials you want to run across all workers
 # -----------------------------------
+INIT_SCRIPT=$USER_WORKDIR/init_optuna_db.py
 
 mkdir -p "$USER_WORKDIR"
 mkdir -p logs
+
+# ======================================================
+#  CREATE DB BEFORE RUNNING THE CODE
+# ======================================================
+echo "🟦 Initializing DB before starting parallel workers..."
+
+apptainer exec \
+    --bind /tmpdir \
+    "$CONTAINER" \
+    python "$INIT_SCRIPT" "$STUDY_DB" "$STUDY_NAME"
+echo "[SBATCH] DB ready. Launching workers…"
 
 # Ensure $HOME/.local/bin is in PATH for the container
 export PATH="$HOME/.local/bin:$PATH"
@@ -295,7 +310,7 @@ Et définir un espace :
 ## Lancer le job
 
 ```bash
-sbatch run-optuna-multinode_Turpan.sh
+sbatch run-optuna-multinode-Turpan.sh
 ```
 
 Suivre la file :
@@ -323,7 +338,7 @@ Si vous lancez 500 trials avec 4 GPU :
 Avec 8 GPU → 8 trials simultanés  
 Avec 16 GPU → 16 trials simultanés
 
-Optuna scale **parfaitement** tant qu’il y a des trials à lancer.
+Optuna scale bien tant qu’il y a des trials à lancer.
 
 Ce document fournit un exemple complet utilisant MNIST, mais le schéma peut être étendu à des modèles plus complexes comme des CNN plus profonds ou des modèles transformers.
 
