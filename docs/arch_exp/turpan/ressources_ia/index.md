@@ -42,7 +42,13 @@ These adaptations allow users to launch distributed training jobs without needin
 Examples:
 
 [- Flow matching](./flow_matching.md) 
-[- Ray tuning](./ray_tune.md) 
+
+## L’Hyperparameter Optimization (HPO)
+
+L’Hyperparameter Optimization (HPO) vise à trouver automatiquement les meilleurs hyperparamètres pour optimiser les performances d’un modèle. Dans le cadre du cluster Turpan, nous proposons deux approches complémentaires : Ray Tune, idéal pour des expérimentations sur un seul nœud, offrant une large variété d’algorithmes d’optimisation ; et Optima, mieux adapté aux charges multi-nœuds, permettant d’exploiter pleinement l’architecture distribuée de Turpan pour accélérer la recherche d’hyperparamètres à grande échelle.
+
+[- Ray tuning](./HPO/ray_tune.md) 
+[- Optuna](./HPO/optuna.md) 
 
 ---
 
