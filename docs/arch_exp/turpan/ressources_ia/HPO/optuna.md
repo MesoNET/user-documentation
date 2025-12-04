@@ -4,13 +4,13 @@ Optuna est une bibliothèque d’optimisation d’hyperparamètres moderne, effi
 Contrairement à Ray Tune, qui fonctionne bien sur un seul nœud, **Optuna supporte naturellement les environnements multi‑nœuds sur Turpan**, via une base de données partagée SQLite que chaque worker met à jour. Cela permet de lancer des centaines de trials en parallèle sur plusieurs GPU et plusieurs nœuds.
 
 Ce document explique comment utiliser Optuna sur Turpan :  
-- [copier les fichiers d’exemple](#copier-lexemple-optuna)
+- [Copier les fichiers d’exemple](#copier-lexemple-optuna)
 - [Structure du répertoire](#structure-du-répertoire)
-- [installer Optuna dans le conteneur](#installer-optuna-dans-le-conteneur-turpan)
-- [fonctionnement d’Optuna sur Turpan (multi‑nœuds)](#fonctionnement-doptuna-sur-turpan-multinœuds)
-- [écrire votre fonction `objective(trial)` dynamique](#la-fonction-objectivetrial--cœur-doptuna)
+- [Installer Optuna dans le conteneur](#installer-optuna-dans-le-conteneur-turpan)
+- [Fonctionnement d’Optuna sur Turpan (multi‑nœuds)](#fonctionnement-doptuna-sur-turpan-multinœuds)
+- [Écrire votre fonction `objective(trial)` dynamique](#la-fonction-objectivetrial--cœur-doptuna)
 - [Script SBATCH (multi‑nœuds, multi‑GPU)](#script-sbatch-multinœuds-multigpu)  
-- [récupérer le meilleur modèle](#récupérer-le-meilleur-modèle) 
+- [Récupérer le meilleur modèle](#récupérer-le-meilleur-modèle) 
 - [Algorithmes d'optimisation avancés dans Optuna](#algorithmes-doptimisation-avancés-dans-optuna) 
 - [Visualisations Optuna](#visualisations-optuna)
 - [Adapter l’exemple à des modèles plus grands (LLM)](#adapter-lexemple-à-des-modèles-plus-grands-llm)
