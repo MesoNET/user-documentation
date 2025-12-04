@@ -16,7 +16,6 @@ Ce document explique comment lancer Ray Tune sur le cluster Turpan en utilisant 
 - [Modèle MNIST dynamique](#modèle-mnist-dynamique)  
 - [Adapter pour des expériences LLM](#adapter-pour-des-expériences-llm)  
 - [Lancer le job](#lancer-le-job)  
-- [Évolutivité attendue](#évolutivité-attendue)  
 - [Algorithmes de recherche avancés](#utiliser-des-algorithmes-de-recherche-avancés-bohb-hebo-optuna-bayesopt)  
 
 ---
@@ -58,7 +57,6 @@ ray_tune/
 │   ├── mnist_ddp.py
 │   ├── ray_tune.py
 │   ├── run-ray_tune_on_2gpus_Turpan.sh
-│   ├── run-ray_tune_on_8gpus_Turpan.sh
 ├── data
 │   └── MNIST/               (dataset MNIST téléchargé)
 └── README.txt
@@ -71,7 +69,6 @@ ray_tune/
 | `mnist_ddp.py`                    | Script d'entraînement utilisant PyTorch                      |
 | `ray_tune.py`                     | Script principal Ray Tune pour l'HPO                         |
 | `run-ray_tune_on_2gpus_Turpan.sh` | Script SLURM pour lancer Ray Tune sur 2 GPU                  |
-| `run-ray_tune_on_8gpus_Turpan.sh` | Script SLURM pour lancer Ray Tune sur 8 GPU                  |
 | `data/MNIST`                      | Dataset MNIST (téléchargé automatiquement si manquant)       |
 | `README.txt`                      | Instructions et notes                                         |
 
@@ -125,7 +122,7 @@ Chaque essai utilise par exemple :
 tune.with_resources(original_main, resources={"cpu": 4, "gpu": 1})
 ```
 
-Cela signifie que chaque *trial* consomme 1 GPU. Si chaque nœud offre 2 GPU → 2 trials simultanés par noeud. Avec 4 nœuds → 8 trials en parallèle.
+Cela signifie que chaque *trial* consomme 1 GPU. Si chaque nœud offre 2 GPU → 2 trials simultanés par noeud.
 
 Si vous voulez qu'un *trial* utilise plusieurs GPU, changez `"gpu": 2` et adaptez le code d'entraînement pour utiliser `DistributedDataParallel` ou un schéma multi-GPU.
 
@@ -230,8 +227,8 @@ Supprimez les parties liées à MNIST (dataset, transformations) et adaptez le p
 
 ## Lancer le job
 
-Dans `code_and_slurm-scripts` il y a deux exemples prêts à être lances `run-ray_tune_on_2gpus_Turpan.sh` et `run-ray_tune_on_8gpus_Turpan.sh`
-Pour les lances il suffit de :
+Dans `code_and_slurm-scripts` il y a un exemple prêt à être lancé `run-ray_tune_on_2gpus_Turpan.sh`.
+Pour les lancer il suffit de :
 
 ```bash
 sbatch run-ray_tune_on_2gpus_Turpan.sh
@@ -246,16 +243,6 @@ Vérifiez l'utilisation des GPU une fois le job est en RUNNING (commande interne
 ```bash
 placement --checkme
 ```
-
----
-
-## Évolutivité attendue
-Si chaque essai demande 1 GPU et que `num_samples=8` :
-- 1 nœud = 2 GPUs → 2 essais simultanés
-- 4 nœuds = 8 GPUs → 8 essais simultanés (tous les essais peuvent s'exécuter en parallèle)
-- Le temps total ≈ temps d'entraînement d'un modèle (si le nombre d'essais ≤ nombre de GPUs)
-
-`num_samples` définit le nombre total d'essais Ray lancés (échantillonnés dans l'espace d'hyperparamètres). Ce n'est pas nécessairement égal au nombre de combinaisons possibles : Ray échantillonne `num_samples` points dans l'espace.
 
 ---
 
@@ -279,7 +266,7 @@ tuner = tune.Tuner(
         mode="min",
         num_samples=50,        # nombre total d'essais
         search_alg=search_alg, # l'algorithme d'optimisation
-        max_concurrent_trials=8,
+        max_concurrent_trials=2,
     ),
 )
 tuner.fit()
