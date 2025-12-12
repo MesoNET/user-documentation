@@ -46,8 +46,6 @@ Les utilisateurs s'engagent à faire usage des ressources du mésocentre dans le
 
 - Reconnaitre avoir été informés que l'accès aux ressources du mésocentre est susceptible d'être interrompu à tout moment pour raison de maintenance.
 
-- Supprimer les fichiers du repertoire /scartch plus n'ayant pas été utilisés depuis plus d'un an.
-
 **Environnement utilisateur HPC**
 
 Tous les utilisateurs doivent utiliser leurs adresses e-mail institutionnelles pour des raisons de sécurité.Le coordinateur d'un projet est automatiquement abonné à la liste de diffusion **mesocentre-projets-responsables@univ-amu.fr.** Il est également inscrit, comme tous les utilisateurs associés au projet, à la liste de diffusion **mesocentre@univ-amu.fr**. Les usagers ont la possibilité de se désabonner des listes, ils prennent cependant la responsabilité de ne pas être tenu informés des notifications et en particulier des avis de maintenance qui pourront n'être diffusés que par ce biais. L'utilisateur est désabonné de ces listes lors de la suppression de son compte d'accès.Le Mésocentre attribue des espaces disques avec quotas à chaque utilisateur. Le stockage, la sauvegarde et l'archivage des données et logiciels que l'utilisateur dépose ou installe sur les équipements du mésocentre sont sous sa seule responsabilité. Les espaces disques et données d'un utilisateur sont effacés lors de la suppression de son compte.
