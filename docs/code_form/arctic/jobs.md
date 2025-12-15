@@ -10,7 +10,7 @@ sidebar_position: 6
 | -------------------------------------------------------------------------------------------- | -------------------------------------|
 | Caractéristiques des partitions (classes)                                                    | `sinfo`                              |
 | Soumettre un travail                                                                         | `sbatch slurm_script.sl`             |
-| Lister l'ensemble des travail                                                                | `squeue`                             |
+| Lister l'ensemble des travaux                                                                | `squeue`                             |
 | Lister ses propres travaux                                                                   | `squeue --me`                        |
 | Affichage des caractéristiques d'un travail                                                  | `scontrol show job job_id`           |
 | Prévision d'horaire de passage d'un travail en file d'attente                                | `squeue --start --job job_id`        |
