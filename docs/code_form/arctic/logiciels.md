@@ -11,12 +11,12 @@ Les logiciels sont installés sous environnements python3, pour l'architecture d
 - Outils de traitement d'image **OpenCV** et **scikit-image**
 - Outils d'analyse de données **pandas**
 
-Une [page dédiée](https://services.criann.fr/services/hpc/cluster-austral/guide/ia-deep-learning/) recense les différentes versions et leurs modules asscociés.
+Une [page dédiée](https://services.criann.fr/services/hpc/cluster-austral/guide/ia-deep-learning/) recense les différentes versions et leurs modules associés.
 
 Commande utile : `module avail aidl`
 
 ## HPC
-### Compliation
+### Compilation
 Les liens suivants décrivent les environnements spécifiques (Cray Programming Environment) disponibles sur Arctic :
 - pour la [compilation de codes CPU](https://services.criann.fr/services/hpc/cluster-austral/guide/#compilation)
 - pour la [compilation de codes GPU](https://services.criann.fr/services/hpc/cluster-austral/guide/compil-gpu/)
