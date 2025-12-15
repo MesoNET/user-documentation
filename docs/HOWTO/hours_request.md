@@ -75,4 +75,4 @@ Sur Zen la comptabilisation se fait en heures CPU. Pour réserver un nœud compl
 
 ## Arctic (CPU et GPU)
 
-Qu'un travail exploite des CPU ou des GPU, sa consommation de ressource décomptée est le nombdre d'heures.cœurs qu'il réserve : (cœurs de CPU) x (durée de temps elapsed).
+Qu'un travail exploite des CPU ou des GPU, sa consommation de ressource décomptée est le nombre d'heures.cœurs qu'il réserve : (cœurs de CPU) x (durée de temps elapsed).

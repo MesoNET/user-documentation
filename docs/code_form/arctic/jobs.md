@@ -10,7 +10,7 @@ sidebar_position: 6
 | -------------------------------------------------------------------------------------------- | -------------------------------------|
 | Caractéristiques des partitions (classes)                                                    | `sinfo`                              |
 | Soumettre un travail                                                                         | `sbatch slurm_script.sl`             |
-| Lister l'ensemble des travail                                                                | `squeue`                             |
+| Lister l'ensemble des travaux                                                                | `squeue`                             |
 | Lister ses propres travaux                                                                   | `squeue --me`                        |
 | Affichage des caractéristiques d'un travail                                                  | `scontrol show job job_id`           |
 | Prévision d'horaire de passage d'un travail en file d'attente                                | `squeue --start --job job_id`        |
@@ -22,7 +22,7 @@ sidebar_position: 6
 Les modèles de script sont fournis dans un répertoire `/soft/slurm/Arctic_Modeles_scripts/`
 
 ## Les partitions (classes de soumission)
-La parition Slurm est à spécifier par l'utilisateur dans son script. 
+La partition Slurm est à spécifier par l'utilisateur dans son script. 
 
 | Partition    | Durée maximale | Limites par calcul                                      
 | ------------ | -------------- |------------------------------------------------------- |
@@ -39,9 +39,9 @@ Lire sa [page consacrée](https://services.criann.fr/services/hpc/cluster-austra
 La partition `ar_mig` est associée à un nœud de calcul dont les GPU NVIDIA A100 sont partitionnés par la technologie MIG (Multi-Instance GPU).
 
 Différentes tailles d'instances sont disponibles (SM : Streaming Multiprocessor, TC : Tensor Core) :
-  - 10 devices a100_1g.10gb avec 10 GB de Mémoire, 14 SM et 56 TC
-  - 17 devices a100_2g.20gb avec 20 GB de Mémoire, 28 SM et 108 TC
-  - 4 devices a100_3g.40gb avec 40 GB de Mémoire, 42 SM et 164 TC
+  - 10 devices a100_1g.10gb avec 10 GB de mémoire, 14 SM et 56 TC
+  - 17 devices a100_2g.20gb avec 20 GB de mémoire, 28 SM et 108 TC
+  - 4 devices a100_3g.40gb avec 40 GB de mémoire, 42 SM et 164 TC
 
 Pour utiliser l'un de ces devices dans vos calculs il faut :
   - cibler la partition `ar_mig` avec l'option `--partition ar_mig` de sbatch
