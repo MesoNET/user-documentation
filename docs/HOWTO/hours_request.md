@@ -72,3 +72,7 @@ Les règles exactes de comptabilité sur Zen sont encore en cours de développem
 :::
 
 Sur Zen la comptabilisation se fait en heures CPU. Pour réserver un nœud complet, le nombre d'heures à demander correspond à 128 fois le nombre d'heures de calcul.
+
+## Arctic (CPU et GPU)
+
+Qu'un travail exploite des CPU ou des GPU, sa consommation de ressource décomptée est le nombre d'heures.cœurs qu'il réserve : (cœurs de CPU) x (durée de temps elapsed).
