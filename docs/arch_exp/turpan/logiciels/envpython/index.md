@@ -20,9 +20,3 @@ CALMIP préconise l’utilisation de conda pour l’installation de vos environn
 
 * [JupyterLab](./jupyterlab.md)
 * [TensorBoard](./tensorboard.md)
-
-### Autres ressources et guides pratiques
-
-* [Guide pour débuter avec l'IA sur turpan](Turpan_for_AI.pdf)
-
-

@@ -280,7 +280,7 @@ apptainer exec --env "PYTHONUSERBASE=${HOME}/myenv3" --bind /tmpdir,/work --nv /
 </Tabs>
 
 Voici quelques liens pour avoir de l'information supplémentaire :
-  * Sur l'[utilisation des conteneurs](../apptainer.md) sur Turpan
+  * Sur l'[utilisation des conteneurs](../container/index.md) sur Turpan
   * Sur l'[utilisation de la bibliothèque Pytorch](./pytorch.md) sur Turpan
   * Sur l'[utilisation de la bibliothèque TensorFlow](./tensorflow.md) sur Turpan
   * Sur l'[utilisation de la bibliothèque Scikit-learn](./scikit-learn.md) sur Turpan
