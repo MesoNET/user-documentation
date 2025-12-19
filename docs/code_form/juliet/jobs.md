@@ -142,7 +142,7 @@ Cette commande spécifie les ressources pour le travail, y compris la partition,
 
 ### Exemple 8 : Exécuter des tâches interactives avec srun
 
-    srun --time=HH:MM:SS --account=m2xxxx --pty -c 4 /bin/bash
+    srun --time=HH:MM:SS --account=m2xxxx --pty -c 4 --gres=gpu:1 /bin/bash
 
 Cette commande lance un shell interactif avec 4 CPU alloués. Utile pour les tâches interactives ou les tests.
 
