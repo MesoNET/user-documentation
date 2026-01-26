@@ -20,6 +20,20 @@ Accessible via une interface web ou une API, la plateforme permet de gérer des 
 Le projet Nova met à disposition une infrastructure de cloud computing (IaaS : Infrastructure as a Service) à destination des activités recherche de l'EPE UGA.
 Avec Mesonet, Nova met désormais ses ressources à disposition de tout l'ESR français.
 
+#### Infrastructure technique
+
+Matériellement, la plateforme se compose d'une partie serveurs hôtes Openstack :
+
+- **24 serveurs CPU**
+- **3 serveurs GPU** comportant chacun **4 GPU NVIDIA H100**
+pour un total de : **5184 cœurs**, **40,5 To de mémoire**, **12 GPU NVIDIA H100**.
+
+Les serveurs hôtes sont complétés par un stockage Ceph (pour les disques des VMs, les images d'OS) :
+- **6 nœuds de stockage avec disques NVMe**    
+
+pour un total de **150 To** brut par serveur
+
+
 #### Caractéristiques de la plateforme Nova
 - approvisionnement de machines virtuelles à la demande,
 - nombreuses options disponibles (capacité CPU, RAM, disque, GPU, etc.),
