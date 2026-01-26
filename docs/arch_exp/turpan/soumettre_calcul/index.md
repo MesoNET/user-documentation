@@ -14,7 +14,7 @@ L'utilisateur peut exécuter un maximum de 3 jobs simultanément, quelle que soi
 - **big** : exclusive, 1 job max, pas plus de 13 noeuds par jobs, max walltime par job 2H.
 - **full** : exclusive, 1 job max, au moins 14 noeuds par jobs, max walltime par job 20H
 - **visu** : non exclusive, 1 job max, max 50Go RAM max 8 cpu par job, max walltime par job 4H.
-- **shared** : non exclusive, 2 jobs max, max la moitié du noeud (40 cpu et 256G ram,1 GPU ), max walltime par job 4H.
+- **shared** : non exclusive, 2 jobs max, max la moitié du noeud (40 cpu et max 256G ram,1 GPU ), max walltime par job 4H.
 
 :::info
 * **Exclusive**: Un job en partition exclusive réserve l’intégralité des nœuds qui lui sont attribués.
@@ -64,7 +64,7 @@ Exemple script exclusif, 2 nœuds, 160 processeurs, le temps d'exécution moins 
 
 Exemple script shared, 1 nœud, 40 processeurs,  le temps d'exécution moins de 4H
 
->```
+>```shell
 >#!/bin/bash
 >#SBATCH -N 1
 >#SBATCH -n 40
@@ -72,6 +72,7 @@ Exemple script shared, 1 nœud, 40 processeurs,  le temps d'exécution moins de 
 >#SBATCH -p shared
 >#SBATCH --ntasks-per-node=40
 >#SBATCH --time=00:10:00
+>#SBATCH --mem=256G     # Mémoire par défaut est 64G, max est 256 G 
 >
 >module purge
 >module load gnu/11.2.0
@@ -83,9 +84,16 @@ Exemple script shared, 1 nœud, 40 processeurs,  le temps d'exécution moins de 
 </TabItem>
 </Tabs>
 
+:::info
+Sur la partition **shared**, la mémoire par défaut est de 64G, mais vous pouvez l'augmenter jusqu'à 256 G en utilisant `#SBATCH --mem` .
+Si `#SBATCH --mem` n'est pas présent dans votre script, la mémoire attribué à la tâche est de 64 Go par défaut.
+:::
+
 :::caution
 Sur Turpan, si l'application utilise **MPI**, il est nécessaire d'utiliser **mpirun** et d'éviter srun, sauf si un conteneur est utilisé ([voir ici](../logiciels/container/index.md)). Pour les autres applications **sans MPI**, srun reste valide
 :::
+
+
 
 ## Obtenir des informations sur un job
 

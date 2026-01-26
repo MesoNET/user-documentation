@@ -9,7 +9,16 @@ Vous trouverez ici les dernières informations, annonces et mises à jour concer
 
 ---
 ## Dernières Nouvelles
+### 🔄 **Maintenance de Turpan** 
+**🗓️ <u>Date : 19 Novembre 2025</u>**
 
+Une maintenance Turpan aura lieu du **19 Novembre à 9h00** . Les nœuds seront de nouveau disponibles les uns après les autres dans la journée.
+:::caution  
+📌 **Indisponibilité du système**  
+Vos job seront suspendues pendant cette période, mais la machine restera accessible. 
+:::
+
+---
 ### 💻➕ Environnement logiciel 
 L’environnement logiciel a été enrichi avec les modules :
 - [La dynamique moléculaire](./logiciels/dynamique_moléculaire.md): LAMMPS, GROMACS et AMBER sont désormais disponible. 
