@@ -55,7 +55,7 @@ Suivez attentivement les étapes de [la procédure générale de création de co
 Après validation de votre compte MesoNET, suivez le second lien et complétez votre profil.
 
 - Laboratoire : Zen - Formation Zen
-- Statut : Autre
+- Statut : étudiant
 - Établissement : Votre établissement (en cas de doute, demandez à votre responsable de formation)
 
 ## 4 - Générer et télécharger vos clés ssh
