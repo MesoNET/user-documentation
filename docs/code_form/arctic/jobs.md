@@ -30,7 +30,7 @@ La partition Slurm est à spécifier par l'utilisateur dans son script.
 | **ar_a100**  | 8 h            | 16 cœurs, 1 GPU NVIDIA A100 |
 | **ar_h200**  | 8 h            | 24 cœurs, 1 GPU NVIDIA H200 |
 | **ar_mi210** | 1 h            | 16 cœurs, 1 GPU AMD MI210 |
-| **ar_fin**   | 1 h            | 384 cœurs (2 nœuds de calcul purs CPU, AMD Genoa) |
+| **ar_fin**   | 3 h            | 384 cœurs (2 nœuds de calcul purs CPU, AMD Genoa) |
 
 ## Domaine IA - deep learning
 Lire sa [page consacrée](https://services.criann.fr/services/hpc/cluster-austral/guide/ia-deep-learning) et sa section **Utilisation** (les partitions Slurm pour GPU NVIDIA mentionnées sur ce lien sont à remplacer par celles du tableau ci-dessus).
