@@ -11,6 +11,8 @@ La machine Juliet du projet MesoNET est dédiée aux projets scientifiques, tech
 
 [Pour les formations](/code_form/juliet/formations)
 
+[Problèmes fréquents](/code_form/juliet/troubleshooting)
+
 
 :::info En cas de problème
 Pour les utilisateurs non-académiques (entreprises et collectivités), vous pouvez solliciter le support de l'équipe ROMEO [ici](https://romeo-ticket.univ-reims.fr)
