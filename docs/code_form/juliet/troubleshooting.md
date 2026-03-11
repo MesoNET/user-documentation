@@ -13,7 +13,7 @@ Vérifiez également que vous avez bien [configuré votre clé SSH](https://www.
 
 ### Je ne sais pas quel est mon identifiant sur Juliet
 
-Vous pouvez retrouver votre identifiant dans l'onglet `Demandeur` du [portail MesoNET](https://acces.mesonet.fr/gramc-meso/) à la ligne de votre projet ayant des heures de calcul attribuées sur Juliet.
+Vous pouvez retrouver votre identifiant dans l'onglet `Liste des projets` du [portail MesoNET](https://acces.mesonet.fr/gramc-meso/projet/accueil) à la ligne de votre projet ayant des heures de calcul attribuées sur Juliet.
 
 :::info
 
@@ -25,7 +25,7 @@ Cet identifiant est le même pour tous vos projet. Si vous avez un autre projet 
 
 Vérifiez que le nom d'utilisateur entré est bien celui indiqué dans votre projet ayant accès à Juliet. Vous pouvez retrouver la liste de vos projets [ici](https://acces.mesonet.fr/gramc-meso/projet/accueil)
 
- Vérifiez que votre clé SSH est bien à l'endroit indiqué dans votre fichier de configuration. Si vous avez créé votre clé SSH sur une autre machine, vous devez en générer une autre ou copier la clé sur votre nouvelle machine.
+Vérifiez que votre clé SSH est bien à l'endroit indiqué dans votre fichier de configuration. Si vous avez créé votre clé SSH sur une autre machine, vous devez en générer une autre ou copier la clé sur votre nouvelle machine.
 
 Si vous avez défini un chemin particulier pour votre clé ssh qui n'est pas un chemin par défaut (par exemple, .ssh/turpan) il vous faut spécifier le chemin de la clé
 
