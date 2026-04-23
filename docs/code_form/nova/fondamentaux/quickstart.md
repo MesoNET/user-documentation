@@ -98,7 +98,7 @@ Rendez vous dans l'onglet à gauche *Projet > Réseau > IP flottantes* :
 
 ![screen_ipcreate](/img/nova/nova_vm_ip_create.png?classes=shadow)
 
-* On sélectionne *public* pour le pool d'IPs
+* On sélectionne *dmz* pour le pool d'IPs
 * Vous pouvez ajouter une description à votre adresse IP
 * **Obligatoire** : Pour le nom de domaine DNS, seule une liste de noms est autorisée : **nova.u-ga.fr.**, **u-ga.fr.** et **univ-grenoble-alpes.fr.**
 * Choisissez ensuite un nom DNS pour votre IP. Ce nom sera concaténé avec le nom de domaine précédent. Au final, vous pourrez, par exemple, accéder à votre machine virtuelle avec le nom *ma-vm.u-ga.fr*.
@@ -134,7 +134,7 @@ Enfin, sélectionnez le port de votre machine virtuelle, à associer à votre IP
 ![screen_pingip](/img/nova/nova_vm_ping_ip.png?classes=shadow) -->
 
 Il ne reste plus qu'à se connecter à la machine virtuelle en SSH pour en profiter :
-**Attention**, l'utilisateur par défaut est *ubuntu* pour un système d'exploitation Ubuntu, et *debian* pour un système d'exploitation Debian. De plus, il faut être connecté au réseau de l'UGA ou au VPN pour se connecter aux instances.
+**Attention**, l'utilisateur par défaut est *ubuntu* pour un système d'exploitation Ubuntu, et *debian* pour un système d'exploitation Debian.
 
 ```bash
 user@user-gricad:~$ ssh debian@ma-vm.u-ga.fr
@@ -145,10 +145,6 @@ user@user-gricad:~$ ssh debian@ma-vm.u-ga.fr
 ```bash
 user@user-gricad:~$ ssh debian@129.88.204.55
 ```
-
-Pour rendre accessible un service en dehors du réseau de l'UGA, vous devez vous adresser à un administrateur systèmes et réseaux proche de votre structure.   
-Pour un site web (port 443), la demande est facilitée et peut être effectuée ici :
-https://formulaires.univ-grenoble-alpes.fr/fr/declaration-site-web.
 
 ## Pour aller plus loin
 
