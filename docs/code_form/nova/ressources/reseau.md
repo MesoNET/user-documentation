@@ -19,10 +19,10 @@ Elles auront accès à l'extérieur grâce à un mécanisme de SNAT, mais ne ser
 Les VMs pouront par ailleurs communiquer entre elles au sein des réseaux privés d'un même projet.
 
 
-### Réseau public
+### Réseau dmz
 
-Pour chaque projet, il y a un réseau public : **public**, qui est un réseau routé sur le backbone UGA.
-C'est dans ce réseau public que vous pourrez allouer des _adresses ip flottantes_.
+Pour chaque projet, il y a un réseau dmz : **dmz**, qui est un réseau routé sur le backbone UGA.
+C'est dans ce réseau dmz que vous pourrez allouer des _adresses ip flottantes_.
 Ces _ip flottantes_ pourront alors être associées aux VMs que vous aurez créées, pour les rendre accessibles.
 
 

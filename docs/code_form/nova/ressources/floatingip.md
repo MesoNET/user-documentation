@@ -5,8 +5,8 @@ title: "IP Flottante"
 ## 1- Principe de fonctionnement
 Comme vu précédemment pour une configuration réseau classique sur NOVA, chaque instance possède une interface avec une adresse IP privée fixe.
 Si elle permet de communiquer vers l'extérieur via la translation d'adresse du routeur, elle ne suffit pas pour être jointe depuis l'extérieur du projet.
-Pour cela, il faut recourir à une IP flottante du réseau **public**.
-Une IP flottante est un objet du projet, en lien avec le sous-réseau du réseau **public** et avec son quota de ressources.
+Pour cela, il faut recourir à une IP flottante du réseau **dmz**.
+Une IP flottante est un objet du projet, en lien avec le sous-réseau du réseau **dmz** et avec son quota de ressources.
 Elle doit être allouée avant d'être associée ou dissociée d'une interface réseau d'instance.
 Elle peut enfin être libérée.
 
@@ -35,12 +35,12 @@ Si vous souhaitez conserver votre déclaration DNS au moment de la suppression d
 :::
 
 ## 3- Allouer une IP flottante {#allouerIpFlottante}
-Pour allouer une IP flottante au projet, il faut créer une adresse dans le sous-réseau **public**.
+Pour allouer une IP flottante au projet, il faut créer une adresse dans le sous-réseau **dmz**.
 Pour cela, executez la commande :
 ```bash
 openstack floating ip create \
 --dns-name <nomDNS> --dns-domain nova.u-ga.fr. \
-public
+dmz
 ```
 
 ## 4- Associer une IP flottante à une instance
