@@ -23,7 +23,7 @@ Exemple de script shell qui sollicite la réservation pour 24 heures de 2 GPUs G
 #SBATCH --account=b1001
 #SBATCH --partition=gpu
 #SBATCH --nodes=1
-#SBATCH --gres=gpu:GH100:2 
+#SBATCH --gres=gpu:2 
 #SBATCH --time=24:00:00 
 
 # copie des données d’entrée sur le nœud alloué
@@ -48,7 +48,7 @@ sbatch mon_programme.sh
 
 Il est possible d'utiliser directement sbatch en ligne de commande avec pour arguments les directives Slurm et le nom du programme. 
 ```
-srun --job-name=mon_job_gpu --account=b1001 --partition=gpu --nodes=1 --gres=gpu:GH100:2 --time=24:00:00 mon_script.sh
+srun --job-name=mon_job_gpu --account=b1001 --partition=gpu --nodes=1 --gres=gpu:2 --time=24:00:00 mon_script.sh
 ```
 
 ## Ouverture d’une session interactive
@@ -56,7 +56,7 @@ Il est également possible d'accéder à une session interactive en précisant l
 
 Par exemple : 
 ```
-srun --job-name=mon_job_gpu --account=b1001 --partition=gpu --nodes=1 --gres=gpu:GH100:2 --time=24:00:00 --pty bash -i
+srun --job-name=mon_job_gpu --account=b1001 --partition=gpu --nodes=1 --gres=gpu:2 --time=24:00:00 --pty bash -i
 ```
 Vous serez alors connecté sur un nœud et pourrez utiliser les commandes unix et lancer vos directement en ligne de commande.
 

@@ -7,8 +7,24 @@ sidebar_position: 0
 
 Vous trouverez ici les dernières informations, annonces et mises à jour concernant Turpan. Consultez cette page régulièrement pour rester informé.
 
----
+
 ## Dernières Nouvelles
+
+### ⚙️ **Extension de Turpan** 
+Déploiement et mise à disposition d’une extension de stockage SSD sur chaque nœud afin d’améliorer les performances d’entrée/sortie (I/O) de vos jobs.
+Pour plus d’informations, voir [L'espace disque sur Turpan](./stockage.md)
+
+---
+### 💻➕ Environnement logiciel 
+L’environnement logiciel a été enrichi avec les modules :
+- [La dynamique moléculaire](./logiciels/dynamique_moléculaire.md): LAMMPS, GROMACS et AMBER sont désormais disponible. 
+- [Chdb](./logiciels/chdb.md): pour  embarrassingly parallel sur un grand nombre d’entrées indépendantes.
+- L'utile `placement` a été mis à jour pour permettre une surveillance continue comme suit : Ajoutez à votre commande l’option **`--rt`**, qui par défaut affiche les informations toutes les 1 seconde, ou **--rt=t**, qui affiche les informations sur l’utilisation des ressources du code intégrées sur un intervalle de temps t. Pour plus d’informations, consultez placement --help.
+---
+
+
+##  Actualités Précédentes
+
 ### 🔄 **Maintenance de Turpan** 
 **🗓️ <u>Date : 19 Novembre 2025</u>**
 
@@ -17,16 +33,6 @@ Une maintenance Turpan aura lieu du **19 Novembre à 9h00** . Les nœuds seront 
 📌 **Indisponibilité du système**  
 Vos job seront suspendues pendant cette période, mais la machine restera accessible. 
 :::
-
----
-### 💻➕ Environnement logiciel 
-L’environnement logiciel a été enrichi avec les modules :
-- [La dynamique moléculaire](./logiciels/dynamique_moléculaire.md): LAMMPS, GROMACS et AMBER sont désormais disponible. 
-- [Chdb](./logiciels/chdb.md): pour  embarrassingly parallel sur un grand nombre d’entrées indépendantes.
-- L'utile `placement` a été mis à jour pour permettre une surveillance continue comme suit : Ajoutez à votre commande l’option **`--rt`**, qui par défaut affiche les informations toutes les 1 seconde, ou **--rt=t**, qui affiche les informations sur l’utilisation des ressources du code intégrées sur un intervalle de temps t. Pour plus d’informations, consultez placement --help.
-
-
-##  Actualités Précédentes
 ---
 ### 💻➕ Environnement logiciel 
 L’environnement logiciel a été enrichi avec les modules suivants :

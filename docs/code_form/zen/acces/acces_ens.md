@@ -11,7 +11,7 @@ Pour utiliser [le cluster Zen](/code_form/zen/description) pour votre formation,
 
 :::caution Attention
 
-Comme indiqué dans la procédure, lors de votre demande de projet, il ne faut pas rajouter vos étudiants comme collaborateurs!
+A ce stade (demande de projet) **il ne faut pas rajouter vos étudiants comme collaborateurs!**
 
 :::
 

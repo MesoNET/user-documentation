@@ -21,9 +21,18 @@ Si votre laboratoire n'apparaît pas sur la liste merci de contacter support@mes
 
 ### Création de projet
 
-Pour créer un nouveau projet, allez dans la barre à gauche, dans la section `Projet` et cliquez sur `Nouveau Projet`
+
+Pour créer un nouveau projet, rendez-vous sur le portail MesoNET à l'adresse [https://acces.mesonet.fr] et identifiez-vous de la même manière que lorsque vous avez créé votre compte.
+
+Allez dans la barre à gauche, dans la section `Projet` et cliquez sur `Nouveau Projet`
 
 Vous pouvez ensuite remplir les différents champs, enregistrer et cliquer sur `Envoyer en validation`.
+
+:::caution
+
+N'oubliez pas de cocher les cases machines pour les collaborateurs que vous souhaitez ajouter. (voir section `Accès aux machines`)
+
+:::
 
 ## Inviter des collaborateurs
 
@@ -38,7 +47,9 @@ Si vous ajoutez des collaborateurs par la suite, vous pouvez allez dans l'onglet
 
 Dans la section `Personnes participant au projet` ou dans l'onglet `Collaborateurs`, cochez pour chaque collaborateur les machines sur lesquelles le collaborateur a besoin d'un accès.
 
-Pour avoir accès à une machine vous devez faire une demande d'heures de calcul à cette dernière. Vous pouvez vous référer à la documentation de chaque machine 
+Pour chaque collaborateur, cliquez sur `Afficher/Masquer logins` et cocher les cases des machines auxquelles ils doivent avoir accès.
+
+Pour avoir accès à une machine vous devez faire une demande d'heures de calcul à cette dernière. Vous pouvez vous référer à la documentation de chaque machine.
 
 ## Demander une extension
 

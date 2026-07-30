@@ -21,7 +21,9 @@ module load jupyterlab
 
 Vous devez ensuite exécuter la commande :
 ```bash
-launch_jupyterlab
+launch_jupyterlab -A <account>
+# Remplacez <account> par votre compte projet Mesonet. Par exemple :
+# launch_jupyterlab -A m99999
 ```
 
 Laissez le script démarrer (cela prend quelques secondes, soyez patient...), puis vous devriez voir un affichage de ce style :

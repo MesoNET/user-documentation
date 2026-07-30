@@ -89,6 +89,10 @@ Sur la partition **shared**, la mémoire par défaut est de 64G, mais vous pouve
 Si `#SBATCH --mem` n'est pas présent dans votre script, la mémoire attribué à la tâche est de 64 Go par défaut.
 :::
 
+:::info
+Sur la partition **shared**; In case of using openMP, il est nécessaire de définir le nombre de threads en ajoutant `#SBATCH --cpus-per-task=40` (max threads=40) sinon, le nombre de threads sur la partition shared sera considéré comme égal à 1.
+:::
+
 :::caution
 Sur Turpan, si l'application utilise **MPI**, il est nécessaire d'utiliser **mpirun** et d'éviter srun, sauf si un conteneur est utilisé ([voir ici](../logiciels/container/index.md)). Pour les autres applications **sans MPI**, srun reste valide
 :::

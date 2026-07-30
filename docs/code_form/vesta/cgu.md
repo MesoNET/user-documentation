@@ -16,14 +16,14 @@ sidebar_position: 5
 Tout utilisateur utilisant les services du système d'information (SI) Vesta de
 l'Université de Strasbourg s'engage à :
 
-1. Etre signataire de la Charte du numérique de l'Université de Strasbourg, dont
+1. Être signataire de la Charte du numérique de l'Université de Strasbourg, dont
 une copie est disponible à l'adresse suivante : [Charte du
 numérique](https://services-numeriques.unistra.fr/charte-du-numerique.html).
 
 2. Ne pas partager son compte avec d'autres utilisateurs. Les accès au cluster
 doivent rester impérativement personnels et traçables.
 
-3. Transmettre sans délai au mesocentre, toutes les informations concernant
+3. Transmettre sans délai au mésocentre, toutes les informations concernant
 d'éventuels problèmes de sécurité, notamment en cas de suspicion d'accès
 frauduleux, de divulgation ou de vol de ses identifiants de connexion.
 
