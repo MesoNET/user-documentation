@@ -9,22 +9,22 @@ Les machines du groupe Code/Formation sont des machines à CPU ou GPU utiles à 
 
 ## Calculateurs CPU
 
-[**Zen**](./zen/description.md) machine CPU AMD
+[**Zen**](./zen/description.md), machine CPU AMD
 
-[**Phileas**](./phileas/) machine CPU Intel avec OpenOnDemand
+[**Phileas**](./phileas/), machine CPU Intel avec OpenOnDemand
 
 ## Calculateurs GPU
 
-[**Juliet**](./juliet/description.md) machine GPU NVIDIA A100
+[**Juliet**](./juliet/description.md), machine GPU NVIDIA A100
 
-[**Vesta**](./vesta/description.md) machine GPU AMD
+[**Vesta**](./vesta/description.md), machine GPU AMD
 
 [**Arctic** ](./arctic/description.md), machine GPU hétérogène.
 
-[**Hedy**](./hedy/description.md) machine GPU NVIDIA H100
+[**Hedy**](./hedy/description.md), machine GPU NVIDIA H100
 
 ## Machines Cloud
 
-[**Nova-cloud**](./nova/description.md)
+[**Nova-cloud**](./nova/description.md), machine de cloud computing CPU/GPU
 
 
