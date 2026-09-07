@@ -45,12 +45,18 @@ Pour cela, cliquez sur votre login en haut à droite de l'interface web.
 Pour utiliser le ficher clouds.yml, il faudra d'abord créer un [*Application Credentials/Identifiants d'application*](https://docs.openstack.org/keystone/latest/user/application_credentials.html). Il faudra ensuite remplir le fichier *clouds.yml* avec l'identifiant créé sur l'interface Web.
 
 #### Création de l'identifiant
-* Naviguer dans *Identité > Identifiants d'application* 
-* Cliquer sur *Créer un identifiant d'application*   
-![ficherappcred](/img/nova/nova_creer_app_cred.png?classes=shadow)   
-* Choisir un nom pour votre identifiant et choisir le rôle *member*, si vous choisissez le rôle *reader*, votre identifiant n'aura que les droits en lecture.
-![ficherappcred2](/img/nova/nova_creer_app_cred2.png?classes=shadow)   
-* Une fenêtre apparait, vous pouvez directement télécharger le fichier *clouds.yml* pré-rempli avec vos identifiants.
+* Naviguer dans *Identité > Identifiants d'application*     
+
+* Cliquer sur *Créer un identifiant d'application*       
+
+![ficherappcred](/img/nova/nova_creer_app_cred.png?classes=shadow)      
+
+* Choisir un nom pour votre identifiant et choisir le rôle *member*, si vous choisissez le rôle *reader*, votre identifiant n'aura que les droits en lecture.    
+
+![ficherappcred2](/img/nova/nova_creer_app_cred2.png?classes=shadow)      
+
+* Une fenêtre apparait, vous pouvez directement télécharger le fichier *clouds.yml* pré-rempli avec vos identifiants.    
+
 ![ficherappcred2](/img/nova/nova_creer_app_cred3.png?classes=shadow)      
 
 Il ne vous reste plus qu'à placer le fichier clouds.yml dans *~/.config/openstack/clouds.yaml*.   
