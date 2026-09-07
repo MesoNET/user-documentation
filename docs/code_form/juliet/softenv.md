@@ -7,7 +7,13 @@ sidebar_position: 5
 
 ## Spack
 
-Spack est pris en charge sur Juliet.
+Spack est pris en charge sur Juliet pour le chargement de modules pré-installés.
+
+:::caution
+
+L'installation de paquets autres que les paquets fournis est prévue mais n'est pour l'instant pas supportée sur Juliet.
+
+:::
 
 Pour charger un *module* à une certaine *version* avec un *compilateur* à une certaine *version_complilateur* vous pouvez utiliser la commande:
 
