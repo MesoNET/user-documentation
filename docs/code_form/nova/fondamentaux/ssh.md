@@ -1,6 +1,6 @@
 ---
 title: "Gestion des clés SSH"
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 ## Préparer l'accès ssh aux VMs
