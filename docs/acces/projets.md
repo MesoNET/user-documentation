@@ -42,6 +42,12 @@ Si le collaborateur a déjà un compte MesoNET, une autocomplétion est proposé
 
 Si vous ajoutez des collaborateurs par la suite, vous pouvez allez dans l'onglet `Collaborateurs` de votre projet.
 
+:::info
+
+Vous pouvez ajouter les utilisateurs dans n'importe quel ordre avant et après la validation du projet.
+
+:::
+
 
 ## Accès aux machines 
 
