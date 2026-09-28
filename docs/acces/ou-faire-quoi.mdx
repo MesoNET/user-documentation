@@ -1,0 +1,50 @@
+---
+title: "Où faire quoi"
+sidebar_position: 3
+---
+
+import SearchableSortableTable from '@site/src/components/SearchableSortableTable';
+
+# Où faire quoi
+
+Ce tableau vous permet de trouver la machine MesoNET la plus adaptée à vos besoins.
+
+<SearchableSortableTable
+  title="Ressources MesoNET par cas d'usage"
+  columns={[
+    { key: 'usage', label: 'Cas d\'usage typique' },
+    { key: 'besoin', label: 'Besoin' },
+    { key: 'ressource', label: 'Ressource MesoNET à envisager' }
+  ]}
+  data={[
+    { usage: 'IA générative, entraînement de réseaux de neurones, dynamique moléculaire GPU, chimie quantique accélérée, codes CUDA multi-GPU', besoin: 'GPU NVIDIA H100', ressource: 'Hedy – Marseille' },
+    { usage: 'Grands modèles IA, calculs nécessitant plus de 80 Go de mémoire par GPU, simulations scientifiques GPU de grande taille', besoin: 'GPU NVIDIA H200 / très grande mémoire GPU', ressource: 'Arctic – Rouen' },
+    { usage: 'Deep learning, calcul CUDA, simulation moléculaire, traitement d\'images, prototypage GPU', besoin: 'GPU NVIDIA A100', ressource: 'Juliet – Reims, Arctic – Rouen, Turpan – Toulouse' },
+    { usage: 'Portage CUDA→HIP/ROCm, validation de portabilité GPU, développement de codes indépendants de NVIDIA', besoin: 'GPU AMD MI210 / ROCm', ressource: 'Vesta – Strasbourg ou Arctic – Rouen' },
+    { usage: 'CFD, mécanique, climat, chimie quantique CPU, dynamique moléculaire, codes MPI/OpenMP massivement parallèles', besoin: 'Gros calcul CPU AMD x86', ressource: 'Zen – Lille ou Arctic – Rouen' },
+    { usage: 'Applications HPC CPU classiques, validation et optimisation sur architecture Intel', besoin: 'CPU Intel x86', ressource: 'Phileas – Nantes' },
+    { usage: 'Assemblage de très grandes matrices, traitement de gros jeux de données en mémoire, calculs nécessitant plusieurs To de RAM', besoin: 'Très grosse mémoire RAM', ressource: 'Zen – Lille, Phileas – Nantes, éventuellement Arctic' },
+    { usage: 'PyTorch, TensorFlow, vision par ordinateur, réseaux de neurones, modèles génératifs, entraînement multi-GPU', besoin: 'IA / Deep Learning', ressource: 'Hedy, Juliet, Arctic, Turpan' },
+    { usage: 'LLM, modèles multimodaux, modèles avec très grands tenseurs ou gros batches', besoin: 'Très gros modèles IA', ressource: 'Arctic H200 – Rouen' },
+    { usage: 'OpenFOAM, aérodynamique, écoulements, thermique, mécanique numérique', besoin: 'CFD / mécanique des fluides', ressource: 'Arctic – Rouen' },
+    { usage: 'GROMACS, LAMMPS, AMBER, biomolécules, matériaux, liquides, surfaces', besoin: 'Dynamique moléculaire / simulation atomistique', ressource: 'Arctic – Rouen, Turpan – Toulouse' },
+    { usage: 'WRF, simulations atmosphériques, climat régional', besoin: 'Modélisation climat / météo', ressource: 'Arctic – Rouen' },
+    { usage: 'Développement HIP, OpenACC, OpenMP target, SYCL/OpenCL et comparaison de performances GPU', besoin: 'Développement multi-architecture NVIDIA + AMD', ressource: 'Arctic – Rouen' },
+    { usage: 'Tester la portabilité d\'un code x86 vers ARM, compiler et optimiser un code HPC pour ARM', besoin: 'Développement / portage vers CPU ARM', ressource: 'Turpan – Toulouse' },
+    { usage: 'Codes couplant calcul CPU ARM et accélération GPU, benchmarks d\'architectures alternatives', besoin: 'Calcul hybride ARM + NVIDIA A100', ressource: 'Turpan – Toulouse' },
+    { usage: 'Profilage, étude du scaling MPI/OpenMP, optimisation mémoire et vectorisation', besoin: 'Optimisation / benchmark de code HPC', ressource: 'Turpan – Toulouse' },
+    { usage: 'Codes avec grandes boucles numériques régulières, stencil, algèbre linéaire, calcul scientifique fortement vectorisable', besoin: 'Calcul vectoriel', ressource: 'Boréale' },
+    { usage: 'CFD, méthodes numériques sur maillages, solveurs itératifs, applications manipulant beaucoup de données par opération', besoin: 'Code limité par la bande passante mémoire', ressource: 'Boréale' },
+    { usage: 'Portage de codes Fortran/C/C++ HPC vers NEC SX-Aurora, étude de stratégies de vectorisation', besoin: 'MPI/OpenMP sur accélérateur vectoriel', ressource: 'Boréale' },
+    { usage: 'DFT, matériaux, structure électronique lorsque le code bénéficie de la vectorisation', besoin: 'Quantum ESPRESSO / calcul matériaux vectorisé', ressource: 'Boréale' },
+    { usage: 'Développement et simulation de circuits quantiques, algorithmes variationnels, hybridation calcul classique/quantique', besoin: 'Calcul quantique / simulation quantique', ressource: 'QLM MesoNET' },
+    { usage: 'Créer son propre environnement Ubuntu/Debian, installer un logiciel non disponible sur les clusters, conserver un environnement persistant', besoin: 'Machines virtuelles CPU/GPU personnalisées', ressource: 'Nova-Cloud – Grenoble' },
+    { usage: 'Pipelines de données, analyses nécessitant des services persistants, traitements CPU ou GPU personnalisés', besoin: 'Traitement de données', ressource: 'Nova-Cloud – Grenoble' },
+    { usage: 'Héberger une interface web scientifique, une API, un portail de résultats ou un service associé à un projet', besoin: 'Serveur web / service scientifique', ressource: 'Nova-Cloud – Grenoble' },
+    { usage: 'GitLab Runner, compilation et tests automatiques, validation multi-environnements', besoin: 'CI/CD / développement logiciel scientifique', ressource: 'Nova-Cloud – Grenoble' },
+    { usage: 'Calcul paramétrique, campagnes de nombreux petits jobs, environnement reproductible', besoin: 'HPC/HTC dans une VM', ressource: 'Nova-Cloud – Grenoble' },
+    { usage: 'Visualisation de volumes, résultats CFD, molécules, matériaux, post-traitement graphique distant', besoin: 'Visualisation scientifique', ressource: 'Hedy, Phileas, Juliet' },
+    { usage: 'Initiation à Slurm, MPI, OpenMP, programmation parallèle, TP numériques', besoin: 'TP / formation HPC CPU', ressource: 'Zen, Phileas, Arctic' },
+    { usage: 'CUDA, PyTorch/TensorFlow, initiation GPU, TP IA', besoin: 'TP / formation GPU / IA', ressource: 'Arctic, Juliet, Turpan' }
+  ]}
+/>
