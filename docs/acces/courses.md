@@ -1,3 +1,8 @@
+---
+title: "Pour les formations"
+sidebar_position: 2
+---
+
 # Pour les formations
 
 (page en cours de création)
