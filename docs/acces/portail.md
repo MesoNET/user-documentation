@@ -7,6 +7,12 @@ sidebar_position: 1
 
 Pour accéder au portail MesoNET, il faut au préalable se créer un compte.
 
+:::danger
+
+Les comptes sont soumis à validation manuelle, et la mise en place peut prendre du temps, si vous avez besoin d'accès à une date fixé pour un groupe de personnes (par exemple étudiants), nous vous recommendons fortement de commencer les procédures en amont afin d'être certain d'avoir tous les accès.
+
+:::
+
 ## Demander un compte MesoNET {#demander-compte}
 
 Pour demander un compte MesoNET, faites pointer votre navigateur sur l'URL: https://iam.mesonet.fr/
