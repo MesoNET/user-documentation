@@ -5,10 +5,10 @@ title: "Images"
 Les images sont des modèles de volume système qui servent à l'instanciation d'une VM.
 Une nouvelle VM ne fait pas une installation mais elle va se baser sur une image pour initialiser le contenu du volume système avant de le personnaliser.
 
-## Images disponibles (novembre 2024)
-Quelques images de systèmes GNU/Linux standards sont mises à disposition et peuvent être listées grâce à la commande `openstack image list` :
+## Images disponibles
+Quelques images de systèmes GNU/Linux standards sont mises à disposition et peuvent être listées grâce à la commande `openstack image list --public` :
 ```bash
-openstack image list
+openstack image list --public
 +--------------------------------------+----------------------------------------------+--------+
 | ID                                   | Name                                         | Status |
 +--------------------------------------+----------------------------------------------+--------+
@@ -18,6 +18,8 @@ openstack image list
 | d56a0d26-b3b8-4db9-937a-1e7f1691d304 | debian-11-bullseye-x86_64                    | active |
 | 54e3e595-162b-4a5e-b141-481ad70c1204 | debian-12-bookworm-x86_64                    | active |
 | b1effd7d-28ee-4897-9d16-2b77fb18d9ef | debian-12-generic-amd64-nvidia-gpu-drivers   | active |
+| 1309d2e9-b30e-418b-98e3-7fd098554148 | debian-13-genericcloud-amd64                 | active |
+| 7e69a949-0384-4826-912c-df3c19f451af | rocky-9                                      | active |
 | 8ebf61ed-f060-4d92-83ad-49145bcef6a8 | ubuntu-18.04-bionic-x86_64                   | active |
 | 62254e4b-86f6-4cec-871f-8ce47db3e99c | ubuntu-18.04-docker-x86_64                   | active |
 | 830d0019-70c9-4c19-993b-fb221f478a97 | ubuntu-18.04.4-bionic-x86_64-unet            | active |
@@ -29,6 +31,7 @@ openstack image list
 | 74147e8f-bc38-4135-8a9e-628f92a6cb15 | ubuntu-22.04-jammy-x86_64                    | active |
 | c76f8140-6d7b-4078-b19d-d385d8c3be05 | ubuntu-22.04-jammy-x86_64-nvidia-gpu-drivers | active |
 | c3a4c629-4654-4258-87b0-72215608016d | ubuntu-22.04-jammy-x86_64-nvidia-gpu-drivers | active |
+| cbad2dd7-4d4f-4561-a3e9-4b27ba4c4ef4 | ubuntu-24.04-noble-h100-drivers              | active |
 | 67b9652e-a0d1-4b05-9782-aea086b66b01 | ubuntu-24.04-noble-x86_64                    | active |
 | 12702ee5-2340-42de-becb-26f53cb0bd7a | ubuntu-24.04-noble-x86_64-nvidia-gpu-drivers | active |
 +--------------------------------------+----------------------------------------------+--------+

@@ -1,6 +1,6 @@
 ---
 title: "Gérer ses clés SSH"
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Gérer ses clés SSH

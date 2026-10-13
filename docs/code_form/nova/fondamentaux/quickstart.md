@@ -1,6 +1,6 @@
 ---
 title: "Quickstart"
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 Dans ce quickstart, nous allons créer une première machine virtuelle (VM) du début à la fin, en utilisant l'interface graphique (Horizon) via un navigateur Web.
