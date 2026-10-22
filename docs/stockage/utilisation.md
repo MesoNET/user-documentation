@@ -8,39 +8,44 @@ sidebar_position: 3
 
 La liste exhaustive des commandes utilisateur iRODS est fournie par la commande `ihelp`. 
 
+Dans les exemples de commande suivante nous considérons que : 
+* **fichier.txt** est un fichier existant **sur votre machine cliente**.
+* **/MesoNET/home/M26007** est le dossier associé à votre projet qui se trouve **sur la fédération de stockage**.
+
+
 ## Naviguer dans le système de fichier
 
 * `ipwd` : Affiche le répertoire courant.
-* `icd /MesoNET/home/M26007` : Change le dossier de travail par M26007.
+* `icd /MesoNET/home/M26007` : Change le dossier de travail par *M26007*.
 
-* `ils /MesoNET/home/M26007` : lister les fichiers présents dans la collection M26007
-* `ils - l /MesoNET/home/M26007` : lister les fichiers présents dans la collection M26007 en affichant dans quelles ressources ils se trouvent
+* `ils /MesoNET/home/M26007` : Liste les fichiers présents dans le dossier *M26007*.
+* `ils -l /MesoNET/home/M26007` : Liste les fichiers présents dans le dossier *M26007* en affichant dans quelles ressources ils se trouvent.
+
 
 ## Envoyer des données
 
-* `iput file.txt /MesoNET/home/M26007` : déposer le fichier *file.txt* dans la collection M26007
-* `iput -R Nantes file.txt /MesoNET/home/M26007` : déposer le fichier *file.txt* dans la collection M26007 en spécifiant la ressource
+* `iput fichier.txt /MesoNET/home/M26007` : Dépose le fichier *fichier.txt* dans le dossier *M26007*.
+* `iput -R Nantes fichier.txt /MesoNET/home/M26007` : Dépose le fichier *fichier.txt* dans le dossier *M26007* en spécifiant la ressource.
 
-* `imkdir /MesoNET/home/M26007/demo_folder` : créer le dossier *demo_folder* dans la collection M26007
+* `imkdir /MesoNET/home/M26007/dossier_demo` : Crée le dossier *dossier_demo* dans la collection *M26007*.
 
-* `irsync -r mon_dossier_local i:mon_dossier_distant` : synchronise *mon_dossier_local* sur *mon_dossier_distant* -> envoie les données sur la fédération de stockage
+* `irsync -r dossier_local i:dossier_distant` : Synchronise *dossier_local* sur *dossier_distant* -> Envoie les données sur la fédération de stockage. **Ne pas oublier le i: devant le dossier distant.**
+
 
 ## Récupérer les données 
 
+* `iget /MesoNET/home/M26007/fichier.txt <dossier_local_destination>` : Récupère le fichier *fichier.txt* pour le mettre dans *<dossier_local_destination*.
 
-* `iget /MesoNET/home/M26007/file.txt <dossier_local_destination>` : récupère le fichie *file.txt* 
-
-* `irsync -r i:mon_dossier_distant mon_dossier_local` : synchronise *mon_dossier_distant* sur *mon_dossier_local*  -> récupère les données présentes sur la fédération de stockage.
-
+* `irsync -r i:dossier_distant mon_dossier_local` : Synchronise *dossier_distant* sur *dossier_local*  -> Récupère les données présentes sur la fédération de stockage. **Ne pas oublier le i: devant le dossier distant.**
 
 
 ## Suppresion
 
-* `irm /MesoNET/home/M26007/file.txt` : supprimer le fichier *file.txt* de la collection M26007
-* `irm -r /MesoNET/home/M26007/demo_folder` : supprimer le dossier *demo_folder* dans la collection M26007
+* `irm /MesoNET/home/M26007/file.txt` : Supprime le fichier *fichier.txt* du dossier *M26007*.
+* `irm -r /MesoNET/home/M26007/dossier_demo` : Supprime le dossier *dossier_demo* dans la collection *M26007*.
 
 ## Metadonnées
-Les métadonnées sont des informations aouter à propos des vos fichiers et collections.
+Les métadonnées sont des informations ajouter à propos de vos fichiers et collections.
 
 Pour ajouter, suprimer, lister ou requêter les métadonnées, utilisez la commande `imeta`.
 
@@ -50,8 +55,7 @@ Une métadonnée est définie par le triplet d'information suivant :
 * Valeur (AttVal)
 * Unité (AttUnits)
 
-L'unité n'est pas obligatoire.
-
+> L'unité n'est pas obligatoire.
 
 
 ## Informations diverses
@@ -79,7 +83,6 @@ Strasbourg
 ```
 
 
-
 ## Bonne pratiques 
 
 La plupart des infrastructures de stockage, en particulier le stockage en nuage, ne gèrent pas très bien les grandes collections de petits fichiers et c’est notamment le cas d’iRODS. 
@@ -87,6 +90,4 @@ La plupart des infrastructures de stockage, en particulier le stockage en nuage,
 Chaque transaction de fichier (lecture, écriture, copie, déplacement) génère de nombreuses transactions de base de données associées dans iRODS, le surcoût sur l’opération de fichier proprement dite peut rapidement devenir très important et affecter négativement le temps de traitement de vos travaux de calcul.
 
 
-> Il est donc préconniser de faire une archive de vos petits fichiers, avec un outil tel que tar ou zip, avant de les télécharger sur Irods. Vous pourrez ensuite décompresser le paquet sur le nœud de calcul après son téléchargement plutôt que de télécharger une grande collection de petits fichiers.
-
-
+> Il est donc préconnisé de **faire une archive** de vos petits fichiers, avec un outil tel que tar ou zip, **avant de les télécharger sur Irods**. Vous pourrez ensuite décompresser le paquet sur le nœud de calcul après son téléchargement plutôt que de télécharger une grande collection de petits fichiers.

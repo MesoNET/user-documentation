@@ -1,23 +1,26 @@
 ---
-title: "Se connecter"
+title: "Connexion"
 sidebar_position: 2
 ---
 
+
 # Connexion
+
 
 ## Prérequis logiciels
 
 Les paquets `irods-icommands` et `irods-auth-plugin-pam-interactive-client` sont nécessaires pour pouvoir utiliser iRODS sur une machine cliente. Ces paquets sont disponibles sur le dépôt suivant : [packages.irods.org](https://packages.irods.org/).
 
+
 ## Configuration de l'environnement utilisateur
 
-Chaque utilisateur doit disposer d'un fichier de configuration propre afin de pouvoir utiliser la fédération de stockage iRODS de MesoNET.
+Avant de vous connecter, vous devez disposer d'un fichier de configuration.
 
 <!-- TODO: un utilisateur sait-il ce qu'est IAM ? -->
 
-S'il n'existe pas déjà, il est nécessaire de créer le fichier `~/.irods/irods_environment.json` et de le remplir comme suit, en remplaçant **PREFERRED_USERNAME_IAM** par son nom d'utilisateur IAM et **IRODS_DEFAULT_RESOURCE** par une ressource de son choix (Rouen, Nantes, Strasbourg, etc) :
+S'il n'existe pas déjà, il est nécessaire de créer le fichier `~/.irods/irods_environment.json` et de le remplir comme suit, en remplaçant **PREFERRED_USERNAME_IAM** par son nom d'utilisateur IAM et **IRODS_DEFAULT_RESOURCE** par une ressource de votre choix (Rouen, Nantes, Strasbourg, etc...) :
 
-Configuration utilisateur pour le client version 5.X.X
+Configuration utilisateur pour le client version 5.X.X :
 
 ```
 {
@@ -39,7 +42,7 @@ Configuration utilisateur pour le client version 5.X.X
 
 <!-- Est-ce vraiment utile de mettre la version 4.X.X ? -->
 
-Configuration utilisateur pour le client version 4.X.X
+Configuration utilisateur pour le client version 4.X.X :
 ```
 {
     "irods_user_name": "PREFERRED_USERNAME_IAM",
@@ -65,20 +68,20 @@ Il est possible de préciser le "home" (dossier utilisateur) et le "cwd" (dossie
     "irods_home": "/MesoNET/home/PREFERRED_USERNAME_IAM",
 }
 ```
-Dans ce cas, si vous appartenez à plusieurs projets différents, faites bien attention à changer de dossier pour chaque projet. 
+Dans ce cas, si vous appartenez à plusieurs projets différents, faites bien attention à changer de dossier pour chaque projet. Voir la commande `icd`. 
 
-> **ATTENTION** : Par défaut vous ne pourrez mettre des fichiers uniquement dans le dossier de votre projet (ex: /MesoNET/home/PROJECT_NUMBER), vous n'avez pas la possibilité de déposer des fichier sur votre dossier utilisateur (ex: /MesoNET/home/USERNAME)
+> **ATTENTION** : Par défaut vous ne pourrez mettre des fichiers uniquement dans le dossier de votre projet (exemple : /MesoNET/home/PROJECT_NUMBER), vous n'avez pas la possibilité de déposer des fichiers sur votre dossier utilisateur (exemple : /MesoNET/home/USERNAME).
 
-## Connextion
+
+## Se connecter
 
 Pour débuter une session iRODS, l'utilisateur doit lancer la commande `iinit`, puis suivre les instructions.
 
-Si sa configuration est correcte, la commande `init` devrait alors renvoyer une URL lui permettant de s'authentifier avec ses identifiants IAM.
+Si votre configuration est correcte, la commande `init` devrait alors renvoyer une URL vous permettant de vous authentifier avec vos identifiants IAM.
 
 
-## Déconnexion
+## Se déconnecter
 
-Pour vous déconnecter vous pouvez utiliszer la commande ` iexit`.
-
+Pour vous déconnecter vous pouvez utiliser la commande `iexit`.
 
 > Chaque session a une durée de 6h ; passé ce délai, l'utilisateur doit se connecter à nouveau.
