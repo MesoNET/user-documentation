@@ -18,14 +18,18 @@ Avant de vous connecter, vous devez disposer d'un fichier de configuration.
 
 <!-- TODO: un utilisateur sait-il ce qu'est IAM ? -->
 
-S'il n'existe pas déjà, il est nécessaire de créer le fichier `~/.irods/irods_environment.json` et de le remplir comme suit, en remplaçant **PREFERRED_USERNAME_IAM** par son nom d'utilisateur IAM et **IRODS_DEFAULT_RESOURCE** par une ressource de votre choix (Rouen, Nantes, Strasbourg, etc...) :
+S'il n'existe pas déjà, il est nécessaire de créer le fichier `~/.irods/irods_environment.json` et de le remplir comme suit, en remplaçant :
+* **USERNAME** par votre nom d'utilisateur IAM.
+* **IRODS_DEFAULT_RESOURCE** par une ressource de votre choix (Rouen, Nantes, Strasbourg, etc...).
+* **PROJECT_NAME** par votre numéro de projet, exemple : M26007.
 
 Configuration utilisateur pour le client version 5.X.X :
 
-```
+``` bash
 {
-    "irods_user_name": "PREFERRED_USERNAME_IAM",
+    "irods_user_name": "USERNAME",
     "irods_default_resource": "IRODS_DEFAULT_RESOURCE",
+    "irods_cwd": "/MesoNET/home/PROJECT_NAME",
     "irods_authentication_scheme": "pam_interactive",
     "irods_client_server_policy": "CS_NEG_REQUIRE",
     "irods_encryption_algorithm": "AES-256-CBC",
@@ -43,10 +47,11 @@ Configuration utilisateur pour le client version 5.X.X :
 <!-- Est-ce vraiment utile de mettre la version 4.X.X ? -->
 
 Configuration utilisateur pour le client version 4.X.X :
-```
+``` bash
 {
-    "irods_user_name": "PREFERRED_USERNAME_IAM",
+    "irods_user_name": "USERNAME",
     "irods_default_resource": "IRODS_DEFAULT_RESOURCE",
+    "irods_cwd": "/MesoNET/home/ds",
     "irods_authentication_scheme": "pam_interactive",
     "irods_client_server_negotiation": "request_server_negotiation",
     "irods_encryption_algorithm": "AES-256-CBC",
@@ -58,19 +63,19 @@ Configuration utilisateur pour le client version 4.X.X :
     "irods_zone_name": "MesoNET"
 }
 ```
+La version de votre client irods peut être obtenue grace à la commande suivante : 
+
+``` bash
+ihelp | grep Version 
+```
 
 > Cette configuration est également visible avec la commande `ienv`.
 
-Il est possible de préciser le "home" (dossier utilisateur) et le "cwd" (dossier de travail), avec les variables optionnelles suivantes :
-```
-{
-    "irods_cwd": "/MesoNET/home/PROJECT_NAME",
-    "irods_home": "/MesoNET/home/PREFERRED_USERNAME_IAM",
-}
-```
-Dans ce cas, si vous appartenez à plusieurs projets différents, faites bien attention à changer de dossier pour chaque projet. Voir la commande `icd`. 
+> Pour la ressource, en théorie vous pouvez mettre celle que vous voulez, ne pratique nous recommendons de mettre une ressource non loins du mésocentre qui traiteras vos données pour optimiser vos temps de transfère. Exemple : vous utiliser la plateforme Nova qui est à Grenoble, définissez votre ressource à Lyon.
 
-> **ATTENTION** : Par défaut vous ne pourrez mettre des fichiers uniquement dans le dossier de votre projet (exemple : /MesoNET/home/PROJECT_NUMBER), vous n'avez pas la possibilité de déposer des fichiers sur votre dossier utilisateur (exemple : /MesoNET/home/USERNAME).
+> Si vous appartenez à plusieurs projets différents, faites bien attention à changer de dossier pour chaque projet. Voir la commande `icd`. 
+
+> **ATTENTION** : Vous ne pouvez mettre des fichiers uniquement dans le dossier de votre projet (exemple : */MesoNET/home/PROJECT_NAME*), vous n'avez pas la possibilité de déposer des fichiers sur votre dossier utilisateur (exemple */MesoNET/home/USERNAME*).
 
 
 ## Se connecter
@@ -84,4 +89,4 @@ Si votre configuration est correcte, la commande `init` devrait alors renvoyer u
 
 Pour vous déconnecter vous pouvez utiliser la commande `iexit`.
 
-> Chaque session a une durée de 6h ; passé ce délai, l'utilisateur doit se connecter à nouveau.
+> Chaque session a une durée de 6h, passé ce délai, vous devez vous connecter à nouveau.
