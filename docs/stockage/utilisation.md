@@ -68,18 +68,7 @@ Une métadonnée est définie par le triplet d'information suivant :
 Pour avoir un affichage plus facile à lire vous pouvez taper la commande suivante : 
 
 ``` bash
-$ ilsresc -l | grep -B 4 'type: random' | awk '/resource name:/ {print $NF}' | sort
-
-Corse
-Lille
-Marseille
-Meudon
-Nantes
-Orleans
-Reims
-Rennes
-Rouen
-Strasbourg
+ilsresc -l | grep -B 4 'type: random' | awk '/resource name:/ {print $NF}' | sort
 ```
 
 

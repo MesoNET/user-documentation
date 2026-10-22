@@ -14,13 +14,16 @@ Les paquets `irods-icommands` et `irods-auth-plugin-pam-interactive-client` sont
 
 ## Configuration de l'environnement utilisateur
 
+
+### Fichier de configuration
+
 Avant de vous connecter, vous devez disposer d'un fichier de configuration.
 
 <!-- TODO: un utilisateur sait-il ce qu'est IAM ? -->
 
 S'il n'existe pas déjà, il est nécessaire de créer le fichier `~/.irods/irods_environment.json` et de le remplir comme suit, en remplaçant :
 * **USERNAME** par votre nom d'utilisateur IAM.
-* **IRODS_DEFAULT_RESOURCE** par une ressource de votre choix (Rouen, Nantes, Strasbourg, etc...).
+* **IRODS_DEFAULT_RESOURCE** par une ressource de votre choix, voir la section suivante.
 * **PROJECT_NAME** par votre numéro de projet, exemple : M26007.
 
 Configuration utilisateur pour le client version 5.X.X :
@@ -63,7 +66,7 @@ Configuration utilisateur pour le client version 4.X.X :
     "irods_zone_name": "MesoNET"
 }
 ```
-La version de votre client irods peut être obtenue grace à la commande suivante : 
+La version de votre client irods peut être obtenue grâce à la commande suivante : 
 
 ``` bash
 ihelp | grep Version 
@@ -71,11 +74,29 @@ ihelp | grep Version
 
 > Cette configuration est également visible avec la commande `ienv`.
 
+### Liste des ressources
+
+* Corse
+* Lille
+* Lyon
+* Marseille
+* Meudon
+* Nantes
+* Orleans
+* Reims
+* Rennes
+* Rouen
+* Strasbourg
+
+<!-- TODO : Rajouter une carte -->
+
+### Points de vigilance
+
 > Pour la ressource, en théorie vous pouvez mettre celle que vous voulez, ne pratique nous recommendons de mettre une ressource non loins du mésocentre qui traiteras vos données pour optimiser vos temps de transfère. Exemple : vous utiliser la plateforme Nova qui est à Grenoble, définissez votre ressource à Lyon.
 
 > Si vous appartenez à plusieurs projets différents, faites bien attention à changer de dossier pour chaque projet. Voir la commande `icd`. 
 
-> **ATTENTION** : Vous ne pouvez mettre des fichiers uniquement dans le dossier de votre projet (exemple : */MesoNET/home/PROJECT_NAME*), vous n'avez pas la possibilité de déposer des fichiers sur votre dossier utilisateur (exemple */MesoNET/home/USERNAME*).
+> **ATTENTION** : Vous ne pouvez mettre des fichiers uniquement dans le dossier de votre projet (exemple : */MesoNET/home/PROJECT_NAME*), vous n'avez pas la possibilité de déposer des fichiers sur votre dossier utilisateur (exemple : */MesoNET/home/USERNAME*).
 
 
 ## Se connecter
