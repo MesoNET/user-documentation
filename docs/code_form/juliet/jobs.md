@@ -154,12 +154,6 @@ Cette commande lance un shell interactif avec 4 CPU alloués. Utile pour les tâ
 
 Cette commande exécute le travail sur une réservation de 2 nœuds spécifiée avec l'option `--reservation`.
 
-### Exemple 10 : Utiliser une partition spécifique avec srun
-
-    srun --partition=visu --nodes=1 --time=HH:MM:SS --account=m2xxxx mon_script.sh 
-
-Cette commande exécute le travail sur la partition "visu" avec 1 nœud. 
-
 
 ## 7. Informations sur les noeuds de calcul
 

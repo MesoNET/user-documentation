@@ -9,9 +9,15 @@ Cette page est en cours de construction. Si des parties sont peu claires, manqua
 
 :::
 
+
+
 ## Prérequis
 
 Pour pouvoir lancer des sessions de visualisation sur Juliet, vous devez avoir demandé un compte sur Juliet visu (la case doit être cochée dans l'onglet ). Vous devez également faire partie d'un projet ayant demandé des heures de visualisation sur Juliet.
+
+:::warning
+L'utilisation des noeuds de visualisation est réservée aux sessions de visualisation. Merci de ne pas utiliser ces noeuds pour du calcul intensif.
+:::
 
 ## Lancement d'une machine virtuelle de visualisation
 
