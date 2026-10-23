@@ -6,7 +6,7 @@ title: "Réseaux"
 
 **Nova** vous permet de créer la topologie réseau souhaitée à l'intérieur de votre projet.
 Le trafic interne entre les instances du projet est isolé des autres projets et de l'extérieur de **Nova**.
-Chaque projet contient deux types de réseaux - network : privé et publique.
+Chaque projet contient deux types de réseaux - network : privé et dmz.
 
 ### Réseau privé
 
@@ -24,6 +24,18 @@ Les VMs pouront par ailleurs communiquer entre elles au sein des réseaux privé
 Pour chaque projet, il y a un réseau dmz : **dmz**, qui est un réseau routé sur le backbone UGA.
 C'est dans ce réseau dmz que vous pourrez allouer des _adresses ip flottantes_.
 Ces _ip flottantes_ pourront alors être associées aux VMs que vous aurez créées, pour les rendre accessibles.
+
+:::warning Le réseau dmz est le seul à utiliser pour les IP flottantes
+Le réseau **public** reste visible dans Horizon et dans le CLI, mais il s'agit d'un réseau externe historique qu'il ne faut plus utiliser : n'y allouez ni IP flottante, ni passerelle de routeur.
+
+**dmz** et **public** sont deux segments externes distincts, non interconnectés. Une VM dont l'IP flottante est sur **public** n'est pas joignable depuis une machine dont la sortie se fait par **dmz**, et inversement : la connexion reste bloquée en timeout, même si le groupe de sécurité et l'association de l'IP flottante sont corrects.
+
+Pour vérifier le réseau d'une IP flottante existante :
+```bash
+openstack floating ip list
+```
+La colonne *Floating Network* doit indiquer **dmz**.
+:::
 
 
 ## Sous-réseau
