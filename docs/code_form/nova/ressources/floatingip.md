@@ -43,6 +43,10 @@ openstack floating ip create \
 dmz
 ```
 
+:::warning
+Le dernier argument est le nom du réseau externe dans lequel l'adresse est prise : il doit valoir **dmz**. Le réseau **public** est également proposé dans Horizon, mais c'est un réseau externe historique à ne pas utiliser (voir [Réseaux](/code_form/nova/ressources/reseau#réseau-dmz)).
+:::
+
 ## 4- Associer une IP flottante à une instance
 L'association peut se faire lors de l'instanciation de la VM ou après coup,
 voir [Accès aux VMs](/code_form/nova/creer_vm/acces_vm#associerIpFlottante).
