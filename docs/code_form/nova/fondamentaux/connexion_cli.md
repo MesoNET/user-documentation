@@ -72,7 +72,7 @@ Pour en savoir plus sur les Application Credentials : [documentation OpenStack](
 
    ![Téléchargement du clouds.yaml](/img/nova/nova_creer_app_cred3.png?classes=shadow)
 
-5. Placez-le dans `~/.config/openstack/clouds.yaml` sur la machine où vous exécutez le CLI (votre poste ou le runner).
+5. Placez-le dans `~/.config/openstack/clouds.yaml` sur la machine où vous exécutez le CLI.
 6. Vérifiez le nom du cloud (la clé sous `clouds:`) et testez :
 
 ```bash
@@ -96,11 +96,6 @@ openstack --os-cloud <nom_du_cloud> floating ip list
 - Vérifiez que l'Application Credential n'a pas expiré et qu'elle a bien le rôle `member` (ou `reader`).
 - Si le 401 persiste, recréez l'Application Credential et remplacez le `clouds.yaml`.
 - Le `clouds.yaml` du profil utilisateur (menu en haut à droite) ne convient pas : utilisez celui de l'Application Credential.
-
-### Où placer le `clouds.yaml` ?
-
-- **Sur votre poste local** : pour diagnostiquer et lancer le CLI manuellement.
-- **Sur le runner GitLab** : uniquement si le job exécute Terraform ou le CLI OpenStack. Ne commitez jamais le `clouds.yaml` dans le dépôt. Utilisez les variables CI/CD GitLab (`OS_AUTH_TYPE=v3applicationcredential`, `OS_AUTH_URL`, `OS_APPLICATION_CREDENTIAL_ID`, `OS_APPLICATION_CREDENTIAL_SECRET`, etc.) ou générez le fichier au moment du job à partir de variables protégées.
 
 ### Récupérer le fichier RC (méthode interactive)
 
