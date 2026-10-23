@@ -41,55 +41,82 @@ openstack --version
 ## Authentification
 
 :::info
-Vous trouverez tous les détails de la configuration du client pour s'authentifier à Openstack [ici](https://docs.openstack.org/python-openstackclient/latest/configuration/index.html#configuration-files)
+Vous trouverez tous les détails de la configuration du client pour s'authentifier à OpenStack [ici](https://docs.openstack.org/python-openstackclient/latest/configuration/index.html#configuration-files).
 :::
 
-Pour vous connecter avec le CLI ou via les APIs, vous pouvez :
-- Utilisez les variables d'environnement, un fichier RC est téléchargeable sur *Horizon*.
-Il suffit ensuite de *sourcer* ce fichier, celui-ci contenant toutes les variables d'environnement relatives au projet dans lequel vous êtes authentifié.
-- Plus moderne, vous pouvez utiliser le fichier *clouds.yml*. Ce fichier est aussi téléchargeable sur *Horizon*.
-Ce fichier se place ensuite dans *~/.config/openstack/clouds.yaml*
+Pour vous connecter avec le CLI ou via les APIs, deux méthodes existent :
 
-La plateforme Openstack MesoNET utilise le protocole OIDC pour vous connecter via l'authentification de votre université. Il est nécessaire de faire quelques ajustements pour utiliser le fichier *clouds.yml*. 
+- **Variables d'environnement / fichier RC** : un fichier RC est téléchargeable sur *Horizon* (menu utilisateur en haut à droite). Il suffit de le sourcer. Cette méthode est pratique en interactif, mais le fichier RC s'appuie sur l'authentification OIDC de votre compte et n'est pas adapté à un usage non interactif (CI, runner, cron).
+- **Fichier `clouds.yaml` avec une Application Credential** : méthode recommandée pour le CLI, les scripts et les runners. Le fichier se place dans `~/.config/openstack/clouds.yaml`.
 
-:::info 
-L'utilisation du fichier *clouds.yml* est fortement conseillé.    
-De plus, l'avantage de ce fichier est qu'il peut contenir différents Clouds Openstack, différents projets, différents utilisateurs.
+:::warning Le clouds.yaml du profil utilisateur ne suffit pas
+Le fichier `clouds.yaml` téléchargeable depuis le menu utilisateur en haut à droite d'Horizon (profil) n'est **pas** utilisable directement pour le CLI non interactif : il dépend de la session OIDC et renvoie souvent `HTTP 401`. Pour le CLI et l'automatisation, utilisez le `clouds.yaml` généré lors de la création d'une **Application Credential** (voir ci-dessous).
 :::
 
-### Récupérer les fichiers **RC** ou *clouds.yml* de votre projet
+### Créer une Application Credential et récupérer le `clouds.yaml`
 
-Vous pouvez récupérer un fichier d'authentification pré-rempli sur le Dashboard *Horizon*.
-Pour cela, cliquez sur votre login en haut à droite de l'interface web.   
-    
-![fichierRC](/img/nova/Nova_fichierRC.png?classes=shadow)   
+Pour en savoir plus sur les Application Credentials : [documentation OpenStack](https://docs.openstack.org/keystone/latest/user/application_credentials.html).
 
-### Utiliser le fichier clouds.yml
-Pour utiliser le ficher clouds.yml, il faudra d'abord créer un [*Application Credentials/Identifiants d'application*](https://docs.openstack.org/keystone/latest/user/application_credentials.html). Il faudra ensuite remplir le fichier *clouds.yml* avec l'identifiant créé sur l'interface Web.
+1. Dans Horizon : **Identité > Identifiants d'application**.
+2. Cliquez sur **Créer un identifiant d'application**.
+3. Choisissez un nom et le rôle :
+   - `member` pour un usage complet (création/suppression de ressources) ;
+   - `reader` pour un usage en lecture seule.
+4. À la création, Horizon propose de **télécharger le fichier `clouds.yaml`** pré-rempli. Téléchargez-le immédiatement : le secret de l'Application Credential n'est affiché qu'une seule fois.
+5. Placez-le dans `~/.config/openstack/clouds.yaml` sur la machine où vous exécutez le CLI (votre poste ou le runner).
+6. Vérifiez le nom du cloud (la clé sous `clouds:`) et testez :
 
-#### Création de l'identifiant
-* Naviguer dans *Identité > Identifiants d'application*     
-
-* Cliquer sur *Créer un identifiant d'application*       
-
-![ficherappcred](/img/nova/nova_creer_app_cred.png?classes=shadow)      
-
-* Choisir un nom pour votre identifiant et choisir le rôle *member*, si vous choisissez le rôle *reader*, votre identifiant n'aura que les droits en lecture.    
-
-![ficherappcred2](/img/nova/nova_creer_app_cred2.png?classes=shadow)      
-
-* Une fenêtre apparait, vous pouvez directement télécharger le fichier *clouds.yml* pré-rempli avec vos identifiants.    
-
-![ficherappcred2](/img/nova/nova_creer_app_cred3.png?classes=shadow)      
-
-Il ne vous reste plus qu'à placer le fichier clouds.yml dans *~/.config/openstack/clouds.yaml*.     
-
-Vous pouvez tester votre configuration en faisant, par exemple :
 ```bash
-openstack server list
+openstack --os-cloud <nom_du_cloud> token issue
 ```
 
-#### Mise à jour de modules
+Si la commande renvoie un token, l'authentification fonctionne. Vous pouvez ensuite lancer vos commandes :
+
+```bash
+openstack --os-cloud <nom_du_cloud> server list
+openstack --os-cloud <nom_du_cloud> floating ip list
+```
+
+![Création d'un identifiant d'application](/img/nova/nova_creer_app_cred.png?classes=shadow)
+
+![Choix du rôle](/img/nova/nova_creer_app_cred2.png?classes=shadow)
+
+![Téléchargement du clouds.yaml](/img/nova/nova_creer_app_cred3.png?classes=shadow)
+
+### En cas de `HTTP 401`
+
+- Vérifiez que le fichier s'appelle bien `clouds.yaml` (et non `clouds.yml`) et qu'il est dans `~/.config/openstack/`.
+- Vérifiez que vous êtes bien l'utilisateur qui lance la commande : le fichier doit être dans son `$HOME` (`echo $HOME`), pas dans celui d'un autre compte.
+- Vérifiez qu'il n'y a pas un autre `clouds.yaml` dans le répertoire courant ou dans `/etc/openstack/` qui serait chargé à la place.
+- Vérifiez que `--os-cloud <nom_du_cloud>` correspond à la clé sous `clouds:` dans le fichier.
+- Vérifiez qu'aucune variable `OS_*` ou `OS_CLOUD` ne vient écraser la configuration : `env | grep OS_`.
+- Vérifiez que l'Application Credential n'a pas expiré et qu'elle a bien le rôle `member` (ou `reader`).
+- Si le 401 persiste, recréez l'Application Credential et remplacez le `clouds.yaml`.
+- Le `clouds.yaml` du profil utilisateur (menu en haut à droite) ne convient pas : utilisez celui de l'Application Credential.
+
+### Où placer le `clouds.yaml` ?
+
+- **Sur votre poste local** : pour diagnostiquer et lancer le CLI manuellement.
+- **Sur le runner GitLab** : uniquement si le job exécute Terraform ou le CLI OpenStack. Ne commitez jamais le `clouds.yaml` dans le dépôt. Utilisez les variables CI/CD GitLab (`OS_AUTH_TYPE=v3applicationcredential`, `OS_AUTH_URL`, `OS_APPLICATION_CREDENTIAL_ID`, `OS_APPLICATION_CREDENTIAL_SECRET`, etc.) ou générez le fichier au moment du job à partir de variables protégées.
+
+### Récupérer le fichier RC (méthode interactive)
+
+Le fichier RC reste utile pour un usage interactif. Cliquez sur votre login en haut à droite de l'interface web, puis téléchargez le fichier RC.
+
+![fichierRC](/img/nova/Nova_fichierRC.png?classes=shadow)
+
+Puis sourcez-le :
+
+```bash
+source <fichier_rc>.sh
+```
+
+:::note
+Le fichier RC utilise l'authentification OIDC. Il peut donc demander une authentification interactive et n'est pas adapté aux jobs CI ou aux runners.
+:::
+
+## Mise à jour de modules
+
 Il faudra de temps en temps mettre à jour les modules de votre environnement car ils ne sont pas gérés par la distribution.
 ``` bash
 pip install -U MODULE_NAME
