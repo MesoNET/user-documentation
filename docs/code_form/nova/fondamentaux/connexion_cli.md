@@ -59,10 +59,19 @@ Pour en savoir plus sur les Application Credentials : [documentation OpenStack](
 
 1. Dans Horizon : **Identité > Identifiants d'application**.
 2. Cliquez sur **Créer un identifiant d'application**.
+
+   ![Création d'un identifiant d'application](/img/nova/nova_creer_app_cred.png?classes=shadow)
+
 3. Choisissez un nom et le rôle :
    - `member` pour un usage complet (création/suppression de ressources) ;
    - `reader` pour un usage en lecture seule.
+
+   ![Choix du rôle](/img/nova/nova_creer_app_cred2.png?classes=shadow)
+
 4. À la création, Horizon propose de **télécharger le fichier `clouds.yaml`** pré-rempli. Téléchargez-le immédiatement : le secret de l'Application Credential n'est affiché qu'une seule fois.
+
+   ![Téléchargement du clouds.yaml](/img/nova/nova_creer_app_cred3.png?classes=shadow)
+
 5. Placez-le dans `~/.config/openstack/clouds.yaml` sur la machine où vous exécutez le CLI (votre poste ou le runner).
 6. Vérifiez le nom du cloud (la clé sous `clouds:`) et testez :
 
@@ -76,12 +85,6 @@ Si la commande renvoie un token, l'authentification fonctionne. Vous pouvez ensu
 openstack --os-cloud <nom_du_cloud> server list
 openstack --os-cloud <nom_du_cloud> floating ip list
 ```
-
-![Création d'un identifiant d'application](/img/nova/nova_creer_app_cred.png?classes=shadow)
-
-![Choix du rôle](/img/nova/nova_creer_app_cred2.png?classes=shadow)
-
-![Téléchargement du clouds.yaml](/img/nova/nova_creer_app_cred3.png?classes=shadow)
 
 ### En cas de `HTTP 401`
 
