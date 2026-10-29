@@ -21,6 +21,8 @@ Dans les exemples de commande suivante nous considérons que :
 * `ils /MesoNET/home/M26007` : Liste les fichiers présents dans le dossier *M26007*.
 * `ils -l /MesoNET/home/M26007` : Liste les fichiers présents dans le dossier *M26007* en affichant dans quelles ressources ils se trouvent.
 
+> **ATTENTION** : Lorsque vous vous êtes connecté avec la commande ```iinit```, cela ne vous déplace pas dans une autre arborescence de fichiers. Vous conservez toujours l'accès aux fichiers et répertoires de votre machine. Ce sont les ```icommandes``` qui vous permettront d'interagir avec le système de fichiers distant.
+
 
 ## Envoyer des données
 
