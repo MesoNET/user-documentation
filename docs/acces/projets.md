@@ -13,7 +13,7 @@ Cette page est en construction, n'hésitez pas à envoyer des retours à theo.ba
 
 ### Prérequis
 
-Pour pouvoir créer un projet vous devez [avoir un compte MesoNET](https://www.mesonet.fr/documentation/user-documentation/acces/portail/) et être membre d'un laboratoire identifié. 
+Pour pouvoir créer un projet vous devez [avoir un compte MesoNET](https://www.mesonet.fr/documentation/user-documentation/acces/portail/) et être membre d'un laboratoire identifié.
 
 Si vous n'avez pas rentré votre laboratoire vous pouvez le rentrer dans [votre profil](https://acces.mesonet.fr/gramc-meso/profil)
 
@@ -49,7 +49,7 @@ Vous pouvez ajouter les utilisateurs dans n'importe quel ordre avant et après l
 :::
 
 
-## Accès aux machines 
+## Accès aux machines
 
 Dans la section `Personnes participant au projet` ou dans l'onglet `Collaborateurs`, cochez pour chaque collaborateur les machines sur lesquelles le collaborateur a besoin d'un accès.
 
@@ -63,10 +63,10 @@ Pour demander une extension, une fois que le projet est validé, cliquer sur le 
 
 ## Cycle de vie d'un projet Mesonet
 
-Le cycle de vie d'un projet Mesonet est détaillé dans les [Conditions Générales d'Attribution](https://acces.mesonet.fr/gramc-meso/Mesonet_CGA_version_1.pdf).
+Le cycle de vie d'un projet Mesonet est détaillé dans les [Conditions Générales d'Attribution](https://acces.mesonet.fr/gramc-meso/cga.pdf).
 
-Concernant la fin de vie des projets Mesonet, voici un certain nombre de précisions : 
-* Les accès aux ressources des projets Mesonet n'ayant pas été renouvelés au bout d'un an sont suspendus. 
+Concernant la fin de vie des projets Mesonet, voici un certain nombre de précisions :
+* Les accès aux ressources des projets Mesonet n'ayant pas été renouvelés au bout d'un an sont suspendus.
 * L'état non-renouvelé dure 365 jours à compter de la date de fin du projet. Pendant cette période il vous est toujours possible de demander un renouvellement pour retrouver l'accès aux ressources.
 * Au-delà des 365 jours en état "non-renouvelé", les accès aux machines seront bloqués. **Puis, 15 jours après ce blocage, les comptes seront définitivement supprimés sans préavis**.
 
